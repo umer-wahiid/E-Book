@@ -785,7 +785,7 @@ section{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url(../image/img\ 3.jpg);
+    background: url(../image/con4.jpg);
     background-size: cover;
     height: calc(90vh - 50px);
     background-attachment: fixed;
@@ -890,7 +890,7 @@ section{
 
 /* about */
 .about-section{
-    background: url(../image/pic.jpg) no-repeat left;
+    background: url(../image/con3.jpg) no-repeat left;
     background-size: 55%;
     background-color: #fdfdfd;
     overflow: hidden;
