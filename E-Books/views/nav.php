@@ -28,7 +28,7 @@
 </div>
 
 <div class="header-2">
-    <nav class="navbar">
+    <nav class="navbar-n">
         <a href="#home">home</a>
         <a href="#bestselling">Best Selling</a>
         <a href="#arrivals">arrivals</a>

@@ -69,7 +69,7 @@ section{
     border:var(--border);
 }
 
-.btn{
+.btn-n{
     margin-top: 1rem;
     display:inline-block;
     padding:.9rem 3rem;
@@ -81,7 +81,7 @@ section{
     font-weight: 500;
 }
 
-.btn:hover{
+.btn-n:hover{
     background:var(--dark-color);
 }
 
@@ -155,18 +155,18 @@ section{
     background:var(--green);
 }
 
-.header .header-2 .navbar{
+.header .header-2 .navbar-n{
     text-align: center;
 }
 
-.header .header-2 .navbar a{
+.header .header-2 .navbar-n a{
     color:#fff;
     display: inline-block;
     padding:1.2rem;
     font-size: 1.7rem;
 }
 
-.header .header-2 .navbar a:hover{
+.header .header-2 .navbar-n a:hover{
     background:var(--dark-color);
 }
 
@@ -259,7 +259,7 @@ section{
     cursor: pointer;
 }
 
-.login-form-container form .btn{
+.login-form-container form .btn-n{
     text-align: center;
     width:100%;
     margin:1.5rem 0;
@@ -273,12 +273,12 @@ section{
 
 .login-form-container form p a{
     color:var(--green);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .login-form-container form p button{
     color:var(--green);
-    text-decoration: underline;
+    text-decoration: none;
     background-color: transparent;
     cursor: pointer;
 }
@@ -376,7 +376,7 @@ section{
     cursor: pointer;
 }
 
-.signup-form-container form .btn{
+.signup-form-container form .btn-n{
     text-align: center;
     width:100%;
     margin:1.5rem 0;
@@ -390,7 +390,7 @@ section{
 
 .signup-form-container form p a{
     color:var(--green);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .signup-form-container form p button{
@@ -775,6 +775,8 @@ section{
     padding:1rem 0;
     line-height: 2;
 }
+
+
 /* CONTACT US */
 
 .contact{
@@ -1015,8 +1017,6 @@ section{
 .loader-container img{
     height:10rem;
 }
-
-
 
 
 

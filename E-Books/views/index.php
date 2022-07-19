@@ -2,10 +2,10 @@
 
     require '../apis/connection.php';
 
-    if(isset($_GET['alert'])){
-        $alert = $_GET['alert'];
-        echo '<div class="alert alert-success" role="alert">'.$alert.'</div>';
-    }
+    // if(isset($_GET['alert'])){
+    //     $alert = $_GET['alert'];
+    //     echo '<div class="alert alert-success" role="alert">'.$alert.'</div>';
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +29,9 @@
     <link rel="shortcut icon" type="image/png" href="image/loader-img.gif">
 
     <!-- bootstrap 5 -->
+    <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+
+
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
 </head>
@@ -44,8 +47,6 @@
     ?>
 
 
-
-
     <!-- home section starts  -->
 
     <section class="home" id="home">
@@ -56,7 +57,7 @@
                 <h3>upto 75% off</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias
                     sit necessitatibus, aliquid ex minima at!</p>
-                <a href="#" class="btn">shop now</a>
+                <a href="#" class="btn-n">shop now</a>
             </div>
 
             <div class="swiper books-slider">
@@ -139,7 +140,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -155,7 +156,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -171,7 +172,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -187,7 +188,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -203,7 +204,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -219,7 +220,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -235,7 +236,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -251,7 +252,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -267,7 +268,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -283,7 +284,7 @@
                     <div class="content">
                         <h3>featured books</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
 
@@ -305,7 +306,7 @@
         <form action="">
             <h3>subscribe for latest updates</h3>
             <input type="email" name="" placeholder="enter your email" id="" class="box">
-            <input type="submit" value="subscribe" class="btn">
+            <input type="submit" value="subscribe" class="btn-n">
         </form>
 
     </section>
@@ -517,7 +518,7 @@
             <h1>upto 50% off</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde perspiciatis in atque dolore tempora
                 quaerat at fuga dolorum natus velit.</p>
-            <a href="#" class="btn">shop now</a>
+            <a href="#" class="btn-n">shop now</a>
         </div>
 
         <div class="image">
@@ -646,7 +647,7 @@
                     <div class="content">
                         <h3>blog title goes here</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn">read more</a>
+                        <a href="#" class="btn-n">read more</a>
                     </div>
                 </div>
 
@@ -657,7 +658,7 @@
                     <div class="content">
                         <h3>blog title goes here</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn">read more</a>
+                        <a href="#" class="btn-n">read more</a>
                     </div>
                 </div>
 
@@ -668,7 +669,7 @@
                     <div class="content">
                         <h3>blog title goes here</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn">read more</a>
+                        <a href="#" class="btn-n">read more</a>
                     </div>
                 </div>
 
@@ -679,7 +680,7 @@
                     <div class="content">
                         <h3>blog title goes here</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn">read more</a>
+                        <a href="#" class="btn-n">read more</a>
                     </div>
                 </div>
 
@@ -690,7 +691,7 @@
                     <div class="content">
                         <h3>blog title goes here</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn">read more</a>
+                        <a href="#" class="btn-n">read more</a>
                     </div>
                 </div>
 
