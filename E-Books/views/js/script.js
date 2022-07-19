@@ -20,7 +20,8 @@ let signupForm = document.querySelector('.signup-form-container');
 
 document.querySelector('#signup-btn').onclick = () =>{
   signupForm.classList.toggle('active');
-  loginForm.classList.remove('active');
+  // loginForm.classList.remove('active');
+  loginForm.classList.toggle('active');
 }
 
 document.querySelector('#close-signup-btn').onclick = () =>{
