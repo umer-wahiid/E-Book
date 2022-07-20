@@ -290,6 +290,119 @@ section{
     color:var(--black);
     cursor: pointer;
 }
+.nui img{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.up{
+    display: flex;
+    align-items: center;
+}
+.up img{
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.up p{
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #626262;
+}
+.up small{
+    font-size: 12px;
+}
+.online{
+    position: relative;
+}
+.online::after{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #41db51;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+}
+.sm{
+    position: absolute;
+    width: 90%;
+    max-width: 320px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0.0.4);
+    border-radius: 5px;
+    overflow: hidden;
+    top: 15%;
+    right: 10%;
+    max-height: 0;
+    transition: max-height 0.5s;
+    z-index: +2;
+}
+.smh{
+    max-height: 450px;
+}
+
+.up a{
+    font-size: 12px;
+    color: #1876f2;
+    text-decoration: none;
+}
+
+.smi{
+    padding: 20px;
+}
+.sm hr{
+    border: 0;
+    height: 1px;
+    background: #9a9a9a;
+    margin: 15px;
+}
+.sl{
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+.sl .si{
+    width: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.sl a{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #626262;
+}
+#drk-bnt{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ccc;
+    width: 45px;
+    border-radius: 15px;
+    padding: 2px 3px;
+    cursor: pointer;
+    display: flex;
+    transition: padding-left 0.5s, background 0.5s;
+}
+#drk-bnt span{
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+}
+#drk-bnt.drk-bnt-on{
+    padding-left: 23px;
+    background: #0a0a0a;
+}
+
 
 
 
@@ -407,6 +520,7 @@ section{
     color:var(--black);
     cursor: pointer;
 }
+
 
 
 

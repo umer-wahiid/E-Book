@@ -172,3 +172,35 @@ var swiper = new Swiper(".blogs-slider", {
     },
   },
 });
+
+var settingsmenu = document.querySelector(".sm");
+var darkBtn = document.getElementById("drk-bnt");
+
+function settingsMenuToggle(){
+    settingsmenu.classList.toggle("smh");
+}
+darkBtn.onclick = function(){
+    darkBtn.classList.toggle("drk-bnt-on");
+    document.body.classList.toggle("dark-theme");
+
+    if(localStorage.getItem("theme") == "light"){
+        localStorage.setItem("theme", "dark");
+    }
+    else{
+        localStorage.setItem("theme", "light");
+    }
+
+}
+
+
+if(localStorage.getItem("theme") == "light"){
+    darkBtn.classList.remove("drk-bnt-on");
+    document.body.classList.remove("dark-theme");
+}
+else if(localStorage.getItem("theme") == "dark"){
+    darkBtn.classList.add("drk-bnt-on");
+    document.body.classList.add("dark-theme");
+}
+else{
+    localStorage.setItem("theme", "light");
+}

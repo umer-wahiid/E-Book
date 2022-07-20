@@ -4,56 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
-<header class="header">
+        <header class="header">
 
-<div class="header-1">
+        <div class="header-1">
 
-    <a href="index.php" class="logo"> <i class="fas fa-book"></i> e-books </a>
+            <a href="index.php" class="logo"> <i class="fas fa-book"></i> e-books </a>
 
-    <form action="" class="search-form">
-        <input type="search" name="" placeholder="search here..." id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-    </form>
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
 
-    <div class="icons">
-        <div id="search-btn" class="fas fa-search"></div>
-        <a href="../apis/user_apis/logout_user.php" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
-        <div id="login-btn" class="fas fa-user"></div>
-    </div>
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="../apis/user_apis/logout_user.php" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <!-- <div id="login-btn" class="fas fa-user"></div> -->
+                <div class="nui online" onclick="settingsMenuToggle()">
+                <img  src="image/Ammar.jpg">
+                </div>
+            </div>
+            
+        </div>
 
-</div>
+        <!----------- settings-menu---------------  -->
 
-<div class="header-2">
-    <nav class="navbar-n">
-        <a href="#home">home</a>
-        <a href="#bestselling">Best Selling</a>
-        <a href="#arrivals">arrivals</a>
-        <a href="#reviews">reviews</a>
-        <!-- <a href="#blogs">blogs</a> -->
-        <a href="about.php">About</a>
-        <a href="contact.php">Contact</a>
-        <a href="">competition</a>
-    </nav>
-</div>
+        <div class="sm">
 
-</header>
+            <div id="drk-bnt">
+                <span></span>
+            </div>
 
-<!-- header section ends -->
+            <div class="smi">
+                <div class="up">
+                    <img src="image/Ammar.jpg">
+                    <div>
+                        <p>Ammar Ansari</p>
+                        <a href="#">See Your Profile</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="up">
+                    <img src="image/feedback.png">
+                    <div>
+                        <p>Give Feedback</p>
+                        <a href="#">Help us to improve a new design</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="sl">
+                    <img src="../Downloads/socialbook_img/images/setting.png" class="si">
+                    <a href="#">Settings & Privacy <img src="../Downloads/socialbook_img/images/arrow.png"
+                            width="10px"></a>
+                </div>
+                <div class="sl">
+                    <img src="../Downloads/socialbook_img/images/help.png" class="si">
+                    <a href="#">Help & Support <img src="../Downloads/socialbook_img/images/arrow.png" width="10px"></a>
+                </div>
+                <div class="sl">
+                    <img src="../Downloads/socialbook_img/images/logout.png" class="si">
+                    <a href="#">Logout <img src="../Downloads/socialbook_img/images/arrow.png" width="10px"></a>
+                </div>
+            </div>
+        </div>
 
-<!-- bottom navbar  -->
+        
 
-<nav class="bottom-navbar">
-<a href="#home" class="fas fa-home"></a>
-<a href="#bestselling" class="fas fa-list"></a>
-<a href="#arrivals" class="fas fa-tags"></a>
-<a href="#reviews" class="fas fa-comments"></a>
-<a href="contact.php" class="fa fa-phone"></a>
-<a href="about.php" class="fa fa-blog"></a>
-</nav>
+        <div class="header-2">
+            <nav class="navbar-n">
+                <a href="index.php">home</a>
+                <a href="#bestselling">Best Selling</a>
+                <a href="#arrivals">arrivals</a>
+                <a href="#reviews">reviews</a>
+                <!-- <a href="#blogs">blogs</a> -->
+                <a href="about.php">About</a>
+                <a href="contact.php">Contact</a>
+                <a href="">competition</a>
+            </nav>
+        </div>
+
+        </header>
+
+        <!-- header section ends -->
+
+        <!-- bottom navbar  -->
+
+        <nav class="bottom-navbar">
+        <a href="index.php" class="fas fa-home"></a>
+        <a href="#bestselling" class="fas fa-list"></a>
+        <a href="#arrivals" class="fas fa-tags"></a>
+        <a href="#reviews" class="fas fa-comments"></a>
+        <a href="contact.php" class="fa fa-phone"></a>
+        <a href="about.php" class="fa fa-blog"></a>
+        </nav>
 
 
 
@@ -73,7 +120,7 @@
                 <input type="checkbox" name="" id="remember-me">
                 <label for="remember-me"> remember me</label>
             </div>
-            <input type="submit" name="login" value="sign in" class="btn">
+            <input type="submit" name="login" value="sign in" class="btn-n">
             <p>forget password ? <a href="#">click here</a></p>
             <p>don't have an account ? <button id="signup-btn">create one</button></p>
         </form>
@@ -101,10 +148,11 @@
             <textarea style="border:1px solid gray;border-radius:6px ; resize: none; color: var(--light-color);" placeholder="Enter your address" name="uaddress" id="" cols="52" rows="3"></textarea>
             <span>password</span>
             <input type="password" name="upassword" class="box" placeholder="Enter your password" id="">
-            <input type="submit" name="submit" value="submit" class="btn">
+            <input type="submit" name="submit" value="submit" class="btn-n">
             <p>Already have an account ? <button id="login-btn">Sign in</button></p>
         </form>
 
     </div>
+
 </body>
 </html>
