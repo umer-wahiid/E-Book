@@ -21,7 +21,7 @@
 
             <div class="icons">
                 <div id="search-btn" class="fas fa-search"></div>
-                <a href="../apis/user_apis/logout_user.php" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-shopping-cart"></a>
                 <!-- <div id="login-btn" class="fas fa-user"></div> -->
                 <div class="nui online" onclick="settingsMenuToggle()">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="sl">
                     <img src="image/logout.png" class="si">
-                    <a href="#">Logout <img src="image/arrow.png" width="10px"></a>
+                    <a href="../apis/user_apis/logout_user.php">Logout <img src="image/arrow.png" width="10px"></a>
                 </div>
             </div>
         </div>
