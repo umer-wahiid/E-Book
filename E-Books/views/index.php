@@ -134,7 +134,7 @@
                     <div class="icons">
                         <a href="#" class="fas fa-search"></a>
                         <a href="#" class="fas fa-heart"></a>
-                        <button id="open">
+                        <button data-bs-toggle="modal" data-bs-target="#modalId">
                         <a class="fas fa-eye"></a>
                         </button>
                         
@@ -148,7 +148,7 @@
                         <a href="#" class="btn-n">add to cart</a>
                     </div>
                     
-                    <div class="mdl-cntainer" id="mdl_cntainer">
+                    <!-- <div class="mdl-cntainer" id="mdl_cntainer">
                         <div class="mdl">
                             <h1>Most Selling</h1>
                         </div>
@@ -158,8 +158,38 @@
                             assumenda!
                         </p>
                         <button id="close">Close</button>
-                    </div>
+                    </div> -->
 
+                    <div class="modal" id="modalId">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Ammar</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <img class="img-fluid" style="border-radius: 10px;"
+                                                src="image/con1.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h3 class="mb-3">hdaic</h3>
+                                            <h6 class="m-0">Specifications :</h6>
+                                            <p style="font-size: small;">cajbnn</p>
+                                            <h6 class="m-0">Price :</h6>
+                                            <p style="color: gray;">Rs: <strike><small>1200</small></strike> 1122
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" style="background-color: green;"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="swiper-slide box">
@@ -752,15 +782,15 @@
 
 
 
+    
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
-
+    
     <!-- bootstrap 5 js link -->
     <script src="css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script src="css/bootstrap-5.0.2-dist/js/bootstrap.jquery.js"></script>
-
+    
 </body>
 
 </html>

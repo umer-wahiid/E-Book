@@ -205,14 +205,14 @@ else{
     localStorage.setItem("theme", "light");
 }
 
-const open = document.getElementById('open');
-const mdl_cntainer  = document.getElementById('mdl_cntainer');
-const close  = document.getElementById('close');
+// const open = document.getElementById('open');
+// const mdl_cntainer  = document.getElementById('mdl_cntainer');
+// const close  = document.getElementById('close');
 
-open.addEventListner('click',() =>{
-  mdl_cntainer.classList.add('show');
-})
+// open.addEventListner('click',() =>{
+//   mdl_cntainer.classList.add('show');
+// })
 
-close.addEventListner('click',() =>{
-  mdl_cntainer.classList.remove('show');
-})
+// close.addEventListner('click',() =>{
+//   mdl_cntainer.classList.remove('show');
+// })
