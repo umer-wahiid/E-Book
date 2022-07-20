@@ -28,8 +28,10 @@
     <!-- short icon link -->
     <link rel="shortcut icon" type="image/png" href="image/loader-img.gif">
 
-    <!-- bootstrap 5 -->
+    <!-- bootstrap 5 css link -->
     <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    
+    
 
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
@@ -132,16 +134,32 @@
                     <div class="icons">
                         <a href="#" class="fas fa-search"></a>
                         <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-eye"></a>
+                        <button id="open">
+                        <a class="fas fa-eye"></a>
+                        </button>
+                        
                     </div>
                     <div class="image">
                         <img src="image/book-1.png" alt="">
                     </div>
                     <div class="content">
-                        <h3>featured books</h3>
+                        <h3>most selling</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
                         <a href="#" class="btn-n">add to cart</a>
                     </div>
+                    
+                    <!-- <div class="mdl-cntainer" id="mdl_cntainer">
+                        <div class="mdl">
+                            <h1>Most Selling</h1>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolor voluptas voluptatum numquam omnis 
+                            excepturi error eius alias, aperiam praesentium nulla possimus a saepe animi iure ea exercitationem corrupti 
+                            assumenda!
+                        </p>
+                        <button id="close">Close</button>
+                    </div> -->
+
                 </div>
 
                 <div class="swiper-slide box">
@@ -738,6 +756,10 @@
 
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
+
+    <!-- bootstrap 5 js link -->
+    <script src="css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="css/bootstrap-5.0.2-dist/js/bootstrap.jquery.js"></script>
 
 </body>
 

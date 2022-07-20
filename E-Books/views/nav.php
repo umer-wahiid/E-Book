@@ -23,7 +23,7 @@
                 <div id="search-btn" class="fas fa-search"></div>
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-shopping-cart"></a>
-                <!-- <div id="login-btn" class="fas fa-user"></div> -->
+                <div id="login-btn" class="fas fa-user"></div>
                 <div class="nui online" onclick="settingsMenuToggle()">
                 <img  src="image/Ammar.jpg">
                 </div>
@@ -45,14 +45,6 @@
                     <div>
                         <p>Ammar Ansari</p>
                         <a href="#">See Your Profile</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="up">
-                    <img src="image/feedback.png">
-                    <div>
-                        <p>Give Feedback</p>
-                        <a href="#">Help us to improve a new design</a>
                     </div>
                 </div>
                 <hr>
