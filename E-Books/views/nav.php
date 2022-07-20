@@ -57,17 +57,17 @@
                 </div>
                 <hr>
                 <div class="sl">
-                    <img src="../Downloads/socialbook_img/images/setting.png" class="si">
-                    <a href="#">Settings & Privacy <img src="../Downloads/socialbook_img/images/arrow.png"
+                    <img src="image/setting.png" class="si">
+                    <a href="#">Settings & Privacy <img src="image/arrow.png"
                             width="10px"></a>
                 </div>
                 <div class="sl">
-                    <img src="../Downloads/socialbook_img/images/help.png" class="si">
-                    <a href="#">Help & Support <img src="../Downloads/socialbook_img/images/arrow.png" width="10px"></a>
+                    <img src="image/help.png" class="si">
+                    <a href="#">Help & Support <img src="image/arrow.png" width="10px"></a>
                 </div>
                 <div class="sl">
-                    <img src="../Downloads/socialbook_img/images/logout.png" class="si">
-                    <a href="#">Logout <img src="../Downloads/socialbook_img/images/arrow.png" width="10px"></a>
+                    <img src="image/logout.png" class="si">
+                    <a href="#">Logout <img src="image/arrow.png" width="10px"></a>
                 </div>
             </div>
         </div>

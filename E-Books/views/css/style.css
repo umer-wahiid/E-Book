@@ -681,6 +681,7 @@ section{
     text-decoration: line-through;
 }
 
+
 .swiper-button-next,
 .swiper-button-prev{
     border:var(--border-hover);
