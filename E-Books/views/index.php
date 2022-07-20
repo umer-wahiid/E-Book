@@ -148,7 +148,7 @@
                         <a href="#" class="btn-n">add to cart</a>
                     </div>
                     
-                    <!-- <div class="mdl-cntainer" id="mdl_cntainer">
+                    <div class="mdl-cntainer" id="mdl_cntainer">
                         <div class="mdl">
                             <h1>Most Selling</h1>
                         </div>
@@ -158,7 +158,7 @@
                             assumenda!
                         </p>
                         <button id="close">Close</button>
-                    </div> -->
+                    </div>
 
                 </div>
 

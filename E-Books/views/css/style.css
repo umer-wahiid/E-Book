@@ -387,7 +387,7 @@ section{
     padding-left: 23px;
     background: #0a0a0a;
 }
-/* .mdl-cntainer{
+.mdl-cntainer{
     background-color: rgb(0,0,0,0.3);
     display: flex;
     align-items: center;
@@ -419,7 +419,7 @@ section{
 .mdl p{
     font-size: 14px;
     opacity: 0.7;
-} */
+}
 
 
 
