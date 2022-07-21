@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="CSS/fontawesome-free-6.0.0-beta3-web/css/fontawesome.min.css">
     <link rel="shortcut icon" type="image/png" href="IMAGES/SHORTCUT 2.png">
     <title>Youros Sports</title>
-
+    
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     
 
@@ -45,6 +45,17 @@
         .main-header{
             margin-top: 0px;
         }
+        .cat-card {
+            width: 260px;
+            height: 230px;
+            box-shadow: 1px 1px 5px black;
+        }
+        .brand-item .col-lg-3 {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </STYLE>
 </head>
 
@@ -56,44 +67,46 @@
         <div class="container categories-brand">
             <div class="row">
                 <div class="col-8"> 
-                <form style="width: 400px;" action="" method="POST" enctype="multipart/form-data">
+                <form style="width: 700px;" action="../apis/user_apis/edit_user.php" method="POST" enctype="multipart/form-data">
                     <table class="table">
                         <?php
-                        // $fetch_user = mysqli_query($con,'SELECT * FROM user where uid = $_SESSION["userid"]');
-                        // $row = mysqli_fetch_array($fetch_user);
                         if(isset($_SESSION["userid"])!=null){
                         echo '
                         <tr>
                             <th>Name :</th>
-                            <td>'.$_SESSION["name"].'</td>
+                            <td><input type="text" name="txtname" value="'.$_SESSION["name"].'" class="form-control"></td>
                         </tr>
                         <tr>
                             <th>Email :</th>
-                            <td>'.$_SESSION["email"].'</td>
+                            <td><input type="text" name="txtemail" value="'.$_SESSION["email"].'" class="form-control"></td>
                         </tr>
                         <tr>
                             <th>Contact :</th>
-                            <td>'.$_SESSION["contact"].'</td>
+                            <td><input type="text" name="txtcontact" value="'.$_SESSION["contact"].'" class="form-control"></td>
                         </tr>
                         <tr>
                             <th>Address :</th>
-                            <td>'.$_SESSION["address"].'</td>
+                            <td><input type="text" name="txtage" value="'.$_SESSION["address"].'" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Picture :</th>
+                            <td><input type="file" name="txtimage" class="form-control"></td>                        
                         </tr>
                         <tr>
                             <th></th>
-                            <td><a href="edit.php" class="form-control btn btn-success" value="Edit Profile">Edit Profile</a></td>
+                            <td><input type="submit" name="btn" class="btn btn-success form-control"></td>
                         </tr>
                     </table>
                 </form>
             </div>
             <div class="col-3">
-                <img src="image/Ammar.jpg" class="rounded-circle" style="width:270px;height:270px;" alt="">
+                <img src="admin/profileimage/'.$_SESSION["image"].'" class="rounded-circle" style="width:350px;height:350px;" alt="">
             </div>
-            ';
-            }
-            ?>
-            </div>    
-        </div>        
+        </div>    
+    </div>        
+    ';
+    }
+    ?>
         
 
 
@@ -110,15 +123,13 @@
         new WOW().init();
     </script>
 
-
-    
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
         <!-- custom js file link  -->
     <script src="js/script.js"></script>
+
 </body>
 
 </html>
 <?php
-
-        }
+    }
 ?>
