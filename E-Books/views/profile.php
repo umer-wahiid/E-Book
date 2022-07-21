@@ -87,7 +87,7 @@ include "nav.php"
                 </form>
             </div>
             <div class="col-3">
-                <img src="image/Ammar.jpg" class="rounded-circle" style="width:270px;height:270px;margin-top:50px;" alt="">
+                <img src="image/Ammar.jpg" class="rounded-circle" style="width:270px;height:270px;margin-top:50px;margin-left:50px;" alt="">
             </div>
             ';
     }
