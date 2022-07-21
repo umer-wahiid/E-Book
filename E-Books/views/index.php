@@ -18,9 +18,11 @@
     <title>E-Books</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
@@ -30,12 +32,10 @@
 
     <!-- bootstrap 5 css link -->
     <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    
-
-
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-
+    
 </head>
 
 <body>
@@ -124,7 +124,7 @@
 
     <section class="featured" id="bestselling">
 
-        <h1 class="heading"> <span>best saller</span> </h1>
+        <h1 class="heading"><span>best saller</span> </h1>
 
         <div class="swiper featured-slider">
 
@@ -134,7 +134,7 @@
                     <div class="icons">
                         <a href="#" class="fas fa-search"></a>
                         <a href="#" class="fas fa-heart"></a>
-                        <button data-bs-toggle="modal" data-bs-target="#modalId">
+                        <button data-bs-toggle="modal" data-bs-target="#myModal">
                         <a class="fas fa-eye"></a>
                         </button>
                         
@@ -146,49 +146,6 @@
                         <h3>most selling</h3>
                         <div class="price">$15.99 <span>$20.99</span></div>
                         <a href="#" class="btn-n">add to cart</a>
-                    </div>
-                    
-                    <!-- <div class="mdl-cntainer" id="mdl_cntainer">
-                        <div class="mdl">
-                            <h1>Most Selling</h1>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolor voluptas voluptatum numquam omnis 
-                            excepturi error eius alias, aperiam praesentium nulla possimus a saepe animi iure ea exercitationem corrupti 
-                            assumenda!
-                        </p>
-                        <button id="close">Close</button>
-                    </div> -->
-
-                    <div class="modal" id="modalId">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Ammar</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <img class="img-fluid" style="border-radius: 10px;"
-                                                src="image/con1.jpg" alt="">
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <h3 class="mb-3">hdaic</h3>
-                                            <h6 class="m-0">Specifications :</h6>
-                                            <p style="font-size: small;">cajbnn</p>
-                                            <h6 class="m-0">Price :</h6>
-                                            <p style="color: gray;">Rs: <strike><small>1200</small></strike> 1122
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn" style="background-color: green;"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -344,6 +301,38 @@
         </div>
 
     </section>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">'.$row[1].'</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img class="img-fluid" style="border-radius: 10px;"
+                                src="image/con2.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="mb-3">'.$row[1].'</h3>
+                            <h6 class="m-0">Specifications :</h6>
+                            <p style="font-size: small;">'.$row[3].'</p>
+                            <h6 class="m-0">Price :</h6>
+                            <p style="color: gray;">Rs: <strike><small>1200</small></strike> '.$row[2].'
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" style="background-color: green;"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 
     <!-- featured section ends -->
 
@@ -787,9 +776,9 @@
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
     
+    
     <!-- bootstrap 5 js link -->
-    <script src="css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-    <script src="css/bootstrap-5.0.2-dist/js/bootstrap.jquery.js"></script>
+    
     
 </body>
 
