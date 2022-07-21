@@ -1,5 +1,5 @@
 <style>
-  <?php include "css/bootstrap.min.css" ?>
+  <?php include "css/bootstrap.min.css"?>
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +17,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -39,8 +39,8 @@
 
     <style>
         .form-control{
-            border: 1px solid red;
-         }   
+            border: 1px solid #27ae60;
+         }
         .navbar .navbar-nav .nav-link.dash{
             color: var(--primary);
             background: var(--dark);
@@ -63,7 +63,7 @@
 
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-secondary navbar-dark">
+            <nav class="navbar">
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>E-BOOKS</h3>
                 </a>
@@ -140,29 +140,22 @@
                 <!-- Sale & Revenue Start -->
                 <div class="container-fluid pt-4 px-4">
             <?php
-                if(isset($_GET["addcat"])){
-                        include("AddCategory.php");
-                }
-                else if(isset($_GET["viewcat"])){
-                        include("ViewCategory.php");
-                }
-                else if(isset($_GET["addbrand"])){
-                        include("AddBrand.php");
-                }
-                else if(isset($_GET["viewbrand"])){
-                        include("ViewBrand.php");
-                }
-                else if(isset($_GET["addproduct"])){
-                        include("AddProduct.php");
-                }
-                else if(isset($_GET["viewproduct"])){
-                        include("ViewProduct.php");
-                }
-                else if(isset($_GET["user"])){
-                        include("user.php");
-                }
-                else{
-                    echo '
+if (isset($_GET["addcat"])) {
+    include "AddCategory.php";
+} else if (isset($_GET["viewcat"])) {
+    include "ViewCategory.php";
+} else if (isset($_GET["addbrand"])) {
+    include "AddBrand.php";
+} else if (isset($_GET["viewbrand"])) {
+    include "ViewBrand.php";
+} else if (isset($_GET["addproduct"])) {
+    include "AddProduct.php";
+} else if (isset($_GET["viewproduct"])) {
+    include "ViewProduct.php";
+} else if (isset($_GET["user"])) {
+    include "user.php";
+} else {
+    echo '
                     <div class="row g-4">
                         <div class="col-sm-6 col-xl-3">
                             <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
@@ -205,8 +198,8 @@
                 <!-- Sale & Revenue End -->
             <!-- Content End -->
             ';
-        }
-        ?>
+}
+?>
 
 
 
@@ -222,7 +215,7 @@
 
 
 
-        
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
