@@ -22,7 +22,7 @@ if (isset($_SESSION["userid"]) == null) {
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/fontawesome-free-6.0.0-beta3-web/css/fontawesome.min.css">
     <link rel="shortcut icon" type="image/png" href="IMAGES/SHORTCUT 2.png">
-    <title>Youros Sports</title>
+    <title>Edit Profile - E-Book</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
