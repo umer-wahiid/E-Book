@@ -1,11 +1,10 @@
 <?php
-    include("../apis/connection.php");
-    session_start();
-    if(isset($_SESSION["userid"])==null){
-        header("location:index.php");
-    }
-    else{
-?>
+include "../apis/connection.php";
+session_start();
+if (isset($_SESSION["userid"]) == null) {
+    header("location:index.php");
+} else {
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,14 +22,14 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/fontawesome-free-6.0.0-beta3-web/css/fontawesome.min.css">
     <link rel="shortcut icon" type="image/png" href="IMAGES/SHORTCUT 2.png">
-    <title>Youros Sports</title>
+    <title>Profile - E-Book</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    
+
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
@@ -50,34 +49,35 @@
 
 <body>
     <?php
-        include ("nav.php")
+include "nav.php"
     ?>
 
+        <h1 class="heading" style="margin-top: 50px;"><span>Profile</span></h1>
         <div class="container categories-brand">
             <div class="row">
-                <div class="col-8"> 
+                <div class="col-8">
                 <form style="width: 400px;" action="" method="POST" enctype="multipart/form-data">
-                    <table class="table">
+                    <table class="table" style="margin-top: 50px; width: 70vh; height: 50vh; font-size: 15px; margin-left: -150px;">
                         <?php
-                        // $fetch_user = mysqli_query($con,'SELECT * FROM user where uid = $_SESSION["userid"]');
-                        // $row = mysqli_fetch_array($fetch_user);
-                        if(isset($_SESSION["userid"])!=null){
-                        echo '
+// $fetch_user = mysqli_query($con,'SELECT * FROM user where uid = $_SESSION["userid"]');
+    // $row = mysqli_fetch_array($fetch_user);
+    if (isset($_SESSION["userid"]) != null) {
+        echo '
                         <tr>
                             <th>Name :</th>
-                            <td>'.$_SESSION["name"].'</td>
+                            <td>' . $_SESSION["name"] . '</td>
                         </tr>
                         <tr>
                             <th>Email :</th>
-                            <td>'.$_SESSION["email"].'</td>
+                            <td>' . $_SESSION["email"] . '</td>
                         </tr>
                         <tr>
                             <th>Contact :</th>
-                            <td>'.$_SESSION["contact"].'</td>
+                            <td>' . $_SESSION["contact"] . '</td>
                         </tr>
                         <tr>
                             <th>Address :</th>
-                            <td>'.$_SESSION["address"].'</td>
+                            <td>' . $_SESSION["address"] . '</td>
                         </tr>
                         <tr>
                             <th></th>
@@ -87,20 +87,20 @@
                 </form>
             </div>
             <div class="col-3">
-                <img src="image/Ammar.jpg" class="rounded-circle" style="width:270px;height:270px;" alt="">
+                <img src="image/Ammar.jpg" class="rounded-circle" style="width:270px;height:270px;margin-top:50px;" alt="">
             </div>
             ';
-            }
-            ?>
-            </div>    
-        </div>        
-        
+    }
+    ?>
+            </div>
+        </div>
+
 
 
 
 
     <?php
-        include ("footer.php");
+include "footer.php";
     ?>
 
 
@@ -111,7 +111,7 @@
     </script>
 
 
-    
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
         <!-- custom js file link  -->
     <script src="js/script.js"></script>
@@ -120,5 +120,5 @@
 </html>
 <?php
 
-        }
+}
 ?>

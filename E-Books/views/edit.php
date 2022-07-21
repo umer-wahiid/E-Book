@@ -1,11 +1,10 @@
 <?php
-    include("../apis/connection.php");
-    session_start();
-    if(isset($_SESSION["userid"])==null){
-        header("location:index.php");
-    }
-    else{
-?>
+include "../apis/connection.php";
+session_start();
+if (isset($_SESSION["userid"]) == null) {
+    header("location:index.php");
+} else {
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,13 +23,13 @@
     <link rel="stylesheet" href="CSS/fontawesome-free-6.0.0-beta3-web/css/fontawesome.min.css">
     <link rel="shortcut icon" type="image/png" href="IMAGES/SHORTCUT 2.png">
     <title>Youros Sports</title>
-    
+
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    
+
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
@@ -61,36 +60,37 @@
 
 <body>
     <?php
-        include ("nav.php")
+include "nav.php"
     ?>
 
+        <h1 class="heading" style="margin-top: 50px;"><span>Edit Your Profile</span></h1>
         <div class="container categories-brand">
             <div class="row">
-                <div class="col-8"> 
+                <div class="col-8">
                 <form style="width: 700px;" action="../apis/user_apis/edit_user.php" method="POST" enctype="multipart/form-data">
-                    <table class="table">
+                    <table class="table" style="margin-top: 50px; width: 70vh; height: 50vh; font-size: 15px; margin-left: 95px;">
                         <?php
-                        if(isset($_SESSION["userid"])!=null){
-                        echo '
+if (isset($_SESSION["userid"]) != null) {
+        echo '
                         <tr>
                             <th>Name :</th>
-                            <td><input type="text" name="txtname" value="'.$_SESSION["name"].'" class="form-control"></td>
+                            <td><input type="text" name="txtname" value="' . $_SESSION["name"] . '" class="form-control"></td>
                         </tr>
                         <tr>
                             <th>Email :</th>
-                            <td><input type="text" name="txtemail" value="'.$_SESSION["email"].'" class="form-control"></td>
+                            <td><input type="text" name="txtemail" value="' . $_SESSION["email"] . '" class="form-control"></td>
                         </tr>
                         <tr>
                             <th>Contact :</th>
-                            <td><input type="text" name="txtcontact" value="'.$_SESSION["contact"].'" class="form-control"></td>
+                            <td><input type="text" name="txtcontact" value="' . $_SESSION["contact"] . '" class="form-control"></td>
                         </tr>
                         <tr>
                             <th>Address :</th>
-                            <td><input type="text" name="txtage" value="'.$_SESSION["address"].'" class="form-control"></td>
+                            <td><input type="text" name="txtage" value="' . $_SESSION["address"] . '" class="form-control"></td>
                         </tr>
                         <tr>
                             <th>Picture :</th>
-                            <td><input type="file" name="txtimage" class="form-control"></td>                        
+                            <td><input type="file" name="txtimage" class="form-control"></td>
                         </tr>
                         <tr>
                             <th></th>
@@ -100,20 +100,20 @@
                 </form>
             </div>
             <div class="col-3">
-                <img src="admin/profileimage/'.$_SESSION["image"].'" class="rounded-circle" style="width:350px;height:350px;" alt="">
+                <img src="admin/profileimage/' . $_SESSION["image"] . '" class="rounded-circle" style="width:350px;height:350px;margin-top:50px;" alt="">
             </div>
-        </div>    
-    </div>        
+        </div>
+    </div>
     ';
     }
     ?>
-        
+
 
 
 
 
     <?php
-        include ("footer.php");
+include "footer.php";
     ?>
 
 
@@ -131,5 +131,5 @@
 
 </html>
 <?php
-    }
+}
 ?>
