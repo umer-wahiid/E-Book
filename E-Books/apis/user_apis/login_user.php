@@ -22,8 +22,8 @@
                 $_SESSION["name"] = $fetchArray[1];
                 $_SESSION["image"] = $fetchArray[5];
                 $_SESSION["email"] = $fetchArray[2];
-                $_SESSION["contact"] = $fetchArray[3];
-                $_SESSION["age"] = $fetchArray[4];
+                $_SESSION["contact"] = $fetchArray[4];
+                $_SESSION["address"] = $fetchArray[3];
                 $_SESSION["userid"] = $fetchArray[0];
 
                 header("location:../../views/index.php?alert=Welcome Back");

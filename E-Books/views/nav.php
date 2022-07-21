@@ -23,10 +23,17 @@
                 <div id="search-btn" class="fas fa-search"></div>
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-shopping-cart"></a>
-                <div id="login-btn" class="fas fa-user"></div>
-                <div class="fas nui online" onclick="settingsMenuToggle()">
-                <img  src="image/Ammar.jpg">
-                </div>
+                <?php
+                if(isset($_SESSION["userid"])!=null){
+                    echo '                <div class="fas nui online" onclick="settingsMenuToggle()">
+                    <img  src="image/Ammar.jpg">
+                    </div>';
+                }
+                else{
+                    echo '<div id="login-btn" class="fas fa-user"></div>';
+                }
+                ?>
+
             </div>
             
         </div>
@@ -43,8 +50,15 @@
                 <div class="up">
                     <img src="image/Ammar.jpg">
                     <div>
-                        <p>Ammar Ansari</p>
-                        <a href="#">See Your Profile</a>
+                    <?php
+                        if(isset($_SESSION["userid"])!=null){
+                        echo '<p>'.$_SESSION["name"].'</p>
+                        <a href="#">See Your Profile</a>';
+                        }
+                        else{
+                            echo '<p>login</p>';
+                        }
+                        ?>
                     </div>
                 </div>
                 <hr>
