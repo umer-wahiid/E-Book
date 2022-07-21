@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
+    
 </head>
 <body>
         <header class="header">
@@ -25,7 +26,7 @@
                 <a href="#" class="fas fa-shopping-cart"></a>
                 <?php
                 if(isset($_SESSION["userid"])!=null){
-                    echo '                <div class="fas nui online" onclick="settingsMenuToggle()">
+                    echo '<div class="fas nui online" onclick="settingsMenuToggle()">
                     <img  src="image/Ammar.jpg">
                     </div>';
                 }
@@ -53,10 +54,7 @@
                     <?php
                         if(isset($_SESSION["userid"])!=null){
                         echo '<p>'.$_SESSION["name"].'</p>
-                        <a href="#">See Your Profile</a>';
-                        }
-                        else{
-                            echo '<p>login</p>';
+                        <a href="profile.php">See Your Profile</a>';
                         }
                         ?>
                     </div>
@@ -159,6 +157,5 @@
         </form>
 
     </div>
-
 </body>
 </html>
