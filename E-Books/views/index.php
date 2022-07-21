@@ -144,7 +144,7 @@
                     </div>
                     <div class="content">
                         <h3>most selling</h3>
-                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <div class="price">$20.99 <span>$20.99</span></div>
                         <a href="#" class="btn-n">add to cart</a>
                     </div>
                 </div>
@@ -305,7 +305,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">'.$row[1].'</h4>
+                    <h4 class="modal-title">The Art City</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -315,11 +315,11 @@
                                 src="image/con2.jpg" alt="">
                         </div>
                         <div class="col-lg-6">
-                            <h3 class="mb-3">'.$row[1].'</h3>
-                            <h6 class="m-0">Specifications :</h6>
-                            <p style="font-size: small;">'.$row[3].'</p>
+                            <h3 class="mb-3">The Art City</h3>
+                            <h6 class="m-0">JOHN ALBERT</h6>
+                            <p style="font-size: small;"><b>JOHN ALBERT</b> was very famous author of his hometown. And he wrote more than 35 book and this book is one of his famous books </p>
                             <h6 class="m-0">Price :</h6>
-                            <p style="color: gray;">Rs: <strike><small>1200</small></strike> '.$row[2].'
+                            <p style="color: gray;">Rs: <strike><small>1200</small></strike>
                             </p>
                         </div>
                     </div>
