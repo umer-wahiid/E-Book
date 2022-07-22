@@ -68,7 +68,7 @@ include "nav.php"
             <div class="row">
                 <div class="col-8">
                 <form style="width: 700px;" action="../apis/user_apis/edit_user.php" method="POST" enctype="multipart/form-data">
-                    <table class="table" style="margin-top: 90px; width: 113vh; font-size: 15px; margin-left: -100px;">
+                    <table class="table" style="margin-top: 95px; width: 113vh; font-size: 15px; margin-left: -50px;">
                         <?php
 if (isset($_SESSION["userid"]) != null) {
         echo '
