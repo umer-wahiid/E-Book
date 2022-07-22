@@ -124,7 +124,7 @@ include 'nav.php';
 
     <section class="featured" id="bestselling">
 
-        <h1 class="heading"><span>best saller</span> </h1>
+        <h1 class="heading"><span>Most Selling</span> </h1>
 
         <div class="swiper featured-slider">
 
@@ -140,10 +140,10 @@ include 'nav.php';
 
                     </div>
                     <div class="image">
-                        <img src="image/book-1.png" alt="">
+                        <img src="image/A Gentleman in Moscow.jpg" alt="">
                     </div>
                     <div class="content">
-                        <h3>most selling</h3>
+                        <h3>best selling</h3>
                         <div class="price">$20.99 <span>$20.99</span></div>
                         <a href="#" class="btn-n">add to cart</a>
                     </div>
@@ -305,30 +305,42 @@ include 'nav.php';
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">The Art City</h4>
+                    <h4 class="modal-title">A Gentleman in Moscow</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-6">
                             <img class="img-fluid" style="border-radius: 10px;"
-                                src="image/book-1.png" alt="">
+                                src="image/A Gentleman in Moscow.jpg" alt="">
                         </div>
                         <div class="col-lg-6">
-                            <h3 class="mb-3">The Art City</h3>
-                            <h5 class="m-0">JOHN ALBERT</h5>
-                            <p style="font-size: small;">John Albert was very famous author of his hometown. And he wrote more than 35 book and this book is one of his famous books </p>
-                            <h6 class="m-0">Price :</h6>
-                            <p style="color: gray;">Rs: <strike><small>1200</small></strike>
+                            <h3 class="mb-3">A Gentleman in Moscow</h3>
+                            <h5 class="m-0"><b>Amor Towel</b></h5>
+                            <p style="font-size: small;">
+                            Amor Towles is the author of the New York Times bestsellers Rules of Civility and A Gentleman in Moscow.
                             </p>
+                            <h6 class="m-0" style="font-size: 16px;">Price :</h6>
+                            <p style="color: gray; font-size: 12px;">Rs: <strike><small>1200</small></strike>
+                            </p>
+                            <button class="btn btn-info">Read More</button>
                         </div>
                     </div>
+                    
                 </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, asperiores odit voluptatum quibusdam quo, sit iure
-                       laboriosam veniam voluptas eius ullam maxime! Autem itaque reprehenderit nemo suscipit, voluptates ratione. Voluptas.
-                    </p>
-                </div>
+                <?php
+
+                if (isset($_SESSION['userid']) != null) {
+                    echo '
+                        <div class="description">
+                            <p>A Gentleman in Moscow immerses us in another elegantly drawn era with the story of Count Alexander Rostov.
+                               When, in 1922, he is deemed an unrepentant aristocrat by a Bolshevik tribunal, the count is sentenced to house
+                                arrest in the Metropol, a grand hotel across the street from the Kremlin.
+                            </p>
+                        </div>';
+                    }
+
+?>
                 <div class="modal-footer">
                     <button type="button" class="btn" style="background-color: green;"
                         data-bs-dismiss="modal">Close</button>
