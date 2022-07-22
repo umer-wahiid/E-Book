@@ -139,7 +139,8 @@
             </div>
             <input type="submit" name="login" value="sign in" class="btn-n">
             <p>forget password ? <a href="#">click here</a></p>
-            <p>don't have an account ? <button id="signup-btn">create one</button></p>
+            <p>don't have an account ? <a href="#" id="signup-btn">create one</a></p>
+            <!-- <p>don't have an account ? <button id="signup-btn">create one</button></p> -->
         </form>
 
     </div>
@@ -166,6 +167,7 @@
             <span>password</span>
             <input type="password" name="upassword" class="box" placeholder="Enter your password" id="">
             <input type="submit" name="submit" value="submit" class="btn-n">
+            <!-- <p>Already have an account ? <a href="#" id="login-btn">Sign in</a></p> -->
             <p>Already have an account ? <button id="login-btn">Sign in</button></p>
         </form>
 
