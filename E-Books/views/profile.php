@@ -57,7 +57,7 @@ include "nav.php"
             <div class="row">
                 <div class="col-8">
                 <form style="width: 400px;" action="" method="POST" enctype="multipart/form-data">
-                    <table class="table" style="margin-top: 100px; width: 90vh; font-size: 15px; margin-left: -150px;">
+                    <table class="table" style="margin-top: 40px; width: 90vh; font-size: 15px; margin-left: -150px;">
                         <?php
 // $fetch_user = mysqli_query($con,'SELECT * FROM user where uid = $_SESSION["userid"]');
     // $row = mysqli_fetch_array($fetch_user);
@@ -87,7 +87,7 @@ include "nav.php"
                 </form>
             </div>
             <div class="col-3">
-                <img src="' . $_SESSION["image"] . '" class="rounded-circle" style="width:270px;height:270px;margin-top:50px;margin-left:50px;" alt="">
+                <img src="' . $_SESSION["image"] . '" class="rounded-circle" style="width:270px;height:270px;margin-top:15px;margin-left:50px;" alt="">
             </div>
             ';
     }

@@ -68,7 +68,7 @@ include "nav.php"
             <div class="row">
                 <div class="col-8">
                 <form style="width: 700px;" action="../apis/user_apis/edit_user.php" method="POST" enctype="multipart/form-data">
-                    <table class="table" style="margin-top: 95px; width: 90vh; font-size: 15px; margin-left: -50px;">
+                    <table class="table" style="margin-top: 40px; width: 90vh; font-size: 15px; margin-left: -50px;">
                         <?php
 if (isset($_SESSION["userid"]) != null) {
         echo '
@@ -100,7 +100,7 @@ if (isset($_SESSION["userid"]) != null) {
                 </form>
             </div>
             <div class="col-3">
-                <img src="' . $_SESSION["image"] . '" class="rounded-circle" style="width:350px;height:350px;margin-top:50px;" alt="">
+                <img src="' . $_SESSION["image"] . '" class="rounded-circle" style="width:350px;height:350px;margin-top:10px;" alt="">
             </div>
         </div>
     </div>
