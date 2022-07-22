@@ -57,7 +57,7 @@ include "nav.php"
             <div class="row">
                 <div class="col-8">
                 <form style="width: 400px;" action="" method="POST" enctype="multipart/form-data">
-                    <table class="table" style="margin-top: 100px; width: 90vh; font-size: 15px; margin-left: -200px;">
+                    <table class="table" style="margin-top: 100px; width: 90vh; font-size: 15px; margin-left: -150px;">
                         <?php
 // $fetch_user = mysqli_query($con,'SELECT * FROM user where uid = $_SESSION["userid"]');
     // $row = mysqli_fetch_array($fetch_user);

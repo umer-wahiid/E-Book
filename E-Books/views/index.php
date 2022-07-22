@@ -312,17 +312,22 @@ include 'nav.php';
                     <div class="row">
                         <div class="col-lg-6">
                             <img class="img-fluid" style="border-radius: 10px;"
-                                src="image/con2.jpg" alt="">
+                                src="image/book-1.png" alt="">
                         </div>
                         <div class="col-lg-6">
                             <h3 class="mb-3">The Art City</h3>
-                            <h6 class="m-0">JOHN ALBERT</h6>
-                            <p style="font-size: small;"><b>JOHN ALBERT</b> was very famous author of his hometown. And he wrote more than 35 book and this book is one of his famous books </p>
+                            <h5 class="m-0">JOHN ALBERT</h5>
+                            <p style="font-size: small;">John Albert was very famous author of his hometown. And he wrote more than 35 book and this book is one of his famous books </p>
                             <h6 class="m-0">Price :</h6>
                             <p style="color: gray;">Rs: <strike><small>1200</small></strike>
                             </p>
                         </div>
                     </div>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, asperiores odit voluptatum quibusdam quo, sit iure
+                       laboriosam veniam voluptas eius ullam maxime! Autem itaque reprehenderit nemo suscipit, voluptates ratione. Voluptas.
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" style="background-color: green;"
