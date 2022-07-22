@@ -53,11 +53,11 @@ include "nav.php"
     ?>
 
         <h1 class="heading" style="margin-top: 50px;"><span>Profile</span></h1>
-        <div class="container categories-brand">
+        <div class="container">
             <div class="row">
                 <div class="col-8">
                 <form style="width: 400px;" action="" method="POST" enctype="multipart/form-data">
-                    <table class="table" style="margin-top: 50px; width: 70vh; height: 50vh; font-size: 15px; margin-left: -150px;">
+                    <table class="table" style="margin-top: 100px; width: 90vh; font-size: 15px; margin-left: -200px;">
                         <?php
 // $fetch_user = mysqli_query($con,'SELECT * FROM user where uid = $_SESSION["userid"]');
     // $row = mysqli_fetch_array($fetch_user);
@@ -65,29 +65,29 @@ include "nav.php"
         echo '
                         <tr>
                             <th>Name :</th>
-                            <td>' . $_SESSION["name"] . '</td>
+                            <td style="height: 5vh; font-size:15px;">' . $_SESSION["name"] . '</td>
                         </tr>
                         <tr>
                             <th>Email :</th>
-                            <td>' . $_SESSION["email"] . '</td>
+                            <td style="height: 5vh; font-size:15px;">' . $_SESSION["email"] . '</td>
                         </tr>
                         <tr>
                             <th>Contact :</th>
-                            <td>' . $_SESSION["contact"] . '</td>
+                            <td style="height: 5vh; font-size:15px;">' . $_SESSION["contact"] . '</td>
                         </tr>
                         <tr>
                             <th>Address :</th>
-                            <td>' . $_SESSION["address"] . '</td>
+                            <td style="height: 5vh; font-size:15px;">' . $_SESSION["address"] . '</td>
                         </tr>
                         <tr>
                             <th></th>
-                            <td><a href="edit.php" class="form-control btn btn-success" value="Edit Profile">Edit Profile</a></td>
+                            <td><a href="edit.php" class="form-control btn btn-success" value="Edit Profile" style="height: 5vh; font-size:15px;">Edit Profile</a></td>
                         </tr>
                     </table>
                 </form>
             </div>
             <div class="col-3">
-                <img src="'.$_SESSION["image"].'" class="rounded-circle" style="width:270px;height:270px;margin-top:50px;margin-left:50px;" alt="">
+                <img src="' . $_SESSION["image"] . '" class="rounded-circle" style="width:270px;height:270px;margin-top:50px;margin-left:50px;" alt="">
             </div>
             ';
     }

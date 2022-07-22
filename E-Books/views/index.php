@@ -1,11 +1,11 @@
 <?php
 
-    require '../apis/connection.php';
-    session_start();
-    // if(isset($_GET['alert'])){
-    //     $alert = $_GET['alert'];
-    //     echo '<div class="alert alert-success" role="alert">'.$alert.'</div>';
-    // }
+require '../apis/connection.php';
+session_start();
+// if(isset($_GET['alert'])){
+//     $alert = $_GET['alert'];
+//     echo '<div class="alert alert-success" role="alert">'.$alert.'</div>';
+// }
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +18,11 @@
     <title>E-Books</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    
+
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
@@ -33,9 +33,9 @@
     <!-- bootstrap 5 css link -->
     <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    
+
 </head>
 
 <body>
@@ -43,10 +43,10 @@
     <!-- header section starts  -->
 
     <?php
-    
-    include 'nav.php';
 
-    ?>
+include 'nav.php';
+
+?>
 
 
     <!-- home section starts  -->
@@ -137,7 +137,7 @@
                         <button data-bs-toggle="modal" data-bs-target="#myModal">
                         <a class="fas fa-eye"></a>
                         </button>
-                        
+
                     </div>
                     <div class="image">
                         <img src="image/book-1.png" alt="">
@@ -332,7 +332,7 @@
         </div>
     </div>
 
-    
+
 
     <!-- featured section ends -->
 
@@ -743,10 +743,10 @@
 
     <!-- footer section starts  -->
     <?php
-    
-        include 'footer.php';
-    
-    ?>
+
+include 'footer.php';
+
+?>
 
     <!-- footer section ends -->
 
@@ -755,11 +755,11 @@
     <div class="loader-container">
         <img src="image/loader-img.gif" alt="">
     </div> -->
-    
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
-        
+
 </body>
 
 </html>

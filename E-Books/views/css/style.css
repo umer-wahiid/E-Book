@@ -292,7 +292,6 @@ section{
 }
 .nui img{
     width: 40px;
-    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -302,12 +301,12 @@ section{
 }
 .up img{
     width: 45px;
-    border-radius: 50%;
     margin-right: 10px;
 }
 .up p{
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-weight: 500;
+    font-size: 15px;
     color: #626262;
 }
 .up small{
