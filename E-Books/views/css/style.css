@@ -717,6 +717,11 @@ section{
     border-radius: .5rem;
     text-transform: none;
 }
+.newsletter form .radio{
+    color: white;
+    font-size: 20px;
+    margin-top: 50px;
+}
 
 .arrivals .arrivals-slider .box{
     display: flex;

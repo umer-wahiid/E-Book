@@ -367,6 +367,14 @@ include 'nav.php';
         <form action="">
             <h3>subscribe for latest updates</h3>
             <input type="email" name="" placeholder="enter your email" id="" class="box">
+            <input type="radio" value="Annual" name="subscribe" style="margin-top: 30px;margin-bottom: 30px;">
+            &nbsp;
+            <span class="radio">Annual/Rs. 1500</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" value="Monthly" name="subscribe">
+            &nbsp;
+            <span class="radio">Monthly/Rs. 750</span>
+            <br>
             <input type="submit" value="subscribe" class="btn-n">
         </form>
 
