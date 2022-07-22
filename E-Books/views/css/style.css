@@ -292,7 +292,7 @@ section{
 }
 .nui img{
     width: 40px;
-    border-radius: 50%;
+    height: 40px;
     cursor: pointer;
 }
 
@@ -302,12 +302,13 @@ section{
 }
 .up img{
     width: 45px;
-    border-radius: 50%;
+    height: 45px;
     margin-right: 10px;
 }
 .up p{
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-weight: 500;
+    font-size: 15px;
     color: #626262;
 }
 .up small{
@@ -386,39 +387,6 @@ section{
 #drk-bnt.drk-bnt-on{
     padding-left: 23px;
     background: #0a0a0a;
-}
-.mdl-cntainer{
-    background-color: rgb(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    opacity: 0;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vh;
-}
-.mdl-cntainer .show{
-    pointer-events: auto;
-    opacity: 1;
-}
-.mdl{
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgb(0,0,0,0.2);
-    padding: 30px 50px;
-    width: 600px;
-    max-width: 100%;
-    text-align: center;
-}
-.mdl h1{
-    margin: 0;
-}
-.mdl p{
-    font-size: 14px;
-    opacity: 0.7;
 }
 
 
@@ -748,6 +716,11 @@ section{
     color:var(--black);
     border-radius: .5rem;
     text-transform: none;
+}
+.newsletter form .radio{
+    color: white;
+    font-size: 20px;
+    margin-top: 50px;
 }
 
 .arrivals .arrivals-slider .box{

@@ -1,11 +1,11 @@
 <?php
 
-    require '../apis/connection.php';
-    session_start();
-    // if(isset($_GET['alert'])){
-    //     $alert = $_GET['alert'];
-    //     echo '<div class="alert alert-success" role="alert">'.$alert.'</div>';
-    // }
+require '../apis/connection.php';
+session_start();
+// if(isset($_GET['alert'])){
+//     $alert = $_GET['alert'];
+//     echo '<div class="alert alert-success" role="alert">'.$alert.'</div>';
+// }
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +18,11 @@
     <title>E-Books</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    
+
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
@@ -33,9 +33,9 @@
     <!-- bootstrap 5 css link -->
     <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    
+
 </head>
 
 <body>
@@ -43,10 +43,10 @@
     <!-- header section starts  -->
 
     <?php
-    
-    include 'nav.php';
 
-    ?>
+include 'nav.php';
+
+?>
 
 
     <!-- home section starts  -->
@@ -124,7 +124,7 @@
 
     <section class="featured" id="bestselling">
 
-        <h1 class="heading"><span>best saller</span> </h1>
+        <h1 class="heading"><span>Most Selling</span> </h1>
 
         <div class="swiper featured-slider">
 
@@ -137,13 +137,13 @@
                         <button data-bs-toggle="modal" data-bs-target="#myModal">
                         <a class="fas fa-eye"></a>
                         </button>
-                        
+
                     </div>
                     <div class="image">
-                        <img src="image/book-1.png" alt="">
+                        <img src="image/A Gentleman in Moscow.jpg" alt="">
                     </div>
                     <div class="content">
-                        <h3>most selling</h3>
+                        <h3>best selling</h3>
                         <div class="price">$20.99 <span>$20.99</span></div>
                         <a href="#" class="btn-n">add to cart</a>
                     </div>
@@ -305,24 +305,48 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">The Art City</h4>
+                    <h4 class="modal-title">A Gentleman in Moscow</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-6">
                             <img class="img-fluid" style="border-radius: 10px;"
-                                src="image/con2.jpg" alt="">
+                                src="image/A Gentleman in Moscow.jpg" alt="">
                         </div>
                         <div class="col-lg-6">
-                            <h3 class="mb-3">The Art City</h3>
-                            <h6 class="m-0">JOHN ALBERT</h6>
-                            <p style="font-size: small;"><b>JOHN ALBERT</b> was very famous author of his hometown. And he wrote more than 35 book and this book is one of his famous books </p>
-                            <h6 class="m-0">Price :</h6>
-                            <p style="color: gray;">Rs: <strike><small>1200</small></strike>
+                            <h3 class="mb-3">A Gentleman in Moscow</h3>
+                            <h5 class="m-0"><b>Amor Towel</b></h5>
+                            <p style="font-size: small;">
+                            Amor Towles is the author of the New York Times bestsellers Rules of Civility and A Gentleman in Moscow.
                             </p>
+                            <h6 class="m-0" style="font-size: 16px;">Price :</h6>
+                            <p style="color: gray; font-size: 12px;">Rs: <strike><small>1200</small></strike>
+                            </p>
+                            <div class="about-book">
+                              <h3>About Book</h3>
+                               <p>
+                               With his breakout debut novel, Rules of Civility, Amor Towles established himself as a master of absorbing
+                               <a href="" class="link">Read More</a>
+                               </p> 
+                            </div>
+
+                <?php
+
+                if (isset($_SESSION['userid']) != null) {
+                    echo '
+                        <div class="description">
+                            <p>A Gentleman in Moscow immerses us in another elegantly drawn era with the story of Count Alexander Rostov.
+                               When, in 1922, he is deemed an unrepentant aristocrat by a Bolshevik tribunal, the count is sentenced to house
+                                arrest in the Metropol, a grand hotel across the street from the Kremlin.
+                            </p>
+                        </div>';
+                    }
+
+                ?>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" style="background-color: green;"
@@ -332,7 +356,7 @@
         </div>
     </div>
 
-    
+
 
     <!-- featured section ends -->
 
@@ -343,6 +367,14 @@
         <form action="">
             <h3>subscribe for latest updates</h3>
             <input type="email" name="" placeholder="enter your email" id="" class="box">
+            <input type="radio" value="Annual" name="subscribe" style="margin-top: 30px;margin-bottom: 30px;">
+            &nbsp;
+            <span class="radio">Annual/Rs. 1500</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" value="Monthly" name="subscribe">
+            &nbsp;
+            <span class="radio">Monthly/Rs. 750</span>
+            <br>
             <input type="submit" value="subscribe" class="btn-n">
         </form>
 
@@ -743,10 +775,10 @@
 
     <!-- footer section starts  -->
     <?php
-    
-        include 'footer.php';
-    
-    ?>
+
+include 'footer.php';
+
+?>
 
     <!-- footer section ends -->
 
@@ -755,11 +787,11 @@
     <div class="loader-container">
         <img src="image/loader-img.gif" alt="">
     </div> -->
-    
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
-        
+
 </body>
 
 </html>

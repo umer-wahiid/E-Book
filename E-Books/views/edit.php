@@ -68,39 +68,39 @@ include "nav.php"
             <div class="row">
                 <div class="col-8">
                 <form style="width: 700px;" action="../apis/user_apis/edit_user.php" method="POST" enctype="multipart/form-data">
-                    <table class="table" style="margin-top: 50px; width: 70vh; height: 50vh; font-size: 15px; margin-left: 95px;">
+                    <table class="table" style="margin-top: 95px; width: 113vh; font-size: 15px; margin-left: -50px;">
                         <?php
-                            if (isset($_SESSION["userid"]) != null) {
-                                echo '
+if (isset($_SESSION["userid"]) != null) {
+        echo '
                         <tr>
                             <th>Name :</th>
-                            <td><input type="text" name="txtname" value="' . $_SESSION["name"] . '" class="form-control"></td>
+                            <td><input type="text" name="txtname" value="' . $_SESSION["name"] . '" class="form-control" style="height: 5vh; font-size:15px;"></td>
                         </tr>
                         <tr>
                             <th>Email :</th>
-                            <td><input type="text" name="txtemail" value="' . $_SESSION["email"] . '" class="form-control"></td>
+                            <td><input type="text" name="txtemail" value="' . $_SESSION["email"] . '" class="form-control" style="height: 5vh; font-size:15px;"></td>
                         </tr>
                         <tr>
                             <th>Contact :</th>
-                            <td><input type="text" name="txtcontact" value="' . $_SESSION["contact"] . '" class="form-control"></td>
+                            <td><input type="text" name="txtcontact" value="' . $_SESSION["contact"] . '" class="form-control" style="height: 5vh; font-size:15px;"></td>
                         </tr>
                         <tr>
                             <th>Address :</th>
-                            <td><input type="text" name="txtaddress" value="' . $_SESSION["address"] . '" class="form-control"></td>
+                            <td><input type="text" name="txtaddress" value="' . $_SESSION["address"] . '" class="form-control" style="height: 5vh; font-size:15px;"></td>
                         </tr>
                         <tr>
                             <th>Picture :</th>
-                            <td><input type="file" name="txtimage" class="form-control"></td>
+                            <td><input type="file" name="txtimage" class="form-control" style="height: 5vh; font-size:15px;"></td>
                         </tr>
                         <tr>
                             <th></th>
-                            <td><input type="submit" name="btn-edit" class="btn btn-success form-control"></td>
+                            <td><input type="submit" name="btn-edit" class="btn btn-success form-control" style="height: 5vh; font-size:15px;"></td>
                         </tr>
                     </table>
                 </form>
             </div>
             <div class="col-3">
-                <img src="'.$_SESSION["image"].'" class="rounded-circle" style="width:350px;height:350px;margin-top:50px;" alt="">
+                <img src="' . $_SESSION["image"] . '" class="rounded-circle" style="width:350px;height:350px;margin-top:50px;" alt="">
             </div>
         </div>
     </div>
@@ -113,7 +113,7 @@ include "nav.php"
 
 
     <?php
-        include "footer.php";
+include "footer.php";
     ?>
 
 
