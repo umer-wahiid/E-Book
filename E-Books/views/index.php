@@ -323,11 +323,14 @@ include 'nav.php';
                             <h6 class="m-0" style="font-size: 16px;">Price :</h6>
                             <p style="color: gray; font-size: 12px;">Rs: <strike><small>1200</small></strike>
                             </p>
-                            <button class="btn btn-info">Read More</button>
-                        </div>
-                    </div>
-                    
-                </div>
+                            <div class="about-book">
+                              <h3>About Book</h3>
+                               <p>
+                               With his breakout debut novel, Rules of Civility, Amor Towles established himself as a master of absorbing
+                               <a href="" class="link">Read More</a>
+                               </p> 
+                            </div>
+
                 <?php
 
                 if (isset($_SESSION['userid']) != null) {
@@ -340,7 +343,11 @@ include 'nav.php';
                         </div>';
                     }
 
-?>
+                ?>
+                        </div>
+                    </div>
+                    
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" style="background-color: green;"
                         data-bs-dismiss="modal">Close</button>
