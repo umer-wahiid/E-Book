@@ -47,7 +47,7 @@
                             <td>'.$user_row[2].'</td>
                             <td>'.$user_row[3].'</td>
                             <td>'.$user_row[4].'</td>
-                            <td><img src="'.$user_row[5].'" width="500px" height="50px" alt="profileimage/'.$user_row[5].'"></td>
+                            <td><img src="../../E-Books/views/'.$user_row[5].'" width="40px" height="40px"></td>
                             <td>'.$user_row[6].'</td>
                             <td>
                                 <a href="" class="btn btn-primary">Block</a>
