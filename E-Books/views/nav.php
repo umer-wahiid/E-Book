@@ -27,7 +27,7 @@
                 <?php
                 if(isset($_SESSION["userid"])!=null){
                     echo '<div class="fas nui online" onclick="settingsMenuToggle()">
-                    <img  src="image/Ammar.jpg">
+                    <img  src="'.$_SESSION["image"].'" class="rounded-circle">
                     </div>';
                 }
                 else{
@@ -48,17 +48,30 @@
             </div>
 
             <div class="smi">
-                <div class="up">
-                    <img src="image/Ammar.jpg">
-                    <div>
-                    <?php
-                        if(isset($_SESSION["userid"])!=null){
-                        echo '<p>'.$_SESSION["name"].'</p>
-                        <a href="profile.php">See Your Profile</a>';
-                        }
-                        ?>
-                    </div>
-                </div>
+                <?php
+                
+                    if(isset($_SESSION["userid"])!=null){
+                        echo'
+                        <div class="up">
+                            <img src="'.$_SESSION["image"].'" class="rounded-circle">
+                            <div>
+                                <p>'.$_SESSION["name"].'</p>
+                                <a href="profile.php">See Your Profile</a>
+                            </div>
+                        </div>';   
+                    }
+                    else{
+                        echo'
+                        <div class="up">
+                            <img src="image/Ammar.jpg" class="rounded-circle">
+                            <div>
+                                <p>Login</p>
+                                <a href="#">See Your Profile</a>
+                            </div>
+                        </div>';
+                    }
+                
+                ?>
                 <hr>
                 <div class="sl">
                     <img src="image/setting.png" class="si">

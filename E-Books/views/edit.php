@@ -70,8 +70,8 @@ include "nav.php"
                 <form style="width: 700px;" action="../apis/user_apis/edit_user.php" method="POST" enctype="multipart/form-data">
                     <table class="table" style="margin-top: 50px; width: 70vh; height: 50vh; font-size: 15px; margin-left: 95px;">
                         <?php
-if (isset($_SESSION["userid"]) != null) {
-        echo '
+                            if (isset($_SESSION["userid"]) != null) {
+                                echo '
                         <tr>
                             <th>Name :</th>
                             <td><input type="text" name="txtname" value="' . $_SESSION["name"] . '" class="form-control"></td>
@@ -86,7 +86,7 @@ if (isset($_SESSION["userid"]) != null) {
                         </tr>
                         <tr>
                             <th>Address :</th>
-                            <td><input type="text" name="txtage" value="' . $_SESSION["address"] . '" class="form-control"></td>
+                            <td><input type="text" name="txtaddress" value="' . $_SESSION["address"] . '" class="form-control"></td>
                         </tr>
                         <tr>
                             <th>Picture :</th>
@@ -94,13 +94,13 @@ if (isset($_SESSION["userid"]) != null) {
                         </tr>
                         <tr>
                             <th></th>
-                            <td><input type="submit" name="btn" class="btn btn-success form-control"></td>
+                            <td><input type="submit" name="btn-edit" class="btn btn-success form-control"></td>
                         </tr>
                     </table>
                 </form>
             </div>
             <div class="col-3">
-                <img src="admin/profileimage/' . $_SESSION["image"] . '" class="rounded-circle" style="width:350px;height:350px;margin-top:50px;" alt="">
+                <img src="'.$_SESSION["image"].'" class="rounded-circle" style="width:350px;height:350px;margin-top:50px;" alt="">
             </div>
         </div>
     </div>
@@ -113,7 +113,7 @@ if (isset($_SESSION["userid"]) != null) {
 
 
     <?php
-include "footer.php";
+        include "footer.php";
     ?>
 
 

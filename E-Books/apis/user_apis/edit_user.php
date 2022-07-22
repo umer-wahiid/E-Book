@@ -1,10 +1,14 @@
 <?php
-if(isset($_POST["btn"])){
+
+    require '../connection.php';
+    session_start();
+
+    if(isset($_POST["btn-edit"])){
         $id = $_SESSION["userid"];
         $name = $_POST["txtname"];
         $email = $_POST["txtemail"];
         $contact = $_POST["txtcontact"];
-        $address = $_POST["txtage"];
+        $address = $_POST["txtaddress"];
 
         $unique = uniqid();
 
@@ -15,18 +19,17 @@ if(isset($_POST["btn"])){
 
         move_uploaded_file($tmp_location, $uimage_path); //(Specifies the filename of the uploaded file, Specifies the new location for the file)
 
-        $insert_q = "INSERT INTO `tbl_user_data`(`user_name`, `user_email`, `user_address`, `user_phone`, `user_image`) VALUES ('$name','$email','$address','$contact','$uimage')";
+        $insert_q = "UPDATE `tbl_user_data` SET `user_name`='$name',`user_email`='$email',`user_address`='$address',`user_phone`='$contact',`user_image`='$uimage' WHERE `user_id` = '$id'";
 
         $insert_e = mysqli_query($con, $insert_q);
         
         if($insert_e){
-            header("location:../../views/user.php?response=Successfully Inserted");
+            header("location:../../views/profile.php?response=Successfully Inserted");
         }
         else{
-            header("location:../../views/user.php?response=Try Again");
+            header("location:../../views/profile.php?response=Try Again");
         }
-
-
+    }
 
         // move_uploaded_file($tmplocation,"admin/profileimage/".$image);
 
@@ -38,5 +41,5 @@ if(isset($_POST["btn"])){
         // else {
         //     echo "<h1>VALUES NOT Updated</h1>";
         // }
-    }
+    
     ?>
