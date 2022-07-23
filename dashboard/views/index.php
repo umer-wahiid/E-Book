@@ -139,15 +139,9 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-<<<<<<< Updated upstream
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <?php
-=======
-                <!-- Sale & Revenue Start -->
-                <div class="container-fluid pt-4 px-4">
-            <?php
->>>>>>> Stashed changes
                 if (isset($_GET["addcat"])) {
                     include "AddCategory.php";
                 } else if (isset($_GET["viewcat"])) {
@@ -162,11 +156,8 @@
                     include "ViewProduct.php";
                 } else if (isset($_GET["user"])) {
                     include "user.php";
-<<<<<<< Updated upstream
                 } else if (isset($_GET["contact"])) {
                     include "contact.php";
-=======
->>>>>>> Stashed changes
                 } else {
                     echo '
                     <div class="row g-4">
