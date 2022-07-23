@@ -59,10 +59,10 @@ include "nav.php"
                 <form style="width: 400px;" action="" method="POST" enctype="multipart/form-data">
                     <table class="table" style="margin-top: 40px; width: 90vh; font-size: 15px; margin-left: -150px;">
                         <?php
-// $fetch_user = mysqli_query($con,'SELECT * FROM user where uid = $_SESSION["userid"]');
-    // $row = mysqli_fetch_array($fetch_user);
-    if (isset($_SESSION["userid"]) != null) {
-        echo '
+                // $fetch_user = mysqli_query($con,'SELECT * FROM user where uid = $_SESSION["userid"]');
+                // $row = mysqli_fetch_array($fetch_user);
+                if (isset($_SESSION["userid"]) != null) {
+                    echo '
                         <tr>
                             <th>Name :</th>
                             <td style="height: 5vh; font-size:15px;">' . $_SESSION["name"] . '</td>

@@ -29,6 +29,11 @@ session_start();
     <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Contact</title>
+    <style>
+        *{
+            text-transform: lowercase;
+        }
+    </style>
 </head>
 
 <body>
@@ -90,17 +95,17 @@ session_start();
                 <form action="../apis/user_apis/insert_contact.php" method="POST">
                     <h2>Send Message</h2>
                     <div class="inputBox">
-                        <input type="text" name="name" required="required">
+                        <input type="text" name="name" required value="<?=$_SESSION["name"]?>">
                         <span>Full Name</span>
                     </div>
 
                     <div class="inputBox">
-                        <input type="email" name="email" required="required">
+                        <input type="email" name="email" required value="<?=$_SESSION["email"]?>">
                         <span>Email</span>
                     </div>
 
                     <div class="inputBox">
-                        <textarea required="required" name="message"></textarea>
+                        <textarea required name="message"></textarea>
                         <span>Type your Message...</span>
                     </div>
 
