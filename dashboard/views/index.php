@@ -1,5 +1,5 @@
 <style>
-  <?php include "css/bootstrap.min.css"?>
+    <?php include "css/bootstrap.min.css" ?>
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,14 +38,15 @@
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 
     <style>
-        .form-control{
+        .form-control {
             border: 1px solid #27ae60;
-         }
-        .navbar .navbar-nav .nav-link.dash{
+        }
+
+        .navbar .navbar-nav .nav-link.dash {
             color: var(--primary);
             background: var(--dark);
             border-color: var(--primary);
-         }
+        }
     </style>
 
 </head>
@@ -65,7 +66,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar">
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>E-BOOKS</h3>
+                    <h3 class="text-primary"><i class="fa fa-book me-2"></i>E-BOOKS</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -101,6 +102,7 @@
                         </div>
                     </div>
                     <a href="index.php?user" class="nav-item nav-link use"><i class="fa fa-user me-2"></i>User</a>
+                    <a href="index.php?contact" class="nav-item nav-link use"><i class="fa fa-phone me-2"></i>contact</a>
                 </div>
             </nav>
         </div>
@@ -137,25 +139,27 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-                <!-- Sale & Revenue Start -->
-                <div class="container-fluid pt-4 px-4">
-            <?php
-if (isset($_GET["addcat"])) {
-    include "AddCategory.php";
-} else if (isset($_GET["viewcat"])) {
-    include "ViewCategory.php";
-} else if (isset($_GET["addbrand"])) {
-    include "AddBrand.php";
-} else if (isset($_GET["viewbrand"])) {
-    include "ViewBrand.php";
-} else if (isset($_GET["addproduct"])) {
-    include "AddProduct.php";
-} else if (isset($_GET["viewproduct"])) {
-    include "ViewProduct.php";
-} else if (isset($_GET["user"])) {
-    include "user.php";
-} else {
-    echo '
+            <!-- Sale & Revenue Start -->
+            <div class="container-fluid pt-4 px-4">
+                <?php
+                if (isset($_GET["addcat"])) {
+                    include "AddCategory.php";
+                } else if (isset($_GET["viewcat"])) {
+                    include "ViewCategory.php";
+                } else if (isset($_GET["addbrand"])) {
+                    include "AddBrand.php";
+                } else if (isset($_GET["viewbrand"])) {
+                    include "ViewBrand.php";
+                } else if (isset($_GET["addproduct"])) {
+                    include "AddProduct.php";
+                } else if (isset($_GET["viewproduct"])) {
+                    include "ViewProduct.php";
+                } else if (isset($_GET["user"])) {
+                    include "user.php";
+                } else if (isset($_GET["contact"])) {
+                    include "contact.php";
+                } else {
+                    echo '
                     <div class="row g-4">
                         <div class="col-sm-6 col-xl-3">
                             <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
@@ -198,8 +202,8 @@ if (isset($_GET["addcat"])) {
                 <!-- Sale & Revenue End -->
             <!-- Content End -->
             ';
-}
-?>
+                }
+                ?>
 
 
 
@@ -216,35 +220,35 @@ if (isset($_GET["addcat"])) {
 
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+                <!-- Back to Top -->
+                <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+            </div>
 
 
 
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+            <!-- JavaScript Libraries -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="lib/chart/chart.min.js"></script>
+            <script src="lib/easing/easing.min.js"></script>
+            <script src="lib/waypoints/waypoints.min.js"></script>
+            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+            <script src="lib/tempusdominus/js/moment.min.js"></script>
+            <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+            <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+            <!-- Template Javascript -->
+            <script src="js/main.js"></script>
 
-    <!-- for Datatable -->
-    <script src="js/jquery.dataTables.js"></script>
-    <script src="js/dataTables.bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#mytable").DataTable();
-        });
-    </script>
+            <!-- for Datatable -->
+            <script src="js/jquery.dataTables.js"></script>
+            <script src="js/dataTables.bootstrap.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $("#mytable").DataTable();
+                });
+            </script>
 
 </body>
 

@@ -1,11 +1,12 @@
 <?php
 
-    include "../apis/connection.php";
-    session_start();
+include "../apis/connection.php";
+session_start();
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,26 +30,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Contact</title>
 </head>
+
 <body>
     <!-- header section starts  -->
 
     <?php
-    
-        include 'nav.php';
-    
-    ?>    
 
-     <!-- contact form starts -->
+    include 'nav.php';
 
-     <h1 class="heading" style="margin-bottom: 50px; margin-top: 70px;"> <span>Contact Us</span> </h1>
+    ?>
 
-     <section class="contact" id="contact">
+    <!-- contact form starts -->
+
+    <h1 class="heading" style="margin-bottom: 50px; margin-top: 70px;"> <span>Contact Us</span> </h1>
+
+    <section class="contact" id="contact">
 
         <div class="container">
             <div class="contactInfo">
                 <div class="box">
                     <div class="icon">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
                     </div>
                     <div class="text">
                         <h3>Address</h3>
@@ -65,7 +67,7 @@
                     <div class="text">
                         <h3>Email</h3>
                         <p>
-                        e.bookstore@ebooks.com
+                            e.bookstore@ebooks.com
                         </p>
                     </div>
                 </div>
@@ -77,7 +79,7 @@
                     <div class="text">
                         <h3>Phone</h3>
                         <p>
-                        +92-317-0100122
+                            +92-317-0100122
                         </p>
                     </div>
                 </div>
@@ -85,25 +87,25 @@
             </div>
 
             <div class="contactForm">
-                <form>
+                <form action="../apis/user_apis/insert_contact.php" method="POST">
                     <h2>Send Message</h2>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="name" required="required">
                         <span>Full Name</span>
                     </div>
 
                     <div class="inputBox">
-                        <input type="email" name="" required="required">
+                        <input type="email" name="email" required="required">
                         <span>Email</span>
                     </div>
 
                     <div class="inputBox">
-                        <textarea required="required"></textarea>
+                        <textarea required="required" name="message"></textarea>
                         <span>Type your Message...</span>
                     </div>
 
                     <div class="inputBox">
-                        <input type="submit" name="" value="Send">
+                        <input type="submit" name="send" value="Send">
                     </div>
 
                 </form>
@@ -119,15 +121,15 @@
     <!-- footer section starts  -->
 
     <?php
-    
-        include 'footer.php';
+
+    include 'footer.php';
 
     ?>
 
     <!-- footer section ends -->
 
     <!-- loader  -->
-<!--
+    <!--
     <div class="loader-container">
         <img src="image/loader-img.gif" alt="">
     </div> -->
@@ -151,4 +153,5 @@
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
