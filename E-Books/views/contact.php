@@ -98,17 +98,14 @@ session_start();
                         <input type="text" name="name" required value="<?=$_SESSION["name"]?>">
                         <span>Full Name</span>
                     </div>
-
                     <div class="inputBox">
                         <input type="email" name="email" required value="<?=$_SESSION["email"]?>">
                         <span>Email</span>
                     </div>
-
                     <div class="inputBox">
                         <textarea required name="message"></textarea>
                         <span>Type your Message...</span>
                     </div>
-
                     <div class="inputBox">
                         <input type="submit" name="send" value="Send">
                     </div>
