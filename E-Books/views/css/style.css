@@ -595,10 +595,25 @@ section{
     color:var(--light-color);
 }
 
+
+
+
+
+.modal-body .img-fluid{
+    max-width: 150px;
+    height: 280px;
+}
+.modal-body .row .col-lg-8 .row:not(:first-child){
+    margin-top: 22px;
+}
+.modal-title{
+    font-weight: bold;
+    font-size: 25px;
+}
 .featured .featured-slider .box{
     margin:2rem 0;
     position: relative;
-    overflow: hidden;
+    overflow: hidden;   
     border:var(--border);
     text-align: center;
 }

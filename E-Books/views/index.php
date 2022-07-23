@@ -135,7 +135,7 @@ include 'nav.php';
                         <a href="#" class="fas fa-search"></a>
                         <a href="#" class="fas fa-heart"></a>
                         <button data-bs-toggle="modal" data-bs-target="#myModal">
-                        <a class="fas fa-eye"></a>
+                        <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
                         </button>
 
                     </div>
@@ -302,54 +302,95 @@ include 'nav.php';
 
     </section>
     <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog" style="max-width:3000px;width:600px;">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">A Gentleman in Moscow</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h2 class="modal-title" style="color:green;">A Gentleman in Moscow</h2>
+                    <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="padding:1.5rem;">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-3" width="max-content">
                             <img class="img-fluid" style="border-radius: 10px;"
                                 src="image/A Gentleman in Moscow.jpg" alt="">
                         </div>
-                        <div class="col-lg-6">
-                            <h3 class="mb-3">A Gentleman in Moscow</h3>
-                            <h5 class="m-0"><b>Amor Towel</b></h5>
-                            <p style="font-size: small;">
-                            Amor Towles is the author of the New York Times bestsellers Rules of Civility and A Gentleman in Moscow.
-                            </p>
-                            <h6 class="m-0" style="font-size: 16px;">Price :</h6>
-                            <p style="color: gray; font-size: 12px;">Rs: <strike><small>1200</small></strike>
-                            </p>
-                            <div class="about-book">
-                              <h3>About Book</h3>
-                               <p>
-                               With his breakout debut novel, Rules of Civility, Amor Towles established himself as a master of absorbing
-                               <a href="" class="link">Read More</a>
-                               </p> 
+                        <div class="col-lg-8 mt-3" style="margin-left:20px;">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4><b>Title</b></h4>
+                                    <h5>Amor Towles</h5>
+                                </div>
+                                <div class="col-5">
+                                    <h4><b>Publisher</b></h4>
+                                    <h5>Windmill Books</h5>
+                                </div>
                             </div>
-
-                <?php
-
-                if (isset($_SESSION['userid']) != null) {
-                    echo '
-                        <div class="description">
-                            <p>A Gentleman in Moscow immerses us in another elegantly drawn era with the story of Count Alexander Rostov.
-                               When, in 1922, he is deemed an unrepentant aristocrat by a Bolshevik tribunal, the count is sentenced to house
-                                arrest in the Metropol, a grand hotel across the street from the Kremlin.
-                            </p>
-                        </div>';
-                    }
-
-                ?>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4><b>Categories</b></h4>
+                                    <h5>Fiction & Literature</h5>
+                                    <h5>Historical Fiction</h5>
+                                    <h5>Bestsellers</h5>
+                                </div>
+                                <div class="col-5">
+                                    <h4><b>Publication Date</b></h4>
+                                    <h5>02/11/2017</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4><b>Book Weight</b></h4>
+                                    <h5>100 gm</h5>
+                                </div>
+                                <div class="col-5">
+                                    <h4><b>Number of Pages</b></h4>
+                                    <h5>480 pages</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4><b>Availability</b></h4>
+                                    <h5>PDF/CD/BOOK</h5>
+                                </div>
+                                <div class="col-6">
+                                    <h4><b>Rating</b></h4>
+                                    <h5>4.8</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <h3><b>About Book</b></h3>
+                            <h5>On 21 June 1922, Count Alexander Rostov - recipient of the Order of Saint Andrew,
+                                member of the Jockey Club, Master of the Hunt - is escorted out of the Kremlin, across Red Square 
+                                and through the elegant revolving doors of the Hotel Metropol.
+                            <br>
+                                Deemed an unrepentant aristocrat by a Bolshevik tribunal, the Count has been sentenced to house 
+                                arrest indefinitely. But instead of his usual suite, he must now live in an attic room 
+                                while Russia undergoes decades of tumultuous upheaval.
+                            <br>
+                                Can a life without luxurybe the richest of all?
+                            </h5>
+                            <br>
+                            <h3><b>About Author</b></h3>
+                            <h5>Born And Raised In The Boston Area, Amor Towles Graduated From Yale College And Received An MA In 
+                                English From Stanford University. Having Worked As An Investment Professional In Manhattan For Over
+                                Twenty Years, He Now Devotes Himself Fulltime To Writing.
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-6">
+                            <h4><b>Price</b></h4>
+                            <h5>Rs. 300</h5>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn" style="background-color: green;"
+                    <button type="button" class="btn-n" style="margin-top:0px;margin-right:309px;" 
+                        data-bs-dismiss="modal">Add To Cart</button>
+                    <button type="button" style="width:100px;height:35px;font-size:15px;" class="btn"
                         data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
