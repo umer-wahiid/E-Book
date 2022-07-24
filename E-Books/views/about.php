@@ -1,7 +1,9 @@
 <?php
 
     include "../apis/connection.php";
+    $bestselling = "index.php/";
     session_start();
+
 
 ?>
 <!DOCTYPE html>
