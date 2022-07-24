@@ -596,15 +596,29 @@ section{
 }
 
 
+/* dropdown */
+.cat-d{
+    width: 165px;
+    position:absolute;
+    margin-left:437px;
+}
+.cat-i{
+    line-height: 30px;
+    font-size:15px;
+    color:#27ae60;
+}
 
 
 
+
+/* modal */
 .modal-body .img-fluid{
+    margin-top: 10px;
     max-width: 150px;
-    height: 260px;
+    height: 250px;
 }
 .modal-body .row .col-lg-8 .row:not(:first-child){
-    margin-top: 22px;
+    margin-top: 15px;
 }
 .modal-title{
     font-weight: bold;

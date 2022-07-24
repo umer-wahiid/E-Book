@@ -128,6 +128,12 @@ var swiper = new Swiper(".arrivals-slider", {
   },
 });
 
+$(document).ready(function(){
+  $("#cat").click(function(){
+    $("#list").slideHideToggle("hide");
+  });
+});
+
 var swiper = new Swiper(".reviews-slider", {
   spaceBetween: 10,
   grabCursor:true,

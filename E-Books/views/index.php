@@ -289,7 +289,7 @@
 
     </section>
     <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog" style="max-width:3000px;width:600px;">
+        <div class="modal-dialog" style="max-width:3000px;width:630px;">
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title" style="color:green;">A Gentleman in Moscow</h2>
@@ -356,8 +356,7 @@
                                 Deemed an unrepentant aristocrat by a Bolshevik tribunal, the Count has been sentenced to house 
                                 arrest indefinitely. But instead of his usual suite, he must now live in an attic room 
                                 while Russia undergoes decades of tumultuous upheaval.
-                            <br>
-                                Can a life without luxurybe the richest of all?
+                                <b>Can a life without luxurybe the richest of all?</b>
                             </h5>
                             <br>
                             <h3><b>About Author</b></h3>
@@ -369,8 +368,8 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-6">
-                            <h4><b>Price</b></h4>
-                            <h5>Rs. 300</h5>
+                            <h3><b>Price</b></h3>
+                            <h4>Rs. 300</h4>
                         </div>
                     </div>
                 </div>

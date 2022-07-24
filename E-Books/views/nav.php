@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-
+    
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
-
+    
+    
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
-
-
+    
+    
+    
     <!-- bootstrap 5 css link -->
     <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <title>Document</title>
@@ -108,6 +107,7 @@
         <div class="header-2">
             <nav class="navbar-n">
                 <a href="index.php">home</a>
+                <a href="#" id="cat">Categories</a>
                 <!-- <a href="#bestselling">Best Selling</a> -->
                 <a href='<?=$bestselling.'#bestselling'?>'>Best Selling</a>
                 <a href="#arrivals">arrivals</a>
@@ -117,6 +117,11 @@
                 <a href="contact.php">Contact</a>
                 <a href="">competition</a>
             </nav>
+        </div>
+        <div class="list-group cat-d" id="list">
+            <a href="#" class="list-group-item list-group-item-action cat-i">Horror</a>
+            <a href="#" class="list-group-item list-group-item-action cat-i">Romantic</a>
+            <a href="#" class="list-group-item list-group-item-action cat-i">Documentary</a>
         </div>
 
         </header>
@@ -188,6 +193,6 @@
 
     </div>
 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>
