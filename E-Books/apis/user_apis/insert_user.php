@@ -10,7 +10,7 @@
         $phone = mysqli_real_escape_string($con, $_POST['uphone']);
         $password = mysqli_real_escape_string($con, $_POST['upassword']);
 
-        $insert_q = "INSERT INTO `tbl_user_data`(`user_name`, `user_email`, `user_address`, `user_phone`, `user_image`, `user_password`) VALUES ('$name','$email','$address','$phone','image','$password')";
+        $insert_q = "INSERT INTO `tbl_user_data`(`user_name`, `user_email`, `user_address`, `user_phone`, `user_image`, `user_subscribtion`, `user_password`) VALUES ('$name','$email','$address','$phone','image','No','$password')";
 
         $insert_e = mysqli_query($con, $insert_q);
 

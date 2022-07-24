@@ -24,6 +24,7 @@
                 $_SESSION["email"] = $fetchArray[2];
                 $_SESSION["contact"] = $fetchArray[4];
                 $_SESSION["address"] = $fetchArray[3];
+                $_SESSION["subscribtion"] = $fetchArray[6];
                 $_SESSION["userid"] = $fetchArray[0];
 
                 header("location:../../views/index.php?alert=Welcome Back");

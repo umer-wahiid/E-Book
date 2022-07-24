@@ -405,18 +405,31 @@ include 'nav.php';
 
     <section class="newsletter">
 
-        <form action="">
+        <form action="../apis/user_apis/subscribe.php" method="POST">
             <h3>subscribe for latest updates</h3>
-            <input type="email" name="" placeholder="enter your email" id="" class="box">
-            <input type="radio" value="Annual" name="subscribe" style="margin-top: 30px;margin-bottom: 30px;">
+            <input type="email" name="" placeholder="enter your email"
+            <?php
+                if(isset($_SESSION["userid"])!=null){
+                    echo  'value="'.$_SESSION["email"].'" ';
+                }
+            ?>
+            id="" class="box">
+            <input type="radio" value="Annual" name="subs" style="margin-top: 30px;margin-bottom: 30px;">
             &nbsp;
-            <span class="radio">Annual/Rs. 1500</span>
+            <span class="radio" name="annradio">Annual/Rs. 1500</span>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" value="Monthly" name="subscribe">
+            <input type="radio" value="Monthly" name="subs">
             &nbsp;
-            <span class="radio">Monthly/Rs. 750</span>
+            <span class="radio" name="monradio">Monthly/Rs. 750</span>
             <br>
-            <input type="submit" value="subscribe" class="btn-n">
+            <?php
+                if(isset($_SESSION["userid"])!=null){
+                    echo '<input type="submit" name="subs" value="subscribe" class="btn-n">';
+                }
+                else{
+                    echo '<input type="submit" href="#" value="subscribe" class="btn-n">';
+                }
+            ?>    
         </form>
 
     </section>

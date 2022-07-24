@@ -95,11 +95,23 @@ session_start();
                 <form action="../apis/user_apis/insert_contact.php" method="POST">
                     <h2>Send Message</h2>
                     <div class="inputBox">
-                        <input type="text" name="name" required value="<?=$_SESSION["name"]?>">
+                        <input type="text" name="name" required 
+                            <?php
+                                if(isset($_SESSION["userid"])!=null){
+                                    echo  'value="'.$_SESSION["name"].'" ';
+                                }
+                            ?>
+                        >
                         <span>Full Name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="email" name="email" required value="<?=$_SESSION["email"]?>">
+                        <input type="email" name="email" required 
+                        <?php
+                            if(isset($_SESSION["userid"])!=null){
+                                echo  'value="'.$_SESSION["email"].'" ';
+                            }
+                        ?>
+                        >
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
