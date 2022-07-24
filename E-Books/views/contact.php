@@ -1,7 +1,8 @@
 <?php
 
-include "../apis/connection.php";
-session_start();
+    include "../apis/connection.php";
+    session_start();
+    $bestselling = "index.php";
 
 ?>
 <!DOCTYPE html>
