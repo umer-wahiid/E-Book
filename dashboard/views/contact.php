@@ -13,13 +13,14 @@ require "../apis/connection.php";
         .navbar .navbar-nav .nav-link.dash,
         .cat,
         .pro,
-        .use {
+        .use,
+        .cont {
             color: var(--light);
             background: none;
             border-color: transparent;
         }
 
-        .navbar .navbar-nav .nav-link.use {
+        .navbar .navbar-nav .nav-link.cont {
             color: var(--primary);
             background: var(--dark);
             border-color: var(--primary);

@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <a href="index.php?user" class="nav-item nav-link use"><i class="fa fa-user me-2"></i>User</a>
-                    <a href="index.php?contact" class="nav-item nav-link use"><i class="fa fa-phone me-2"></i>contact</a>
+                    <a href="index.php?contact" class="nav-item nav-link cont"><i class="fa fa-phone me-2"></i>contact</a>
                 </div>
             </nav>
         </div>
