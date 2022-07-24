@@ -109,7 +109,7 @@
             <nav class="navbar-n">
                 <a href="index.php">home</a>
                 <!-- <a href="#bestselling">Best Selling</a> -->
-                <a href="<?=$bestselling?>">Best Selling</a>
+                <a href='<?=$bestselling.'#bestselling'?>'>Best Selling</a>
                 <a href="#arrivals">arrivals</a>
                 <a href="#reviews">reviews</a>
                 <!-- <a href="#blogs">blogs</a> -->

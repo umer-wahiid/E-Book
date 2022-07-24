@@ -2,7 +2,7 @@
 
     include "../apis/connection.php";
     session_start();
-    $bestselling = "index.php";
+    $bestselling = "index.php/";
 
 ?>
 <!DOCTYPE html>
