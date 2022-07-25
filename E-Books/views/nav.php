@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,12 +18,13 @@
     <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <title>Document</title>
-    
+
 </head>
+
 <body>
-        <header class="header">
+    <header class="header">
 
         <div class="header-1">
 
@@ -36,20 +38,19 @@
             <div class="icons">
                 <div id="search-btn" class="fas fa-search"></div>
                 <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="cart.php" class="fas fa-shopping-cart"></a>
                 <?php
-                if(isset($_SESSION["userid"])!=null){
+                if (isset($_SESSION["userid"]) != null) {
                     echo '<div class="fas nui online" onclick="settingsMenuToggle()">
-                    <img  src="'.$_SESSION["image"].'" class="rounded-circle">
+                    <img  src="' . $_SESSION["image"] . '" class="rounded-circle">
                     </div>';
-                }
-                else{
+                } else {
                     echo '<div id="login-btn" class="fas fa-user"></div>';
                 }
                 ?>
 
             </div>
-            
+
         </div>
 
         <!----------- settings-menu---------------  -->
@@ -62,19 +63,18 @@
 
             <div class="smi">
                 <?php
-                
-                    if(isset($_SESSION["userid"])!=null){
-                        echo'
+
+                if (isset($_SESSION["userid"]) != null) {
+                    echo '
                         <div class="up">
-                            <img src="'.$_SESSION["image"].'" class="rounded-circle">
+                            <img src="' . $_SESSION["image"] . '" class="rounded-circle">
                             <div>
-                                <p>'.$_SESSION["name"].'</p>
+                                <p>' . $_SESSION["name"] . '</p>
                                 <a href="profile.php">See Your Profile</a>
                             </div>
-                        </div>';   
-                    }
-                    else{
-                        echo'
+                        </div>';
+                } else {
+                    echo '
                         <div class="up">
                             <img src="image/Ammar.jpg" class="rounded-circle">
                             <div>
@@ -82,14 +82,13 @@
                                 <a href="#">See Your Profile</a>
                             </div>
                         </div>';
-                    }
-                
+                }
+
                 ?>
                 <hr>
                 <div class="sl">
                     <img src="image/setting.png" class="si">
-                    <a href="#">Settings & Privacy <img src="image/arrow.png"
-                            width="10px"></a>
+                    <a href="#">Settings & Privacy <img src="image/arrow.png" width="10px"></a>
                 </div>
                 <div class="sl">
                     <img src="image/help.png" class="si">
@@ -102,14 +101,14 @@
             </div>
         </div>
 
-        
+
 
         <div class="header-2">
             <nav class="navbar-n">
                 <a href="index.php">home</a>
                 <a href="#" id="cat">Categories</a>
                 <!-- <a href="#bestselling">Best Selling</a> -->
-                <a href='<?=$bestselling.'#bestselling'?>'>Best Selling</a>
+                <a href='<?= $bestselling . '#bestselling' ?>'>Best Selling</a>
                 <a href="#arrivals">arrivals</a>
                 <a href="#reviews">reviews</a>
                 <!-- <a href="#blogs">blogs</a> -->
@@ -124,20 +123,20 @@
             <a href="#" class="list-group-item list-group-item-action cat-i">Documentary</a>
         </div>
 
-        </header>
+    </header>
 
-        <!-- header section ends -->
+    <!-- header section ends -->
 
-        <!-- bottom navbar  -->
+    <!-- bottom navbar  -->
 
-        <nav class="bottom-navbar">
+    <nav class="bottom-navbar">
         <a href="index.php" class="fas fa-home"></a>
         <a href="#bestselling" class="fas fa-list"></a>
         <a href="#arrivals" class="fas fa-tags"></a>
         <a href="#reviews" class="fas fa-comments"></a>
         <a href="contact.php" class="fa fa-phone"></a>
         <a href="about.php" class="fa fa-blog"></a>
-        </nav>
+    </nav>
 
 
 
@@ -193,6 +192,11 @@
 
     </div>
 
+<<<<<<< Updated upstream
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+=======
+
+>>>>>>> Stashed changes
 </body>
+
 </html>

@@ -1,46 +1,51 @@
 <?php
-    include("connection.php")
+include("connection.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .input{
-            border: 1px solid red;
+        .input {
+            border: 1px solid #27ae60;
         }
-        .td .form-control{
-            background-color: black;
+
+        .td .form-control {
             font-weight: bolder;
-            color: red;
-            border: 1px solid red;
+            color: #27ae60;
+            border: 1px solid #27ae60;
         }
-        .td .form-control:hover{
-            background-color: red;
+
+        .td .form-control:hover {
+            background-color: #27ae60;
             font-weight: bolder;
-            color: black;
+            color: white;
         }
-        .navbar .navbar-nav .nav-link.dash{
+
+        .navbar .navbar-nav .nav-link.dash {
             color: var(--light);
             background: none;
             border-color: transparent;
         }
-        .navbar .navbar-nav .nav-link.cat{
+
+        .navbar .navbar-nav .nav-link.cat {
             color: var(--primary);
             background: var(--dark);
             border-color: var(--primary);
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <center>
             <h1>Add New Category</h1>
         </center>
-          <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
             <table class="table">
                 <tr>
                     <td><b> Category Name</b></td>
@@ -48,7 +53,7 @@
                 </tr>
                 <tr>
                     <td><b> Category Image</b></td>
-                    <td><input type="file" required name="catimage" style="background-color:black;" class="form-control input"></td>
+                    <td><input type="file" required name="catimage" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -58,23 +63,23 @@
         </form>
 
         <?php
-            if(isset($_POST["txtcategory"])){
-                $toGetCategoryName = $_POST["txtcategory"];
-                $toGetCategoryImage = $_FILES["catimage"]["name"];
-                $tmplocation = $_FILES["catimage"]["tmp_name"];
+        if (isset($_POST["txtcategory"])) {
+            $toGetCategoryName = $_POST["txtcategory"];
+            $toGetCategoryImage = $_FILES["catimage"]["name"];
+            $tmplocation = $_FILES["catimage"]["tmp_name"];
 
-                move_uploaded_file($tmplocation,"cimagefolder/".$toGetCategoryImage);
+            move_uploaded_file($tmplocation, "cimagefolder/" . $toGetCategoryImage);
 
-                $query = mysqli_query($con,"insert into category(cname,cimage) values ('$toGetCategoryName','$toGetCategoryImage')");
+            $query = mysqli_query($con, "insert into category(cname,cimage) values ('$toGetCategoryName','$toGetCategoryImage')");
 
-                if($query>0){
-                    echo "<h1>Category Added</h1>";
-                }
-                else{
-                    echo "<h1>Invalid Error</h1>";
-                }
+            if ($query > 0) {
+                echo "<h1>Category Added</h1>";
+            } else {
+                echo "<h1>Invalid Error</h1>";
             }
+        }
         ?>
     </div>
 </body>
+
 </html>

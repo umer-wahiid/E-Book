@@ -1,49 +1,52 @@
 <?php
-    include("connection.php")
+include("connection.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .input{
-            border: 1px solid red;
+        .input {
+            border: 1px solid #27ae60;
         }
-        .td .form-control{
-            background-color: black;
+
+        .td .form-control {
             font-weight: bolder;
-            color: red;
-            border: 1px solid red;
+            color: #27ae60;
+            border: 1px solid #27ae60;
         }
-        .td .form-control:hover{
-            background-color: red;
+
+        .td .form-control:hover {
+            background-color: #27ae60;
             font-weight: bolder;
-            color: black;
+            color: white;
         }
-        select{
-            background-color: black;
-        }
-        .navbar .navbar-nav .nav-link.dash,.cat{
+
+        .navbar .navbar-nav .nav-link.dash,
+        .cat {
             color: var(--light);
             background: none;
             border-color: transparent;
         }
-        .navbar .navbar-nav .nav-link.pro{
+
+        .navbar .navbar-nav .nav-link.pro {
             color: var(--primary);
             background: var(--dark);
             border-color: var(--primary);
-        }        
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <center>
             <h1>Add New Product</h1>
         </center>
-          <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
             <table class="table">
                 <tr>
                     <td><b>Product Name</b></td>
@@ -59,35 +62,35 @@
                 </tr>
                 <tr>
                     <td><b>Select Category</b></td>
-                    <td><select name="pcategory" style="background-color:black;" class="form-control input" id="">
+                    <td><select name="pcategory" class="form-control input" id="">
                             <?php
-                                
-                                $fetch_cat = mysqli_query($con,"select * from category");
 
-                                while($row_cat = mysqli_fetch_array($fetch_cat)){
-                                    echo '<option value='.$row_cat[0].'>'.$row_cat[1].'</option>';
-                                }
+                            $fetch_cat = mysqli_query($con, "select * from category");
+
+                            while ($row_cat = mysqli_fetch_array($fetch_cat)) {
+                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
+                            }
                             ?>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td><b>Select Brand</b></td>
-                    <td><select name="pbrand" style="background-color:black;" class="form-control input" id="">
+                    <td><select name="pbrand" class="form-control input" id="">
                             <?php
 
-                                $fetch_brand = mysqli_query($con,"select * from brand");
+                            $fetch_brand = mysqli_query($con, "select * from brand");
 
-                                while($row_brand = mysqli_fetch_array($fetch_brand)){
-                                    echo '<option value='.$row_brand[0].'>'.$row_brand[1].'</option>';
-                                }
+                            while ($row_brand = mysqli_fetch_array($fetch_brand)) {
+                                echo '<option value=' . $row_brand[0] . '>' . $row_brand[1] . '</option>';
+                            }
                             ?>
-                       </select>
+                        </select>
                     </td>
                 </tr>
                 <tr>
                     <td>Select Image</td>
-                    <td><input type="file" name="pimage" style="background-color:black;" class="form-control input" multiple accept="image/*"></td>
+                    <td><input type="file" name="pimage" class="form-control input" multiple accept="image/*"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -97,27 +100,27 @@
         </form>
 
         <?php
-            if(isset($_POST["btn"])){
-                $toGetName = $_POST["pname"];
-                $toGetPrice = $_POST["pprice"];
-                $toGetDescription = $_POST["pdescription"];
-                $toGetCategory = $_POST["pcategory"];
-                $toGetBrand = $_POST["pbrand"];
-                $toGetImage = $_FILES["pimage"]["name"];
-                $tmp_location = $_FILES["pimage"]["tmp_name"];
+        if (isset($_POST["btn"])) {
+            $toGetName = $_POST["pname"];
+            $toGetPrice = $_POST["pprice"];
+            $toGetDescription = $_POST["pdescription"];
+            $toGetCategory = $_POST["pcategory"];
+            $toGetBrand = $_POST["pbrand"];
+            $toGetImage = $_FILES["pimage"]["name"];
+            $tmp_location = $_FILES["pimage"]["tmp_name"];
 
-                move_uploaded_file($tmp_location,"pimagefolder/".$toGetImage);
+            move_uploaded_file($tmp_location, "pimagefolder/" . $toGetImage);
 
-                $query = mysqli_query($con,"insert into product(pname,pprice,pdesc,pcategory,pbrand,pimage) values ('$toGetName','$toGetPrice','$toGetDescription','$toGetCategory','$toGetBrand','$toGetImage')");
+            $query = mysqli_query($con, "insert into product(pname,pprice,pdesc,pcategory,pbrand,pimage) values ('$toGetName','$toGetPrice','$toGetDescription','$toGetCategory','$toGetBrand','$toGetImage')");
 
-                if($query>0){
-                    echo '<h1>Product Added</h1>';
-                }
-                else{
-                    echo '<h1>Invalid Error</h1>';
-                }
+            if ($query > 0) {
+                echo '<h1>Product Added</h1>';
+            } else {
+                echo '<h1>Invalid Error</h1>';
             }
+        }
         ?>
     </div>
 </body>
+
 </html>
