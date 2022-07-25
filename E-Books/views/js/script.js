@@ -210,14 +210,27 @@ else{
     localStorage.setItem("theme", "light");
 }
 
-// const open = document.getElementById('open');
-// const mdl_cntainer  = document.getElementById('mdl_cntainer');
-// const close  = document.getElementById('close');
+$(document).ready(function () {
+  $("#FeedButton").click(function () {
+      $(".FeedContainer").fadeToggle();
+  });
+});
 
-// open.addEventListner('click',() =>{
-//   mdl_cntainer.classList.add('show');
-// })
-
-// close.addEventListner('click',() =>{
-//   mdl_cntainer.classList.remove('show');
-// })
+$(document).ready(function () {
+  $("#feedremove").click(function () {
+      $("#feedsticky").fadeOut(500,);
+  });
+});
+const btn = document.querySelector("button");
+const post = document.querySelector(".post");
+const widget = document.querySelector(".star-widget");
+const editBtn = document.querySelector(".edit");
+btn.onclick = ()=>{
+widget.style.display = "none";
+post.style.display = "block";
+editBtn.onclick = ()=>{
+widget.style.display = "block";
+post.style.display = "none";
+}
+return false;
+}

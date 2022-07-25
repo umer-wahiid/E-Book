@@ -355,11 +355,7 @@
                                     Deemed an unrepentant aristocrat by a Bolshevik tribunal, the Count has been sentenced to house
                                     arrest indefinitely. But instead of his usual suite, he must now live in an attic room
                                     while Russia undergoes decades of tumultuous upheaval.
-                                    <<<<<<< Updated upstream <b>Can a life without luxurybe the richest of all?</b>
-                                        =======
-                                        <br>
-                                        Can a life without luxurybe the richest of all?
-                                        >>>>>>> Stashed changes
+                                    Can a life without luxurybe the richest of all?
                                 </h5>
                                 <br>
                                 <h3><b>About Author</b></h3>
