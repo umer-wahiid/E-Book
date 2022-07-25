@@ -194,8 +194,8 @@
                     <td>$235.00</td>
                 </tr>
             </table>
-
         </div>
+        <button class="btn-n">Check Out</button>
     </div>
 
     <!-- cart section ends -->
