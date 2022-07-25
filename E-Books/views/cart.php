@@ -30,7 +30,7 @@
         /* cart */
 
         .small-container {
-            max-width: 1080px;
+            max-width: 1200px;
             margin: auto;
             padding-left: 25px;
             padding-right: 25px;
