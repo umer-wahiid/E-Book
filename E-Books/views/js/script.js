@@ -130,7 +130,7 @@ var swiper = new Swiper(".arrivals-slider", {
 
 $(document).ready(function(){
   $("#cat").click(function(){
-    $("#list").slideHideToggle("hide");
+    $("#list").slideToggle("slow");
   });
 });
 
