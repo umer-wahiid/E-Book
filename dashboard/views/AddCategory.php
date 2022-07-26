@@ -1,5 +1,5 @@
 <?php
-include("connection.php")
+    include("../apis/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,15 +45,11 @@ include("connection.php")
         <center>
             <h1>Add New Category</h1>
         </center>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="../apis/book_apis/add_category.php" method="POST" enctype="multipart/form-data">
             <table class="table">
                 <tr>
                     <td><b> Category Name</b></td>
                     <td><input type="text" required name="txtcategory" placeholder="Category Name" class="form-control input"></td>
-                </tr>
-                <tr>
-                    <td><b> Category Image</b></td>
-                    <td><input type="file" required name="catimage" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -62,23 +58,7 @@ include("connection.php")
             </table>
         </form>
 
-        <?php
-        if (isset($_POST["txtcategory"])) {
-            $toGetCategoryName = $_POST["txtcategory"];
-            $toGetCategoryImage = $_FILES["catimage"]["name"];
-            $tmplocation = $_FILES["catimage"]["tmp_name"];
 
-            move_uploaded_file($tmplocation, "cimagefolder/" . $toGetCategoryImage);
-
-            $query = mysqli_query($con, "insert into category(cname,cimage) values ('$toGetCategoryName','$toGetCategoryImage')");
-
-            if ($query > 0) {
-                echo "<h1>Category Added</h1>";
-            } else {
-                echo "<h1>Invalid Error</h1>";
-            }
-        }
-        ?>
     </div>
 </body>
 

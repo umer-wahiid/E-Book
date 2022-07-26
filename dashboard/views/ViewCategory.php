@@ -1,5 +1,5 @@
 <?php
-    include("connection.php")
+    include("../apis/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,23 +28,19 @@
             <tr>
                 <th>ID</th>
                 <th>Category</th>
-                <th>Image</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <?php
-                $fetch_category = mysqli_query($con,"select * from category");
+                $fetch_category = mysqli_query($con,"select * from tbl_book_category");
                 while($row = mysqli_fetch_array($fetch_category)){
                     echo'
                         <tr>
                             <td>'.$row[0].'</td>
                             <td>'.$row[1].'</td>
-                            <td><img src="cimagefolder/'.$row[2].'" width="50px" height="50px"></td>
                             <td>
-                                <a href="" class="btn btn-success">Edit</a>
-                                <a href="" class="btn btn-info">Detail</a>
-                                <a href="" class="btn btn-primary">Delete</a>
+                                <a href="../apis/book_apis/delete_category.php?id='.$row[0].'" name="delete" class="btn btn-primary">Delete</a>
                             </td>
                         </tr>
                     ';        

@@ -118,9 +118,14 @@
             </nav>
         </div>
         <div class="list-group cat-d" style="display: none;" id="list">
-            <a href="#" class="list-group-item list-group-item-action cat-i">Horror</a>
-            <a href="#" class="list-group-item list-group-item-action cat-i">Romantic</a>
-            <a href="#" class="list-group-item list-group-item-action cat-i">Documentary</a>
+            <?php
+            
+                $fetch_category = mysqli_query($con,"select * from tbl_book_category");
+                while($row = mysqli_fetch_array($fetch_category)){
+                    echo '<a href="#" class="list-group-item list-group-item-action cat-i">'.$row[1].'</a>';
+                };
+            
+            ?>
         </div>
 
     </header>
