@@ -15,5 +15,6 @@
         } else {
             header("location:../../views/index.php?alert=Something went wrong");
         }
+        
     }
     ?>

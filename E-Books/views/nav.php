@@ -117,7 +117,7 @@
                 <a href="">competition</a>
             </nav>
         </div>
-        <div class="list-group cat-d" id="list">
+        <div class="list-group cat-d" style="display: none;" id="list">
             <a href="#" class="list-group-item list-group-item-action cat-i">Horror</a>
             <a href="#" class="list-group-item list-group-item-action cat-i">Romantic</a>
             <a href="#" class="list-group-item list-group-item-action cat-i">Documentary</a>
