@@ -395,17 +395,17 @@
                                                                                 echo  'value="' . $_SESSION["email"] . '" ';
                                                                             }
                                                                             ?> id="" class="box">
-                <input type="radio" value="Annual" name="subs" style="margin-top: 30px;margin-bottom: 30px;">
+                <input type="radio" name="sub" value="Annual" style="margin-top: 30px;margin-bottom: 30px;">
                 &nbsp;
-                <span class="radio" name="annradio">Annual/Rs. 1500</span>
+                <span class="radio">Annual/Rs. 1500</span>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" value="Monthly" name="subs">
+                <input type="radio" name="sub" value="Monthly">
                 &nbsp;
-                <span class="radio" name="monradio">Monthly/Rs. 750</span>
+                <span class="radio">Monthly/Rs. 750</span>
                 <br>
                 <?php
                 if (isset($_SESSION["userid"]) != null) {
-                    echo '<input type="submit" name="subs" value="subscribe" class="btn-n">';
+                    echo '<input type="submit" name="subscribe" value="subscribe" class="btn-n">';
                 } else {
                     echo '<input type="submit" href="#" value="subscribe" class="btn-n">';
                 }

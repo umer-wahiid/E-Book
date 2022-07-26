@@ -1,39 +1,19 @@
-<?php
-    require '../connection.php';
+    <?php
+    include '../connection.php';
     session_start();
-    
-    if(isset($_POST['subs'])){
 
-        $id = $_SESSION['userid'];
-        $subs = $_POST['subs'];
+    if (isset($_POST["subscribe"])) {
 
-        if($subs == 'Annual'){
-            $GLOBALS['sub'] = 'Annual';         
-        }
+        $sid = $_SESSION["userid"];
+        $subscribe = $_POST["sub"];
 
-        $qu = $GLOBALS['sub'];
-        $insert_q = "UPDATE `tbl_user_data` SET `user_subscribtion`='$qu' WHERE `user_id` = '$id'";
-        $insert_e = mysqli_query($con, $insert_q);
+        $insert_uquery = "UPDATE `tbl_user_data` SET `user_subscribtion`='$subscribe' WHERE `user_id` = '$sid'";
+        $insert_e = mysqli_query($con, $insert_uquery);
 
-        if($insert_e){
+        if ($insert_e) {
             header("location:../../views/index.php?alert=Subscribed");
-        }
-        else{
+        } else {
             header("location:../../views/index.php?alert=Something went wrong");
-        };
-        // else if($subs == 'Monthly'){
-        //     $sub = 'Monthly';
-        //     $insert_q = "UPDATE `tbl_user_data` SET `user_subscribtion`='$sub' WHERE `user_id` = '$id'";
-        //     $insert_e = mysqli_query($con, $insert_q);
-    
-        //     if($insert_e){
-        //         header("location:../../views/index.php?alert=Subscribed");
-        //     }
-        //     else{
-        //         header("location:../../views/index.php?alert=Something went wrong");
-        //     };
-        // }
-
+        }
     }
-
-?>
+    ?>
