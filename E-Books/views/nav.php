@@ -193,8 +193,11 @@
     </div>
 
 
-    <!--Feedback-->
-    <div id="feedsticky" style="z-index: +3;border-radius: 10px;">
+    <!--reviews-->
+    <?php
+
+    if (isset($_SESSION["userid"]) != null) {
+        echo '<div id="feedsticky" style="z-index: +3;border-radius: 10px;">
         <div class="FeedDiv">
             <button id="FeedButton" class="wow animate__animated animate__heartBeat" data-wow-duration="1s" data-wow-delay=".7s">
                 <a id="readmore" class="feedbutton" style="color: black;"><b>R<br>E<br>V<br>I<br>E<br>W<br>S</b></a>
@@ -227,7 +230,11 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div>';
+    }
+
+    ?>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
