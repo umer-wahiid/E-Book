@@ -1,0 +1,76 @@
+CREATE  TABLE  tbl_book_detail (
+	book_id int AUTO_INCREMENT PRIMARY KEY,
+    book_title varchar(30),
+    book_author varchar(30),
+    book_author_about varchar(30),
+    book_publisher varchar(30),
+    book_publication_date DATE,
+    book_weight int,
+    book_pages int,
+    book_rating int,
+    book_availability varchar(20),
+    book_about varchar(1000),
+    book_category_1 int,
+    book_category_2 int,
+    book_category_3 int,
+    book_price_hardcopy int,
+    book_price_pdf int,
+    book_price_cd int
+)
+
+
+
+
+CREATE  TABLE  tbl_book_detail (
+	book_id int AUTO_INCREMENT PRIMARY KEY,
+    book_title varchar(30),
+    book_author varchar(30),
+    book_author_about varchar(30),
+    book_publisher varchar(30),
+    book_publication_date DATE,
+    book_weight int,
+    book_pages int,
+    book_rating int,
+    book_availability varchar(20),
+    book_about varchar(1000),
+    book_category_1 int,
+    book_category_2 int,
+    book_category_3 int,
+    book_price_hardcopy int,
+    book_price_pdf int,
+    book_price_cd int,
+    FOREIGN KEY (book_author) REFERENCES tbl_book_author(author_id),
+    FOREIGN KEY (book_author_about) REFERENCES tbl_book_author(author_name),
+    FOREIGN KEY (book_category_1) REFERENCES tbl_book_category(b_id),
+    FOREIGN KEY (book_category_2) REFERENCES tbl_book_category(b_id),
+    FOREIGN KEY (book_category_3) REFERENCES tbl_book_category(b_id)
+)
+
+
+
+
+
+CREATE  TABLE  tbl_book_detail (
+    book_id int AUTO_INCREMENT PRIMARY KEY,
+    book_title varchar(30),
+    book_author int,
+    FOREIGN KEY (book_author) REFERENCES tbl_book_author(author_id),
+    book_author_about int,
+    FOREIGN KEY (book_author_about) REFERENCES tbl_book_author(author_id),
+    book_publisher varchar(30),
+    book_publication_date DATE,
+    book_weight int,
+    book_pages int,
+    book_rating int,
+    book_availability varchar(20),
+    book_about varchar(1000),
+    book_category_1 int,
+    FOREIGN KEY (book_category_1) REFERENCES tbl_book_category(b_id),
+    book_category_2 int,
+    FOREIGN KEY (book_category_2) REFERENCES tbl_book_category(b_id),
+    book_category_3 int,
+    FOREIGN KEY (book_category_3) REFERENCES tbl_book_category(b_id),
+    book_price_hardcopy int,
+    book_price_pdf int,
+    book_price_cd int
+    );
