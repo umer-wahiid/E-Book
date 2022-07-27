@@ -102,7 +102,8 @@
                         </div>
                     </div>
                     <a href="index.php?user" class="nav-item nav-link use"><i class="fa fa-user me-2"></i>User</a>
-                    <a href="index.php?contact" class="nav-item nav-link cont"><i class="fa fa-phone me-2"></i>contact</a>
+                    <a href="index.php?contact" class="nav-item nav-link cont"><i class="fa fa-phone me-2"></i>Contact</a>
+                    <a href="index.php?reviews" class="nav-item nav-link revi"><i class="fa fa-comments me-2"></i>Reviews</a>
                 </div>
             </nav>
         </div>
@@ -158,6 +159,8 @@
                     include "user.php";
                 } else if (isset($_GET["contact"])) {
                     include "contact.php";
+                } else if (isset($_GET["reviews"])) {
+                    include "reviews.php";
                 } else {
                     echo '
                     <div class="row g-4">

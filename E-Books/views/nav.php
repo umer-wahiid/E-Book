@@ -119,12 +119,12 @@
         </div>
         <div class="list-group cat-d" style="display: none;" id="list">
             <?php
-            
-                $fetch_category = mysqli_query($con,"select * from tbl_book_category");
-                while($row = mysqli_fetch_array($fetch_category)){
-                    echo '<a href="#" class="list-group-item list-group-item-action cat-i">'.$row[1].'</a>';
-                };
-            
+
+            $fetch_category = mysqli_query($con, "select * from tbl_book_category");
+            while ($row = mysqli_fetch_array($fetch_category)) {
+                echo '<a href="#" class="list-group-item list-group-item-action cat-i">' . $row[1] . '</a>';
+            };
+
             ?>
         </div>
 
@@ -202,7 +202,8 @@
     <?php
 
     if (isset($_SESSION["userid"]) != null) {
-        echo '<div id="feedsticky" style="z-index: +3;border-radius: 10px;">
+        echo '
+    <div id="feedsticky" style="z-index: +3;border-radius: 10px;">
         <div class="FeedDiv">
             <button id="FeedButton" class="wow animate__animated animate__heartBeat" data-wow-duration="1s" data-wow-delay=".7s">
                 <a id="readmore" class="feedbutton" style="color: black;"><b>R<br>E<br>V<br>I<br>E<br>W<br>S</b></a>
@@ -214,15 +215,15 @@
                 <div class="edit">EDIT</div>
             </div>
             <div class="star-widget">
-                <input type="radio" name="rate" id="rate-5">
+                <input type="radio" name="rate" id="rate-5" value="5-Stars">
                 <label for="rate-5" class="fas fa-star"></label>
-                <input type="radio" name="rate" id="rate-4">
+                <input type="radio" name="rate" id="rate-4" value="4-Stars">
                 <label for="rate-4" class="fas fa-star"></label>
-                <input type="radio" name="rate" id="rate-3">
+                <input type="radio" name="rate" id="rate-3" value="3-Stars">
                 <label for="rate-3" class="fas fa-star"></label>
-                <input type="radio" name="rate" id="rate-2">
+                <input type="radio" name="rate" id="rate-2" value="2-Stars">
                 <label for="rate-2" class="fas fa-star"></label>
-                <input type="radio" name="rate" id="rate-1">
+                <input type="radio" name="rate" id="rate-1 value="1-Star"">
                 <label for="rate-1" class="fas fa-star"></label>
                 <form action="#">
                     <header></header>
