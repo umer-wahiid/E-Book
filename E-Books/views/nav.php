@@ -223,7 +223,7 @@
                 <label for="rate-3" class="fas fa-star"></label>
                 <input type="radio" name="rate" id="rate-2" value="2-Stars">
                 <label for="rate-2" class="fas fa-star"></label>
-                <input type="radio" name="rate" id="rate-1 value="1-Star"">
+                <input type="radio" name="rate" id="rate-1"  value="1-Star">
                 <label for="rate-1" class="fas fa-star"></label>
                 <form action="#">
                     <header></header>
