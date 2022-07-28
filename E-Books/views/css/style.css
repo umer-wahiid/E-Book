@@ -1335,6 +1335,12 @@ section{
     .container .contactInfo{
         width: 100%;
     }
+    #FeedButton{
+        width: 5px;
+    }
+    .FeedContainer{
+        width: 300px;
+    }
   
 
 }
@@ -1392,6 +1398,12 @@ section{
     .newsletter form{
         margin-left:0;
         max-width: 100%;
+    }
+    #FeedButton{
+        width: 5px;
+    }
+    .FeedContainer{
+        width: 400px;
     }
 
 }

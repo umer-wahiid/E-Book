@@ -140,10 +140,12 @@
                         <div class="icons">
                             <a href="#" class="fas fa-search"></a>
                             <a href="#" class="fas fa-heart"></a>
-                            <a href="#" class="fas fa-eye"></a>
+                            <button data-bs-toggle="modal" data-bs-target="#theBookThief">
+                                <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
+                            </button>
                         </div>
                         <div class="image">
-                            <img src="image/book-2.png" alt="">
+                            <img src="image/The Book Thief.jpg" alt="">
                         </div>
                         <div class="content">
                             <h3>featured books</h3>
@@ -369,6 +371,95 @@
                             <div class="col-6">
                                 <h3><b>Price</b></h3>
                                 <h4>Rs. 300</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-n" style="margin-top:0px;margin-right:309px;" data-bs-dismiss="modal">Add To Cart</button>
+                        <button type="button" style="width:100px;height:35px;font-size:15px;" class="btn" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="theBookThief" role="dialog">
+            <div class="modal-dialog" style="max-width:3000px;width:630px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" style="color:green;">The Book Thief</h2>
+                        <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" style="padding:1.5rem;">
+                        <div class="row">
+                            <div class="col-lg-3" width="max-content">
+                                <img class="img-fluid" style="border-radius: 10px;" src="image/The Book Thief.jpg" alt="">
+                            </div>
+                            <div class="col-lg-8 mt-3" style="margin-left:20px;">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4><b>Title</b></h4>
+                                        <h5>Markus Zusak</h5>
+                                    </div>
+                                    <div class="col-5">
+                                        <h4><b>Publisher</b></h4>
+                                        <h5>Windmill Books</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4><b>Categories</b></h4>
+                                        <h5>Historical Fiction</h5>
+                                        <h5>Young Adults</h5>
+                                        <h5>Summer Reading Recommendations</h5>
+                                    </div>
+                                    <div class="col-5">
+                                        <h4><b>Publication Date</b></h4>
+                                        <h5>08/09/2016</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4><b>Book Weight</b></h4>
+                                        <h5>100 gm</h5>
+                                    </div>
+                                    <div class="col-5">
+                                        <h4><b>Number of Pages</b></h4>
+                                        <h5>624 pages</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4><b>Availability</b></h4>
+                                        <h5>PDF/CD/BOOK</h5>
+                                    </div>
+                                    <div class="col-6">
+                                        <h4><b>Rating</b></h4>
+                                        <h5>4.8</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <h3><b>About Book</b></h3>
+                                <h5>It is 1939. In Nazi Germany, the country is holding its breath. Death has never been busier - and will become busier still.
+                                    <br>
+                                    By her brother's graveside, Liesel's life is changed forever when she picks up a single object,
+                                    abandoned in the snow. It is The Gravedigger's Handbook, and this is her first act of book thievery.
+                                    So begins Liesel's love affair with books and words, and soon she is stealing from Nazi book-burnings,
+                                    the mayor's wife's library . . . wherever there are books to be found.
+                                </h5>
+                                <br>
+                                <h3><b>About Author</b></h3>
+                                <h5>Markus Zusak was born in 1975 in Sydney, Australia, the youngest of four children of immigrant
+                                    German and Austrian parents. Neither parent could read or write English when they first arrived
+                                    in Australia.
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                <h3><b>Price</b></h3>
+                                <h4>Rs. 1,095.00</h4>
                             </div>
                         </div>
                     </div>
