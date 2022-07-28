@@ -180,9 +180,17 @@
                                             <!-- product name  -->
                                             <div class="col-6 card-title">
                                                 <h1 class="mb-4 product_name">A Gentleman in Moscow</h1>
-                                                <p class="mb-2"><input type="radio" name="" value="PDFS">PDFS</p>
-                                                <p class="mb-2"><input type="radio" name="" value="CD">CD</p>
-                                                <p class="mb-3"><input type="radio" name="" value="Hard Copy">Hard Copy</p>
+                                                <input type="radio" name="" value="PDFS">
+                                                &nbsp;
+                                                <label style="font-size: 16px;" for="">PDFS</label>
+                                                <br>
+                                                <input type="radio" name="" value="CD">
+                                                &nbsp;
+                                                <label style="font-size: 16px;" for="">CD</label>
+                                                <br>
+                                                <input type="radio" name="" value="Hard Copy">
+                                                &nbsp;
+                                                <label style="font-size: 16px;" for="">Hard Copy</label>
                                             </div>
                                             <!-- quantity inc dec -->
                                             <div class="col-6">
@@ -229,9 +237,17 @@
                                             <!-- product name  -->
                                             <div class="col-6 card-title">
                                                 <h1 class="mb-4 product_name">The Book Thief</h1>
-                                                <p class="mb-2"><input type="radio" name="" value="PDFS">PDFS</p>
-                                                <p class="mb-2"><input type="radio" name="" value="CD">CD</p>
-                                                <p class="mb-3"><input type="radio" name="" value="Hard Copy">Hard Copy</p>
+                                                <input type="radio" name="" value="PDFS">
+                                                &nbsp;
+                                                <label style="font-size: 16px;" for="">PDFS</label>
+                                                <br>
+                                                <input type="radio" name="" value="CD">
+                                                &nbsp;
+                                                <label style="font-size: 16px;" for="">CD</label>
+                                                <br>
+                                                <input type="radio" name="" value="Hard Copy">
+                                                &nbsp;
+                                                <label style="font-size: 16px;" for="">Hard Copy</label>
                                             </div>
                                             <!-- quantity inc dec -->
                                             <div class="col-6">
