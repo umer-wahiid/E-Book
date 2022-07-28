@@ -179,7 +179,7 @@
                                         <div class="row">
                                             <!-- product name  -->
                                             <div class="col-6 card-title">
-                                                <h1 class="mb-4 product_name">The Book Thief</h1>
+                                                <h1 class="mb-4 product_name">A Gentleman in Moscow</h1>
                                                 <p class="mb-2"><input type="radio" name="" value="PDFS">PDFS</p>
                                                 <p class="mb-2"><input type="radio" name="" value="CD">CD</p>
                                                 <p class="mb-3"><input type="radio" name="" value="Hard Copy">Hard Copy</p>
@@ -202,7 +202,7 @@
                                         <!-- //remover move and price -->
                                         <div class="row">
                                             <div class="col-8 d-flex justify-content-between remove_wish">
-                                                <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                                                <p style="cursor: pointer;"><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
                                             </div>
                                             <div class="col-4 d-flex justify-content-end price_money">
                                                 <h3>$<span id="itemval">0.00 </span></h3>
@@ -228,7 +228,7 @@
                                         <div class="row">
                                             <!-- product name  -->
                                             <div class="col-6 card-title">
-                                                <h1 class="mb-4 product_name">Green Zara Shirt</h1>
+                                                <h1 class="mb-4 product_name">The Book Thief</h1>
                                                 <p class="mb-2"><input type="radio" name="" value="PDFS">PDFS</p>
                                                 <p class="mb-2"><input type="radio" name="" value="CD">CD</p>
                                                 <p class="mb-3"><input type="radio" name="" value="Hard Copy">Hard Copy</p>
@@ -250,7 +250,7 @@
                                         <!-- //remover move and price -->
                                         <div class="row">
                                             <div class="col-8 d-flex justify-content-between remove_wish">
-                                                <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                                                <p style="cursor: pointer;"><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
                                             </div>
                                             <div class="col-4 d-flex justify-content-end price_money">
                                                 <h3>$<span id="itemval1">0.00 </span> </h3>
