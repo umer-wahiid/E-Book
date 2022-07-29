@@ -74,3 +74,10 @@ CREATE  TABLE  tbl_book_detail (
     book_price_pdf int,
     book_price_cd int
     );
+
+SELECT a.book_id, a.book_title, b.author_name, c.b_category_1
+FROM  tbl_book_detail a,
+      tbl_book_author b,
+      tbl_book_category c 
+where a.book_author =  b.author_id
+  and a.book_category_1 = c.b_id

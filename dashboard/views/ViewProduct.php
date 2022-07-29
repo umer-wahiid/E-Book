@@ -57,12 +57,9 @@ include("../apis/connection.php");
                 INNER JOIN tbl_book_category
                 ON
                 tbl_book_detail.book_category_1 = tbl_book_category.b_id
-                tbl_book_detail.book_category_2 = tbl_book_category.b_id
-                tbl_book_detail.book_category_3 = tbl_book_category.b_id
                 INNER JOIN tbl_book_author
                 ON
                 tbl_book_detail.book_author = tbl_book_author.author_id
-                tbl_book_detail.book_auhtor_about = tbl_book_author.author_id
                 ');
             while ($row = mysqli_fetch_array($fetch_book)) {
                 echo '
@@ -82,9 +79,9 @@ include("../apis/connection.php");
                             <td>' . $row[14] . '</td>
                             <td>' . $row[15] . '</td>
                             <td>' . $row[16] . '</td>
+                            <td><img src="pimagefolder/' . $row[17] . '" width="50px" height="50px" alt=""></td>
                             <td>' . $row[2] . '</td>
                             <td>' . $row[3] . '</td>
-                            <td><img src="pimagefolder/' . $row[17] . '" width="50px" height="50px" alt=""></td>
                             <td>
                                 <a href="" class="btn btn-success">Edit</a>
                                 <a href="" class="btn btn-primary">Delete</a>
