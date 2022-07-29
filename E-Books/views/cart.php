@@ -120,7 +120,7 @@
         }
 
         .page-item input {
-            line-height: 22px;
+            line-height: 18px;
             padding: 3px;
             font-size: 15px;
             display: flex;

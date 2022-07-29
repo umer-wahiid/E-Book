@@ -88,10 +88,10 @@
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link bra dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Brands</a>
+                        <a href="#" class="nav-link bra dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Author</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="index.php?addbrand" class="dropdown-item">Add Brand</a>
-                            <a href="index.php?viewbrand" class="dropdown-item">View Brands</a>
+                            <a href="index.php?addauthor" class="dropdown-item">Add Author</a>
+                            <a href="index.php?viewauthor" class="dropdown-item">View Author</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -147,10 +147,10 @@
                     include "AddCategory.php";
                 } else if (isset($_GET["viewcat"])) {
                     include "ViewCategory.php";
-                } else if (isset($_GET["addbrand"])) {
-                    include "AddBrand.php";
-                } else if (isset($_GET["viewbrand"])) {
-                    include "ViewBrand.php";
+                } else if (isset($_GET["addauthor"])) {
+                    include "AddAuthor.php";
+                } else if (isset($_GET["viewauthor"])) {
+                    include "ViewAuthor.php";
                 } else if (isset($_GET["addproduct"])) {
                     include "AddProduct.php";
                 } else if (isset($_GET["viewproduct"])) {
