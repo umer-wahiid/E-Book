@@ -56,37 +56,36 @@ include("../apis/connection.php");
             $fetch_book = mysqli_query($con, 'SELECT * from tbl_book_detail
                 INNER JOIN tbl_book_category
                 ON
-                tbl_book_detail.book_category_1 = tbl_book_category.b_id
-                INNER JOIN tbl_book_author
-                ON
-                tbl_book_detail.book_author = tbl_book_author.author_id
+                tbl_book_detail.book_category_2=tbl_book_category.b_id
                 ');
             while ($row = mysqli_fetch_array($fetch_book)) {
                 echo '
-                        <tr>
-                            <td>' . $row[0] . '</td>
-                            <td>' . $row[1] . '</td>
-                            <td>' . $row[4] . '</td>
-                            <td>' . $row[5] . '</td>
-                            <td>' . $row[6] . '</td>
-                            <td>' . $row[7] . '</td>
-                            <td>' . $row[8] . '</td>
-                            <td>' . $row[9] . '</td>
-                            <td>' . $row[10] . '</td>
-                            <td>' . $row[11] . '</td>
-                            <td>' . $row[12] . '</td>
-                            <td>' . $row[13] . '</td>
-                            <td>' . $row[14] . '</td>
-                            <td>' . $row[15] . '</td>
-                            <td>' . $row[16] . '</td>
-                            <td><img src="pimagefolder/' . $row[17] . '" width="50px" height="50px" alt=""></td>
-                            <td>' . $row[2] . '</td>
-                            <td>' . $row[3] . '</td>
-                            <td>
-                                <a href="" class="btn btn-success">Edit</a>
-                                <a href="" class="btn btn-primary">Delete</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>' . $row[0] . '</td>
+                        <td>' . $row[1] . '</td>
+                        <td>' . $row[4] . '</td>
+                        <td>' . $row[5] . '</td>
+                        <td>' . $row[6] . '</td>
+                        <td>' . $row[7] . '</td>
+                        <td>' . $row[8] . '</td>
+                        <td>' . $row[9] . '</td>
+                        <td>' . $row[10] . '</td>
+                        <td>' . $row[14] . '</td>
+                        <td>' . $row[15] . '</td>
+                        <td>' . $row[16] . '</td>
+                        Category
+                        <td>' . $row[19] . '</td>
+                        <td>' . $row[21] . '</td>
+                        <td>' . $row[23] . '</td>
+                        Category
+                        <td>' . $row[2] . '</td>
+                        <td>' . $row[3] . '</td>
+                        <td><img src="pimagefolder/' . $row[17] . '" width="50px" height="50px" alt=""></td>
+                        <td>
+                            <a href="" class="btn btn-success">Edit</a>
+                            <a href="" class="btn btn-primary">Delete</a>
+                        </td>
+                    </tr>
                     ';
             }
             ?>

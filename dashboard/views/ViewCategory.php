@@ -30,9 +30,7 @@ include("../apis/connection.php");
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Category_1</th>
-                <th>Category_2</th>
-                <th>Category_3</th>
+                <th>Category</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -44,8 +42,6 @@ include("../apis/connection.php");
                         <tr>
                             <td>' . $row[0] . '</td>
                             <td>' . $row[1] . '</td>
-                            <td>' . $row[2] . '</td>
-                            <td>' . $row[3] . '</td>
                             <td>
                                 <a href="../apis/book_apis/delete_category.php?id=' . $row[0] . '" name="delete" class="btn btn-primary">Delete</a>
                             </td>

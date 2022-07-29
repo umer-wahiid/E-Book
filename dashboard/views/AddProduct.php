@@ -46,7 +46,7 @@ include("../apis/connection.php");
 </head>
 
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <center>
             <h1>Add New Book</h1>
         </center>
@@ -207,7 +207,7 @@ include("../apis/connection.php");
                 echo '<h1>Invalid Error</h1>';
             }
         }
-        ?>
+        ?> -->
     </div>
 </body>
 

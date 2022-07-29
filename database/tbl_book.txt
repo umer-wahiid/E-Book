@@ -50,13 +50,11 @@ CREATE  TABLE  tbl_book_detail (
 
 
 
-CREATE  TABLE  tbl_book_detail (
+CREATE TABLE tbl_book_detail (
     book_id int AUTO_INCREMENT PRIMARY KEY,
     book_title varchar(30),
-    book_author int,
-    FOREIGN KEY (book_author) REFERENCES tbl_book_author(author_id),
-    book_author_about int,
-    FOREIGN KEY (book_author_about) REFERENCES tbl_book_author(author_id),
+    book_author varchar(25),
+    book_author_about varchar(1000),
     book_publisher varchar(30),
     book_publication_date DATE,
     book_weight int,
@@ -72,7 +70,8 @@ CREATE  TABLE  tbl_book_detail (
     FOREIGN KEY (book_category_3) REFERENCES tbl_book_category(b_id),
     book_price_hardcopy int,
     book_price_pdf int,
-    book_price_cd int
+    book_price_cd int,
+    book_image varchar(500)	
     );
 
 SELECT a.book_id, a.book_title, b.author_name, c.b_category_1

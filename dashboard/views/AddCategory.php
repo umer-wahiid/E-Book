@@ -48,16 +48,8 @@ include("../apis/connection.php");
         <form action="../apis/book_apis/add_category.php" method="POST" enctype="multipart/form-data">
             <table class="table">
                 <tr>
-                    <td><b> Category_1</b></td>
-                    <td><input type="text" required name="txtcategory1" placeholder="Category_1" class="form-control input"></td>
-                </tr>
-                <tr>
-                    <td><b> Category_2</b></td>
-                    <td><input type="text" required name="txtcategory2" placeholder="Category_2" class="form-control input"></td>
-                </tr>
-                <tr>
-                    <td><b> Category_3</b></td>
-                    <td><input type="text" required name="txtcategory3" placeholder="Category_3" class="form-control input"></td>
+                    <td><b> Category Name</b></td>
+                    <td><input type="text" required name="txtcategory" placeholder="Category Name" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -69,22 +61,7 @@ include("../apis/connection.php");
 
     </div>
 
-    <?php
-    if (isset($_POST["btn"])) {
-        $toGetCategory_1 = $_POST["txtcategory1"];
-        $toGetCategory_2 = $_POST["txtcategory2"];
-        $toGetCategory_3 = $_POST["txtcategory3"];
 
-        $query = mysqli_query($con, "INSERT INTO `tbl_book_category`(`b_category_1`, `b_category_2`, `b_category_3`) 
-        VALUES ('$toGetCategory_1'.'$toGetCategory_2','$toGetCategory_3')");
-
-        if ($query > 0) {
-            echo "<h1>Category Added</h1>";
-        } else {
-            echo "<h1>Invalid Error</h1>";
-        }
-    }
-    ?>
 
 
 </body>
