@@ -50,7 +50,7 @@
         <center>
             <h1>Add New Book</h1>
         </center>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
             <table class="table">
                 <tr>
                     <td><b>Book Title</b></td>
@@ -66,15 +66,15 @@
                 </tr>
                 <tr>
                     <td><b>Book Weight</b></td>
-                    <td><input type="text" required name="bweight" placeholder="Book Weight" class="form-control input"></td>
+                    <td><input type="number" required name="bweight" placeholder="Book Weight" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Pages</b></td>
-                    <td><input type="text" required name="bpages" placeholder="Book Pages" class="form-control input"></td>
+                    <td><input type="number" required name="bpages" placeholder="Book Pages" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Rating</b></td>
-                    <td><input type="text" required name="brating" placeholder="Book Rating" class="form-control input"></td>
+                    <td><input type="number" required name="brating" placeholder="Book Rating" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Availability</b></td>
@@ -86,67 +86,66 @@
                 </tr>
                 <tr>
                     <td><b>Book Price HardCopy</b></td>
-                    <td><input type="text" required name="bhardcopy" placeholder="Book Price HardCopy" class="form-control input"></td>
+                    <td><input type="number" required name="bhardcopy" placeholder="Book Price HardCopy" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Price PDFS</b></td>
-                    <td><input type="text" required name="bpdf" placeholder="Book Price PDFS" class="form-control input"></td>
+                    <td><input type="number" required name="bpdf" placeholder="Book Price PDFS" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Price CD</b></td>
-                    <td><input type="text" required name="bcd" placeholder="Book Price CD" class="form-control input"></td>
+                    <td><input type="number" required name="bcd" placeholder="Book Price CD" class="form-control input"></td>
                 </tr>
                 <tr>
-                    <td><b>Select Book Category_1</b></td>
-                    <td><select name="bcategory1" class="form-control input" id="">
+                    <td><b>Book Category_1</b></td>
+                    <td>
+                        <select name="bcategory1" class="form-control input" id="">
                             <?php
-
-                            $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
-
-                            while ($row_cat = mysqli_fetch_array($fetch_cat)) {
-                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
-                            }
-                            ?>
-                        </select>
-                    </td>
-                <tr>
-                    <td><b>Select Book Category_2</b></td>
-                    <td><select name="bcategory2" class="form-control input" id="">
-                            <?php
-
-                            $fetch_cat = mysqli_query($con, "SELECT * FROM `tbl_book_category");
-
-                            while ($row_cat = mysqli_fetch_array($fetch_cat)) {
-                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
-                            }
-                            ?>
-                        </select>
-                    </td>
-                <tr>
-                    <td><b>Select Book Category_3</b></td>
-                    <td><select name="bcategory3" class="form-control input" id="">
-                            <?php
-
-                            $fetch_cat = mysqli_query($con, "SELECT * FROM `tbl_book_category");
-
-                            while ($row_cat = mysqli_fetch_array($fetch_cat)) {
-                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
-                            }
+                                $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
+                                while($row_cat = mysqli_fetch_array($fetch_cat)) {
+                                    echo '<option value='.$row_cat[0].'>'.$row_cat[1].'</option>';
+                                }
                             ?>
                         </select>
                     </td>
                 </tr>
+                <tr>
+                    <td><b>Book Category_2</b></td>
+                    <td>
+                        <select name="bcategory2" class="form-control input" id="">
+                            <?php
+                                $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
+                                while ($row_cat = mysqli_fetch_array($fetch_cat)) {
+                                    echo '<option value='.$row_cat[0].'>'.$row_cat[1].'</option>';
+                                }
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Book Category_3</b></td>
+                    <td>
+                        <select name="bcategory3" class="form-control input" id="">
+                            <?php
+                                $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
+                                while ($row_cat = mysqli_fetch_array($fetch_cat)) {
+                                    echo '<option value='.$row_cat[0].'>'.$row_cat[1].'</option>';
+                                }
+                            ?>
+                        </select>
+                    </td>
+                </tr> 
                 <tr>
                     <td><b>Select Book Author</b></td>
                     <td><input type="text" required name="bauthor" placeholder="Book Author" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Select Book Author_About</b></td>
-                    <td><textarea required name="bauthor_about" placeholder="Book Author About" class="form-control input"></textarea></td>
+                    <td><textarea name="bauthor_about" placeholder="Book Author About" class="form-control input"></textarea></td>
                 </tr>
                 <tr>
                     <td><b>Select Book Image</b></td>
-                    <td><input type="file" name="bimage" class="form-control input" multiple accept="image/*"></td>
+                    <td><input type="file" name="bimage" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -155,8 +154,7 @@
             </table>
         </form>
 
-        <?php
-    // if(isset($_POST['adsproduct'])){
+    <!-- // if(isset($_POST['adsproduct'])){
 
     //     $title = mysqli_real_escape_string($con, $_POST['btitle']);
     //     $publisher = mysqli_real_escape_string($con, $_POST["bpublisher"]);
@@ -190,8 +188,8 @@
     //     } else {
     //         echo '<h1>Invalid Error</h1>';
     //     }
-    // }
-        ?>
+    // } -->
+    
     </div>
 </body>
 
