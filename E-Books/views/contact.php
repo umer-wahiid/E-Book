@@ -1,7 +1,7 @@
 <?php
 
     include "../apis/connection.php";
-    $bestselling = "index.php/";
+    $bestselling = "";
     session_start();
 
 ?>

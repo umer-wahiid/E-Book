@@ -1,5 +1,5 @@
 <?php
-include("../apis/connection.php");
+    include("../apis/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +46,7 @@ include("../apis/connection.php");
 </head>
 
 <body>
-    <!-- <div class="container">
+    <div class="container">
         <center>
             <h1>Add New Book</h1>
         </center>
@@ -54,7 +54,7 @@ include("../apis/connection.php");
             <table class="table">
                 <tr>
                     <td><b>Book Title</b></td>
-                    <td><input type="text" required name="bname" placeholder="Book Title" class="form-control input"></td>
+                    <td><input type="text" required name="btitle" placeholder="Book Title" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Publisher</b></td>
@@ -101,7 +101,7 @@ include("../apis/connection.php");
                     <td><select name="bcategory1" class="form-control input" id="">
                             <?php
 
-                            $fetch_cat = mysqli_query($con, "SELECT * FROM `tbl_book_category");
+                            $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
 
                             while ($row_cat = mysqli_fetch_array($fetch_cat)) {
                                 echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
@@ -117,7 +117,7 @@ include("../apis/connection.php");
                             $fetch_cat = mysqli_query($con, "SELECT * FROM `tbl_book_category");
 
                             while ($row_cat = mysqli_fetch_array($fetch_cat)) {
-                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[2] . '</option>';
+                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
                             }
                             ?>
                         </select>
@@ -130,7 +130,7 @@ include("../apis/connection.php");
                             $fetch_cat = mysqli_query($con, "SELECT * FROM `tbl_book_category");
 
                             while ($row_cat = mysqli_fetch_array($fetch_cat)) {
-                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[3] . '</option>';
+                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
                             }
                             ?>
                         </select>
@@ -138,31 +138,11 @@ include("../apis/connection.php");
                 </tr>
                 <tr>
                     <td><b>Select Book Author</b></td>
-                    <td><select name="bauthor" class="form-control input" id="">
-                            <?php
-
-                            $fetch_author = mysqli_query($con, "SELECT * FROM `tbl_book_author`");
-
-                            while ($row_author = mysqli_fetch_array($fetch_author)) {
-                                echo '<option value=' . $row_author[0] . '>' . $row_author[1] . '</option>';
-                            }
-                            ?>
-                        </select>
-                    </td>
+                    <td><input type="text" required name="bauthor" placeholder="Book Author" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Select Book Author_About</b></td>
-                    <td><select name="bauthor_about" class="form-control input" id="">
-                            <?php
-
-                            $fetch_author = mysqli_query($con, "SELECT * FROM `tbl_book_author`");
-
-                            while ($row_author = mysqli_fetch_array($fetch_author)) {
-                                echo '<option value=' . $row_author[0] . '>' . $row_author[2] . '</option>';
-                            }
-                            ?>
-                        </select>
-                    </td>
+                    <td><textarea required name="bauthor_about" placeholder="Book Author About" class="form-control input"></textarea></td>
                 </tr>
                 <tr>
                     <td><b>Select Book Image</b></td>
@@ -170,44 +150,48 @@ include("../apis/connection.php");
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="td"><input type="submit" value="Add Book" name="btn" class="form-control submit btn btn-outline-secondary"></td>
+                    <td class="td"><input type="submit" value="Add Book" name="adsproduct" class="form-control submit btn btn-outline-secondary"></td>
                 </tr>
             </table>
         </form>
 
         <?php
-        if (isset($_POST["btn"])) {
-            $togetBookTitle = $_POST["bname"];
-            $togetBookPublisher = $_POST["bpublisher"];
-            $togetBookPublicationDate = $_POST["bdate"];
-            $togetBookWeight = $_POST["bweight"];
-            $togetBookPages = $_POST["bpages"];
-            $togetBookRating = $_POST["brating"];
-            $togetBookAvailability = $_POST["bavailaibility"];
-            $togetBookAbout = $_POST["babout"];
-            $togetBookHardCopy = $_POST["bhardcopy"];
-            $togetBookPDFS = $_POST["bpdf"];
-            $togetBookCD = $_POST["bcd"];
-            $togetCategory_1 = $_POST["bcategory1"];
-            $togetCategory_2 = $_POST["bcategory2"];
-            $togetCategory_3 = $_POST["bcategory3"];
-            $togetAuthor = $_POST["bauthor"];
-            $togetAuthor_About = $_POST["bauthor_about"];
-            $toGetImage = $_FILES["bimage"]["name"];
-            $tmp_location = $_FILES["bimage"]["tmp_name"];
+    // if(isset($_POST['adsproduct'])){
 
-            move_uploaded_file($tmp_location, "../../E-Books/views/image/" . $toGetImage);
+    //     $title = mysqli_real_escape_string($con, $_POST['btitle']);
+    //     $publisher = mysqli_real_escape_string($con, $_POST["bpublisher"]);
+    //     $publicationDate = mysqli_real_escape_string($con, $_POST["bdate"]);
+    //     $weight = mysqli_real_escape_string($con, $_POST["bweight"]);
+    //     $pages = mysqli_real_escape_string($con, $_POST["bpages"]);
+    //     $rating = mysqli_real_escape_string($con, $_POST["brating"]);
+    //     $availability = mysqli_real_escape_string($con, $_POST["bavailaibility"]);
+    //     $about = mysqli_real_escape_string($con, $_POST["babout"]);
+    //     $hardCopy = mysqli_real_escape_string($con, $_POST["bhardcopy"]);
+    //     $pdfs = mysqli_real_escape_string($con, $_POST["bpdf"]);
+    //     $cd = mysqli_real_escape_string($con, $_POST["bcd"]);
+    //     $category_1 = mysqli_real_escape_string($con, $_POST["bcategory1"]);
+    //     $category_2 = mysqli_real_escape_string($con, $_POST["bcategory2"]);
+    //     $category_3 = mysqli_real_escape_string($con, $_POST["bcategory3"]);
+    //     $author_name = mysqli_real_escape_string($con, $_POST["bauthor"]);
+    //     $author_about = mysqli_real_escape_string($con, $_POST["bauthor_about"]);
 
-            $query = mysqli_query($con, "INSERT INTO `tbl_book_detail`(`book_title`, `book_author`, `book_author_about`, `book_publisher`, `book_publication_date`, `book_weight`, `book_pages`, `book_rating`, `book_availability`, `book_about`, `book_category_1`, `book_category_2`, `book_category_3`, `book_price_hardcopy`, `book_price_pdf`, `book_price_cd`, `book_image`) 
-            VALUES ('$togetBookTitle'.'$togetBookPublisher','$togetBookPublicationDate','$togetBookWeight','$togetBookPages','$togetBookRating','$togetBookAvailability','$togetBookAbout','$togetBookHardCopy','$togetBookPDFS','$togetBookCD','$togetCategory_1','$togetCategory_2','$togetCategory_3','$togetAuthor','$togetAuthor_About','$toGetImage')");
+    //     $unique = uniqid();
 
-            if ($query > 0) {
-                echo '<h1>Book Added</h1>';
-            } else {
-                echo '<h1>Invalid Error</h1>';
-            }
-        }
-        ?> -->
+    //     $bimage_path = "../book_image/".$unique.basename($_FILES['bimage']['name']);
+    //     $bimage = "../apis/book_image/".$unique.basename($_FILES['bimage']['name']);
+    //     $tmp_location = $_FILES['bimage']['tmp_name'];
+
+    //     move_uploaded_file($tmp_location, $bimage_path);
+        
+        
+
+    //     if ($query > 0) {
+    //         echo '<h1>Book Added</h1>';
+    //     } else {
+    //         echo '<h1>Invalid Error</h1>';
+    //     }
+    // }
+        ?>
     </div>
 </body>
 

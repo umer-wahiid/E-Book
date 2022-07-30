@@ -38,7 +38,7 @@ include("../apis/connection.php");
                 <th>Book Pages</th>
                 <th>Book Ratings</th>
                 <th>Book Availablitity</th>
-                <th>Book About</th>
+                <!-- <th>Book About</th> -->
                 <th>Book Price HardCopy</th>
                 <th>Book Price PDFS</th>
                 <th>Book Price CD</th>
@@ -46,18 +46,24 @@ include("../apis/connection.php");
                 <th>Book Category_2</th>
                 <th>Book Category_3</th>
                 <th>Book Author</th>
-                <th>Book Author About</th>
+                <!-- <th>Book Author About</th> -->
                 <th>Image</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            $fetch_book = mysqli_query($con, 'SELECT * from tbl_book_detail
-                INNER JOIN tbl_book_category
-                ON
-                tbl_book_detail.book_category_2=tbl_book_category.b_id
-                ');
+            $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+            INNER JOIN tbl_book_category as tb1
+            ON
+            tbl_book_detail.book_category_1 = tb1.b_id
+            INNER JOIN tbl_book_category as tb2
+            ON
+            tbl_book_detail.book_category_2 = tb2.b_id
+            INNER JOIN tbl_book_category as tb3
+            ON
+            tbl_book_detail.book_category_3 = tb3.b_id
+            ');
             while ($row = mysqli_fetch_array($fetch_book)) {
                 echo '
                     <tr>
@@ -69,17 +75,13 @@ include("../apis/connection.php");
                         <td>' . $row[7] . '</td>
                         <td>' . $row[8] . '</td>
                         <td>' . $row[9] . '</td>
-                        <td>' . $row[10] . '</td>
                         <td>' . $row[14] . '</td>
                         <td>' . $row[15] . '</td>
                         <td>' . $row[16] . '</td>
-                        Category
                         <td>' . $row[19] . '</td>
                         <td>' . $row[21] . '</td>
                         <td>' . $row[23] . '</td>
-                        Category
                         <td>' . $row[2] . '</td>
-                        <td>' . $row[3] . '</td>
                         <td><img src="pimagefolder/' . $row[17] . '" width="50px" height="50px" alt=""></td>
                         <td>
                             <a href="" class="btn btn-success">Edit</a>

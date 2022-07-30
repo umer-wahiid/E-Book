@@ -108,13 +108,13 @@
                 <a href="index.php">home</a>
                 <a href="#" id="cat">Categories</a>
                 <!-- <a href="#bestselling">Best Selling</a> -->
-                <a href='<?= $bestselling . '#bestselling' ?>'>Best Selling</a>
-                <a href="#arrivals">arrivals</a>
-                <a href="#reviews">reviews</a>
+                <a href='index.php#bestselling'>Best Selling</a>
+                <a href="index.php#arrivals">arrivals</a>
+                <a href="index.php#reviews">reviews</a>
                 <!-- <a href="#blogs">blogs</a> -->
                 <a href="about.php">About</a>
                 <a href="contact.php">Contact</a>
-                <a href="">competition</a>
+                <a href="competition.php">competition</a>
             </nav>
         </div>
         <div class="list-group cat-d" style="display: none;" id="list">
