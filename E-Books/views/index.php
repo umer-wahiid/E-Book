@@ -120,6 +120,21 @@
 
                 <div class="swiper-wrapper">
 
+                    <?php
+
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                INNER JOIN tbl_book_category as tb1
+                ON
+                tbl_book_detail.book_category_1 = tb1.b_id
+                INNER JOIN tbl_book_category as tb2
+                ON
+                tbl_book_detail.book_category_2 = tb2.b_id
+                INNER JOIN tbl_book_category as tb3
+                ON
+                tbl_book_detail.book_category_3 = tb3.b_id
+                ');
+                    while ($row = mysqli_fetch_array($fetch_book)) {
+                        echo '
                     <div class="swiper-slide box">
                         <div class="icons">
                             <a href="#" class="fas fa-search"></a>
@@ -127,17 +142,21 @@
                             <button data-bs-toggle="modal" data-bs-target="#myModal">
                                 <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
                             </button>
-
+    
                         </div>
                         <div class="image">
                             <img src="image/A Gentleman in Moscow.jpg" alt="">
                         </div>
                         <div class="content">
-                            <h3>best selling</h3>
+                            <h3>' . $row[1] . '</h3>
                             <div class="price">$20.99 <span>$20.99</span></div>
                             <a href="#" class="btn-n">add to cart</a>
                         </div>
                     </div>
+                    ';
+                    }
+
+                    ?>
 
                     <!-- <div class="swiper-slide box">
                         <div class="icons">
@@ -319,7 +338,7 @@
                         <div class="modal-body" style="padding:1.5rem;">
                             <div class="row">
                                 <div class="col-lg-3" width="max-content">
-                                    <img class="img-fluid" style="border-radius: 10px;" src="' . $row[17] . '" alt="">
+                                    <img class="img-fluid" style="border-radius: 10px;" src="image/' . $row[17] . '" alt="">
                                 </div>
                                 <div class="col-lg-8 mt-3" style="margin-left:20px;">
                                     <div class="row">
