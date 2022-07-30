@@ -308,7 +308,7 @@
                             <div class="col-lg-8 mt-3" style="margin-left:20px;">
                                 <div class="row">
                                     <div class="col-6">
-                                        <h4><b>Title</b></h4>
+                                        <h4><b>Author</b></h4>
                                         <h5>Amor Towles</h5>
                                     </div>
                                     <div class="col-5">
@@ -399,7 +399,7 @@
                             <div class="col-lg-8 mt-3" style="margin-left:20px;">
                                 <div class="row">
                                     <div class="col-6">
-                                        <h4><b>Title</b></h4>
+                                        <h4><b>Author</b></h4>
                                         <h5>Markus Zusak</h5>
                                     </div>
                                     <div class="col-5">

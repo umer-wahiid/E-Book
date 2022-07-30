@@ -50,7 +50,7 @@
         <center>
             <h1>Add New Book</h1>
         </center>
-        <form method="POST" enctype="multipart/form-data">
+        <form action="../apis/book_apis/addbook.php" method="POST" enctype="multipart/form-data">
             <table class="table">
                 <tr>
                     <td><b>Book Title</b></td>
@@ -58,7 +58,7 @@
                 </tr>
                 <tr>
                     <td><b>Book Publisher</b></td>
-                    <td><input type="text" required name="bpublisher" placeholder="Book Price" class="form-control input"></td>
+                    <td><input type="text" required name="bpublisher" placeholder="Book Publisher" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Publication Date</b></td>

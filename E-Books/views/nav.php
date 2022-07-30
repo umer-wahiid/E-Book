@@ -116,16 +116,16 @@
                 <a href="contact.php">Contact</a>
                 <a href="competition.php">competition</a>
             </nav>
-        </div>
-        <div class="list-group cat-d" style="display: none;" id="list">
-            <?php
-
-            $fetch_category = mysqli_query($con, "select * from tbl_book_category");
-            while ($row = mysqli_fetch_array($fetch_category)) {
-                echo '<a href="#" class="list-group-item list-group-item-action cat-i">' . $row[1] . '</a>';
-            };
-
-            ?>
+            <div class="list-group cat-d" style="display: none;" id="list">
+                <?php
+    
+                $fetch_category = mysqli_query($con, "select * from tbl_book_category");
+                while ($row = mysqli_fetch_array($fetch_category)) {
+                    echo '<a href="#" class="list-group-item list-group-item-action cat-i">' . $row[1] . '</a>';
+                };
+    
+                ?>
+            </div>
         </div>
 
     </header>

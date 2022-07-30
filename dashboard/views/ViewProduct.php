@@ -1,5 +1,5 @@
 <?php
-include("../apis/connection.php");
+    include("../apis/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,6 @@ include("../apis/connection.php");
                 <th>Book Pages</th>
                 <th>Book Ratings</th>
                 <th>Book Availablitity</th>
-                <!-- <th>Book About</th> -->
                 <th>Book Price HardCopy</th>
                 <th>Book Price PDFS</th>
                 <th>Book Price CD</th>
@@ -46,7 +45,6 @@ include("../apis/connection.php");
                 <th>Book Category_2</th>
                 <th>Book Category_3</th>
                 <th>Book Author</th>
-                <!-- <th>Book Author About</th> -->
                 <th>Image</th>
                 <th>Action</th>
             </tr>
@@ -82,7 +80,7 @@ include("../apis/connection.php");
                         <td>' . $row[21] . '</td>
                         <td>' . $row[23] . '</td>
                         <td>' . $row[2] . '</td>
-                        <td><img src="pimagefolder/' . $row[17] . '" width="50px" height="50px" alt=""></td>
+                        <td><img src="' . $row[17] . '" width="50px" height="80px" alt=""></td>
                         <td>
                             <a href="" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-primary">Delete</a>
