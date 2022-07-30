@@ -106,7 +106,7 @@
         <div class="header-2">
             <nav class="navbar-n">
                 <a href="index.php">home</a>
-                <a href="#" id="cat">Categories</a>
+                <a style="cursor:pointer;" id="cat">Categories</a>
                 <!-- <a href="#bestselling">Best Selling</a> -->
                 <a href='index.php#bestselling'>Best Selling</a>
                 <a href="index.php#arrivals">arrivals</a>
@@ -121,7 +121,7 @@
     
                 $fetch_category = mysqli_query($con, "select * from tbl_book_category");
                 while ($row = mysqli_fetch_array($fetch_category)) {
-                    echo '<a href="#" class="list-group-item list-group-item-action cat-i">' . $row[1] . '</a>';
+                    echo '<a href="#" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $row[1] . '</a>';
                 };
     
                 ?>

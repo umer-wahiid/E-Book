@@ -136,15 +136,15 @@ include("../apis/connection.php");
                     </td>
                 </tr>
                 <tr>
-                    <td><b>Select Book Author</b></td>
+                    <td><b>Author</b></td>
                     <td><input type="text" required name="bauthor" placeholder="Book Author" class="form-control input"></td>
                 </tr>
                 <tr>
-                    <td><b>Select Book Author_About</b></td>
+                    <td><b>Author_About</b></td>
                     <td><textarea name="bauthor_about" placeholder="Book Author About" class="form-control input"></textarea></td>
                 </tr>
                 <tr>
-                    <td><b>Select Book Image</b></td>
+                    <td><b>Image</b></td>
                     <td><input type="file" name="bimage" class="form-control input"></td>
                 </tr>
                 <tr>

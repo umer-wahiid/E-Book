@@ -1,7 +1,6 @@
 <?php
 
     include "../apis/connection.php";
-    $bestselling = "";
     session_start();
 
 ?>
