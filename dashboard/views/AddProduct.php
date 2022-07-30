@@ -1,5 +1,5 @@
 <?php
-    include("../apis/connection.php");
+include("../apis/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +74,7 @@
                 </tr>
                 <tr>
                     <td><b>Book Rating</b></td>
-                    <td><input type="number" required name="brating" placeholder="Book Rating" class="form-control input"></td>
+                    <td><input type="text" required name="brating" placeholder="Book Rating" class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Availability</b></td>
@@ -101,10 +101,10 @@
                     <td>
                         <select name="bcategory1" class="form-control input" id="">
                             <?php
-                                $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
-                                while($row_cat = mysqli_fetch_array($fetch_cat)) {
-                                    echo '<option value='.$row_cat[0].'>'.$row_cat[1].'</option>';
-                                }
+                            $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
+                            while ($row_cat = mysqli_fetch_array($fetch_cat)) {
+                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
+                            }
                             ?>
                         </select>
                     </td>
@@ -114,10 +114,10 @@
                     <td>
                         <select name="bcategory2" class="form-control input" id="">
                             <?php
-                                $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
-                                while ($row_cat = mysqli_fetch_array($fetch_cat)) {
-                                    echo '<option value='.$row_cat[0].'>'.$row_cat[1].'</option>';
-                                }
+                            $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
+                            while ($row_cat = mysqli_fetch_array($fetch_cat)) {
+                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
+                            }
                             ?>
                         </select>
                     </td>
@@ -127,14 +127,14 @@
                     <td>
                         <select name="bcategory3" class="form-control input" id="">
                             <?php
-                                $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
-                                while ($row_cat = mysqli_fetch_array($fetch_cat)) {
-                                    echo '<option value='.$row_cat[0].'>'.$row_cat[1].'</option>';
-                                }
+                            $fetch_cat = mysqli_query($con, "SELECT * FROM tbl_book_category");
+                            while ($row_cat = mysqli_fetch_array($fetch_cat)) {
+                                echo '<option value=' . $row_cat[0] . '>' . $row_cat[1] . '</option>';
+                            }
                             ?>
                         </select>
                     </td>
-                </tr> 
+                </tr>
                 <tr>
                     <td><b>Select Book Author</b></td>
                     <td><input type="text" required name="bauthor" placeholder="Book Author" class="form-control input"></td>
@@ -154,7 +154,7 @@
             </table>
         </form>
 
-    <!-- // if(isset($_POST['adsproduct'])){
+        <!-- // if(isset($_POST['adsproduct'])){
 
     //     $title = mysqli_real_escape_string($con, $_POST['btitle']);
     //     $publisher = mysqli_real_escape_string($con, $_POST["bpublisher"]);
@@ -189,7 +189,7 @@
     //         echo '<h1>Invalid Error</h1>';
     //     }
     // } -->
-    
+
     </div>
 </body>
 

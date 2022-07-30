@@ -19,7 +19,7 @@
         <title>E-Books</title>
 
 
-        
+
 
 
         <!-- short icon link -->
@@ -139,7 +139,7 @@
                         </div>
                     </div>
 
-                    <div class="swiper-slide box">
+                    <!-- <div class="swiper-slide box">
                         <div class="icons">
                             <a href="#" class="fas fa-search"></a>
                             <a href="#" class="fas fa-heart"></a>
@@ -283,7 +283,7 @@
                             <div class="price">$15.99 <span>$20.99</span></div>
                             <a href="#" class="btn-n">add to cart</a>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -293,98 +293,107 @@
             </div>
 
         </section>
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog" style="max-width:3000px;width:630px;">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title" style="color:green;">A Gentleman in Moscow</h2>
-                        <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body" style="padding:1.5rem;">
-                        <div class="row">
-                            <div class="col-lg-3" width="max-content">
-                                <img class="img-fluid" style="border-radius: 10px;" src="image/A Gentleman in Moscow.jpg" alt="">
-                            </div>
-                            <div class="col-lg-8 mt-3" style="margin-left:20px;">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h4><b>Author</b></h4>
-                                        <h5>Amor Towles</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4><b>Publisher</b></h4>
-                                        <h5>Windmill Books</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h4><b>Categories</b></h4>
-                                        <h5>Fiction & Literature</h5>
-                                        <h5>Historical Fiction</h5>
-                                        <h5>Bestsellers</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4><b>Publication Date</b></h4>
-                                        <h5>02/11/2017</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h4><b>Book Weight</b></h4>
-                                        <h5>100 gm</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4><b>Number of Pages</b></h4>
-                                        <h5>480 pages</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h4><b>Availability</b></h4>
-                                        <h5>PDF/CD/BOOK</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <h4><b>Rating</b></h4>
-                                        <h5>4.8</h5>
-                                    </div>
-                                </div>
-                            </div>
+
+        <?php
+
+        $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+        INNER JOIN tbl_book_category as tb1
+        ON
+        tbl_book_detail.book_category_1 = tb1.b_id
+        INNER JOIN tbl_book_category as tb2
+        ON
+        tbl_book_detail.book_category_2 = tb2.b_id
+        INNER JOIN tbl_book_category as tb3
+        ON
+        tbl_book_detail.book_category_3 = tb3.b_id
+        ');
+        while ($row = mysqli_fetch_array($fetch_book)) {
+            echo '
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog" style="max-width:3000px;width:630px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" style="color:green;">' . $row[1] . '</h2>
+                            <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
                         </div>
-                        <div class="row mt-2">
-                            <div class="col-12">
-                                <h3><b>About Book</b></h3>
-                                <h5>On 21 June 1922, Count Alexander Rostov - recipient of the Order of Saint Andrew,
-                                    member of the Jockey Club, Master of the Hunt - is escorted out of the Kremlin, across Red Square
-                                    and through the elegant revolving doors of the Hotel Metropol.
+                        <div class="modal-body" style="padding:1.5rem;">
+                            <div class="row">
+                                <div class="col-lg-3" width="max-content">
+                                    <img class="img-fluid" style="border-radius: 10px;" src="' . $row[17] . '" alt="">
+                                </div>
+                                <div class="col-lg-8 mt-3" style="margin-left:20px;">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h4><b>Author</b></h4>
+                                            <h5>' . $row[2] . '</h5>
+                                        </div>
+                                        <div class="col-5">
+                                            <h4><b>Publisher</b></h4>
+                                            <h5>' . $row[4] . '</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h4><b>Categories</b></h4>
+                                            <h5>' . $row[19] . '</h5>
+                                            <h5>' . $row[21] . '</h5>
+                                            <h5>' . $row[23] . '</h5>
+                                        </div>
+                                        <div class="col-5">
+                                            <h4><b>Publication Date</b></h4>
+                                            <h5>' . $row[5] . '</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h4><b>Book Weight</b></h4>
+                                            <h5>' . $row[6] . ' gm</h5>
+                                        </div>
+                                        <div class="col-5">
+                                            <h4><b>Number of Pages</b></h4>
+                                            <h5>' . $row[7] . ' pages</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h4><b>Availability</b></h4>
+                                            <h5>' . $row[9] . '</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <h4><b>Rating</b></h4>
+                                            <h5>' . $row[8] . '</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <h3><b>About Book</b></h3>
+                                    <h5>' . $row[10] . '</h5>
                                     <br>
-                                    Deemed an unrepentant aristocrat by a Bolshevik tribunal, the Count has been sentenced to house
-                                    arrest indefinitely. But instead of his usual suite, he must now live in an attic room
-                                    while Russia undergoes decades of tumultuous upheaval.
-                                    Can a life without luxurybe the richest of all?
-                                </h5>
-                                <br>
-                                <h3><b>About Author</b></h3>
-                                <h5>Born And Raised In The Boston Area, Amor Towles Graduated From Yale College And Received An MA In
-                                    English From Stanford University. Having Worked As An Investment Professional In Manhattan For Over
-                                    Twenty Years, He Now Devotes Himself Fulltime To Writing.
-                                </h5>
+                                    <h3><b>About Author</b></h3>
+                                    <h5>' . $row[3] . '</h5>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <h3><b>Price</b></h3>
+                                    <h4>Rs. 300</h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="row mt-2">
-                            <div class="col-6">
-                                <h3><b>Price</b></h3>
-                                <h4>Rs. 300</h4>
-                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-n" style="margin-top:0px;margin-right:309px;" data-bs-dismiss="modal">Add To Cart</button>
+                            <button type="button" style="width:100px;height:35px;font-size:15px;" class="btn" data-bs-dismiss="modal">Close</button>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn-n" style="margin-top:0px;margin-right:309px;" data-bs-dismiss="modal">Add To Cart</button>
-                        <button type="button" style="width:100px;height:35px;font-size:15px;" class="btn" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal fade" id="theBookThief" role="dialog">
+            ';
+        }
+
+        ?>
+        <!-- <div class="modal fade" id="theBookThief" role="dialog">
             <div class="modal-dialog" style="max-width:3000px;width:630px;">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -472,7 +481,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 
