@@ -138,13 +138,13 @@
                         <div class="icons">
                             <a href="#" class="fas fa-search"></a>
                             <a href="#" class="fas fa-heart"></a>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal'.$row[0].'">
+                            <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '">
                                 <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
                             </button>
     
                         </div>
                         <div class="image">
-                            <img src="../../dashboard/views/'.$row[17].'" alt="">
+                            <img src="../../dashboard/views/' . $row[17] . '" alt="">
                         </div>
                         <div class="content">
                             <h3>' . $row[1] . '</h3>
@@ -180,17 +180,17 @@
         ');
         while ($row = mysqli_fetch_array($fetch_book)) {
             echo '
-            <div class="modal fade" id="myModal'.$row[0].'" role="dialog">
+            <div class="modal fade" id="myModal' . $row[0] . '" role="dialog">
                 <div class="modal-dialog" style="max-width:3000px;width:630px;">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2 class="modal-title" style="color:green;">'.$row[1].'</h2>
+                            <h2 class="modal-title" style="color:green;">' . $row[1] . '</h2>
                             <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body" style="padding:1.5rem;">
                             <div class="row">
                                 <div class="col-lg-3" width="max-content">
-                                    <img class="img-fluid" style="border-radius: 10px;" src="../../dashboard/views/'.$row[17].'" alt="">
+                                    <img class="img-fluid" style="border-radius: 10px;" src="../../dashboard/views/' . $row[17] . '" alt="">
                                 </div>
                                 <div class="col-lg-8 mt-3" style="margin-left:20px;">
                                     <div class="row">
@@ -369,13 +369,17 @@
                                                                                 echo  'value="' . $_SESSION["email"] . '" ';
                                                                             }
                                                                             ?> id="" class="box">
-                <input type="radio" name="sub" value="Annual" style="margin-top: 30px;margin-bottom: 30px;">
+                <input type="radio" name="sub" value="1 Year" style="margin-top: 30px;">
                 &nbsp;
-                <span class="radio">Annual/Rs. 1500</span>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="sub" value="Monthly">
+                <span class="radio">1 Year/Rs.2000</span>
+                <br>
+                <input type="radio" name="sub" value="2 Year">
                 &nbsp;
-                <span class="radio">Monthly/Rs. 750</span>
+                <span class="radio">2 Year/Rs.2600</span>
+                <br>
+                <input type="radio" name="sub" value="3 Year" style="margin-bottom: 30px;">
+                &nbsp;
+                <span class="radio">3 Year/Rs.3200</span>
                 <br>
                 <?php
                 if (isset($_SESSION["userid"]) != null) {

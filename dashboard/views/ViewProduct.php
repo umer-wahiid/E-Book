@@ -1,5 +1,5 @@
 <?php
-    include("../apis/connection.php");
+include("../apis/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,8 +82,8 @@
                         <td>' . $row[2] . '</td>
                         <td><img src="' . $row[17] . '" width="50px" height="80px" alt=""></td>
                         <td>
-                            <a href="" class="btn btn-success">Edit</a>
-                            <a href="" class="btn btn-primary">Delete</a>
+                            <a href="update_book.php" class="btn btn-success">Edit</a>
+                            <a href="" class="btn btn-primary delete">Delete</a>
                         </td>
                     </tr>
                     ';
