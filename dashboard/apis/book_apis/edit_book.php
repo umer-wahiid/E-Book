@@ -3,7 +3,7 @@
     require '../connection.php';
 
     if (isset($_POST["updatebook"])) {
-        $id = $_GET["id"];
+        $id = $_GET["iid"];
         $title = $_POST['utitle'];
         $publisher = $_POST["upublisher"];
         $publicationDate = $_POST["udate"];
