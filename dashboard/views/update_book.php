@@ -148,8 +148,9 @@ include("../apis/connection.php");
                     <td><b>Image</b></td>
                     <td><input type="file" name="uimage" class="form-control input"></td>
                 </tr>
-                <tr>
-                    <td></td>
+                <tr><td>
+                <?= $id = $_GET['id'];?>
+                    </td>
                     <td class="td"><input type="submit" value="Update Book" name="updatebook" class="form-control submit btn btn-outline-secondary"></td>
                 </tr>
             </table>
