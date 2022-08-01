@@ -1,10 +1,9 @@
     <?php
 
     require '../connection.php';
-    session_start();
 
     if (isset($_POST["updatebook"])) {
-        $id = $_SESSION["updateid"];
+        $id = $_GET["id"];
         $title = $_POST['utitle'];
         $publisher = $_POST["upublisher"];
         $publicationDate = $_POST["udate"];
@@ -32,7 +31,7 @@
 
         $update_q = "UPDATE `tbl_book_detail` 
         SET `book_title`='$title',`book_author`='$author_name',`book_author_about`='$author_about',`book_publisher`='$publisher',`book_publication_date`='$publicationDate',`book_weight`='$weight',`book_pages`='$pages',`book_rating`='$rating',`book_availability`='$availability',`book_about`='$about',`book_category_1`='$category_1',`book_category_2`='$category_2',`book_category_3`='$category_3',`book_price_hardcopy`='$hardCopy',`book_price_pdf`='$pdfs',`book_price_cd`='$cd',`book_image`='$uimage' 
-        WHERE `book_id`='$id'";
+        WHERE `book_id`= '$id'";
 
         $update_e = mysqli_query($con, $update_q);
 

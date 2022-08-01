@@ -82,8 +82,8 @@ include("../apis/connection.php");
                         <td>' . $row[2] . '</td>
                         <td><img src="' . $row[17] . '" width="50px" height="80px" alt=""></td>
                         <td>
-                            <a href="update_book.php" class="btn btn-success">Edit</a>
-                            <a href="" class="btn btn-primary delete">Delete</a>
+                            <a href="update_book.php?id=' . $row[0] . '" class="btn btn-success">Edit</a>
+                            <a href="../apis/book_apis/delete_book.php?id=' . $row[0] . '" class="btn btn-primary delete">Delete</a>
                         </td>
                     </tr>
                     ';
