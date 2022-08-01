@@ -51,7 +51,7 @@ include("../apis/connection.php");
         <center>
             <h1>Update Book</h1>
         </center>
-        <form action="../apis/book_apis/edit_book.php" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo'../apis/book_apis/edit_book.php?iid='.$_GET['id'].' '?>" method="POST" enctype="multipart/form-data">
             <table class="table">
                 <tr>
                     <td><b>Book Title</b></td>
@@ -148,9 +148,12 @@ include("../apis/connection.php");
                     <td><b>Image</b></td>
                     <td><input type="file" name="uimage" class="form-control input"></td>
                 </tr>
-                <tr><td>
-                    </td>
-                    <td><a href="../apis/book_apis/edit_book.php?iid=<?=$_GET['id']?>" ></a></td>
+                <tr>
+                <?php
+                // echo'
+                //     <td>'.$id = $_GET['id'].'</td>
+                //     <td><a href="../apis/book_apis/edit_book.php?iid='.$_GET['id'].'" type="submit" class="form-control submit btn btn-outline-secondary">Update Book </a></td>'?>
+                <td></td>
                     <td class="td"><input type="submit" value="Update Book" name="updatebook" class="form-control submit btn btn-outline-secondary"></td>
                 </tr>
             </table>
