@@ -122,16 +122,16 @@
                     <?php
 
                     $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                INNER JOIN tbl_book_category as tb1
-                ON
-                tbl_book_detail.book_category_1 = tb1.b_id
-                INNER JOIN tbl_book_category as tb2
-                ON
-                tbl_book_detail.book_category_2 = tb2.b_id
-                INNER JOIN tbl_book_category as tb3
-                ON
-                tbl_book_detail.book_category_3 = tb3.b_id
-                ');
+                    INNER JOIN tbl_book_category as tb1
+                    ON
+                    tbl_book_detail.book_category_1 = tb1.b_id
+                    INNER JOIN tbl_book_category as tb2
+                    ON
+                    tbl_book_detail.book_category_2 = tb2.b_id
+                    INNER JOIN tbl_book_category as tb3
+                    ON
+                    tbl_book_detail.book_category_3 = tb3.b_id
+                    ');
                     while ($row = mysqli_fetch_array($fetch_book)) {
                         echo '
                     <div class="swiper-slide box">
@@ -362,7 +362,17 @@
 
         <section class="newsletter">
 
+            <div class="row">
+                <div class="content">
+                    <h3>upto 75% off</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias
+                        sit necessitatibus, aliquid ex minima at!</p>
+                    <a href="#" class="btn-n">shop now</a>
+                </div>
+            </div>
+
             <form action="../apis/user_apis/subscribe.php" method="POST">
+
                 <h3>subscribe for latest updates</h3>
                 <input type="email" name="" placeholder="enter your email" <?php
                                                                             if (isset($_SESSION["userid"]) != null) {

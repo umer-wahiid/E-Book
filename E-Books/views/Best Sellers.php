@@ -1,7 +1,7 @@
 <?php
 
-    include "../apis/connection.php";
-    session_start();
+include "../apis/connection.php";
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -16,9 +16,10 @@
     <link rel="shortcut icon" type="image/png" href="image/loader-img.gif">
     <title>Best Sellers</title>
     <style>
-        *{
+        * {
             text-transform: lowercase;
         }
+
         /* .swiper-wrapper{
             width: 0%;
         } */
@@ -44,7 +45,7 @@
         <div class="cat-page">
 
             <div class="swiper-wrapper" style="display: flex;flex-wrap: wrap;width:280px;">
-            <!-- flex-flow:row; -->
+                <!-- flex-flow:row; -->
                 <?php
 
                 $fetch_book = mysqli_query($con, "SELECT * FROM tbl_book_detail
@@ -59,8 +60,8 @@
                 tbl_book_detail.book_category_3 = tb3.b_id
                 WHERE book_category_1=14 OR book_category_2=14 OR book_category_3=14
                 ");
-                    while ($row = mysqli_fetch_array($fetch_book)) {
-                        echo '
+                while ($row = mysqli_fetch_array($fetch_book)) {
+                    echo '
                     <div class="swiper-slide box m-4">
                         <div class="icons">
                             <a href="#" class="fas fa-search"></a>
@@ -80,28 +81,28 @@
                         </div>
                     </div>
                     ';
-                    }
+                }
                 ?>
             </div>
         </div>
 
     </section>
 
-<?php
+    <?php
 
-$fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-INNER JOIN tbl_book_category as tb1
-ON
-tbl_book_detail.book_category_1 = tb1.b_id
-INNER JOIN tbl_book_category as tb2
-ON
-tbl_book_detail.book_category_2 = tb2.b_id
-INNER JOIN tbl_book_category as tb3
-ON
-tbl_book_detail.book_category_3 = tb3.b_id
-');
-while ($row = mysqli_fetch_array($fetch_book)) {
-    echo '
+    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+    INNER JOIN tbl_book_category as tb1
+    ON
+    tbl_book_detail.book_category_1 = tb1.b_id
+    INNER JOIN tbl_book_category as tb2
+    ON
+    tbl_book_detail.book_category_2 = tb2.b_id
+    INNER JOIN tbl_book_category as tb3
+    ON
+    tbl_book_detail.book_category_3 = tb3.b_id
+    ');
+    while ($row = mysqli_fetch_array($fetch_book)) {
+        echo '
     <div class="modal fade" id="myModal' . $row[0] . '" role="dialog">
         <div class="modal-dialog" style="max-width:3000px;width:630px;">
             <div class="modal-content">
@@ -183,9 +184,9 @@ while ($row = mysqli_fetch_array($fetch_book)) {
         </div>
     </div>
     ';
-}
+    }
 
-?>
+    ?>
 
 
 

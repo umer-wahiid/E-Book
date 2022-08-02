@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    
+
     <title>Document</title>
 
 </head>
@@ -107,7 +107,7 @@
 
         <div class="header-2">
             <nav class="navbar-n">
-                <a href="index.php">home</a>
+                <a href="index.php#home">home</a>
                 <a style="cursor:pointer;" id="cat">Categories</a>
                 <!-- <a href="#bestselling">Best Selling</a> -->
                 <a href='index.php#bestselling'>Best Selling</a>
@@ -119,13 +119,73 @@
                 <a href="competition.php">competition</a>
             </nav>
             <div class="list-group cat-d" style="display: none;" id="list">
+                <a data-bs-toggle="modal" data-bs-target="#myModal" style="cursor: pointer;">Most Selling</a>
+            </div>
+            <div class=" modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <section class="featured" id="bestselling">
+
+                            <h1 class="heading"><span>Most Selling</span> </h1>
+
+                            <div class="swiper featured-slider">
+
+                                <div class="swiper-wrapper">
+
+                                    <?php
+
+                                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+        INNER JOIN tbl_book_category as tb1
+        ON
+        tbl_book_detail.book_category_1 = tb1.b_id
+        INNER JOIN tbl_book_category as tb2
+        ON
+        tbl_book_detail.book_category_2 = tb2.b_id
+        INNER JOIN tbl_book_category as tb3
+        ON
+        tbl_book_detail.book_category_3 = tb3.b_id
+        ');
+                                    while ($row = mysqli_fetch_array($fetch_book)) {
+                                        echo '
+        <div class="swiper-slide box">
+            <div class="icons">
+                <a href="#" class="fas fa-search"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '">
+                    <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
+                </button>
+
+            </div>
+            <div class="image">
+                <img src="../../dashboard/views/' . $row[17] . '" alt="">
+            </div>
+            <div class="content">
+                <h3>' . $row[1] . '</h3>
+                <div class="price">$20.99 <span>$20.99</span></div>
+                <a href="#" class="btn-n">add to cart</a>
+            </div>
+        </div>
+        ';
+                                    }
+                                    ?>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="list-group cat-d" style="display: none;" id="list">
                 <?php
-    
+
                 $fetch_category = mysqli_query($con, "select * from tbl_book_category");
                 while ($row = mysqli_fetch_array($fetch_category)) {
-                    echo '<a href="'.$row[1].'.php?" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $row[1] . '</a>';
+                    echo '<a href="' . $row[1] . '.php?" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $row[1] . '</a>';
                 };
-    
                 ?>
             </div>
         </div>
@@ -137,10 +197,10 @@
     <!-- bottom navbar  -->
 
     <nav class="bottom-navbar">
-        <a href="index.php" class="fas fa-home"></a>
-        <a href="#bestselling" class="fas fa-list"></a>
-        <a href="#arrivals" class="fas fa-tags"></a>
-        <a href="#reviews" class="fas fa-comments"></a>
+        <a href="index.php#home" class="fas fa-home"></a>
+        <a href="index.php#bestselling" class="fas fa-list"></a>
+        <a href="index.php#arrivals" class="fas fa-tags"></a>
+        <a href="index.php#reviews" class="fas fa-comments"></a>
         <a href="contact.php" class="fa fa-phone"></a>
         <a href="about.php" class="fa fa-blog"></a>
     </nav>
