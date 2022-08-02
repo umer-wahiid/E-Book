@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="css/swiper.css" />
 
 
     <!-- font awesome cdn link  -->
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    
     <title>Document</title>
 
 </head>
@@ -121,7 +123,7 @@
     
                 $fetch_category = mysqli_query($con, "select * from tbl_book_category");
                 while ($row = mysqli_fetch_array($fetch_category)) {
-                    echo '<a href="#" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $row[1] . '</a>';
+                    echo '<a href="'.$row[1].'.php?" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $row[1] . '</a>';
                 };
     
                 ?>
