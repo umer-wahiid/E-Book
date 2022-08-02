@@ -118,76 +118,71 @@
                 <a href="contact.php">Contact</a>
                 <a href="competition.php">competition</a>
             </nav>
-            <div class="list-group cat-d" style="display: none;" id="list">
-                <a data-bs-toggle="modal" data-bs-target="#myModal" style="cursor: pointer;">Most Selling</a>
-            </div>
-            <div class=" modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
+            <?php
+            echo'
+            <div class="list-group cat-d" style="display: none;" id="list">';
+                $fetch_category = mysqli_query($con, "select * from tbl_book_category");
+                while ($cat_row = mysqli_fetch_array($fetch_category)) {
+                    echo '<a href="#" data-bs-toggle="modal" data-bs-target="#myModal'.$cat_row[0].'" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
+                    ';
+                };
+                echo'
+                <a href="#" data-bs-toggle="modal" data-bs-target="#myModal2" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">Static</a>
+            </div>'
+            ?>
+
+            <?php
+            $fetch_category = mysqli_query($con, "select * from tbl_book_category");
+            while ($cat_row = mysqli_fetch_array($fetch_category)) {
+                    echo'
+            <div class="modal fade" id="myModal'.$cat_row[0].'" role="dialog">
+                <div class="modal-dialog" style="max-width:3000px;">
                     <div class="modal-content">
-                        <section class="featured" id="bestselling">
-
-                            <h1 class="heading"><span>Most Selling</span> </h1>
-
-                            <div class="swiper featured-slider">
-
-                                <div class="swiper-wrapper">
-
-                                    <?php
-
-                                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-        INNER JOIN tbl_book_category as tb1
-        ON
-        tbl_book_detail.book_category_1 = tb1.b_id
-        INNER JOIN tbl_book_category as tb2
-        ON
-        tbl_book_detail.book_category_2 = tb2.b_id
-        INNER JOIN tbl_book_category as tb3
-        ON
-        tbl_book_detail.book_category_3 = tb3.b_id
-        ');
+                        <div class="modal-header">
+                            <h2 class="modal-title" style="color:green;">'.$cat_row[1].'</h2>
+                            <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body" style="padding:1.5rem;">
+                            <section class="featured container-fluid" id="bestselling">
+                                <h1 class="heading"><span>'.$cat_row[1].'</span> </h1>
+                                <div class="swiper featured-slider">
+                                    <div class="swiper-wrapper">';
+                                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail');
                                     while ($row = mysqli_fetch_array($fetch_book)) {
-                                        echo '
-        <div class="swiper-slide box">
-            <div class="icons">
-                <a href="#" class="fas fa-search"></a>
-                <a href="#" class="fas fa-heart"></a>
-                <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '">
-                    <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
-                </button>
-
-            </div>
-            <div class="image">
-                <img src="../../dashboard/views/' . $row[17] . '" alt="">
-            </div>
-            <div class="content">
-                <h3>' . $row[1] . '</h3>
-                <div class="price">$20.99 <span>$20.99</span></div>
-                <a href="#" class="btn-n">add to cart</a>
-            </div>
-        </div>
-        ';
-                                    }
-                                    ?>
-
+                                    echo '
+                                        <div class="swiper-slide box">
+                                            <div class="icons">
+                                                <a href="#" class="fas fa-search"></a>
+                                                <a href="#" class="fas fa-heart"></a>
+                                                <button data-bs-toggle="modal" data-bs-target="#myModal'. $row[0] .'">
+                                                    <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
+                                                </button>
+                                            </div>
+                                            <div class="image">
+                                                <img src="../../dashboard/views/' . $row[17] . '" alt="">
+                                            </div>
+                                            <div class="content">
+                                                <h3>' . $row[1] . '</h3>
+                                                <div class="price">$20.99 <span>$20.99</span></div>
+                                                    <a href="#" class="btn-n">add to cart</a>
+                                                </div>
+                                            </div>
+                                    ';
+                                    };
+                                    echo'
+                                        </div>
+                                    </div>
                                 </div>
-
-                            </div>
-
-                        </section>
-
-
+                            </section>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="list-group cat-d" style="display: none;" id="list">
-                <?php
+            ';
+        };
+            ?>
 
-                $fetch_category = mysqli_query($con, "select * from tbl_book_category");
-                while ($row = mysqli_fetch_array($fetch_category)) {
-                    echo '<a href="' . $row[1] . '.php?" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $row[1] . '</a>';
-                };
-                ?>
-            </div>
+            
         </div>
 
     </header>
