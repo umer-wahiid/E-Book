@@ -129,6 +129,11 @@ var swiper = new Swiper(".arrivals-slider", {
 });
 
 $(document).ready(function(){
+  $("#ser").click(function(){
+    $("#list-ser").slideToggle();
+  });
+});
+$(document).ready(function(){
   $("#cat").click(function(){
     $("#list").slideToggle();
   });
