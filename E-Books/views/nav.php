@@ -127,12 +127,12 @@
                     ';
                 };
                 echo'
-                <a href="#" data-bs-toggle="modal" data-bs-target="#myModal2" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">Static</a>
             </div>'
             ?>
 
             <?php
-            $fetch_category = mysqli_query($con, "select * from tbl_book_category");
+            $fetch_category = mysqli_query($con, "select * from tbl_book_category 
+            ");
             while ($cat_row = mysqli_fetch_array($fetch_category)) {
                     echo'
             <div class="modal fade" id="catModal'.$cat_row[0].'" role="dialog">
@@ -142,12 +142,14 @@
                             <h2 class="modal-title" style="color:green;">'.$cat_row[1].'</h2>
                             <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
                         </div>
-                        <div class="modal-body" style="padding:1.5rem;">
+                        <div class="modal-body" style="0">
                             <section class="featured container-fluid" id="bestselling">
                                 <h1 class="heading"><span>'.$cat_row[1].'</span> </h1>
                                 <div class="swiper featured-slider">
                                     <div class="swiper-wrapper">';
-                                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail');
+                                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                                    WHERE book_category_1='.$cat_row[0].' OR book_category_2='.$cat_row[0].' OR book_category_3='.$cat_row[0].'
+                                    ');
                                     while ($row = mysqli_fetch_array($fetch_book)) {
                                     echo '
                                         <div class="swiper-slide box">
