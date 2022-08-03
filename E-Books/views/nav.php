@@ -32,9 +32,11 @@
 
             <a href="index.php" class="logo"> <i class="fas fa-book"></i> e-books </a>
 
-            <form action="" class="search-form">
-                <input type="search" name="" placeholder="search here..." id="search-box">
-                <label for="search-box" class="fas fa-search"></label>
+            <form action="../apis/user_apis/search-btn.php" class="search-form" method="POST">
+                <input type="search" name="search" placeholder="search here..." id="search-box">
+                <button name="search-btn">
+                    <label for="search-box" class="fas fa-search"></label>
+                </button>
             </form>
 
             <div class="icons">
@@ -119,14 +121,14 @@
                 <a href="competition.php">competition</a>
             </nav>
             <?php
-            echo'
+            echo '
             <div class="list-group cat-d" style="display: none;" id="list">';
-                $fetch_category = mysqli_query($con, "select * from tbl_book_category");
-                while ($cat_row = mysqli_fetch_array($fetch_category)) {
-                    echo '<a href="#" data-bs-toggle="modal" data-bs-target="#catModal'.$cat_row[0].'" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
+            $fetch_category = mysqli_query($con, "select * from tbl_book_category");
+            while ($cat_row = mysqli_fetch_array($fetch_category)) {
+                echo '<a href="#" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
                     ';
-                };
-                echo'
+            };
+            echo '
             </div>'
             ?>
 
@@ -134,29 +136,29 @@
             $fetch_category = mysqli_query($con, "select * from tbl_book_category 
             ");
             while ($cat_row = mysqli_fetch_array($fetch_category)) {
-                    echo'
-            <div class="modal fade" id="catModal'.$cat_row[0].'" role="dialog">
+                echo '
+            <div class="modal fade" id="catModal' . $cat_row[0] . '" role="dialog">
                 <div class="modal-dialog" style="max-width:3000px;">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2 class="modal-title" style="color:green;">'.$cat_row[1].'</h2>
+                            <h2 class="modal-title" style="color:green;">' . $cat_row[1] . '</h2>
                             <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body" style="0">
                             <section class="featured container-fluid" id="bestselling">
-                                <h1 class="heading"><span>'.$cat_row[1].'</span> </h1>
+                                <h1 class="heading"><span>' . $cat_row[1] . '</span> </h1>
                                 <div class="swiper featured-slider">
                                     <div class="swiper-wrapper">';
-                                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                                    WHERE book_category_1='.$cat_row[0].' OR book_category_2='.$cat_row[0].' OR book_category_3='.$cat_row[0].'
+                $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                                    WHERE book_category_1=' . $cat_row[0] . ' OR book_category_2=' . $cat_row[0] . ' OR book_category_3=' . $cat_row[0] . '
                                     ');
-                                    while ($row = mysqli_fetch_array($fetch_book)) {
-                                    echo '
+                while ($row = mysqli_fetch_array($fetch_book)) {
+                    echo '
                                         <div class="swiper-slide box">
                                             <div class="icons">
                                                 <a href="#" class="fas fa-search"></a>
                                                 <a href="#" class="fas fa-heart"></a>
-                                                <button data-bs-toggle="modal" data-bs-target="#myModal'. $row[0] .'">
+                                                <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '">
                                                     <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
                                                 </button>
                                             </div>
@@ -170,8 +172,8 @@
                                                 </div>
                                             </div>
                                     ';
-                                    };
-                                    echo'
+                };
+                echo '
                                         </div>
                                     </div>
                                 </div>
@@ -181,10 +183,10 @@
                 </div>
             </div>
             ';
-        };
+            };
             ?>
 
-            
+
         </div>
 
     </header>

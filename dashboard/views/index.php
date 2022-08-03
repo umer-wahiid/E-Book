@@ -88,17 +88,10 @@
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link bra dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Author</a>
+                        <a href="#" class="nav-link pro dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-book me-2"></i>Books</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="index.php?addauthor" class="dropdown-item">Add Author</a>
-                            <a href="index.php?viewauthor" class="dropdown-item">View Author</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link pro dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Products</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="index.php?addproduct" class="dropdown-item">Add Product</a>
-                            <a href="index.php?viewproduct" class="dropdown-item">View Products</a>
+                            <a href="index.php?addproduct" class="dropdown-item">Add Books</a>
+                            <a href="index.php?viewproduct" class="dropdown-item">View Books</a>
                         </div>
                     </div>
                     <a href="index.php?user" class="nav-item nav-link use"><i class="fa fa-user me-2"></i>User</a>
@@ -147,8 +140,6 @@
                     include "AddCategory.php";
                 } else if (isset($_GET["viewcat"])) {
                     include "ViewCategory.php";
-                } else if (isset($_GET["addauthor"])) {
-                    include "AddAuthor.php";
                 } else if (isset($_GET["viewauthor"])) {
                     include "ViewAuthor.php";
                 } else if (isset($_GET["addproduct"])) {
