@@ -33,8 +33,8 @@
             <a href="index.php" class="logo"> <i class="fas fa-book"></i> e-books </a>
             <!-- id="search-box" -->
             <form class="search-form">
-                <input type="search" name="search" placeholder="search here..." >
-                <button name="search-btn"  id="ser" style="background-color: transparent;">
+                <input type="search" name="search" placeholder="search here...">
+                <button name="search-btn" id="ser" style="background-color: transparent;">
                     <label for="search-box" class="fas fa-search"></label>
                 </button>
             </form>
@@ -57,16 +57,16 @@
 
         </div>
 
-                <?php
-                    echo '
+        <?php
+        echo '
                     <div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
-                    $fetch_category = mysqli_query($con, "select * from tbl_book_detail");
-                    while ($cat_row = mysqli_fetch_array($fetch_category)) {
-                        echo '<a href="#" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $cat_row[1] . '</a>';
-                    };
-                    echo '
+        $fetch_category = mysqli_query($con, "select * from tbl_book_detail");
+        while ($cat_row = mysqli_fetch_array($fetch_category)) {
+            echo '<a href="#" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $cat_row[1] . '</a>';
+        };
+        echo '
                     </div>'
-                ?>
+        ?>
         <!----------- settings-menu---------------  -->
 
         <div class="sm">
@@ -147,14 +147,14 @@
             ");
             while ($cat_row = mysqli_fetch_array($fetch_category)) {
                 echo '
-            <div class="modal fade" id="catModal' . $cat_row[0] . '" role="dialog">
+            <div class="modal fade" id="catModal' . $cat_row[0] . '" role="dialog" style="left: 10%; width: 80%; height: 80%;">
                 <div class="modal-dialog" style="max-width:3000px;">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h2 class="modal-title" style="color:green;">' . $cat_row[1] . '</h2>
                             <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
                         </div>
-                        <div class="modal-body" style="0">
+                        <div class="modal-body">
                             <section class="featured container-fluid">
                                 <h1 class="heading"><span>' . $cat_row[1] . '</span> </h1>
                                 <div class="swiper featured-slider">
