@@ -23,6 +23,15 @@
 
     <title>Document</title>
 
+    <style>
+        .modal-title{
+            text-transform: uppercase;
+            margin-left: 22px;
+        }
+        .heading span{
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,7 +42,7 @@
             <a href="index.php" class="logo"> <i class="fas fa-book"></i> e-books </a>
             <!-- id="search-box" -->
             <form class="search-form">
-                <input type="search" id="ser"  name="search" placeholder="search here...">
+                <input type="search" id="ser" name="search" placeholder="search here...">
                 <button name="search-btn" style="background-color: transparent;">
                     <label for="search-box" class="fas fa-search"></label>
                 </button>
@@ -59,13 +68,13 @@
 
         <?php
         echo '
-        <div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
+                    <div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
         $fetch_category = mysqli_query($con, "select * from tbl_book_detail");
         while ($cat_row = mysqli_fetch_array($fetch_category)) {
             echo '<a href="#" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $cat_row[1] . '</a>';
         };
         echo '
-        </div>'
+                    </div>'
         ?>
         <!----------- settings-menu---------------  -->
 
@@ -147,7 +156,7 @@
             ");
             while ($cat_row = mysqli_fetch_array($fetch_category)) {
                 echo '
-            <div class="modal fade" id="catModal' . $cat_row[0] . '" role="dialog" style="left: 10px">
+            <div class="modal fade" id="catModal' . $cat_row[0] . '" role="dialog" style="left: 5px;right:5px;">
                 <div class="modal-dialog" style="max-width:3000px;">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -155,7 +164,7 @@
                             <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <section class="featured container-fluid">
+                            <section class="featured container-fluid" style="padding-bottom:0px;padding-top:28px;">
                                 <h1 class="heading"><span>' . $cat_row[1] . '</span> </h1>
                                 <div class="swiper featured-slider">
                                     <div class="swiper-wrapper">';
