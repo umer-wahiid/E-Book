@@ -59,13 +59,13 @@
 
         <?php
         echo '
-                    <div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
+        <div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
         $fetch_category = mysqli_query($con, "select * from tbl_book_detail");
         while ($cat_row = mysqli_fetch_array($fetch_category)) {
             echo '<a href="#" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $cat_row[1] . '</a>';
         };
         echo '
-                    </div>'
+        </div>'
         ?>
         <!----------- settings-menu---------------  -->
 
@@ -147,7 +147,7 @@
             ");
             while ($cat_row = mysqli_fetch_array($fetch_category)) {
                 echo '
-            <div class="modal fade" id="catModal' . $cat_row[0] . '" role="dialog" style="left: 10%; width: 80%; height: 80%;">
+            <div class="modal fade" id="catModal' . $cat_row[0] . '" role="dialog" style="left: 10px">
                 <div class="modal-dialog" style="max-width:3000px;">
                     <div class="modal-content">
                         <div class="modal-header">
