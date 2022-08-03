@@ -33,8 +33,8 @@
             <a href="index.php" class="logo"> <i class="fas fa-book"></i> e-books </a>
             <!-- id="search-box" -->
             <form class="search-form">
-                <input type="search" name="search" placeholder="search here...">
-                <button name="search-btn" id="ser" style="background-color: transparent;">
+                <input type="search" id="ser"  name="search" placeholder="search here...">
+                <button name="search-btn" style="background-color: transparent;">
                     <label for="search-box" class="fas fa-search"></label>
                 </button>
             </form>
