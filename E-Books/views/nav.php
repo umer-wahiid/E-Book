@@ -123,7 +123,7 @@
             <div class="list-group cat-d" style="display: none;" id="list">';
                 $fetch_category = mysqli_query($con, "select * from tbl_book_category");
                 while ($cat_row = mysqli_fetch_array($fetch_category)) {
-                    echo '<a href="#" data-bs-toggle="modal" data-bs-target="#myModal'.$cat_row[0].'" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
+                    echo '<a href="#" data-bs-toggle="modal" data-bs-target="#catModal'.$cat_row[0].'" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
                     ';
                 };
                 echo'
@@ -135,7 +135,7 @@
             $fetch_category = mysqli_query($con, "select * from tbl_book_category");
             while ($cat_row = mysqli_fetch_array($fetch_category)) {
                     echo'
-            <div class="modal fade" id="myModal'.$cat_row[0].'" role="dialog">
+            <div class="modal fade" id="catModal'.$cat_row[0].'" role="dialog">
                 <div class="modal-dialog" style="max-width:3000px;">
                     <div class="modal-content">
                         <div class="modal-header">
