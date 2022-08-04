@@ -138,7 +138,7 @@
                         <div class="icons">
                             <a href="#" class="fas fa-search"></a>
                             <a href="#" class="fas fa-heart"></a>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '">
+                            <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style=" background-color: transparent;">
                                 <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
                             </button>
     

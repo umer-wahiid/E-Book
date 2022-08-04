@@ -1,3 +1,7 @@
+<?php
+// session_start();
+// include('../apis/connection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +48,7 @@
             <!-- id="search-box" -->
             <form class="search-form" method="POST">
                 <input type="search" id="ser" name="search" placeholder="search book here...">
-                <button name="search_btn" data-bs-toggle="modal" data-bs-target="#serModal" style=" background-color: transparent;">
+                <button name="search_btn" style=" background-color: transparent;">
                     <label for="search-box" class="fas fa-search"></label>
                 </button>
             </form>
@@ -66,55 +70,58 @@
             </div>
 
         </div>
-
+        <button type="button" data-bs-toggle="modal" data-bs-target="#serModal" style="display:none;">Trigger</button>
         <?php
         // echo '
         // <div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
         if (isset($_POST["search_btn"])) {
             $search = $_POST["search"];
-            $fetch_book = mysqli_query($con, "SELECT * FROM tbl_book_detail WHERE name LIKE '%{$search}%'");
-            while ($row = mysqli_fetch_array($fetch_book)) {
-                echo '        
-            <div class="modal fade" id="serModal" role="dialog" style="left: 5px;right:5px;">
-                <div class="modal-dialog" style="max-width:3000px;">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title" style="color:green;">' . $row[1] . '</h2>
-                            <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <section class="featured" id="bestselling">
-                                <h1 class="heading"><span>Most Selling</span> </h1>
-                                <div class="swiper featured-slider">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide box">
-                                            <div class="icons">
-                                                <a href="#" class="fas fa-search"></a>
-                                                <a href="#" class="fas fa-heart"></a>
-                                                <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[1] . '">
-                                                    <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
-                                                </button>
-    
-                                            </div>
-                                            <div class="image">
-                                                <img src="../../dashboard/views/' . $row[17] . '" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h3>' . $row[1] . '</h3>
-                                                <div class="price">$20.99 <span>$20.99</span></div>
-                                                <a href="#" class="btn-n">add to cart</a>
+            $fetch_book = mysqli_query($con, "SELECT * FROM tbl_book_detail WHERE book_title LIKE '%{$search}%'");
+            if (mysqli_num_rows($fetch_book) > 0) {
+                while ($row = mysqli_fetch_array($fetch_book)) {
+                    // print_r($row);
+                    echo '
+                <div class="modal" id="serModal" role="dialog" style="left: 5px;right:5px;">
+                    <div class="modal-dialog" style="max-width:3000px;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title" style="color:green;">' . $row[1] . '</h2>
+                                <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <section class="featured" id="bestselling" style="padding-bottom:0px;padding-top:28px;">
+                                    <h1 class="heading"><span>' . $row[1] . '</span> </h1>
+                                    <div class="swiper featured-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide box">
+                                                <div class="icons">
+                                                    <a href="#" class="fas fa-search"></a>
+                                                    <a href="#" class="fas fa-heart"></a>
+                                                    <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[1] . '">
+                                                        <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
+                                                    </button>
+        
+                                                </div>
+                                                <div class="image">
+                                                    <img src="../../dashboard/views/' . $row[17] . '" alt="">
+                                                </div>
+                                                <div class="content">
+                                                    <h3>' . $row[1] . '</h3>
+                                                    <div class="price">$20.99 <span>$20.99</span></div>
+                                                    <a href="#" class="btn-n">add to cart</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </section>
+                                </section>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>';
+                </div>';
+                }
+            } else {
+                echo "<p>Try Different Keywords</p>";
             }
-        } else {
-            echo "<p>Try Different Keywords</p>";
         }
 
 
@@ -374,6 +381,11 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(window).on('load', function() {
+            $('#serModal').modal('show');
+        });
+    </script>
 </body>
 
 </html>
