@@ -1,3 +1,10 @@
+
+<?php
+
+include "../apis/connection.php";
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,78 +17,80 @@
 
 <body>
 
+
+
     <style>
         /* cart */
-
+    
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Mulish', sans-serif;
         }
-
+    
         :root {
             --text-clr: #4f4f4f;
         }
-
+    
         p {
             color: #6c757d;
         }
-
+    
         a {
             text-decoration: none;
             color: var(--text-clr);
         }
-
+    
         a:hover {
             text-decoration: none;
             color: var(--text-clr);
         }
-
+    
         h2 {
             color: var(--text-clr);
             font-size: 1.5rem;
         }
-
+    
         .main_cart {
             background: #fff;
         }
-
+    
         .card {
             border: none;
         }
-
+    
         .product_img img {
             min-width: 200px;
             max-height: 200px;
         }
-
+    
         .product_name {
             color: black;
             font-size: 1.4rem;
             text-transform: capitalize;
             font-weight: 500;
         }
-
+    
         .card-title p {
             font-size: 0.9rem;
             font-weight: 500;
         }
-
+    
         .remove-and-wish p {
             font-size: 0.8rem;
             margin-bottom: 0;
         }
-
+    
         .price-money h3 {
             font-size: 1rem;
             font-weight: 600;
         }
-
+    
         .set_quantity {
             position: relative;
         }
-
+    
         .set_quantity::after {
             content: "(Note, 1 piece)";
             width: auto;
@@ -92,7 +101,7 @@
             right: 1.5rem;
             font-size: 0.8rem;
         }
-
+    
         .page-link {
             line-height: 16px;
             width: 45px;
@@ -102,7 +111,7 @@
             align-items: center;
             color: var(--text-clr);
         }
-
+    
         .page-item input {
             line-height: 18px;
             padding: 3px;
@@ -112,31 +121,26 @@
             align-items: center;
             text-align: center;
         }
-
+    
         .page-link:hover {
             text-decoration: none;
             color: #495057;
             outline: none !important;
         }
-
+    
         .page-link:focus {
             box-shadow: none;
         }
-
+    
         .price_indiv p {
             font-size: 1.1rem;
         }
     </style>
-
-    <!-- header section starts -->
-
     <?php
 
     include "nav.php";
 
     ?>
-
-    <!-- header section ends -->
 
     <!-- cart section starts -->
 
