@@ -2,39 +2,41 @@
 // session_start();
 // include('../apis/connection.php');
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-
-<!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
-<link rel="stylesheet" href="css/swiper.css" />
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="image/loader-img.gif">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="css/swiper.css" />
 
 
-<link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
-<title>Document</title>
 
-<style>
-    .modal-title {
-        text-transform: uppercase;
-        margin-left: 22px;
-    }
+    <!-- bootstrap 5 css link -->
+    <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    .heading span {
-        text-transform: uppercase;
-    }
-</style>
+
+    <title>E-Books</title>
+
+    <style>
+        .modal-title {
+            text-transform: uppercase;
+            margin-left: 22px;
+        }
+
+        .heading span {
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
 <body>
@@ -87,8 +89,8 @@
                                 <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body">
-                                <section class="featured" id="bestselling" style="padding-bottom:0px;padding-top:28px;">
-                                    <h1 class="heading"><span>' . $row[1] . '</span> </h1>
+                                <section class="featured" id="bestselling">
+                                    <h1 class="heading"><span>Most Selling</span> </h1>
                                     <div class="swiper featured-slider">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide box">
@@ -388,14 +390,6 @@
     }
 
     ?>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(window).on('load', function() {
-            $('#serModal').modal('show');
-        });
-    </script>
 </body>
 
 </html>
