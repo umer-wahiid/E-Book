@@ -89,7 +89,7 @@
                                 <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body">
-                                <section class="featured" id="bestselling">
+                                <section class="featured" id="bestselling" style="padding-bottom:0px;padding-top:28px;">
                                     <h1 class="heading"><span>' . $row[1] . '</span> </h1>
                                     <div class="swiper featured-slider">
                                         <div class="swiper-wrapper">
