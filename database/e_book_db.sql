@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2022 at 01:27 PM
+-- Generation Time: Aug 05, 2022 at 04:02 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -106,7 +106,8 @@ INSERT INTO `tbl_user_contact` (`contact_id`, `contact_name`, `contact_email`, `
 (4, 'Ammar ', 'daiqfihqiuhf@uhfigig', 'hdhgsuhsliufhesui'),
 (5, 'bvgftftft', 'gftruycruycyrut@jftft', 'hguyruurtf6ur tu6 rfiu6 uietfgkyr i67'),
 (6, 'Imran', 'ABC@CBC.COM', 'tEST MESSAGE'),
-(7, 'Imran', 'i.emranhafeez@gmail.com', 'helo world');
+(7, 'Imran', 'i.emranhafeez@gmail.com', 'helo world'),
+(8, 'Ammar Ansari', 'ammaransari7016@gmail.com', 'AoA PLZ TELL ME WHICH TIME YOU UPLOAD MORE BOOKS ');
 
 -- --------------------------------------------------------
 
@@ -146,8 +147,24 @@ CREATE TABLE `tbl_user_reviews` (
   `review_name` varchar(25) NOT NULL,
   `review_email` varchar(25) NOT NULL,
   `review_stars` varchar(25) NOT NULL,
-  `review_message` varchar(100) NOT NULL
+  `review_description` varchar(1000) NOT NULL,
+  `review_image` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_user_reviews`
+--
+
+INSERT INTO `tbl_user_reviews` (`review_id`, `review_name`, `review_email`, `review_stars`, `review_description`, `review_image`) VALUES
+(1, 'Ammar Ansari', 'ammaransari7016@gmail.com', '5-Stars', 'Its Really Awsome', ''),
+(2, 'Ammar Ansari', 'ammaransari7016@gmail.com', '5-Stars', 'Its Really Awsome', '../apis/profileImage/62da93457be0dAmmar.jpg'),
+(3, 'Ammar Ansari', 'ammaransari7016@gmail.com', '4-Stars', 'Its Great I really Satisfied', '../apis/profileImage/62da93457be0dAmmar.jpg'),
+(4, 'Ammar Ansari', 'ammaransari7016@gmail.com', '4-Stars', 'Its Great I really Satisfied', '../apis/profileImage/62da93457be0dAmmar.jpg'),
+(5, 'Ammar Ansari', 'ammaransari7016@gmail.com', '4-Stars', 'Its Great I really Satisfied', '../apis/profileImage/62da93457be0dAmmar.jpg'),
+(6, '', '', '4-Stars', 'Its Great I really Satisfied', ''),
+(7, '', '', '4-Stars', 'Its Great I really Satisfied', ''),
+(8, '', '', '4-Stars', 'Its Great I really Satisfied', ''),
+(9, '', '', '4-Stars', 'Its Great I really Satisfied', '');
 
 --
 -- Indexes for dumped tables
@@ -206,7 +223,7 @@ ALTER TABLE `tbl_book_detail`
 -- AUTO_INCREMENT for table `tbl_user_contact`
 --
 ALTER TABLE `tbl_user_contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_user_data`
@@ -218,7 +235,7 @@ ALTER TABLE `tbl_user_data`
 -- AUTO_INCREMENT for table `tbl_user_reviews`
 --
 ALTER TABLE `tbl_user_reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
