@@ -1,7 +1,7 @@
     <?php
 
-    require '../apis/connection.php';
     session_start();
+    require '../apis/connection.php';
     // if(isset($_GET['alert'])){
     //     $alert = $_GET['alert'];
     //     echo '<div class="alert alert-success" role="alert">'.$alert.'</div>';
