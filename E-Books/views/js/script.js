@@ -109,7 +109,7 @@ var swiper = new Swiper(".featured-slider", {
 
 var swiper = new Swiper(".arrivals-slider", {
   spaceBetween: 10,
-  loop:true,
+  // loop:true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,

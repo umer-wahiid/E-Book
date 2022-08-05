@@ -414,91 +414,40 @@
 
                 <div class="swiper-wrapper">
 
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-1.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </a>
+                    <?php
 
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                    INNER JOIN tbl_book_category as tb1
+                    ON
+                    tbl_book_detail.book_category_1 = tb1.b_id
+                    INNER JOIN tbl_book_category as tb2
+                    ON
+                    tbl_book_detail.book_category_2 = tb2.b_id
+                    INNER JOIN tbl_book_category as tb3
+                    ON
+                    tbl_book_detail.book_category_3 = tb3.b_id
+                    ');
+                    while ($row = mysqli_fetch_array($fetch_book)) {
+                        echo
+                        '<a href="#" class="swiper-slide box">
+                            <div class="image">
+                                <img src="../../dashboard/views/' . $row[17] . '" alt="">
                             </div>
-                        </div>
-                    </a>
-
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-3.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
+                            <div class="content">
+                                <h3>' . $row[1] . '</h3>
+                                <div class="price">$15.99 <span>$20.99</span></div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>';
+                    }
 
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-4.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-5.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </a>
-
+                    ?>
                 </div>
 
             </div>
@@ -507,90 +456,42 @@
 
                 <div class="swiper-wrapper">
 
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-6.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </a>
+                    <?php
 
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-7.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </a>
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                    INNER JOIN tbl_book_category as tb1
+                    ON
+                    tbl_book_detail.book_category_1 = tb1.b_id
+                    INNER JOIN tbl_book_category as tb2
+                    ON
+                    tbl_book_detail.book_category_2 = tb2.b_id
+                    INNER JOIN tbl_book_category as tb3
+                    ON
+                    tbl_book_detail.book_category_3 = tb3.b_id
+                    ');
+                    while ($row = mysqli_fetch_array($fetch_book)) {
+                        echo
+                        '<a href="#" class="swiper-slide box">
+                                    <div class="image">
+                                        <img src="../../dashboard/views/' . $row[17] . '" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <h3>' . $row[1] . '</h3>
+                                        <div class="price">$15.99 <span>$20.99</span></div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </a>';
+                    }
 
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-8.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </a>
+                    ?>
 
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-9.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </a>
 
-                    <a href="#" class="swiper-slide box">
-                        <div class="image">
-                            <img src="image/book-10.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>new arrivals</h3>
-                            <div class="price">$15.99 <span>$20.99</span></div>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </a>
 
                 </div>
 
