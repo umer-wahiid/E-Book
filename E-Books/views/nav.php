@@ -90,7 +90,7 @@
                             </div>
                             <div class="modal-body">
                                 <section class="featured" id="bestselling">
-                                    <h1 class="heading"><span>Most Selling</span> </h1>
+                                    <h1 class="heading"><span>' . $row[1] . '</span> </h1>
                                     <div class="swiper featured-slider">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide box">
@@ -341,11 +341,14 @@
 
     if (isset($_SESSION["userid"]) != null) {
         if (isset($_POST["post"])) {
-            $rate = $_POST["rate"];
-            $review = $_POST["description"];
+            $review_name = $_SESSION["name"];
+            $review_email = $_SESSION["email"];
+            $review_star = $_POST["rate"];
+            $review_description = $_POST["description"];
+            $review_image = $_SESSION["image"];
 
-            $review_q = mysqli_query($con, "INSERT INTO `tbl_user_reviews`(`review_stars`, `review_description`) 
-            VALUES ('$rate','$review')");
+            $review_q = mysqli_query($con, "INSERT INTO `tbl_user_reviews`(`review_name`,`review_email`,`review_stars`, `review_description`,`review_image`) 
+            VALUES ('$review_name','$review_email','$review_star','$review_description','$review_image')");
             if ($review_q > 0) {
                 echo '<h1>REVIEW SUCCESSFULL</h1>';
             } else {
