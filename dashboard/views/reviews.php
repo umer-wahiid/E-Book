@@ -37,13 +37,14 @@ require "../apis/connection.php";
                 <th>Name</th>
                 <th>Email</th>
                 <th>Stars</th>
-                <th>Reviews</th>
+                <th>Description</th>
+                <th>Image</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            $fetch_review = mysqli_query($con, "SELECT * from tbl_user_reviews");
+            $fetch_review = mysqli_query($con, "SELECT * FROM `tbl_user_reviews`");
             while ($review_row = mysqli_fetch_array($fetch_review)) {
                 echo '
                         <tr>
@@ -52,8 +53,9 @@ require "../apis/connection.php";
                             <td>' . $review_row[2] . '</td>
                             <td>' . $review_row[3] . '</td>
                             <td>' . $review_row[4] . '</td>
+                            <td>' . $review_row[5] . '</td>
                             <td>
-                                <a href="" class="btn btn-primary">Delete</a>
+                                <a href="" class="btn btn-primary">Push</a>
                             </td>
                         </tr>
                     ';
