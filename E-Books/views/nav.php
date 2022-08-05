@@ -2,41 +2,39 @@
 // session_start();
 // include('../apis/connection.php');
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
-    <link rel="stylesheet" href="css/swiper.css" />
-
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
+<link rel="stylesheet" href="css/swiper.css" />
 
 
 
-    <!-- bootstrap 5 css link -->
-    <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
-    <title>Document</title>
+<link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <style>
-        .modal-title {
-            text-transform: uppercase;
-            margin-left: 22px;
-        }
 
-        .heading span {
-            text-transform: uppercase;
-        }
-    </style>
+<title>Document</title>
+
+<style>
+    .modal-title {
+        text-transform: uppercase;
+        margin-left: 22px;
+    }
+
+    .heading span {
+        text-transform: uppercase;
+    }
+</style>
 </head>
 
 <body>
@@ -340,6 +338,18 @@
     <?php
 
     if (isset($_SESSION["userid"]) != null) {
+        if (isset($_POST["post"])) {
+            $rate = $_POST["rate"];
+            $review = $_POST["description"];
+
+            $review_q = mysqli_query($con, "INSERT INTO `tbl_user_reviews`(`review_stars`, `review_description`) 
+            VALUES ('$rate','$review')");
+            if ($review_q > 0) {
+                echo '<h1>REVIEW SUCCESSFULL</h1>';
+            } else {
+                echo '<h1>INVALID ERROR</h1>';
+            }
+        }
         echo '
     <div id="feedsticky" style="z-index: +3;border-radius: 10px;">
         <div class="FeedDiv">
@@ -353,20 +363,20 @@
                 <div class="edit">EDIT</div>
             </div>
             <div class="star-widget">
-                <input type="radio" name="rate" id="rate-5" value="5-Stars">
-                <label for="rate-5" class="fas fa-star"></label>
-                <input type="radio" name="rate" id="rate-4" value="4-Stars">
-                <label for="rate-4" class="fas fa-star"></label>
-                <input type="radio" name="rate" id="rate-3" value="3-Stars">
-                <label for="rate-3" class="fas fa-star"></label>
-                <input type="radio" name="rate" id="rate-2" value="2-Stars">
-                <label for="rate-2" class="fas fa-star"></label>
-                <input type="radio" name="rate" id="rate-1"  value="1-Star">
-                <label for="rate-1" class="fas fa-star"></label>
-                <form action="#">
+                <form action="#" method="POST">
+                    <input type="radio" name="rate" id="rate-5" value="5-Stars">
+                    <label for="rate-5" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-4" value="4-Stars">
+                    <label for="rate-4" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-3" value="3-Stars">
+                    <label for="rate-3" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-2" value="2-Stars">
+                    <label for="rate-2" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-1"  value="1-Star">
+                    <label for="rate-1" class="fas fa-star"></label>
                     <header></header>
                     <div class="textarea">
-                        <textarea cols="30" placeholder="Describe your experience.."></textarea>
+                        <textarea name="description" cols="30" placeholder="Describe your experience.."></textarea>
                     </div>
                     <div class="btn">
                         <button type="submit" name="post" class="btn-n">Post</button>

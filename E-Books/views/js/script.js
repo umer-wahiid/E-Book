@@ -81,7 +81,7 @@ var swiper = new Swiper(".books-slider", {
 
 var swiper = new Swiper(".featured-slider", {
   spaceBetween: 10,
-  loop:true,
+  // loop:true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,
@@ -142,7 +142,7 @@ $(document).ready(function(){
 var swiper = new Swiper(".reviews-slider", {
   spaceBetween: 10,
   grabCursor:true,
-  loop:true,
+  // loop:true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,
@@ -226,19 +226,19 @@ $(document).ready(function () {
       $("#feedsticky").fadeOut(500,);
   });
 });
-const btn = document.querySelector("button");
-const post = document.querySelector(".post");
-const widget = document.querySelector(".star-widget");
-const editBtn = document.querySelector(".edit");
-btn.onclick = ()=>{
-widget.style.display = "none";
-post.style.display = "block";
-editBtn.onclick = ()=>{
-widget.style.display = "block";
-post.style.display = "none";
-}
-return false;
-}
+// const btn = document.querySelector("button");
+// const post = document.querySelector(".post");
+// const widget = document.querySelector(".star-widget");
+// const editBtn = document.querySelector(".edit");
+// btn.onclick = ()=>{
+// widget.style.display = "none";
+// post.style.display = "block";
+// editBtn.onclick = ()=>{
+// widget.style.display = "block";
+// post.style.display = "none";
+// }
+// return false;
+// }
 
 var product_total_amt = document.getElementById('product_total_amt');
 var shipping_charge = document.getElementById('shipping_charge');

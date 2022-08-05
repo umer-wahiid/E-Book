@@ -412,7 +412,7 @@ section{
 .FeedContainer{
     padding: 10px;
     width: 370px; 
-    margin-top: 275px;
+    margin-top: 200px;
     background-color: white;
     display: none;
     position: absolute;
@@ -471,28 +471,28 @@ section{
     color: var(--dark-color);
     text-shadow: 0 0 20px var(--green);
   }
-  #rate-1:checked ~ form header:before{
+  #rate-1:checked ~  header:before{
     content: "I just hate it ";
   }
-  #rate-2:checked ~ form header:before{
+  #rate-2:checked ~  header:before{
     content: "I don't like it ";
   }
-  #rate-3:checked ~ form header:before{
+  #rate-3:checked ~  header:before{
     content: "It is awesome ";
   }
-  #rate-4:checked ~ form header:before{
+  #rate-4:checked ~  header:before{
     content: "I just like it ";
   }
-  #rate-5:checked ~ form header:before{
+  #rate-5:checked ~  header:before{
     content: "I just love it ";
   }
-.FeedContainer form{
+.FeedContainer {
     display: none;
   }
-  input:checked ~ form{
+  input:checked ~ {
     display: block;
   }
-  form header{
+   header{
     width: 100%;
     font-size: 25px;
     color: var(--green);
@@ -502,12 +502,12 @@ section{
     justify-content: center;
     transition: all 0.2s ease;
   }
-  form .textarea{
+   .textarea{
     height: 100px;
     width: 100%;
     overflow: hidden;
   }
-  form .textarea textarea{
+   .textarea textarea{
     height: 100%;
     width: 100%;
     outline: none;
