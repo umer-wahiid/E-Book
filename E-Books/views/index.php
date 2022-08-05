@@ -621,30 +621,31 @@
         <!-- deal section ends -->
 
         <!-- reviews section starts  -->
-
         <section class="reviews" id="reviews">
-
             <h1 class="heading"> <span>client's reviews</span> </h1>
-
             <div class="swiper reviews-slider">
-
                 <div class="swiper-wrapper">
 
-                    <div class="swiper-slide box">
-                        <img src="image/pic-1.png" alt="">
-                        <h3>john deo</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nihil ipsa placeat. Aperiam
-                            at sint, eos ex similique facere hic.</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
+                    <?php
 
+                    $fetch_review = mysqli_query($con, "SELECT * FROM `tbl_user_reviews`");
+                    while ($review_row = mysqli_fetch_array($fetch_review)) {
+                        echo '
                     <div class="swiper-slide box">
+                        <img src="image/' . $review_row[5] . '" alt="">
+                        <h3>' . $review_row[1] . '</h3>
+                        <p>' . $review_row[4] . '</p>
+                        <div class="stars">' . $review_row[3] . '</div>
+                    </div>
+                    ';
+                    }
+
+                    ?>
+                </div>
+            </div>
+        </section>
+
+        <!-- <div class="swiper-slide box">
                         <img src="image/pic-2.png" alt="">
                         <h3>john deo</h3>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nihil ipsa placeat. Aperiam
@@ -711,13 +712,9 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                    </div>
+                    </div> -->
 
-                </div>
 
-            </div>
-
-        </section>
 
         <!-- reviews section ends -->
 
