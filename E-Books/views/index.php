@@ -1,7 +1,7 @@
     <?php
 
+require '../apis/connection.php';
     session_start();
-    require '../apis/connection.php';
     // if(isset($_GET['alert'])){
     //     $alert = $_GET['alert'];
     //     echo '<div class="alert alert-success" role="alert">'.$alert.'</div>';
@@ -374,11 +374,13 @@
             <form action="../apis/user_apis/subscribe.php" method="POST">
 
                 <h3>subscribe for latest updates</h3>
-                <input type="email" name="" placeholder="enter your email" <?php
-                                                                            if (isset($_SESSION["userid"]) != null) {
-                                                                                echo  'value="' . $_SESSION["email"] . '" ';
-                                                                            }
-                                                                            ?> id="" class="box">
+                <input type="email" name="" placeholder="enter your email" 
+                <?php
+                    if (isset($_SESSION["userid"]) != null) {
+                        echo  'value="' . $_SESSION["email"] . '" ';
+                    }
+                ?> 
+                id="" class="box">
                 <input type="radio" name="sub" value="1 Year" style="margin-top: 30px;">
                 &nbsp;
                 <span class="radio">1 Year/Rs.2000</span>
@@ -437,11 +439,7 @@
                                 <h3>' . $row[1] . '</h3>
                                 <div class="price">$15.99 <span>$20.99</span></div>
                                 <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
+                                <h4 style="color:black;">Rating: <span style="font-size:12px;"> '.$row[8].' <i class="fas fa-star"></i></span></h4>
                                 </div>
                             </div>
                         </a>';
@@ -479,11 +477,7 @@
                                         <h3>' . $row[1] . '</h3>
                                         <div class="price">$15.99 <span>$20.99</span></div>
                                         <div class="stars">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
+                                        <h4 style="color:black;">Rating: <span style="font-size:12px;"> '.$row[8].' <i class="fas fa-star"></i></span></h4>
                                         </div>
                                     </div>
                                 </a>';
@@ -528,12 +522,11 @@
                 <div class="swiper-wrapper">
 
                     <?php
-
                     $fetch_review = mysqli_query($con, "SELECT * FROM `tbl_user_reviews`");
                     while ($review_row = mysqli_fetch_array($fetch_review)) {
                         echo '
                     <div class="swiper-slide box">
-                        <img src="image/' . $review_row[5] . '" alt="">
+                        <img src="'. $review_row[5] . '" alt="">
                         <h3>' . $review_row[1] . '</h3>
                         <p>' . $review_row[4] . '</p>
                         <div class="stars">' . $review_row[3] . '</div>

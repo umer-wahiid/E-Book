@@ -81,7 +81,7 @@ var swiper = new Swiper(".books-slider", {
 
 var swiper = new Swiper(".featured-slider", {
   spaceBetween: 10,
-  // loop:true,
+  loop:true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,
@@ -109,7 +109,7 @@ var swiper = new Swiper(".featured-slider", {
 
 var swiper = new Swiper(".arrivals-slider", {
   spaceBetween: 10,
-  // loop:true,
+  loop:true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,
@@ -142,7 +142,7 @@ $(document).ready(function(){
 var swiper = new Swiper(".reviews-slider", {
   spaceBetween: 10,
   grabCursor:true,
-  // loop:true,
+  loop:true,
   centeredSlides: true,
   autoplay: {
     delay: 9500,

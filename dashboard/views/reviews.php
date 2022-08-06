@@ -53,7 +53,7 @@ require "../apis/connection.php";
                             <td>' . $review_row[2] . '</td>
                             <td>' . $review_row[3] . '</td>
                             <td>' . $review_row[4] . '</td>
-                            <td>' . $review_row[5] . '</td>
+                            <td> <img src="../../E-Books/views/' . $review_row[5] . '"  height="50px"  width="50px"  alt="' . $review_row[5] . '"> </td>
                             <td>
                                 <a href="" class="btn btn-primary">Push</a>
                             </td>

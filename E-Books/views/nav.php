@@ -36,6 +36,7 @@
         .heading span {
             text-transform: uppercase;
         }
+        
     </style>
 </head>
 
@@ -100,7 +101,6 @@
                                                     <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[1] . '">
                                                         <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
                                                     </button>
-        
                                                 </div>
                                                 <div class="image">
                                                     <img src="../../dashboard/views/' . $row[17] . '" alt="">
@@ -154,7 +154,8 @@
                                 <a href="profile.php">See Your Profile</a>
                             </div>
                         </div>';
-                } else {
+                } 
+                else {
                     echo '
                         <div class="up">
                             <img src="image/Ammar.jpg" class="rounded-circle">
@@ -164,7 +165,6 @@
                             </div>
                         </div>';
                 }
-
                 ?>
                 <hr>
                 <div class="sl">
@@ -202,7 +202,7 @@
             <div class="list-group cat-d" style="display: none;" id="list">';
             $fetch_category = mysqli_query($con, "select * from tbl_book_category");
             while ($cat_row = mysqli_fetch_array($fetch_category)) {
-                echo '<a href="#" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
+                echo '<a href="#" style="text-align:left;" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
                     ';
             };
             echo '
@@ -349,11 +349,6 @@
 
             $review_q = mysqli_query($con, "INSERT INTO `tbl_user_reviews`(`review_name`,`review_email`,`review_stars`, `review_description`,`review_image`) 
             VALUES ('$review_name','$review_email','$review_star','$review_description','$review_image')");
-            if ($review_q > 0) {
-                echo '<h1>REVIEW SUCCESSFULL</h1>';
-            } else {
-                echo '<h1>INVALID ERROR</h1>';
-            }
         }
         echo '
     <div id="feedsticky" style="z-index: +3;border-radius: 10px;">
