@@ -1,6 +1,6 @@
     <?php
 
-require '../apis/connection.php';
+    require '../apis/connection.php';
     session_start();
     // if(isset($_GET['alert'])){
     //     $alert = $_GET['alert'];
@@ -46,8 +46,7 @@ require '../apis/connection.php';
 
                 <div class="content">
                     <h3>upto 75% off</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias
-                        sit necessitatibus, aliquid ex minima at!</p>
+                    <p>Get Upto 75% Off On All New Arrival Books On Black Friday. So what are you waiting for, Avail the offer ASAP !</p>
                     <a href="#" class="btn-n">shop now</a>
                 </div>
 
@@ -121,39 +120,68 @@ require '../apis/connection.php';
 
                     <?php
 
+
+                    $category = mysqli_query($con, "SELECT * FROM `tbl_book_category` WHERE `b_category`='Best Sellers'");
+                    $category_row = mysqli_fetch_array($category);
                     $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                    INNER JOIN tbl_book_category as tb1
-                    ON
-                    tbl_book_detail.book_category_1 = tb1.b_id
-                    INNER JOIN tbl_book_category as tb2
-                    ON
-                    tbl_book_detail.book_category_2 = tb2.b_id
-                    INNER JOIN tbl_book_category as tb3
-                    ON
-                    tbl_book_detail.book_category_3 = tb3.b_id
-                    ');
-                    while ($row = mysqli_fetch_array($fetch_book)) {
-                        echo '
-                    <div class="swiper-slide box">
-                        <div class="icons">
-                            <a href="#" class="fas fa-search"></a>
-                            <a href="#" class="fas fa-heart"></a>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style=" background-color: transparent;">
-                                <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
-                            </button>
+                                        WHERE book_category_1=' . $category_row[0]. ' OR book_category_2=' . $category_row[0]. ' OR book_category_3=' . $category_row[0]. '
+                                        ');
+                                        while ($row = mysqli_fetch_array($fetch_book)) {
+                                        echo '
+                                        <div class="swiper-slide box">
+                                            <div class="icons">
+                                                <a href="#" class="fas fa-search"></a>
+                                                <a href="#" class="fas fa-heart"></a>
+                                                <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '">
+                                                    <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
+                                                </button>
+                                            </div>
+                                            <div class="image">
+                                                <img src="../../dashboard/views/' . $row[17] . '" alt="">
+                                            </div>
+                                            <div class="content">
+                                                <h3>' . $row[1] . '</h3>
+                                                <div class="price">$20.99 <span>$20.99</span></div>
+                                                    <a href="#" class="btn-n">add to cart</a>
+                                                </div>
+                                            </div>
+                                            ';
+                                            };
+                                            echo '
+                                        </div>'
+                    // $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                    // INNER JOIN tbl_book_category as tb1
+                    // ON
+                    // tbl_book_detail.book_category_1 = tb1.b_id
+                    // INNER JOIN tbl_book_category as tb2
+                    // ON
+                    // tbl_book_detail.book_category_2 = tb2.b_id
+                    // INNER JOIN tbl_book_category as tb3
+                    // ON
+                    // tbl_book_detail.book_category_3 = tb3.b_id
+                    // ');
+                    // while ($row = mysqli_fetch_array($fetch_book)) {
+                    //     echo '
+                    // <div class="swiper-slide box">
+                    //     <div class="icons">
+                    //         <a href="#" class="fas fa-search"></a>
+                    //         <a href="#" class="fas fa-heart"></a>
+                    //         <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style=" background-color: transparent;">
+                    //             <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
+                    //         </button>
     
-                        </div>
-                        <div class="image">
-                            <img src="../../dashboard/views/' . $row[17] . '" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>' . $row[1] . '</h3>
-                            <div class="price">$20.99 <span>$20.99</span></div>
-                            <a href="#" class="btn-n">add to cart</a>
-                        </div>
-                    </div>
-                    ';
-                    }
+                    //     </div>
+                    //     <div class="image">
+                    //         <img src="../../dashboard/views/' . $row[17] . '" alt="">
+                    //     </div>
+                    //     <div class="content">
+                    //         <h3>' . $row[1] . '</h3>
+                    //         <div class="price">$20.99 <span>$20.99</span></div>
+                    //         <a href="#" class="btn-n">add to cart</a>
+                    //     </div>
+                    // </div>
+                    // ';
+                    // }
                     ?>
 
                 </div>
