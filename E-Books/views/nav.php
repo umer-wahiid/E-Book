@@ -49,8 +49,8 @@
             <!-- id="search-box" -->
             <form class="search-form" method="POST">
                 <input type="search" id="ser" name="search" placeholder="search book here...">
-                <button name="search_btn" style=" background-color: transparent;">
-                    <label for="search-box" class="fas fa-search"></label>
+                <button name="search_btn" style=" background-color: transparent;width:45px;">
+                    <i class="fas fa-search"></i>
                 </button>
             </form>
 
@@ -80,7 +80,6 @@
             $fetch_book = mysqli_query($con, "SELECT * FROM tbl_book_detail WHERE book_title LIKE '%{$search}%'");
             if (mysqli_num_rows($fetch_book) > 0) {
                 while ($row = mysqli_fetch_array($fetch_book)) {
-                    // print_r($row);
                     echo '
                 <div class="modal" id="serModal" role="dialog" style="left: 5px;right:5px;">
                     <div class="modal-dialog" style="max-width:3000px;">
