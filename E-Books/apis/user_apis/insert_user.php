@@ -1,8 +1,8 @@
-<?php
+    <?php
 
     require "../connection.php";
 
-    if(isset($_POST['submit']) && isset($_POST['uname'])){
+    if (isset($_POST['submit']) && isset($_POST['uname'])) {
 
         $name = mysqli_real_escape_string($con, $_POST['uname']);
         $email = mysqli_real_escape_string($con, $_POST['uemail']);
@@ -14,12 +14,10 @@
 
         $insert_e = mysqli_query($con, $insert_q);
 
-        if($insert_e){
+        if ($insert_e) {
             header("location:../../views/index.php?alert=Welcome");
-        }
-        else{
+        } else {
             header("location:../../views/index.php?alert=Something went wrong");
         };
     }
-
-?>
+    ?>
