@@ -149,39 +149,6 @@
                                             };
                                             echo '
                                         </div>'
-                    // $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                    // INNER JOIN tbl_book_category as tb1
-                    // ON
-                    // tbl_book_detail.book_category_1 = tb1.b_id
-                    // INNER JOIN tbl_book_category as tb2
-                    // ON
-                    // tbl_book_detail.book_category_2 = tb2.b_id
-                    // INNER JOIN tbl_book_category as tb3
-                    // ON
-                    // tbl_book_detail.book_category_3 = tb3.b_id
-                    // ');
-                    // while ($row = mysqli_fetch_array($fetch_book)) {
-                    //     echo '
-                    // <div class="swiper-slide box">
-                    //     <div class="icons">
-                    //         <a href="#" class="fas fa-search"></a>
-                    //         <a href="#" class="fas fa-heart"></a>
-                    //         <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style=" background-color: transparent;">
-                    //             <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
-                    //         </button>
-    
-                    //     </div>
-                    //     <div class="image">
-                    //         <img src="../../dashboard/views/' . $row[17] . '" alt="">
-                    //     </div>
-                    //     <div class="content">
-                    //         <h3>' . $row[1] . '</h3>
-                    //         <div class="price">$20.99 <span>$20.99</span></div>
-                    //         <a href="#" class="btn-n">add to cart</a>
-                    //     </div>
-                    // </div>
-                    // ';
-                    // }
                     ?>
 
                 </div>
@@ -292,97 +259,7 @@
         }
 
         ?>
-        <!-- <div class="modal fade" id="theBookThief" role="dialog">
-            <div class="modal-dialog" style="max-width:3000px;width:630px;">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title" style="color:green;">The Book Thief</h2>
-                        <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body" style="padding:1.5rem;">
-                        <div class="row">
-                            <div class="col-lg-3" width="max-content">
-                                <img class="img-fluid" style="border-radius: 10px;" src="image/The Book Thief.jpg" alt="">
-                            </div>
-                            <div class="col-lg-8 mt-3" style="margin-left:20px;">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h4><b>Author</b></h4>
-                                        <h5>Markus Zusak</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4><b>Publisher</b></h4>
-                                        <h5>Windmill Books</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h4><b>Categories</b></h4>
-                                        <h5>Historical Fiction</h5>
-                                        <h5>Young Adults</h5>
-                                        <h5>Summer Reading Recommendations</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4><b>Publication Date</b></h4>
-                                        <h5>08/09/2016</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h4><b>Book Weight</b></h4>
-                                        <h5>100 gm</h5>
-                                    </div>
-                                    <div class="col-5">
-                                        <h4><b>Number of Pages</b></h4>
-                                        <h5>624 pages</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h4><b>Availability</b></h4>
-                                        <h5>PDF/CD/BOOK</h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <h4><b>Rating</b></h4>
-                                        <h5>4.8</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-12">
-                                <h3><b>About Book</b></h3>
-                                <h5>It is 1939. In Nazi Germany, the country is holding its breath. Death has never been busier - and will become busier still.
-                                    <br>
-                                    By her brother's graveside, Liesel's life is changed forever when she picks up a single object,
-                                    abandoned in the snow. It is The Gravedigger's Handbook, and this is her first act of book thievery.
-                                    So begins Liesel's love affair with books and words, and soon she is stealing from Nazi book-burnings,
-                                    the mayor's wife's library . . . wherever there are books to be found.
-                                </h5>
-                                <br>
-                                <h3><b>About Author</b></h3>
-                                <h5>Markus Zusak was born in 1975 in Sydney, Australia, the youngest of four children of immigrant
-                                    German and Austrian parents. Neither parent could read or write English when they first arrived
-                                    in Australia.
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-6">
-                                <h3><b>Price</b></h3>
-                                <h4>Rs. 1,095.00</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn-n" style="margin-top:0px;margin-right:309px;" data-bs-dismiss="modal">Add To Cart</button>
-                        <button type="button" style="width:100px;height:35px;font-size:15px;" class="btn" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
+  
 
         <!-- featured section ends -->
 
@@ -446,16 +323,16 @@
 
                     <?php
 
-                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                    INNER JOIN tbl_book_category as tb1
-                    ON
-                    tbl_book_detail.book_category_1 = tb1.b_id
-                    INNER JOIN tbl_book_category as tb2
-                    ON
-                    tbl_book_detail.book_category_2 = tb2.b_id
-                    INNER JOIN tbl_book_category as tb3
-                    ON
-                    tbl_book_detail.book_category_3 = tb3.b_id
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id DESC LIMIT 5
+                    -- INNER JOIN tbl_book_category as tb1
+                    -- ON
+                    -- tbl_book_detail.book_category_1 = tb1.b_id
+                    -- INNER JOIN tbl_book_category as tb2
+                    -- ON
+                    -- tbl_book_detail.book_category_2 = tb2.b_id
+                    -- INNER JOIN tbl_book_category as tb3
+                    -- ON
+                    -- tbl_book_detail.book_category_3 = tb3.b_id
                     ');
                     while ($row = mysqli_fetch_array($fetch_book)) {
                         echo
@@ -484,16 +361,16 @@
 
                     <?php
 
-                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                    INNER JOIN tbl_book_category as tb1
-                    ON
-                    tbl_book_detail.book_category_1 = tb1.b_id
-                    INNER JOIN tbl_book_category as tb2
-                    ON
-                    tbl_book_detail.book_category_2 = tb2.b_id
-                    INNER JOIN tbl_book_category as tb3
-                    ON
-                    tbl_book_detail.book_category_3 = tb3.b_id
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id ASC LIMIT 5
+                    -- INNER JOIN tbl_book_category as tb1
+                    -- ON
+                    -- tbl_book_detail.book_category_1 = tb1.b_id
+                    -- INNER JOIN tbl_book_category as tb2
+                    -- ON
+                    -- tbl_book_detail.book_category_2 = tb2.b_id
+                    -- INNER JOIN tbl_book_category as tb3
+                    -- ON
+                    -- tbl_book_detail.book_category_3 = tb3.b_id
                     ');
                     while ($row = mysqli_fetch_array($fetch_book)) {
                         echo
@@ -570,80 +447,8 @@
 
 
 
-        <!-- reviews section ends -->
 
-        <!-- blogs section starts  -->
 
-        <!-- <section class="blogs" id="blogs">
-
-        <h1 class="heading"> <span>our blogs</span> </h1>
-
-        <div class="swiper blogs-slider">
-
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide box">
-                    <div class="image">
-                        <img src="image/blog-1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>blog title goes here</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn-n">read more</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide box">
-                    <div class="image">
-                        <img src="image/blog-2.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>blog title goes here</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn-n">read more</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide box">
-                    <div class="image">
-                        <img src="image/blog-3.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>blog title goes here</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn-n">read more</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide box">
-                    <div class="image">
-                        <img src="image/blog-4.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>blog title goes here</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn-n">read more</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide box">
-                    <div class="image">
-                        <img src="image/blog-5.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>blog title goes here</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                        <a href="#" class="btn-n">read more</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section> -->
-
-        <!-- blogs section ends -->
 
 
         <!-- footer section starts  -->
