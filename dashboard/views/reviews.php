@@ -38,6 +38,7 @@ require "../apis/connection.php";
                 <th>Email</th>
                 <th>Stars</th>
                 <th>Description</th>
+                <th>Approvel</th>
                 <th>Image</th>
                 <th>Action</th>
             </tr>
@@ -53,10 +54,13 @@ require "../apis/connection.php";
                             <td>' . $review_row[2] . '</td>
                             <td>' . $review_row[3] . '</td>
                             <td>' . $review_row[4] . '</td>
-                            <td> <img src="../../E-Books/views/' . $review_row[5] . '"  height="50px"  width="50px"  alt="' . $review_row[5] . '"> </td>
+                            <td>' . $review_row[5] . '</td>
+                            <td> <img src="../../E-Books/views/' . $review_row[6] . '"  height="50px"  width="50px"  alt="' . $review_row[5] . '"> </td>
+                            <form method="POST">
                             <td>
-                                <a href="" class="btn btn-primary">Push</a>
+                                <a href="../apis/book_apis/review_approvel.php?id=' . $review_row[0] . '" class="btn btn-primary">Push</a>
                             </td>
+                            </form>
                         </tr>
                     ';
             }
