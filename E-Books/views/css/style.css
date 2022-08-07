@@ -306,7 +306,7 @@ section{
     margin-right: 10px;
 }
 .up p{
-    margin-bottom: 2px;
+    margin-bottom: -13px;
     font-weight: 500;
     font-size: 15px;
     color: #626262;
@@ -364,6 +364,7 @@ section{
     justify-content: space-between;
     text-decoration: none;
     color: #626262;
+    font-size: 12px;
 }
 #drk-bnt{
     position: absolute;
@@ -660,6 +661,7 @@ section{
     background: url(../image/banner-bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
+    margin-top: -20px;
 }
 
 .home .row{
