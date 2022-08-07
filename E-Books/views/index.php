@@ -53,11 +53,12 @@
                 <div class="swiper books-slider">
                     <div class="swiper-wrapper">
                         <?php
-                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id DESC LIMIT 5 ');
-                    while ($row = mysqli_fetch_array($fetch_book)) {
-                        echo'
+                        $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id DESC LIMIT 5 ');
+                        while ($row = mysqli_fetch_array($fetch_book)) {
+                            echo '
                         <a href="#" class="swiper-slide"><img src="../../dashboard/views/' . $row[17] . '" alt=""></a>
-                        ';}
+                        ';
+                        }
                         ?>
                     </div>
                     <img src="image/stand.png" class="stand" alt="">
@@ -125,10 +126,10 @@
                     $category = mysqli_query($con, "SELECT * FROM `tbl_book_category` WHERE `b_category`='Best Sellers'");
                     $category_row = mysqli_fetch_array($category);
                     $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                                        WHERE book_category_1=' . $category_row[0]. ' OR book_category_2=' . $category_row[0]. ' OR book_category_3=' . $category_row[0]. '
+                                        WHERE book_category_1=' . $category_row[0] . ' OR book_category_2=' . $category_row[0] . ' OR book_category_3=' . $category_row[0] . '
                                         ');
-                                        while ($row = mysqli_fetch_array($fetch_book)) {
-                                        echo '
+                    while ($row = mysqli_fetch_array($fetch_book)) {
+                        echo '
                                         <div class="swiper-slide box">
                                             <div class="icons">
                                                 <a href="#" class="fas fa-search"></a>
@@ -147,8 +148,8 @@
                                                 </div>
                                             </div>
                                             ';
-                                            };
-                                            echo '
+                    };
+                    echo '
                                         </div>'
                     ?>
 
@@ -260,7 +261,7 @@
         }
 
         ?>
-  
+
 
         <!-- featured section ends -->
 
@@ -269,43 +270,41 @@
         <section class="home newsletter">
             <div class="row">
 
-                <div class="col-9 content">    
+                <div class="col-9 content">
                     <h3 style="color:#27ae60;text-shadow: 1px 2px 3px white;"><b> Free PDF BOOKS!</b></h3>
                     <p style="font-size: 31px;color:white;line-height:30px;" style="color:white;"><b>Subscribe Now And Avail Amazing Discounts on the Go!</b></p>
                     <h1>SUBSCRIBE NOW --></h1>
                     <!-- <a href="#" class="btn-n">Subscribe !</a> -->
                 </div>
 
-            <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
+                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
 
-                <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
-                <input type="email" readonly name="" placeholder="enter your email" 
-                <?php
+                    <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
+                    <input type="email" readonly name="" placeholder="enter your email" <?php
+                                                                                        if (isset($_SESSION["userid"]) != null) {
+                                                                                            echo  'value="' . $_SESSION["email"] . '" ';
+                                                                                        }
+                                                                                        ?> id="" class="box">
+                    <input type="radio" name="sub" value="1 Year" style="margin-top: 30px;" required>
+                    &nbsp;
+                    <span class="radio">1 Year/Rs.2000</span>
+                    <br>
+                    <input type="radio" name="sub" value="2 Year">
+                    &nbsp;
+                    <span class="radio">2 Year/Rs.2600</span>
+                    <br>
+                    <input type="radio" name="sub" value="3 Year" style="margin-bottom: 30px;">
+                    &nbsp;
+                    <span class="radio">3 Year/Rs.3200</span>
+                    <br>
+                    <?php
                     if (isset($_SESSION["userid"]) != null) {
-                        echo  'value="' . $_SESSION["email"] . '" ';
+                        echo '<input type="submit" name="subscribe" value="subscribe" class="btn-n">';
+                    } else {
+                        echo '<input type="submit" id="login-btn" href="#" value="subscribe" class="btn-n">';
                     }
-                ?> 
-                id="" class="box">
-                <input type="radio" name="sub" value="1 Year" style="margin-top: 30px;">
-                &nbsp;
-                <span class="radio">1 Year/Rs.2000</span>
-                <br>
-                <input type="radio" name="sub" value="2 Year">
-                &nbsp;
-                <span class="radio">2 Year/Rs.2600</span>
-                <br>
-                <input type="radio" name="sub" value="3 Year" style="margin-bottom: 30px;">
-                &nbsp;
-                <span class="radio">3 Year/Rs.3200</span>
-                <br>
-                <?php
-                if (isset($_SESSION["userid"]) != null) {
-                    echo '<input type="submit" name="subscribe" value="subscribe" class="btn-n">';
-                } else {
-                    echo '<input type="submit" id="login-btn" href="#" value="subscribe" class="btn-n">';
-                }
-                ?>
-            </form>
+                    ?>
+                </form>
             </div>
         </section>
 
@@ -334,7 +333,7 @@
                                 <h3>' . $row[1] . '</h3>
                                 <div class="price">$15.99 <span>$20.99</span></div>
                                 <div class="stars">
-                                <h4 style="color:black;">Rating: <span style="font-size:12px;"> '.$row[8].' <i class="fas fa-star"></i></span></h4>
+                                <h4 style="color:black;">Rating: <span style="font-size:12px;"> ' . $row[8] . ' <i class="fas fa-star"></i></span></h4>
                                 </div>
                             </div>
                         </a>';
@@ -372,7 +371,7 @@
                                         <h3>' . $row[1] . '</h3>
                                         <div class="price">$15.99 <span>$20.99</span></div>
                                         <div class="stars">
-                                        <h4 style="color:black;">Rating: <span style="font-size:12px;"> '.$row[8].' <i class="fas fa-star"></i></span></h4>
+                                        <h4 style="color:black;">Rating: <span style="font-size:12px;"> ' . $row[8] . ' <i class="fas fa-star"></i></span></h4>
                                         </div>
                                     </div>
                                 </a>';
@@ -421,7 +420,7 @@
                     while ($review_row = mysqli_fetch_array($fetch_review)) {
                         echo '
                     <div class="swiper-slide box">
-                        <img src="'. $review_row[6] . '" alt="">
+                        <img src="' . $review_row[6] . '" alt="">
                         <h3>' . $review_row[1] . '</h3>
                         <p>' . $review_row[4] . '</p>
                         <div class="stars">' . $review_row[3] . '</div>
