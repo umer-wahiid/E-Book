@@ -417,11 +417,11 @@
                 <div class="swiper-wrapper">
 
                     <?php
-                    $fetch_review = mysqli_query($con, "SELECT * FROM `tbl_user_reviews`");
+                    $fetch_review = mysqli_query($con, "SELECT * FROM `tbl_user_reviews` WHERE `review_approvel`='yes'");
                     while ($review_row = mysqli_fetch_array($fetch_review)) {
                         echo '
                     <div class="swiper-slide box">
-                        <img src="'. $review_row[5] . '" alt="">
+                        <img src="'. $review_row[6] . '" alt="">
                         <h3>' . $review_row[1] . '</h3>
                         <p>' . $review_row[4] . '</p>
                         <div class="stars">' . $review_row[3] . '</div>
