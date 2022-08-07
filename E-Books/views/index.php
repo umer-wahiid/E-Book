@@ -154,8 +154,8 @@
 
                 </div>
 
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next" style="top:155%;right:4%;"></div>
+                <div class="swiper-button-prev" style="top:155%;left:4%;"></div>
 
             </div>
 
