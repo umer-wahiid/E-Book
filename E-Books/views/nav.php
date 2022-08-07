@@ -36,7 +36,6 @@
         .heading span {
             text-transform: uppercase;
         }
-        
     </style>
 </head>
 
@@ -72,20 +71,20 @@
 
         </div>
         <?php
-       
+
         if (isset($_GET["search_btn"])) {
             $search = $_GET["search"];
             $fetch_book = mysqli_query($con, "SELECT * FROM tbl_book_detail WHERE book_title LIKE '%{$search}%'");
             // if (mysqli_num_rows($fetch_book) > 0) {
-                echo'<div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
-                while ($pro_row = mysqli_fetch_array($fetch_book)){
-                    echo '
+            echo '<div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
+            while ($pro_row = mysqli_fetch_array($fetch_book)) {
+                echo '
 
                     <a href="#" style="text-align:left;" class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $pro_row[1] . '</a>
 
                 ';
-                }
-                echo '</div>';
+            }
+            echo '</div>';
             // }
         }
 
@@ -98,7 +97,7 @@
         // };
         // echo '
         // </div>'
-        
+
         ?>
 
 
@@ -122,8 +121,7 @@
                                 <a href="profile.php">See Your Profile</a>
                             </div>
                         </div>';
-                } 
-                else {
+                } else {
                     echo '
                         <div class="up">
                             <img src="image/Ammar.jpg" class="rounded-circle">
@@ -194,11 +192,11 @@
                                 <h1 class="heading"><span>' . $cat_row[1] . '</span> </h1>
                                 <div class="swiper featured-slider">
                                     <div class="swiper-wrapper">';
-                                        $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
                                         WHERE book_category_1=' . $cat_row[0] . ' OR book_category_2=' . $cat_row[0] . ' OR book_category_3=' . $cat_row[0] . '
                                         ');
-                                        while ($row = mysqli_fetch_array($fetch_book)) {
-                                        echo '
+                while ($row = mysqli_fetch_array($fetch_book)) {
+                    echo '
                                         <div class="swiper-slide box">
                                             <div class="icons">
                                                 <a href="#" class="fas fa-search"></a>
@@ -217,8 +215,8 @@
                                                 </div>
                                             </div>
                                             ';
-                                            };
-                                            echo '
+                };
+                echo '
                                         </div>
                                     </div>
                                 </div>
@@ -315,8 +313,8 @@
             $review_description = $_POST["description"];
             $review_image = $_SESSION["image"];
 
-            $review_q = mysqli_query($con, "INSERT INTO `tbl_user_reviews`(`review_name`,`review_email`,`review_stars`, `review_description`,`review_image`) 
-            VALUES ('$review_name','$review_email','$review_star','$review_description','$review_image')");
+            $review_q = mysqli_query($con, "INSERT INTO `tbl_user_reviews`(`review_name`,`review_email`,`review_stars`, `review_description`,`review_approvel`,`review_image`) 
+            VALUES ('$review_name','$review_email','$review_star','$review_description','No','$review_image')");
         }
         echo '
     <div id="feedsticky" style="z-index: +3;border-radius: 10px;">
