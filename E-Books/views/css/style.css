@@ -736,9 +736,8 @@ section{
 
 /* dropdown */
 .cat-d{
-    width: 165px;
     position:absolute;
-    margin-left:437px;
+    margin-left:423px;
 }
 .cat-i{
     line-height: 30px;

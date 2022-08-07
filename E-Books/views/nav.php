@@ -47,9 +47,9 @@
 
             <a href="index.php" class="logo"> <i class="fas fa-book"></i> e-books </a>
             <!-- id="search-box" -->
-            <form class="search-form" method="POST">
-                <input type="search" id="ser" name="search" placeholder="search book here...">
-                <button name="search_btn" style=" background-color: transparent;width:45px;">
+            <form class="search-form" method="GET">
+                <input method="GET" type="search" id="ser" name="search" placeholder="search book here...">
+                <button name="search_btn" id="ser" style=" background-color: transparent;width:45px;">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
@@ -71,65 +71,34 @@
             </div>
 
         </div>
-        <button type="button" data-bs-toggle="modal" data-bs-target="#serModal" style="display:none;">Trigger</button>
         <?php
-        // echo '
-        // <div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
-        if (isset($_POST["search_btn"])) {
-            $search = $_POST["search"];
+       
+        if (isset($_GET["search_btn"])) {
+            $search = $_GET["search"];
             $fetch_book = mysqli_query($con, "SELECT * FROM tbl_book_detail WHERE book_title LIKE '%{$search}%'");
-            if (mysqli_num_rows($fetch_book) > 0) {
-                while ($row = mysqli_fetch_array($fetch_book)) {
+            // if (mysqli_num_rows($fetch_book) > 0) {
+                echo'<div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
+                while ($pro_row = mysqli_fetch_array($fetch_book)){
                     echo '
-                <div class="modal" id="serModal" role="dialog" style="left: 5px;right:5px;">
-                    <div class="modal-dialog" style="max-width:3000px;">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2 class="modal-title" style="color:green;">' . $row[1] . '</h2>
-                                <button type="button" class="btn-close" style="margin-right:8px;" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <section class="featured" id="bestselling" style="padding-bottom:0px;padding-top:28px;">
-                                    <h1 class="heading"><span>' . $row[1] . '</span> </h1>
-                                    <div class="swiper featured-slider">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide box">
-                                                <div class="icons">
-                                                    <a href="#" class="fas fa-search"></a>
-                                                    <a href="#" class="fas fa-heart"></a>
-                                                    <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[1] . '">
-                                                        <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
-                                                    </button>
-                                                </div>
-                                                <div class="image">
-                                                    <img src="../../dashboard/views/' . $row[17] . '" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h3>' . $row[1] . '</h3>
-                                                    <div class="price">$20.99 <span>$20.99</span></div>
-                                                    <a href="#" class="btn-n">add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>';
+
+                    <a href="#" style="text-align:left;" class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $pro_row[1] . '</a>
+
+                ';
                 }
-            } else {
-                echo "<p>Try Different Keywords</p>";
-            }
+                echo '</div>';
+            // }
         }
 
 
-        // $fetch_category = mysqli_query($con, "select * from tbl_book_detail");
+        // echo '
+        // <div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
+        // $fetch_category = mysqli_query($con, "SELECT * from tbl_book_detail WHERE book_title LIKE '%{$search}%'");
         // while ($cat_row = mysqli_fetch_array($fetch_category)) {
-        //     echo '<a href="#" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $cat_row[1] . '</a>';
+        //     echo '<a href="#"  class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $cat_row[1] . '</a>';
         // };
         // echo '
-        //             </div>'
+        // </div>'
+        
         ?>
 
 
@@ -201,7 +170,7 @@
             <div class="list-group cat-d" style="display: none;" id="list">';
             $fetch_category = mysqli_query($con, "select * from tbl_book_category");
             while ($cat_row = mysqli_fetch_array($fetch_category)) {
-                echo '<a href="#" style="text-align:left;" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
+                echo '<a href="#" style="text-align:left;width:200px;" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
                     ';
             };
             echo '
@@ -225,11 +194,11 @@
                                 <h1 class="heading"><span>' . $cat_row[1] . '</span> </h1>
                                 <div class="swiper featured-slider">
                                     <div class="swiper-wrapper">';
-                $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                                    WHERE book_category_1=' . $cat_row[0] . ' OR book_category_2=' . $cat_row[0] . ' OR book_category_3=' . $cat_row[0] . '
-                                    ');
-                while ($row = mysqli_fetch_array($fetch_book)) {
-                    echo '
+                                        $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                                        WHERE book_category_1=' . $cat_row[0] . ' OR book_category_2=' . $cat_row[0] . ' OR book_category_3=' . $cat_row[0] . '
+                                        ');
+                                        while ($row = mysqli_fetch_array($fetch_book)) {
+                                        echo '
                                         <div class="swiper-slide box">
                                             <div class="icons">
                                                 <a href="#" class="fas fa-search"></a>
@@ -247,9 +216,9 @@
                                                     <a href="#" class="btn-n">add to cart</a>
                                                 </div>
                                             </div>
-                                    ';
-                };
-                echo '
+                                            ';
+                                            };
+                                            echo '
                                         </div>
                                     </div>
                                 </div>
