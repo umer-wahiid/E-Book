@@ -266,21 +266,20 @@
 
         <!-- newsletter section starts -->
 
-        <section class="newsletter">
-
+        <section class="home newsletter">
             <div class="row">
-                <div class="content">
-                    <h3>upto 75% off</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias
-                        sit necessitatibus, aliquid ex minima at!</p>
-                    <a href="#" class="btn-n">shop now</a>
+
+                <div class="col-9 content">    
+                    <h3 style="color:#27ae60;text-shadow: 1px 2px 3px white;"><b> Free PDF BOOKS!</b></h3>
+                    <p style="font-size: 31px;color:white;line-height:30px;" style="color:white;"><b>Subscribe Now And Avail Amazing Discounts on the Go!</b></p>
+                    <h1>SUBSCRIBE NOW --></h1>
+                    <!-- <a href="#" class="btn-n">Subscribe !</a> -->
                 </div>
-            </div>
 
-            <form action="../apis/user_apis/subscribe.php" method="POST">
+            <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
 
-                <h3>subscribe for latest updates</h3>
-                <input type="email" name="" placeholder="enter your email" 
+                <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
+                <input type="email" readonly name="" placeholder="enter your email" 
                 <?php
                     if (isset($_SESSION["userid"]) != null) {
                         echo  'value="' . $_SESSION["email"] . '" ';
@@ -303,11 +302,11 @@
                 if (isset($_SESSION["userid"]) != null) {
                     echo '<input type="submit" name="subscribe" value="subscribe" class="btn-n">';
                 } else {
-                    echo '<input type="submit" href="#" value="subscribe" class="btn-n">';
+                    echo '<input type="submit" id="login-btn" href="#" value="subscribe" class="btn-n">';
                 }
                 ?>
             </form>
-
+            </div>
         </section>
 
         <!-- newsletter section ends -->
