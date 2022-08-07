@@ -52,12 +52,13 @@
 
                 <div class="swiper books-slider">
                     <div class="swiper-wrapper">
-                        <a href="#" class="swiper-slide"><img src="image/book-2.png" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="image/book-2.png" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="image/book-2.png" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="image/book-4.png" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="image/book-5.png" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="image/book-6.png" alt=""></a>
+                        <?php
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id DESC LIMIT 5 ');
+                    while ($row = mysqli_fetch_array($fetch_book)) {
+                        echo'
+                        <a href="#" class="swiper-slide"><img src="../../dashboard/views/' . $row[17] . '" alt=""></a>
+                        ';}
+                        ?>
                     </div>
                     <img src="image/stand.png" class="stand" alt="">
                 </div>
@@ -323,17 +324,7 @@
 
                     <?php
 
-                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id DESC LIMIT 5
-                    -- INNER JOIN tbl_book_category as tb1
-                    -- ON
-                    -- tbl_book_detail.book_category_1 = tb1.b_id
-                    -- INNER JOIN tbl_book_category as tb2
-                    -- ON
-                    -- tbl_book_detail.book_category_2 = tb2.b_id
-                    -- INNER JOIN tbl_book_category as tb3
-                    -- ON
-                    -- tbl_book_detail.book_category_3 = tb3.b_id
-                    ');
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id DESC LIMIT 5 ');
                     while ($row = mysqli_fetch_array($fetch_book)) {
                         echo
                         '<a href="#" class="swiper-slide box">
