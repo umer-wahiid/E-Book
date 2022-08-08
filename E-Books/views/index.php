@@ -144,15 +144,15 @@
                             <h3>' . $row[1] . '</h3>
                             <div class="price">$20.99 <span>$20.99</span></div>
                                 <a href="#" class="btn-n">add to cart</a>
-                            </div>
-                        </div>
-                ';
-                };
-                echo '
-                    </div>'
-                ?>
+                                </div>
+                                </div>
+                                ';
+                            };
+                            echo '
+                            </div>'
+                            ?>
+                            <!-- <a href="../apis/cart_apis/add_cart.php?id=' . $row[0] . '" class="btn-n">add to cart</a> -->
 
-                <!-- <a href="../apis/cart_apis/add_cart.php?id=' . $row[0] . '" class="btn-n">add to cart</a> -->
 
                 </div>
 
