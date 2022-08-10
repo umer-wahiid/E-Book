@@ -58,7 +58,8 @@ require "../apis/connection.php";
                             <td> <img src="../../E-Books/views/' . $review_row[6] . '"  height="50px"  width="50px"  alt="' . $review_row[5] . '"> </td>
                             <form method="POST">
                             <td>
-                                <a href="../apis/book_apis/review_approvel.php?id=' . $review_row[0] . '" class="btn btn-primary">Push</a>
+                                <a href="../apis/book_apis/review_approvel.php?id=' . $review_row[0] . '" class="btn btn-success">Push</a>
+                                <a href="../apis/book_apis/review_delete.php?id=' . $review_row[0] . '" class="btn btn-primary">Delete</a>
                             </td>
                             </form>
                         </tr>

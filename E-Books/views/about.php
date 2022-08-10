@@ -1,12 +1,13 @@
 <?php
 
-    include "../apis/connection.php";
-    session_start();
+include "../apis/connection.php";
+session_start();
 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,13 +16,14 @@
 
     <title>About</title>
 </head>
+
 <body>
     <!-- header section starts  -->
 
     <?php
-    
-        include 'nav.php';
-    
+
+    include 'nav.php';
+
     ?>
 
     <!-- about section starts -->
@@ -31,14 +33,19 @@
         <div class="inner-container">
             <h1>About</h1>
             <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum,
-                eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi
-                neque voluptates sit deleniti autem error eos totam nisi neque.
+                Welcome to E-Book, your number one source for all reading material at one place. Our day and night research, and work hard,
+                we can provide you the very best knowledge in the shape of E-Book.
+                Our dedicate team has work hard and developed online E-Book store, you will inspire its aesthetic look and enjoy user friendly
+                interface.
+                We are dealing in selling of books in various classifications of Fiction, Non-Fiction, History, Religions, Self-Help.
+                We hope you enjoy our books as much as we enjoy offering them to you. If you have any questions or comments, please don’t
+                hesitate to
+                write to us, we will be glade to answer your queries.
             </p>
             <div class="skills">
-                <span>Web Design</span>
-                <span>Photoshop & Illustrator</span>
-                <span>Coding</span>
+                <span>PDFS</span>
+                <span>Hard Copys</span>
+                <span>CDS</span>
             </div>
         </div>
     </div>
@@ -47,15 +54,15 @@
     <!-- footer section starts  -->
 
     <?php
-    
-        include 'footer.php';
-    
+
+    include 'footer.php';
+
     ?>
 
     <!-- footer section ends -->
 
-<!-- loader  -->
-<!--
+    <!-- loader  -->
+    <!--
 <div class="loader-container">
 <img src="image/loader-img.gif" alt="">
 </div> -->
@@ -64,4 +71,5 @@
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
 </body>
+
 </html>

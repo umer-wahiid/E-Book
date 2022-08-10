@@ -116,24 +116,24 @@
 
             <h1 class="heading"><span>Most Selling</span></h1>
 
+            <!-- <form action="" method="POST"> -->
             <div class="swiper featured-slider">
 
                 <div class="swiper-wrapper">
 
-
-                <?php
-                $category = mysqli_query($con, "SELECT * FROM `tbl_book_category` WHERE `b_category`='Best Sellers'");
-                $category_row = mysqli_fetch_array($category);
-                $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                WHERE book_category_1=' . $category_row[0] . ' OR book_category_2=' . $category_row[0] . ' OR book_category_3=' . $category_row[0] . '
-                ');
-                while ($row = mysqli_fetch_array($fetch_book)) {
-                echo '
+                    <?php
+                    $category = mysqli_query($con, "SELECT * FROM `tbl_book_category` WHERE `b_category`='Best Sellers'");
+                    $category_row = mysqli_fetch_array($category);
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                        WHERE book_category_1=' . $category_row[0] . ' OR book_category_2=' . $category_row[0] . ' OR book_category_3=' . $category_row[0] . '
+                        ');
+                    while ($row = mysqli_fetch_array($fetch_book)) {
+                        echo '
                     <div class="swiper-slide box">
                         <div class="icons">
                             <a href="#" class="fas fa-search"></a>
                             <a href="#" class="fas fa-heart"></a>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '">
+                            <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
                                 <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
                             </button>
                         </div>
@@ -143,23 +143,23 @@
                         <div class="content">
                             <h3>' . $row[1] . '</h3>
                             <div class="price">$20.99 <span>$20.99</span></div>
-                                <a href="#" class="btn-n">add to cart</a>
+                                <button class="btn-n" name="add_to_cart">Add To Cart</button>
                                 </div>
                                 </div>
                                 ';
-                            };
-                            echo '
+                    };
+                    echo '
                             </div>'
-                            ?>
-                            <!-- <a href="../apis/cart_apis/add_cart.php?id=' . $row[0] . '" class="btn-n">add to cart</a> -->
+                    ?>
+                    <!-- <a href="../apis/cart_apis/add_cart.php?id=' . $row[0] . '" class="btn-n">add to cart</a> -->
 
 
                 </div>
 
-                <div class="swiper-button-next" style="top:155%;right:4%;"></div>
-                <div class="swiper-button-prev" style="top:155%;left:4%;"></div>
-
+                <!-- <div class="swiper-button-next" style="top:155%;right:4%;"></div>
+                <div class="swiper-button-prev" style="top:155%;left:4%;"></div> -->
             </div>
+            <!-- </form> -->
 
         </section>
 
@@ -282,10 +282,10 @@
 
                     <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
                     <input type="email" readonly name="" placeholder="enter your email" <?php
-                    if (isset($_SESSION["userid"]) != null) {
-                        echo  'value="' . $_SESSION["email"] . '" ';
-                    }
-                    ?> id="" class="box">
+                                                                                        if (isset($_SESSION["userid"]) != null) {
+                                                                                            echo  'value="' . $_SESSION["email"] . '" ';
+                                                                                        }
+                                                                                        ?> id="" class="box">
                     <input type="radio" name="sub" value="1 Year" style="margin-top: 30px;" required>
                     &nbsp;
                     <span class="radio">1 Year/Rs.2000</span>
@@ -326,7 +326,9 @@
                     $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id DESC LIMIT 5 ');
                     while ($row = mysqli_fetch_array($fetch_book)) {
                         echo
-                        '<a href="#" class="swiper-slide box">
+                        '
+                        <button class="swiper-slide box" data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
+                        <a href="#" >
                             <div class="image">
                                 <img src="../../dashboard/views/' . $row[17] . '" alt="">
                             </div>
@@ -337,7 +339,8 @@
                                 <h4 style="color:black;">Rating: <span style="font-size:12px;"> ' . $row[8] . ' <i class="fas fa-star"></i></span></h4>
                                 </div>
                             </div>
-                        </a>';
+                        </a>
+                        </button>';
                     }
 
                     ?>
