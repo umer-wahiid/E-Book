@@ -262,7 +262,7 @@ if (isset($_GET['delete_all'])) {
                                 <hr />
                                 <div class="total-amt d-flex justify-content-between font-weight-bold">
                                     <p>The total amount of (including VAT)</p>
-                                    <p>PKR/<span id="total_cart_amt">0.00</span></p>
+                                    <p>PKR/<span id="total_cart_amt"><?php echo $sub_total = ($fetch_cart['cart_price']); ?></span></p>
                                 </div>
                                 <button class="btn-n text-uppercase">Checkout</button>
                             </div>
