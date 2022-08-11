@@ -120,50 +120,51 @@
 
             <h1 class="heading"><span>Most Selling</span></h1>
 
-            <!-- <form action="" method="POST"> -->
-            <div class="swiper featured-slider">
+            <form action="../apis/cart_apis/add_to_cart.php" method="POST">
+                <div class="swiper featured-slider">
 
-                <div class="swiper-wrapper">
+                    <div class="swiper-wrapper">
 
-                    <?php
-                    $category = mysqli_query($con, "SELECT * FROM `tbl_book_category` WHERE `b_category`='Best Sellers'");
-                    $category_row = mysqli_fetch_array($category);
-                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                        <?php
+                        $category = mysqli_query($con, "SELECT * FROM `tbl_book_category` WHERE `b_category`='Best Sellers'");
+                        $category_row = mysqli_fetch_array($category);
+                        $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
                         WHERE book_category_1=' . $category_row[0] . ' OR book_category_2=' . $category_row[0] . ' OR book_category_3=' . $category_row[0] . '
                         ');
-                    while ($row = mysqli_fetch_array($fetch_book)) {
-                        echo '
-                    <div class="swiper-slide box">
-                        <div class="icons">
-                            <a href="#" class="fas fa-search"></a>
-                            <a href="#" class="fas fa-heart"></a>
-                            <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
-                                <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
-                            </button>
+                        while ($row = mysqli_fetch_array($fetch_book)) {
+                            echo '
+                        <div class="swiper-slide box">
+                            <div class="icons">
+                                <a href="#" class="fas fa-search"></a>
+                                <a href="#" class="fas fa-heart"></a>
+                                <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
+                                    <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
+                                </button>
+                            </div>
+                            <div class="image">
+                                <img src="../../dashboard/views/' . $row[17] . '" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>' . $row[1] . '</h3>
+                                <div class="price">Rs.' . $row[14] . ' <span>$20.99</span></div>
+                                <input type="hidden" name="book_name" value="' . $row[1] . '">
+                                <input type="hidden" name="book_price" value="' . $row[14] . '">
+                                <input type="hidden" name="book_image" value="' . $row[17] . '">
+                                <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">
+                            </div>
                         </div>
-                        <div class="image">
-                            <img src="../../dashboard/views/' . $row[17] . '" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>' . $row[1] . '</h3>
-                            <div class="price">$20.99 <span>$20.99</span></div>
-                                <button class="btn-n" name="add_to_cart">Add To Cart</button>
-                                </div>
-                                </div>
                                 ';
-                    };
-                    echo '
-                            </div>'
-                    ?>
-                    <!-- <a href="../apis/cart_apis/add_cart.php?id=' . $row[0] . '" class="btn-n">add to cart</a> -->
+                        };
+                        // echo '
+                        //     </div>'
+                        ?>
+                        <!-- <a href="../apis/cart_apis/add_cart.php?id=' . $row[0] . '" class="btn-n">add to cart</a> -->
+                        <!-- </div> -->
 
-
-                </div>
-
-                <!-- <div class="swiper-button-next" style="top:155%;right:4%;"></div>
-                <div class="swiper-button-prev" style="top:155%;left:4%;"></div> -->
-            </div>
-            <!-- </form> -->
+                        <!-- <div class="swiper-button-next" style="top:155%;right:4%;"></div>
+                        <div class="swiper-button-prev" style="top:155%;left:4%;"></div> -->
+                    </div>
+            </form>
 
         </section>
 

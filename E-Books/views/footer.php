@@ -14,12 +14,12 @@
 
         <div class="box">
             <h3>quick links</h3>
-            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> arrivals </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> about </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+            <a href="index.php#home"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="index.php#bestselling"> <i class="fas fa-arrow-right"></i> best selling </a>
+            <a href="index.php#arrivals"> <i class="fas fa-arrow-right"></i> arrivals </a>
+            <a href="index.php#reviews"> <i class="fas fa-arrow-right"></i> reviews </a>
+            <a href="about.php"> <i class="fas fa-arrow-right"></i> about </a>
+            <a href="contact.php"> <i class="fas fa-arrow-right"></i> contact </a>
         </div>
 
         <div class="box">
