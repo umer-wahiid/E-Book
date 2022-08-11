@@ -190,7 +190,7 @@ if (isset($_GET['delete_all'])) {
                                         <div class="row">
                                             <!-- cart images div -->
                                             <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                                                <img src="image/<?php echo $fetch_cart['image']; ?>" alt="cart img">
+                                                <img src="image/<?php echo $fetch_cart['cart_image']; ?>" alt="cart img">
                                             </div>
 
 
@@ -201,7 +201,7 @@ if (isset($_GET['delete_all'])) {
                                                 <div class="row">
                                                     <!-- product name  -->
                                                     <div class="col-6 card-title">
-                                                        <h1 class="mb-4 product_name"><?php echo $fetch_cart['name']; ?></h1>
+                                                        <h1 class="mb-4 product_name"><?php echo $fetch_cart['cart_name']; ?></h1>
                                                         <input type="radio" name="" value="PDFS">
                                                         &nbsp;
                                                         <label style="font-size: 16px;" for="">PDFS</label>
@@ -233,13 +233,13 @@ if (isset($_GET['delete_all'])) {
                                                 <div class="row">
                                                     <div class="col-8 d-flex justify-content-between remove_wish">
                                                         <p style="cursor: pointer;font-size:12px;color:var(--green);"><i class="fas fa-trash-alt"></i>
-                                                            <a style="color:var(--green)" href="cart.php?delete=<?php echo $fetch_cart['id']; ?>" onclick="return confirm('delete this from cart?');">
+                                                            <a style="color:var(--green)" href="cart.php?delete=<?php echo $fetch_cart['cart_id']; ?>" onclick="return confirm('delete this from cart?');">
                                                                 REMOVE ITEM
                                                             </a>
                                                         </p>
                                                     </div>
                                                     <div class="col-4 d-flex justify-content-end price_money">
-                                                        <h3>Rs.<span id="itemval"><?php echo $fetch_cart['price']; ?></span></h3>
+                                                        <h3>Rs.<span id="itemval"><?php echo $fetch_cart['cart_price']; ?></span></h3>
                                                     </div>
                                                 </div>
                                             </div>

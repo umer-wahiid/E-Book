@@ -6,7 +6,7 @@
     $user_id = $_SESSION['userid'];
 
     if (isset($_POST["add_to_cart"])) {
-        $book_name = $_POST['product_name'];
+        $book_name = $_POST['book_name'];
         $book_price = $_POST['book_price'];
         $book_image = $_POST['book_image'];
         // $book_quantitiy = $_POST['book_quantitiy'];
