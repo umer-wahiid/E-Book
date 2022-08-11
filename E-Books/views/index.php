@@ -56,7 +56,11 @@
                         $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id DESC LIMIT 5 ');
                         while ($row = mysqli_fetch_array($fetch_book)) {
                             echo '
-                        <a href="#" class="swiper-slide"><img src="../../dashboard/views/' . $row[17] . '" alt=""></a>
+                            <button class="swiper-slide" data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
+                                <a href="#" >
+                                    <img src="../../dashboard/views/' . $row[17] . '" alt="">
+                                </a>
+                            </button>
                         ';
                         }
                         ?>
@@ -328,7 +332,6 @@
                         echo
                         '
                         <button class="swiper-slide box" data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
-                        <a href="#" >
                             <div class="image">
                                 <img src="../../dashboard/views/' . $row[17] . '" alt="">
                             </div>
@@ -339,7 +342,6 @@
                                 <h4 style="color:black;">Rating: <span style="font-size:12px;"> ' . $row[8] . ' <i class="fas fa-star"></i></span></h4>
                                 </div>
                             </div>
-                        </a>
                         </button>';
                     }
 
@@ -367,18 +369,18 @@
                     ');
                     while ($row = mysqli_fetch_array($fetch_book)) {
                         echo
-                        '<a href="#" class="swiper-slide box">
-                                    <div class="image">
-                                        <img src="../../dashboard/views/' . $row[17] . '" alt="">
-                                    </div>
-                                    <div class="content">
-                                        <h3>' . $row[1] . '</h3>
-                                        <div class="price">$15.99 <span>$20.99</span></div>
-                                        <div class="stars">
-                                        <h4 style="color:black;">Rating: <span style="font-size:12px;"> ' . $row[8] . ' <i class="fas fa-star"></i></span></h4>
-                                        </div>
-                                    </div>
-                                </a>';
+                        '<button class="swiper-slide box" data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
+                            <div class="image">
+                                <img src="../../dashboard/views/' . $row[17] . '" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>' . $row[1] . '</h3>
+                                <div class="price">$15.99 <span>$20.99</span></div>
+                                <div class="stars">
+                                <h4 style="color:black;">Rating: <span style="font-size:12px;"> ' . $row[8] . ' <i class="fas fa-star"></i></span></h4>
+                                </div>
+                            </div>
+                        </button>';
                     }
 
                     ?>
