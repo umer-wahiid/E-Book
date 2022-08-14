@@ -10,38 +10,38 @@ include("../apis/connection.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .input {
-            border: 1px solid #27ae60;
-        }
+    .input {
+        border: 1px solid #27ae60;
+    }
 
-        textarea {
-            resize: none;
-        }
+    textarea {
+        resize: none;
+    }
 
-        .td .form-control {
-            font-weight: bolder;
-            color: #27ae60;
-            border: 1px solid #27ae60;
-        }
+    .td .form-control {
+        font-weight: bolder;
+        color: #27ae60;
+        border: 1px solid #27ae60;
+    }
 
-        .td .form-control:hover {
-            background-color: #27ae60;
-            font-weight: bolder;
-            color: white;
-        }
+    .td .form-control:hover {
+        background-color: #27ae60;
+        font-weight: bolder;
+        color: white;
+    }
 
-        .navbar .navbar-nav .nav-link.dash,
-        .cat {
-            color: var(--light);
-            background: none;
-            border-color: transparent;
-        }
+    .navbar .navbar-nav .nav-link.dash,
+    .cat {
+        color: var(--light);
+        background: none;
+        border-color: transparent;
+    }
 
-        .navbar .navbar-nav .nav-link.pro {
-            color: var(--primary);
-            background: var(--dark);
-            border-color: var(--primary);
-        }
+    .navbar .navbar-nav .nav-link.pro {
+        color: var(--primary);
+        background: var(--dark);
+        border-color: var(--primary);
+    }
     </style>
 </head>
 
@@ -54,11 +54,13 @@ include("../apis/connection.php");
             <table class="table">
                 <tr>
                     <td><b>Book Title</b></td>
-                    <td><input type="text" required name="btitle" placeholder="Book Title" class="form-control input"></td>
+                    <td><input type="text" required name="btitle" placeholder="Book Title" class="form-control input">
+                    </td>
                 </tr>
                 <tr>
                     <td><b>Book Publisher</b></td>
-                    <td><input type="text" required name="bpublisher" placeholder="Book Publisher" class="form-control input"></td>
+                    <td><input type="text" required name="bpublisher" placeholder="Book Publisher"
+                            class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Publication Date</b></td>
@@ -66,19 +68,23 @@ include("../apis/connection.php");
                 </tr>
                 <tr>
                     <td><b>Book Weight</b></td>
-                    <td><input type="number" required name="bweight" placeholder="Book Weight" class="form-control input"></td>
+                    <td><input type="number" required name="bweight" placeholder="Book Weight"
+                            class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Pages</b></td>
-                    <td><input type="number" required name="bpages" placeholder="Book Pages" class="form-control input"></td>
+                    <td><input type="number" required name="bpages" placeholder="Book Pages" class="form-control input">
+                    </td>
                 </tr>
                 <tr>
                     <td><b>Book Rating</b></td>
-                    <td><input type="text" required name="brating" placeholder="Book Rating" class="form-control input"></td>
+                    <td><input type="text" required name="brating" placeholder="Book Rating" class="form-control input">
+                    </td>
                 </tr>
                 <tr>
                     <td><b>Book Availability</b></td>
-                    <td><input type="text" required name="bavailaibility" placeholder="Book Availaibility" class="form-control input"></td>
+                    <td><input type="text" required name="bavailaibility" placeholder="Book Availaibility"
+                            class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book About</b></td>
@@ -86,15 +92,18 @@ include("../apis/connection.php");
                 </tr>
                 <tr>
                     <td><b>Book Price HardCopy</b></td>
-                    <td><input type="number" required name="bhardcopy" placeholder="Book Price HardCopy" class="form-control input"></td>
+                    <td><input type="number" required name="bhardcopy" placeholder="Book Price HardCopy"
+                            class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Price PDFS</b></td>
-                    <td><input type="number" required name="bpdf" placeholder="Book Price PDFS" class="form-control input"></td>
+                    <td><input type="number" required name="bpdf" placeholder="Book Price PDFS"
+                            class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b>Book Price CD</b></td>
-                    <td><input type="number" required name="bcd" placeholder="Book Price CD" class="form-control input"></td>
+                    <td><input type="number" required name="bcd" placeholder="Book Price CD" class="form-control input">
+                    </td>
                 </tr>
                 <tr>
                     <td><b>Book Category_1</b></td>
@@ -137,11 +146,13 @@ include("../apis/connection.php");
                 </tr>
                 <tr>
                     <td><b>Author</b></td>
-                    <td><input type="text" required name="bauthor" placeholder="Book Author" class="form-control input"></td>
+                    <td><input type="text" required name="bauthor" placeholder="Book Author" class="form-control input">
+                    </td>
                 </tr>
                 <tr>
                     <td><b>Author_About</b></td>
-                    <td><textarea name="bauthor_about" placeholder="Book Author About" class="form-control input"></textarea></td>
+                    <td><textarea name="bauthor_about" placeholder="Book Author About"
+                            class="form-control input"></textarea></td>
                 </tr>
                 <tr>
                     <td><b>Image</b></td>
@@ -149,7 +160,8 @@ include("../apis/connection.php");
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="td"><input type="submit" value="Add Book" name="adsproduct" class="form-control submit btn btn-outline-secondary"></td>
+                    <td class="td"><input type="submit" value="Add Book" name="adsproduct"
+                            class="form-control submit btn btn-outline-secondary"></td>
                 </tr>
             </table>
         </form>

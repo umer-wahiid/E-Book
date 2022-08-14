@@ -10,40 +10,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .input {
-            border: 1px solid #27ae60;
-        }
+    .input {
+        border: 1px solid #27ae60;
+    }
 
-        textarea {
-            resize: none;
-        }
+    textarea {
+        resize: none;
+    }
 
-        .td .form-control {
-            background-color: white;
-            font-weight: bolder;
-            color: #27ae60;
-            border: 1px solid #27ae60;
-        }
+    .td .form-control {
+        background-color: white;
+        font-weight: bolder;
+        color: #27ae60;
+        border: 1px solid #27ae60;
+    }
 
-        .td .form-control:hover {
-            background-color: #27ae60;
-            font-weight: bolder;
-            color: white;
-        }
+    .td .form-control:hover {
+        background-color: #27ae60;
+        font-weight: bolder;
+        color: white;
+    }
 
-        .navbar .navbar-nav .nav-link.dash,
-        .cat,
-        .pro {
-            color: var(--light);
-            background: none;
-            border-color: transparent;
-        }
+    .navbar .navbar-nav .nav-link.dash,
+    .cat,
+    .pro {
+        color: var(--light);
+        background: none;
+        border-color: transparent;
+    }
 
-        .navbar .navbar-nav .nav-link.bra {
-            color: var(--primary);
-            background: var(--dark);
-            border-color: var(--primary);
-        }
+    .navbar .navbar-nav .nav-link.bra {
+        color: var(--primary);
+        background: var(--dark);
+        border-color: var(--primary);
+    }
     </style>
 </head>
 
@@ -56,15 +56,18 @@
             <table class="table">
                 <tr>
                     <td><b> Author Name</b></td>
-                    <td><input type="text" required name="authorname" placeholder="Author Name" class="form-control input"></td>
+                    <td><input type="text" required name="authorname" placeholder="Author Name"
+                            class="form-control input"></td>
                 </tr>
                 <tr>
                     <td><b> Author About</b></td>
-                    <td><textarea name="authorabout" placeholder="Author About" class="form-control input"></textarea></td>
+                    <td><textarea name="authorabout" placeholder="Author About" class="form-control input"></textarea>
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="td"><input type="submit" value="Add Author" name="btn" class="form-control submit btn btn-outline-secondary"></td>
+                    <td class="td"><input type="submit" value="Add Author" name="btn"
+                            class="form-control submit btn btn-outline-secondary"></td>
                 </tr>
             </table>
         </form>

@@ -137,9 +137,9 @@
                             <div class="icons">
                                 <a href="#" class="fas fa-search"></a>
                                 <a href="#" class="fas fa-heart"></a>
-                                <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
-                                    <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
-                                </button>
+                                <a data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
+                                    <p class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></p>
+                                </a>
                             </div>
                             <div class="image">
                                 <img src="../../dashboard/views/' . $row[17] . '" alt="">

@@ -159,9 +159,7 @@ if (isset($_GET['delete_all'])) {
         }
     </style>
     <?php
-
     include "nav.php";
-
     ?>
 
     <!-- cart section starts -->
