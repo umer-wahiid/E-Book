@@ -262,7 +262,7 @@ if (isset($_GET['delete_all'])) {
                                     <p>The total amount of (including VAT)</p>
                                     <p>PKR/<span id="total_cart_amt"><?php echo $sub_total = ($fetch_cart['cart_price']); ?></span></p>
                                 </div>
-                                <button class="btn-n text-uppercase">Checkout</button>
+                                <a class="btn-n text-uppercase" href="checkout.php">Check Out</a>
                             </div>
 
                             <div class="mt-3 shadow p-3 bg-white">
