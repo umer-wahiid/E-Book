@@ -46,7 +46,8 @@
 
                 <div class="content">
                     <h3>upto 75% off</h3>
-                    <p>Get Upto 75% Off On All New Arrival Books On Black Friday. So what are you waiting for, Avail the offer ASAP !</p>
+                    <p>Get Upto 75% Off On All New Arrival Books On Black Friday. So what are you waiting for, Avail the
+                        offer ASAP !</p>
                     <a href="#" class="btn-n">shop now</a>
                 </div>
 
@@ -150,6 +151,7 @@
                                 <input type="hidden" name="book_name" value="' . $row[1] . '">
                                 <input type="hidden" name="book_price" value="' . $row[14] . '">
                                 <input type="hidden" name="book_image" value="' . $row[17] . '">
+                                <input type="hidden" value="'.$row[0].'" name="book_id" />
                                 <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">
                             </div>
                         </div>
@@ -164,6 +166,7 @@
                         <!-- <div class="swiper-button-next" style="top:155%;right:4%;"></div>
                         <div class="swiper-button-prev" style="top:155%;left:4%;"></div> -->
                     </div>
+                </div>
             </form>
 
         </section>
@@ -257,8 +260,14 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn-n" style="margin-top:0px;margin-right:309px;" data-bs-dismiss="modal">Add To Cart</button>
+                        <form action="../apis/cart_apis/add_to_cart.php" method="POST" enctype="multipart/form-data"></form>
+                            <input type="hidden" name="book_name" value="' . $row[1] . '">
+                            <input type="hidden" name="book_price" value="' . $row[14] . '">
+                            <input type="hidden" name="book_image" value="' . $row[17] . '">
+                            <input type="hidden" value="'.$row[0].'" name="book_id" />
+                            <button type="submit" name="add_to_cart" class="btn-n" style="margin-top:0px;margin-right:309px;">Add To Cart</button>
                             <button type="button" style="width:100px;height:35px;font-size:15px;" class="btn" data-bs-dismiss="modal">Close</button>
+                        </form>    
                         </div>
                     </div>
                 </div>
@@ -278,12 +287,14 @@
 
                 <div class="col-9 content">
                     <h3 style="color:#27ae60;text-shadow: 1px 2px 3px white;"><b> Free PDF BOOKS!</b></h3>
-                    <p style="font-size: 31px;color:white;line-height:30px;" style="color:white;"><b>Subscribe Now And Avail Amazing Discounts on the Go!</b></p>
+                    <p style="font-size: 31px;color:white;line-height:30px;" style="color:white;"><b>Subscribe Now And
+                            Avail Amazing Discounts on the Go!</b></p>
                     <h1>SUBSCRIBE NOW --></h1>
                     <!-- <a href="#" class="btn-n">Subscribe !</a> -->
                 </div>
 
-                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
+                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php"
+                    method="POST">
 
                     <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
                     <input type="email" readonly name="" placeholder="enter your email" <?php
