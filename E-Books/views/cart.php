@@ -12,17 +12,17 @@ if (!isset($user_id)) {
 if (isset($_POST['update_cart'])) {
     $cart_id = $_POST['cart_id'];
     $cart_quantity = $_POST['cart_quantity'];
-    mysqli_query($con, "UPDATE `tbl_book_cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
+    mysqli_query($con, "UPDATE `tbl_cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
     $message[] = 'cart quantity updated!';
 }
 
 if (isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
-    mysqli_query($con, "DELETE FROM `tbl_book_cart` WHERE id = '$delete_id'") or die('query failed');
+    mysqli_query($con, "DELETE FROM `tbl_cart` WHERE id = '$delete_id'") or die('query failed');
     header('location:cart.php');
 }
 if (isset($_GET['delete_all'])) {
-    mysqli_query($con, "DELETE FROM `tbl_book_cart` WHERE user_id = '$user_id'") or die('query failed');
+    mysqli_query($con, "DELETE FROM `tbl_cart` WHERE cart_user_id = '$user_id'") or die('query failed');
     header('location:cart.php');
 }
 
@@ -42,121 +42,121 @@ if (isset($_GET['delete_all'])) {
 
 
     <style>
-        /* cart */
+    /* cart */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Mulish', sans-serif;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Mulish', sans-serif;
+    }
 
-        :root {
-            --text-clr: #4f4f4f;
-        }
+    :root {
+        --text-clr: #4f4f4f;
+    }
 
-        p {
-            color: #6c757d;
-        }
+    p {
+        color: #6c757d;
+    }
 
-        a {
-            text-decoration: none;
-            color: var(--text-clr);
-        }
+    a {
+        text-decoration: none;
+        color: var(--text-clr);
+    }
 
-        a:hover {
-            text-decoration: none;
-            color: var(--text-clr);
-        }
+    a:hover {
+        text-decoration: none;
+        color: var(--text-clr);
+    }
 
-        h2 {
-            color: var(--text-clr);
-            font-size: 1.5rem;
-        }
+    h2 {
+        color: var(--text-clr);
+        font-size: 1.5rem;
+    }
 
-        .main_cart {
-            background: #fff;
-        }
+    .main_cart {
+        background: #fff;
+    }
 
-        .card {
-            border: none;
-        }
+    .card {
+        border: none;
+    }
 
-        .product_img img {
-            min-width: 200px;
-            max-height: 200px;
-        }
+    .product_img img {
+        min-width: 200px;
+        max-height: 200px;
+    }
 
-        .product_name {
-            color: black;
-            font-size: 1.4rem;
-            text-transform: capitalize;
-            font-weight: 500;
-        }
+    .product_name {
+        color: black;
+        font-size: 1.4rem;
+        text-transform: capitalize;
+        font-weight: 500;
+    }
 
-        .card-title p {
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+    .card-title p {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
 
-        .remove-and-wish p {
-            font-size: 0.8rem;
-            margin-bottom: 0;
-        }
+    .remove-and-wish p {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
 
-        .price-money h3 {
-            font-size: 1rem;
-            font-weight: 600;
-        }
+    .price-money h3 {
+        font-size: 1rem;
+        font-weight: 600;
+    }
 
-        .set_quantity {
-            position: relative;
-        }
+    .set_quantity {
+        position: relative;
+    }
 
-        .set_quantity::after {
-            content: "(Note, 1 piece)";
-            width: auto;
-            height: auto;
-            text-align: center;
-            position: absolute;
-            bottom: -20px;
-            right: 1.5rem;
-            font-size: 0.8rem;
-        }
+    .set_quantity::after {
+        content: "(Note, 1 piece)";
+        width: auto;
+        height: auto;
+        text-align: center;
+        position: absolute;
+        bottom: -20px;
+        right: 1.5rem;
+        font-size: 0.8rem;
+    }
 
-        .page-link {
-            line-height: 16px;
-            width: 45px;
-            font-size: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-clr);
-        }
+    .page-link {
+        line-height: 16px;
+        width: 45px;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-clr);
+    }
 
-        .page-item input {
-            line-height: 19px;
-            padding: 2px;
-            font-size: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+    .page-item input {
+        line-height: 19px;
+        padding: 2px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 
-        .page-link:hover {
-            text-decoration: none;
-            color: #495057;
-            outline: none !important;
-        }
+    .page-link:hover {
+        text-decoration: none;
+        color: #495057;
+        outline: none !important;
+    }
 
-        .page-link:focus {
-            box-shadow: none;
-        }
+    .page-link:focus {
+        box-shadow: none;
+    }
 
-        .price_indiv p {
-            font-size: 1.1rem;
-        }
+    .price_indiv p {
+        font-size: 1.1rem;
+    }
     </style>
     <?php
     include "nav.php";
@@ -174,76 +174,92 @@ if (isset($_GET['delete_all'])) {
                         <!-- left side div -->
                         <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
                             <div class="card p-4">
+                                <h3 style="cursor: pointer;margin-bottom:12px;"><i class="fas fa-trash-alt"></i>
+                                    <a style="color:black;" href="cart.php?delete_all"
+                                        onclick="return confirm('delete all from cart?');">
+                                        REMOVE ALL ITEMS
+                                    </a>
+                                </h3>
                                 <?php
                                 $grand_total = 0;
-                                $select_cart = mysqli_query($con, "SELECT * FROM `tbl_book_cart` WHERE user_id = '$user_id'") or die('query failed');
+                                $select_cart = mysqli_query($con, "SELECT * FROM `tbl_cart` WHERE cart_user_id = '$user_id'") or die('query failed');
                                 if (mysqli_num_rows($select_cart) > 0) {
                                     while ($fetch_cart = mysqli_fetch_assoc($select_cart)) {
                                 ?>
-                                        <h3 style="cursor: pointer;margin-bottom:12px;"><i class="fas fa-trash-alt"></i>
-                                            <a style="color:black;" href="cart.php?delete_all" onclick="return confirm('delete all from cart?');">
-                                                REMOVE ALL ITEMS
-                                            </a>
-                                        </h3>
+                                <div class="row">
+                                    <!-- cart images div -->
+                                    <div
+                                        class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                                        <img src="../../dashboard/views/<?php echo $fetch_cart['cart_book_image']; ?>"
+                                            alt="cart img">
+                                    </div><!-- cart product details -->
+                                    <div class="col-md-7 col-11 mx-auto px-4 mt-2">
                                         <div class="row">
-                                            <!-- cart images div -->
-                                            <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                                                <img src="image/<?php echo $fetch_cart['cart_image']; ?>" alt="cart img">
+                                            <!-- product name  -->
+                                            <div class="col-6 card-title">
+                                                <h1 class="mb-4 product_name">
+                                                    <?php echo $fetch_cart['cart_book_name']; ?>
+                                                </h1>
+                                                <input type="radio" name="abc" value="PDFS">
+                                                &nbsp;
+                                                <label style="font-size: 16px;" for="">PDFS</label>
+                                                <br>
+                                                <input type="radio" name="abc" value="CD">
+                                                &nbsp;
+                                                <label style="font-size: 16px;" for="">CD</label>
+                                                <br>
+                                                <input type="radio" name="abc" value="Hard Copy">
+                                                &nbsp;
+                                                <label style="font-size: 16px;" for="">Hard Copy</label>
                                             </div>
-
-
-
-
-                                            <!-- cart product details -->
-                                            <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                                                <div class="row">
-                                                    <!-- product name  -->
-                                                    <div class="col-6 card-title">
-                                                        <h1 class="mb-4 product_name"><?php echo $fetch_cart['cart_name']; ?></h1>
-                                                        <input type="radio" name="" value="PDFS">
-                                                        &nbsp;
-                                                        <label style="font-size: 16px;" for="">PDFS</label>
-                                                        <br>
-                                                        <input type="radio" name="" value="CD">
-                                                        &nbsp;
-                                                        <label style="font-size: 16px;" for="">CD</label>
-                                                        <br>
-                                                        <input type="radio" name="" value="Hard Copy">
-                                                        &nbsp;
-                                                        <label style="font-size: 16px;" for="">Hard Copy</label>
-                                                    </div>
-                                                    <!-- quantity inc dec -->
-                                                    <div class="col-6">
-                                                        <ul class="pagination justify-content-end set_quantity">
-                                                            <li class="page-item">
-                                                                <button class="page-link " onclick="decreaseNumber('textbox','itemval')">
-                                                                    <i class="fas fa-minus"></i> </button>
-                                                            </li>
-                                                            <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox">
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <button class="page-link" onclick="increaseNumber('textbox','itemval')"> <i class="fas fa-plus"></i></button>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <!-- //remover move and price -->
-                                                <div class="row">
-                                                    <div class="col-8 d-flex justify-content-between remove_wish">
-                                                        <p style="cursor: pointer;font-size:12px;color:var(--green);"><i class="fas fa-trash-alt"></i>
-                                                            <a style="color:var(--green)" href="cart.php?delete=<?php echo $fetch_cart['cart_id']; ?>" onclick="return confirm('delete this from cart?');">
-                                                                REMOVE ITEM
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-4 d-flex justify-content-end price_money">
-                                                        <h3>Rs.<span id="itemval"><?php echo $fetch_cart['cart_price']; ?></span></h3>
-                                                    </div>
-                                                </div>
+                                            <!-- quantity inc dec -->
+                                            <div class="col-6">
+                                                <ul class="pagination justify-content-end set_quantity">
+                                                    <li class="page-item">
+                                                        <button class="page-link "
+                                                            onclick="decreaseNumber('textbox','itemval')">
+                                                            <i class="fas fa-minus"></i> </button>
+                                                    </li>
+                                                    <li class="page-item"><input type="text" name="quantity" class="page-link"
+                                                            value="1" id="textbox">
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <button class="page-link"
+                                                            onclick="increaseNumber('textbox','itemval')"> <i
+                                                                class="fas fa-plus"></i></button>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
+                                        <!-- //remover move and price -->
+                                        <div class="row">
+                                            <div class="col-8 d-flex justify-content-between remove_wish">
+                                                <p style="cursor: pointer;font-size:12px;color:var(--green);"><i
+                                                        class="fas fa-trash-alt"></i>
+                                                    <a style="color:var(--green)"
+                                                        href="cart.php?delete=<?php echo $fetch_cart['cart_id']; ?>"
+                                                        onclick="return confirm('delete this from cart?');">
+                                                        REMOVE ITEM
+                                                    </a>
+                                                </p>
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-end price_money">
+                                                <h3>Rs.<span
+                                                        id="itemval" value="<?php echo $fetch_cart['cart_book_price']; ?>"><?php echo $fetch_cart['cart_book_price']; ?></span>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <?php
+                                // $grand_total += $sub_total;
+                            }
+                        } else {
+                            echo '<center><p style="font-size:30px;">your cart is empty</p></center>';
+                        }
+                ?>
                             </div>
-                            <hr>
                         </div>
                         <!-- right side div -->
                         <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
@@ -260,7 +276,8 @@ if (isset($_GET['delete_all'])) {
                                 <hr />
                                 <div class="total-amt d-flex justify-content-between font-weight-bold">
                                     <p>The total amount of (including VAT)</p>
-                                    <p>PKR/<span id="total_cart_amt"><?php echo $sub_total = ($fetch_cart['cart_price']); ?></span></p>
+                                    <p>PKR/<span id="total_cart_amt"></span>
+                                    </p>
                                 </div>
                                 <a class="btn-n text-uppercase" href="checkout.php">Check Out</a>
                             </div>
@@ -274,13 +291,6 @@ if (isset($_GET['delete_all'])) {
                         </div>
                     </div>
                 </div>
-        <?php
-                                        $grand_total += $sub_total;
-                                    }
-                                } else {
-                                    echo '<center><p style="font-size:30px;">your cart is empty</p></center>';
-                                }
-        ?>
             </div>
             <a class="btn-n" href="index.php#bestselling" style="margin: 15px 0 20px 10px;">Continue Shopping</a>
         </div>
@@ -297,6 +307,46 @@ if (isset($_GET['delete_all'])) {
         ?>
 
 
+<script>
+     const abc = parseInt(document.getElementById('itemval').innerHTML);
+var product_total_amt = document.getElementById('product_total_amt');
+var shipping_charge = document.getElementById('shipping_charge');
+var total_cart_amt = document.getElementById('total_cart_amt');
+var discountCode = document.getElementById('discount_code1');
+const decreaseNumber = (incdec, itemprice) => {
+var itemval = document.getElementById(incdec);
+var itemprice = document.getElementById(itemprice);
+console.log(itemprice.innerHTML);
+// console.log(itemval.value);
+if (itemval.value <= 0) {
+      itemval.value = 0;
+      alert('Negative quantity not allowed');
+  } else {
+      itemval.value = parseInt(itemval.value) - 1;
+      itemval.style.background = '#fff';
+      itemval.style.color = '#000';
+      itemprice.innerHTML = parseInt(itemprice.innerHTML) - abc;
+      product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 0;
+      total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+  }
+}
+const increaseNumber = (incdec, itemprice) => {
+var itemval = document.getElementById(incdec);
+var itemprice = document.getElementById(itemprice);
+// console.log(itemval.value);
+if (itemval.value >= 5) {
+      itemval.value = 5;
+      alert('max 5 allowed');
+      itemval.style.background = 'red';
+      itemval.style.color = '#fff';
+  } else {
+      itemval.value = parseInt(itemval.value) + 1;
+      itemprice.innerHTML = parseInt(itemprice.innerHTML) + abc;
+      product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 0;
+      total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+  }
+}
+</script>
     </body>
 
 </html>

@@ -25,7 +25,7 @@
                 $_SESSION["contact"] = $fetchArray[5];
                 $_SESSION["address"] = $fetchArray[6];
                 $_SESSION["subscribtion"] = $fetchArray[7];
-                $_SESSION["userid"] = $fetchArray[8];
+                $_SESSION["userid"] = $fetchArray[0];
                 $_SESSION["role_id"] = $fetchArray[1];
 
                 if($_SESSION["role_id"] == 2){

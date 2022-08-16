@@ -44,13 +44,13 @@
                     echo'
                         <tr>
                             <td>'.$user_row[0].'</td>
-                            <td>'.$user_row[1].'</td>
                             <td>'.$user_row[2].'</td>
                             <td>'.$user_row[3].'</td>
                             <td>'.$user_row[4].'</td>
-                            <td><img src="../../E-Books/views/'.$user_row[5].'" width="40px" height="40px"></td>
-                            <td>'.$user_row[6].'</td>
+                            <td>'.$user_row[5].'</td>
+                            <td><img src="../../E-Books/views/'.$user_row[6].'" width="40px" height="40px"></td>
                             <td>'.$user_row[7].'</td>
+                            <td>'.$user_row[8].'</td>
                             <td>
                                 <a href="" class="btn btn-primary">Block</a>
                             </td>
