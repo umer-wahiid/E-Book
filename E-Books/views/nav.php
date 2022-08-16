@@ -76,7 +76,7 @@
             $search = $_GET["search"];
             $fetch_book = mysqli_query($con, "SELECT * FROM tbl_book_detail WHERE book_title LIKE '%{$search}%'");
             // if (mysqli_num_rows($fetch_book) > 0) {
-            echo '<div class="list-group cat-d" style="display: none;margin-left:505px;margin-top:-15px;" id="list-ser">';
+            echo '<div class="list-group cat-d" style="margin-left:505px;margin-top:-15px;" id="list-ser">';
             while ($pro_row = mysqli_fetch_array($fetch_book)) {
                 echo '
 
@@ -168,7 +168,7 @@
             <div class="list-group cat-d" style="display: none;" id="list">';
             $fetch_category = mysqli_query($con, "select * from tbl_book_category");
             while ($cat_row = mysqli_fetch_array($fetch_category)) {
-                echo '<a href="#" style="text-align:left;width:200px;" data-bs-toggle="modal" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
+                echo '<a href="#" style="text-align:left;width:200px;" data-bs-toggle="modal"  aria-label="Open" data-bs-target="#catModal' . $cat_row[0] . '" class="list-group-item list-group-item-action cat-i" style="z-index:+3;">' . $cat_row[1] . '</a>
                     ';
             };
             echo '
@@ -354,6 +354,7 @@
     }
 
     ?>
+    
 </body>
 
 </html>

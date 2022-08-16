@@ -133,6 +133,8 @@ $(document).ready(function(){
     $("#list-ser").slideToggle();
   });
 });
+
+
 $(document).ready(function(){
   $("#cat").click(function(){
     $("#list").slideToggle();

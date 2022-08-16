@@ -1,5 +1,9 @@
 <style>
-    <?php include "css/bootstrap.min.css" ?>
+<?php
+ session_start();
+ include "css/bootstrap.min.css";
+ if($_SESSION['role_id']==2){
+ ?>
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +21,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -38,15 +43,15 @@
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 
     <style>
-        .form-control {
-            border: 1px solid #27ae60;
-        }
+    .form-control {
+        border: 1px solid #27ae60;
+    }
 
-        .navbar .navbar-nav .nav-link.dash {
-            color: var(--primary);
-            background: var(--dark);
-            border-color: var(--primary);
-        }
+    .navbar .navbar-nav .nav-link.dash {
+        color: var(--primary);
+        background: var(--dark);
+        border-color: var(--primary);
+    }
     </style>
 
 </head>
@@ -54,7 +59,8 @@
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -70,8 +76,11 @@
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="img/quicksquarenew_202151615520338.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                        <img class="rounded-circle" src="img/quicksquarenew_202151615520338.jpg" alt=""
+                            style="width: 40px; height: 40px;">
+                        <div
+                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
                     </div>
                     <div class="ms-3">
                         <h6 class="mb-0">umer wahiid</h6>
@@ -79,24 +88,29 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.php" class="nav-item nav-link dash"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="index.php" class="nav-item nav-link dash"><i
+                            class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link cat dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Category</a>
+                        <a href="#" class="nav-link cat dropdown-toggle" data-bs-toggle="dropdown"><i
+                                class="fa fa-laptop me-2"></i>Category</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="index.php?addcat" class="dropdown-item">Add Category</a>
                             <a href="index.php?viewcat" class="dropdown-item">View Categories</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link pro dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-book me-2"></i>Books</a>
+                        <a href="#" class="nav-link pro dropdown-toggle" data-bs-toggle="dropdown"><i
+                                class="fa fa-book me-2"></i>Books</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="index.php?addproduct" class="dropdown-item">Add Books</a>
                             <a href="index.php?viewproduct" class="dropdown-item">View Books</a>
                         </div>
                     </div>
                     <a href="index.php?user" class="nav-item nav-link use"><i class="fa fa-user me-2"></i>User</a>
-                    <a href="index.php?contact" class="nav-item nav-link cont"><i class="fa fa-phone me-2"></i>Contact</a>
-                    <a href="index.php?reviews" class="nav-item nav-link revi"><i class="fa fa-comments me-2"></i>Reviews</a>
+                    <a href="index.php?contact" class="nav-item nav-link cont"><i
+                            class="fa fa-phone me-2"></i>Contact</a>
+                    <a href="index.php?reviews" class="nav-item nav-link revi"><i
+                            class="fa fa-comments me-2"></i>Reviews</a>
                 </div>
             </nav>
         </div>
@@ -116,18 +130,20 @@
                     <i class="fa fa-bars"></i>
                 </a>
                 <form class="d-none d-md-flex ms-4">
-                    <input class="form-control bg-dark border-0" style="margin-top: 15px;" type="search" placeholder="Search">
+                    <input class="form-control bg-dark border-0" style="margin-top: 15px;" type="search"
+                        placeholder="Search">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/quicksquarenew_202151615520338.jpg" alt="" style="width: 40px; height: 40px;">
+                            <img class="rounded-circle me-lg-2" src="img/quicksquarenew_202151615520338.jpg" alt=""
+                                style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex">Umer Wahiid</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="../../E-Books/apis/user_apis/logout_user.php" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -136,6 +152,7 @@
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <?php
+                if($_SESSION['role_id'] == 2){
                 if (isset($_GET["addcat"])) {
                     include "AddCategory.php";
                 } else if (isset($_GET["viewcat"])) {
@@ -197,6 +214,10 @@
             <!-- Content End -->
             ';
                 }
+            }
+            else{
+                header("location:../../E-Books/views/index.php");
+            }
                 ?>
 
 
@@ -239,11 +260,13 @@
             <script src="js/jquery.dataTables.js"></script>
             <script src="js/dataTables.bootstrap.min.js"></script>
             <script>
-                $(document).ready(function() {
-                    $("#mytable").DataTable();
-                });
+            $(document).ready(function() {
+                $("#mytable").DataTable();
+            });
             </script>
 
 </body>
 
 </html>
+
+<?php } ?>
