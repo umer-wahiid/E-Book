@@ -91,35 +91,19 @@ include "../apis/connection.php";
                     <span>payment method :</span>
                     <select name="method">
                         <option value="cash on delivery">cash on delivery</option>
-                        <option value="credit card">credit card/debit card</option>
-                        <option value="paypal">jazzcash</option>
-                        <option value="paytm">easypaisa</option>
-                        <option value="paytm">u-paisa</option>
+                        <option value="credit card/debit card">credit card/debit card</option>
+                        <option value="jazzcash">jazzcash</option>
+                        <option value="easypaisa">easypaisa</option>
+                        <option value="u-paisa">u-paisa</option>
                     </select>
                 </div>
                 <div class="inputBox">
-                    <span>address line 01 :</span>
+                    <span>address :</span>
                     <input type="text" name="house/flat" required placeholder="e.g. house/flat no.">
-                </div>
-                <div class="inputBox">
-                    <span>address line 01 :</span>
-                    <input type="text" name="street" required placeholder="e.g. street name">
                 </div>
                 <div class="inputBox">
                     <span>city :</span>
                     <input type="text" name="city" required placeholder="e.g. karachi">
-                </div>
-                <div class="inputBox">
-                    <span>state :</span>
-                    <input type="text" name="state" required placeholder="e.g. clifton">
-                </div>
-                <div class="inputBox">
-                    <span>country :</span>
-                    <input type="text" name="country" required placeholder="e.g. pakistan">
-                </div>
-                <div class="inputBox">
-                    <span>pin code :</span>
-                    <input type="number" min="0" name="pin_code" required placeholder="e.g. 123456">
                 </div>
             </div>
             <input type="submit" value="order now" class="btn-n" name="order_btn">
