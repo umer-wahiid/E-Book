@@ -110,9 +110,66 @@
 
         <!-- icons section ends -->
 
-        <!-- featured section starts  -->
+        <!-- products section starts  -->
 
         <section class="featured" id="bestselling">
+
+            <h1 class="heading"><span>Featured Books</span></h1>
+
+            <div class="swiper featured-slider">
+
+                <div class="swiper-wrapper">
+
+                    <?php
+
+                    $category = mysqli_query($con, "SELECT * FROM `tbl_book_category` WHERE `b_category`='Best Sellers'");
+                    $category_row = mysqli_fetch_array($category);
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+        WHERE book_category_1=' . $category_row[0] . ' OR book_category_2=' . $category_row[0] . ' OR book_category_3=' . $category_row[0] . '
+        ');
+                    while ($row = mysqli_fetch_array($fetch_book)) {
+                        echo '
+                <div class="swiper-slide box">
+                <div class="icons">
+                <a href="#" class="fas fa-search"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
+                <p class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></p>
+                </a>
+                </div>
+                <div class="image">
+                <img src="../../dashboard/views/' . $row[17] . '" alt="">
+                </div>
+                <div class="content">
+                <h3>' . $row[1] . '</h3>
+                <div class="price">Rs.' . $row[14] . ' <span>$20.99</span></div>
+                <form action="../apis/cart_apis/add_to_cart.php" method="POST">
+                        <input type="hidden" name="book_name" value="' . $row[1] . '">
+                        <input type="hidden" name="book_price" value="' . $row[14] . '">
+                        <input type="hidden" name="book_image" value="' . $row[17] . '">
+                        <input type="hidden" value="' . $row[0] . '" name="book_id" />';
+                        if (isset($_SESSION["userid"]) != null) {
+                            echo '
+                        <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">
+                </form>
+                        ';
+                        } else {
+                            echo '
+                        <a href="#" class="btn-n">Add To Cart</a>';
+                        }
+                        echo '
+                    </div>
+                </div>
+                    ';
+                    };
+
+                    ?>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="featured">
 
             <h1 class="heading"><span>Most Selling</span></h1>
 
@@ -122,13 +179,13 @@
 
                     <?php
 
-                        $category = mysqli_query($con, "SELECT * FROM `tbl_book_category` WHERE `b_category`='Best Sellers'");
-                        $category_row = mysqli_fetch_array($category);
-                        $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
-                        WHERE book_category_1=' . $category_row[0] . ' OR book_category_2=' . $category_row[0] . ' OR book_category_3=' . $category_row[0] . '
-                        ');
-                        while ($row = mysqli_fetch_array($fetch_book)) {
-                            echo '
+                    $category = mysqli_query($con, "SELECT * FROM `tbl_book_category` WHERE `b_category`='Best Sellers'");
+                    $category_row = mysqli_fetch_array($category);
+                    $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+                    WHERE book_category_1=' . $category_row[0] . ' OR book_category_2=' . $category_row[0] . ' OR book_category_3=' . $category_row[0] . '
+                    ');
+                    while ($row = mysqli_fetch_array($fetch_book)) {
+                        echo '
                             <div class="swiper-slide box">
                             <div class="icons">
                             <a href="#" class="fas fa-search"></a>
@@ -147,20 +204,23 @@
                                     <input type="hidden" name="book_name" value="' . $row[1] . '">
                                     <input type="hidden" name="book_price" value="' . $row[14] . '">
                                     <input type="hidden" name="book_image" value="' . $row[17] . '">
-                                    <input type="hidden" value="'.$row[0].'" name="book_id" />';
-                                    if(isset($_SESSION["userid"]) != null){echo'
+                                    <input type="hidden" value="' . $row[0] . '" name="book_id" />';
+                        if (isset($_SESSION["userid"]) != null) {
+                            echo '
                                     <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">
                             </form>
-                                    ';}
-                                    else{echo'
-                                    <a href="#" class="btn-n">Add To Cart</a>';}
-                                echo '
+                                    ';
+                        } else {
+                            echo '
+                                    <a href="#" class="btn-n">Add To Cart</a>';
+                        }
+                        echo '
                                 </div>
                             </div>
                                 ';
-                        };
+                    };
 
-                        ?>
+                    ?>
                 </div>
             </div>
 
@@ -250,7 +310,7 @@
                             <div class="row mt-2">
                                 <div class="col-6">
                                     <h3><b>Price</b></h3>
-                                    <h4>Rs. 300</h4>
+                                    <h4>Rs. ' . $row[14] . '</h4>
                                 </div>
                             </div>
                         </div>
@@ -259,7 +319,7 @@
                             <input type="hidden" name="book_name" value="' . $row[1] . '">
                             <input type="hidden" name="book_price" value="' . $row[14] . '">
                             <input type="hidden" name="book_image" value="' . $row[17] . '">
-                            <input type="hidden" value="'.$row[0].'" name="book_id" />
+                            <input type="hidden" value="' . $row[0] . '" name="book_id" />
                             <button type="submit" name="add_to_cart" class="btn-n" style="margin-top:0px;margin-right:309px;">Add To Cart</button>
                             <button type="button" style="width:100px;height:35px;font-size:15px;" class="btn" data-bs-dismiss="modal">Close</button>
                         </form>    
@@ -273,7 +333,7 @@
         ?>
 
 
-        <!-- featured section ends -->
+        <!-- product section ends -->
 
         <!-- newsletter section starts -->
 
@@ -288,8 +348,7 @@
                     <!-- <a href="#" class="btn-n">Subscribe !</a> -->
                 </div>
 
-                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php"
-                    method="POST">
+                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
 
                     <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
                     <input type="email" readonly name="" placeholder="enter your email" <?php
@@ -344,7 +403,7 @@
                             </div>
                             <div class="content">
                                 <h3>' . $row[1] . '</h3>
-                                <div class="price">$15.99 <span>$20.99</span></div>
+                                <div class="price">Rs. ' . $row[14] . ' <span>$20.99</span></div>
                                 <div class="stars">
                                 <h4 style="color:black;">Rating: <span style="font-size:12px;"> ' . $row[8] . ' <i class="fas fa-star"></i></span></h4>
                                 </div>
@@ -382,7 +441,7 @@
                             </div>
                             <div class="content">
                                 <h3>' . $row[1] . '</h3>
-                                <div class="price">$15.99 <span>$20.99</span></div>
+                                <div class="price">Rs. ' . $row[14] . ' <span>$20.99</span></div>
                                 <div class="stars">
                                 <h4 style="color:black;">Rating: <span style="font-size:12px;"> ' . $row[8] . ' <i class="fas fa-star"></i></span></h4>
                                 </div>
