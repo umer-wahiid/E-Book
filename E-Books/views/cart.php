@@ -219,7 +219,7 @@ if (isset($_GET['delete_all'])) {
                                                 <ul class="pagination justify-content-end set_quantity">
                                                     <li class="page-item">
                                                         <input type="number" name="quantity" min="1" max="4"
-                                                            class="page-link" value="1" onkeyup="qty()" id="textbox">
+                                                            class="page-link" value="1" onchange="qty()" id="textbox">
                                                     </li>
                                                 </ul>
                                             </div>
@@ -237,7 +237,7 @@ if (isset($_GET['delete_all'])) {
                                                 </p>
                                             </div>
                                             <div class="col-4 d-flex justify-content-end price_money">
-                                                <h3>Rs.<span id="itemval" onkeyup="qty()"
+                                                <h3>Rs.<span id="itemval" onchange="qty()"
                                                         value="<?php echo $fetch_cart['cart_book_price']; ?>"><?php echo $fetch_cart['cart_book_price']; ?></span>
                                                 </h3>
                                             </div>
@@ -301,50 +301,51 @@ if (isset($_GET['delete_all'])) {
 
 
         <script>
-        const abc = parseInt(document.getElementById('itemval').innerHTML);
-        var product_total_amt = document.getElementById('product_total_amt');
-        var shipping_charge = document.getElementById('shipping_charge');
-        var total_cart_amt = document.getElementById('total_cart_amt');
-        var discountCode = document.getElementById('discount_code1');
-        const decreaseNumber = (incdec, itemprice) => {
-            var itemval = document.getElementById(incdec);
-            var itemprice = document.getElementById(itemprice);
-            console.log(itemprice.innerHTML);
-            // console.log(itemval.value);
-            if (itemval.value <= 0) {
-                itemval.value = 0;
-                alert('Negative quantity not allowed');
-            } else {
-                itemval.value = parseInt(itemval.value) - 1;
-                itemval.style.background = '#fff';
-                itemval.style.color = '#000';
-                itemprice.innerHTML = parseInt(itemprice.innerHTML) - abc;
-                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 0;
-                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge
-                    .innerHTML);
-            }
-        }
-        const increaseNumber = (incdec, itemprice) => {
-            var itemval = document.getElementById(incdec);
-            var itemprice = document.getElementById(itemprice);
-            // console.log(itemval.value);
-            if (itemval.value >= 5) {
-                itemval.value = 5;
-                alert('max 5 allowed');
-                itemval.style.background = 'red';
-                itemval.style.color = '#fff';
-            } else {
-                itemval.value = parseInt(itemval.value) + 1;
-                itemprice.innerHTML = parseInt(itemprice.innerHTML) + abc;
-                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 0;
-                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge
-                    .innerHTML);
-            }
-        }
+        // const abc = parseInt(document.getElementById('itemval').innerHTML);
+        // var product_total_amt = document.getElementById('product_total_amt');
+        // var shipping_charge = document.getElementById('shipping_charge');
+        // var total_cart_amt = document.getElementById('total_cart_amt');
+        // var discountCode = document.getElementById('discount_code1');
+        // const decreaseNumber = (incdec, itemprice) => {
+        //     var itemval = document.getElementById(incdec);
+        //     var itemprice = document.getElementById(itemprice);
+        //     console.log(itemprice.innerHTML);
+        //     // console.log(itemval.value);
+        //     if (itemval.value <= 0) {
+        //         itemval.value = 0;
+        //         alert('Negative quantity not allowed');
+        //     } else {
+        //         itemval.value = parseInt(itemval.value) - 1;
+        //         itemval.style.background = '#fff';
+        //         itemval.style.color = '#000';
+        //         itemprice.innerHTML = parseInt(itemprice.innerHTML) - abc;
+        //         product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 0;
+        //         total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge
+        //             .innerHTML);
+        //     }
+        // }
+        // const increaseNumber = (incdec, itemprice) => {
+        //     var itemval = document.getElementById(incdec);
+        //     var itemprice = document.getElementById(itemprice);
+        //     // console.log(itemval.value);
+        //     if (itemval.value >= 5) {
+        //         itemval.value = 5;
+        //         alert('max 5 allowed');
+        //         itemval.style.background = 'red';
+        //         itemval.style.color = '#fff';
+        //     } else {
+        //         itemval.value = parseInt(itemval.value) + 1;
+        //         itemprice.innerHTML = parseInt(itemprice.innerHTML) + abc;
+        //         product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 0;
+        //         total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge
+        //             .innerHTML);
+        //     }
+        // }
 
-        const qty = () => {
+        function qty(){
 
-            const price = document.getElementById('itemval').value;
+            const price = parseInt(document.getElementById('itemval').innerHTML);
+            // alert(price);
             const quantity = document.getElementById('textbox').value;
             const now = (price * quantity);
 
