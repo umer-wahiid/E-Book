@@ -9,8 +9,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="image/loader-img.gif">
     <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
+    <link rel="shortcut icon" type="image/png" href="image/loader-img.gif">
     <link rel="stylesheet" href="css/swiper.css" />
 
 
@@ -155,7 +155,7 @@
                 <a href="index.php#home">home</a>
                 <a style="cursor:pointer;" id="cat">Categories</a>
                 <!-- <a href="#bestselling">Best Selling</a> -->
-                <a href='index.php#bestselling'>Best Selling</a>
+                <a href='all_products.php'>All Products</a>
                 <a href="index.php#arrivals">arrivals</a>
                 <a href="index.php#reviews">reviews</a>
                 <!-- <a href="#blogs">blogs</a> -->
@@ -240,7 +240,7 @@
 
     <nav class="bottom-navbar">
         <a href="index.php#home" class="fas fa-home"></a>
-        <a href="index.php#bestselling" class="fas fa-list"></a>
+        <a href="all_products.php" class="fas fa-list"></a>
         <a href="index.php#arrivals" class="fas fa-tags"></a>
         <a href="index.php#reviews" class="fas fa-comments"></a>
         <a href="contact.php" class="fa fa-phone"></a>
@@ -354,7 +354,7 @@
     }
 
     ?>
-    
+
 </body>
 
 </html>
