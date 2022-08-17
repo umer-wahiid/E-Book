@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2022 at 10:42 AM
+-- Generation Time: Aug 17, 2022 at 09:23 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -121,6 +121,22 @@ CREATE TABLE `tbl_book_order` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_cart`
+--
+
+CREATE TABLE `tbl_cart` (
+  `cart_id` int(11) NOT NULL,
+  `cart_user_id` int(11) NOT NULL,
+  `cart_book_name` varchar(50) NOT NULL,
+  `cart_book_image` varchar(1000) NOT NULL,
+  `cart_book_price` int(11) NOT NULL,
+  `cart_book_quantity` int(11) NOT NULL,
+  `cart_status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_user_contact`
 --
 
@@ -143,7 +159,8 @@ INSERT INTO `tbl_user_contact` (`contact_id`, `contact_name`, `contact_email`, `
 (5, 'bvgftftft', 'gftruycruycyrut@jftft', 'hguyruurtf6ur tu6 rfiu6 uietfgkyr i67'),
 (6, 'Imran', 'ABC@CBC.COM', 'tEST MESSAGE'),
 (7, 'Imran', 'i.emranhafeez@gmail.com', 'helo world'),
-(8, 'Ammar Ansari', 'ammaransari7016@gmail.com', 'AoA PLZ TELL ME WHICH TIME YOU UPLOAD MORE BOOKS ');
+(8, 'Ammar Ansari', 'ammaransari7016@gmail.com', 'AoA PLZ TELL ME WHICH TIME YOU UPLOAD MORE BOOKS '),
+(9, 'Ammar Ansari', 'ammaransari7016@gmail.com', 'plz us provide us more books');
 
 -- --------------------------------------------------------
 
@@ -153,6 +170,7 @@ INSERT INTO `tbl_user_contact` (`contact_id`, `contact_name`, `contact_email`, `
 
 CREATE TABLE `tbl_user_data` (
   `user_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
   `user_name` varchar(25) NOT NULL,
   `user_email` varchar(25) NOT NULL,
   `user_address` varchar(100) NOT NULL,
@@ -166,16 +184,17 @@ CREATE TABLE `tbl_user_data` (
 -- Dumping data for table `tbl_user_data`
 --
 
-INSERT INTO `tbl_user_data` (`user_id`, `user_name`, `user_email`, `user_address`, `user_phone`, `user_image`, `user_subscribtion`, `user_password`) VALUES
-(1, 'Ammar Ansari', 'ammaransari7016@gmail.com', 'House no D-18 Shah Faisal Town Malir Halt Karachi', 28374987, '../apis/profileImage/62da93457be0dAmmar.jpg', '2 Year', 'ammaransari5544'),
-(2, 'Ayan', 'ayan@gmail.com', 'ashfiuaufheiufha', 783561875, '../apis/profileImage/62daa20c215fbblog-1.jpg', 'Annual', '123456'),
-(3, 'Umar Abdul Wahid', 'umarwahiid48@gmail.com', 'fkhsahfuiashufha', 4563279, '../apis/profileImage/62dae42cd262dblog-4.jpg', 'Monthly', '1234'),
-(4, 'Imran Hafeez', 'i.emranhafeez@gmail.com', 'hsaguoaghuqy', 2147483647, 'image', 'No', '1234'),
-(5, 'Shapatar', 'shapatar@lallu.co', 'uhb76', 967, 'image', 'No', '1234'),
-(6, 'Maaz ', 'maaz@gmail.com', 'sfiuahfiuhfiuqh', 898979, 'fas fa-user', 'No', '1234'),
-(7, 'Ammar', 'ammar@gmail.com', 'House No. D-18 Shah Faisal Town Malir Halt Karachi Near Cafe Bajwa ', 2147483647, 'image', 'No', '00f1dfa98dcf9459d6309552a'),
-(8, 'Umar', 'umar@gmail.com', 'jilsjte', 523, 'image', 'No', '81dc9bdb52d04dc20036dbd83'),
-(9, 'Ayan', 'ayan65@gmail.com', 'sfet', 7356, 'image', 'No', 'e10adc3949ba59abbe56e057f');
+INSERT INTO `tbl_user_data` (`user_id`, `role_id`, `user_name`, `user_email`, `user_address`, `user_phone`, `user_image`, `user_subscribtion`, `user_password`) VALUES
+(1, 0, 'Ammar Ansari', 'ammaransari7016@gmail.com', 'House no D-18 Shah Faisal Town Malir Halt Karachi', 28374987, '../apis/profileImage/62da93457be0dAmmar.jpg', '2 Year', 'ammaransari5544'),
+(2, 0, 'Ayan', 'ayan@gmail.com', 'ashfiuaufheiufha', 783561875, '../apis/profileImage/62daa20c215fbblog-1.jpg', 'Annual', '123456'),
+(3, 0, 'Umar Abdul Wahid', 'umarwahiid48@gmail.com', 'fkhsahfuiashufha', 4563279, '../apis/profileImage/62dae42cd262dblog-4.jpg', 'Monthly', '1234'),
+(4, 0, 'Imran Hafeez', 'i.emranhafeez@gmail.com', 'hsaguoaghuqy', 2147483647, 'image', 'No', '1234'),
+(5, 0, 'Shapatar', 'shapatar@lallu.co', 'uhb76', 967, 'image', 'No', '1234'),
+(6, 0, 'Maaz ', 'maaz@gmail.com', 'sfiuahfiuhfiuqh', 898979, 'fas fa-user', 'No', '1234'),
+(7, 0, 'Ammar', 'ammar@gmail.com', 'House No. D-18 Shah Faisal Town Malir Halt Karachi Near Cafe Bajwa ', 2147483647, 'image', 'No', '00f1dfa98dcf9459d6309552a'),
+(8, 0, 'Umar', 'umar@gmail.com', 'jilsjte', 523, 'image', 'No', '81dc9bdb52d04dc20036dbd83'),
+(9, 0, 'Ayan', 'ayan65@gmail.com', 'sfet', 7356, 'image', 'No', 'e10adc3949ba59abbe56e057f'),
+(10, 2, 'Admin', 'admin@admin.com', 'sjagfywf', 7646, 'image', 'No', 'admin123');
 
 -- --------------------------------------------------------
 
@@ -202,10 +221,9 @@ INSERT INTO `tbl_user_reviews` (`review_id`, `review_name`, `review_email`, `rev
 (12, 'Ammar Ansari', 'ammaransari7016@gmail.com', '3-Stars', 'Its Sweat but Plz Increase The Website Features ', 'Yes', '../apis/profileImage/62da93457be0dAmmar.jpg'),
 (13, 'Ayan', 'ayan@gmail.com', '5-Stars', 'NICE EXPERIENCE KEEP IT UP', 'Yes', '../apis/profileImage/62daa20c215fbblog-1.jpg'),
 (14, 'Umar Abdul Wahid', 'umarwahiid48@gmail.com', '3-Stars', 'Awsome But Need Improvment', 'Yes', '../apis/profileImage/62dae42cd262dblog-4.jpg'),
-(15, 'Shapatar', 'shapatar@lallu.co', '1-Star', 'Ek Dum Tatti Maal Haii Website Bhe Tatti Maal BHe Tatti', '', 'image'),
 (20, 'Ammar Ansari', 'ammaransari7016@gmail.com', '5-Stars', 'rasha rasha', '', '../apis/profileImage/62da93457be0dAmmar.jpg'),
 (21, 'Ammar Ansari', 'ammaransari7016@gmail.com', '5-Stars', 'rasha rasha', 'Yes', '../apis/profileImage/62da93457be0dAmmar.jpg'),
-(22, 'Ammar Ansari', 'ammaransari7016@gmail.com', '5-Stars', 'Dagha', 'No', '../apis/profileImage/62da93457be0dAmmar.jpg'),
+(22, 'Ammar Ansari', 'ammaransari7016@gmail.com', '5-Stars', 'Dagha', 'Yes', '../apis/profileImage/62da93457be0dAmmar.jpg'),
 (23, 'Ammar Ansari', 'ammaransari7016@gmail.com', '5-Stars', 'Dagha', 'No', '../apis/profileImage/62da93457be0dAmmar.jpg');
 
 --
@@ -265,7 +283,7 @@ ALTER TABLE `tbl_user_reviews`
 -- AUTO_INCREMENT for table `tbl_book_cart`
 --
 ALTER TABLE `tbl_book_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_book_category`
@@ -289,13 +307,13 @@ ALTER TABLE `tbl_book_order`
 -- AUTO_INCREMENT for table `tbl_user_contact`
 --
 ALTER TABLE `tbl_user_contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_user_data`
 --
 ALTER TABLE `tbl_user_data`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_user_reviews`
