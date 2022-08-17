@@ -110,10 +110,8 @@
 
         <!-- icons section ends -->
 
-        <!-- products section starts  -->
 
-
-        <section class="featured" id="bestselling">
+        <section class="featured">
 
             <h1 class="heading"><span>Most Selling</span></h1>
 
@@ -147,6 +145,8 @@
                             <form action="../apis/cart_apis/add_to_cart.php" method="POST">
                                     <input type="hidden" name="book_name" value="' . $row[1] . '">
                                     <input type="hidden" name="book_price" value="' . $row[14] . '">
+                                    <input type="hidden" name="pdf_price" value="' . $row[15] . '">
+                                    <input type="hidden" name="cd_price" value="' . $row[16] . '">
                                     <input type="hidden" name="book_image" value="' . $row[17] . '">
                                     <input type="hidden" value="' . $row[0] . '" name="book_id" />';
                         if (isset($_SESSION["userid"]) != null) {
