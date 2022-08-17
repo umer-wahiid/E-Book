@@ -77,10 +77,10 @@
             $fetch_book = mysqli_query($con, "SELECT * FROM tbl_book_detail WHERE book_title LIKE '%{$search}%'");
             // if (mysqli_num_rows($fetch_book) > 0) {
             echo '<div class="list-group cat-d" style="margin-left:505px;margin-top:-15px;" id="list-ser">';
-            while ($pro_row = mysqli_fetch_array($fetch_book)) {
+            while ($row = mysqli_fetch_array($fetch_book)) {
                 echo '
 
-                    <a href="#" style="text-align:left;" class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $pro_row[1] . '</a>
+                    <a data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" href="#" style="text-align:left;" class="list-group-item list-group-item-action cat-i" style="z-index:+3;width:500px;">' . $row[1] . '</a>
 
                 ';
             }
