@@ -114,7 +114,7 @@ if (isset($_GET['delete_all'])) {
         position: relative;
     }
 
-    .set_quantity::after {
+    /* .set_quantity::after {
         content: "(Note, 1 piece)";
         width: auto;
         height: auto;
@@ -123,7 +123,7 @@ if (isset($_GET['delete_all'])) {
         bottom: -20px;
         right: 1.5rem;
         font-size: 0.8rem;
-    }
+    } */
 
     .page-link {
         line-height: 16px;
@@ -189,8 +189,10 @@ if (isset($_GET['delete_all'])) {
                                 ?>
                                 <div class="row">
                                     <!-- cart images div -->
-                                    <div class="col-md-3 col-10 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img" style="height: 250px;">
-                                        <img style="height:230px;" src="../../dashboard/views/<?php echo $fetch_cart['cart_book_image']; ?>"
+                                    <div class="col-md-3 col-10 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img"
+                                        style="height: 250px;">
+                                        <img style="height:230px;"
+                                            src="../../dashboard/views/<?php echo $fetch_cart['cart_book_image']; ?>"
                                             alt="cart img">
                                     </div><!-- cart product details -->
                                     <div class="col-md-9 col-11 mx-auto px-4 mt-2">
@@ -216,17 +218,8 @@ if (isset($_GET['delete_all'])) {
                                             <div class="col-6">
                                                 <ul class="pagination justify-content-end set_quantity">
                                                     <li class="page-item">
-                                                        <button class="page-link "
-                                                            onclick="decreaseNumber('textbox','itemval')">
-                                                            <i class="fas fa-minus"></i> </button>
-                                                    </li>
-                                                    <li class="page-item"><input type="text" name="quantity"
-                                                            class="page-link" value="1" id="textbox">
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <button class="page-link"
-                                                            onclick="increaseNumber('textbox','itemval')"> <i
-                                                                class="fas fa-plus"></i></button>
+                                                        <input type="number" name="quantity" min="1" max="4"
+                                                            class="page-link" value="1" onkeyup="qty()" id="textbox">
                                                     </li>
                                                 </ul>
                                             </div>
@@ -244,7 +237,7 @@ if (isset($_GET['delete_all'])) {
                                                 </p>
                                             </div>
                                             <div class="col-4 d-flex justify-content-end price_money">
-                                                <h3>Rs.<span id="itemval"
+                                                <h3>Rs.<span id="itemval" onkeyup="qty()"
                                                         value="<?php echo $fetch_cart['cart_book_price']; ?>"><?php echo $fetch_cart['cart_book_price']; ?></span>
                                                 </h3>
                                             </div>
@@ -347,6 +340,16 @@ if (isset($_GET['delete_all'])) {
                 total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge
                     .innerHTML);
             }
+        }
+
+        const qty = () => {
+
+            const price = document.getElementById('itemval').value;
+            const quantity = document.getElementById('textbox').value;
+            const now = (price * quantity);
+
+            document.getElementById('itemval').innerHTML = now;
+
         }
         </script>
     </body>
