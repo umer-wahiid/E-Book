@@ -210,7 +210,7 @@ if (isset($_GET['delete_all'])) {
                                                 &nbsp;
                                                 <label style="font-size: 16px;" for="">CD</label>
                                                 <br>
-                                                <input type="radio" name="abc" value="Hard Copy" checked="checked">
+                                                <input type="radio" name="abc" value="Hard Copy">
                                                 &nbsp;
                                                 <label style="font-size: 16px;" for="">Hard Copy</label>
                                             </div>
@@ -220,7 +220,15 @@ if (isset($_GET['delete_all'])) {
                                                     <li class="page-item">
                                                         <input type="number" name="quantity" min="1" max="4"
                                                             class="page-link" value="1" onchange="qty()" id="textbox">
-                                                        <input type="hidden" id="origprice" value="<?php echo $fetch_cart['cart_book_price']; ?>" id="textbox">
+                                                        <input type="hidden" id="origprice"
+                                                            value="<?php echo $fetch_cart['cart_book_price']; ?>"
+                                                            id="textbox">
+                                                        <input type="hidden" id="origprice"
+                                                            value="<?php echo $fetch_cart['cart_pdf_price']; ?>"
+                                                            id="textbox">
+                                                        <input type="hidden" id="origprice"
+                                                            value="<?php echo $fetch_cart['cart_cd_price']; ?>"
+                                                            id="textbox">
                                                     </li>
                                                 </ul>
                                             </div>
@@ -344,13 +352,36 @@ if (isset($_GET['delete_all'])) {
         // }
 
         // function qty(){
-            const qty = () => {
+
+        const radio = () => {
+
+            const abc = document.getElementsByName('abc').value;
+            const orig = document.getElementById('origprice').value;
+
+            switch (abc) {
+                case 'PDFS':
+                    document.getElementById('origprice').value = ;
+                    
+                    break;
+                case 'CD':
+                    
+                    break;
+                case 'Hard Copy':
+                    
+                    break;
+            
+                default:
+                    break;
+            }
+
+        }
+        const qty = () => {
 
             const orig = document.getElementById('origprice').value;
             // const price = parseInt(document.getElementById('itemval').innerHTML);
             // alert(price);
             const quantity = document.getElementById('textbox').value;
-            const now = (orig*quantity);
+            const now = (orig * quantity);
 
             document.getElementById('itemval').innerHTML = now;
 
