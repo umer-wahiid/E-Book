@@ -18,9 +18,10 @@ if (isset($_POST['update_cart'])) {
 
 if (isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
-    mysqli_query($con, "DELETE FROM `tbl_cart` WHERE id = '$delete_id'") or die('query failed');
+    mysqli_query($con, "DELETE FROM `tbl_cart` WHERE cart_id = '$delete_id'") or die('query failed');
     header('location:cart.php');
 }
+
 if (isset($_GET['delete_all'])) {
     mysqli_query($con, "DELETE FROM `tbl_cart` WHERE cart_user_id = '$user_id'") or die('query failed');
     header('location:cart.php');
@@ -84,7 +85,7 @@ if (isset($_GET['delete_all'])) {
 
     .product_img img {
         min-width: 200px;
-        max-height: 200px;
+        max-height: 230px;
     }
 
     .product_name {
@@ -164,7 +165,7 @@ if (isset($_GET['delete_all'])) {
 
     <!-- cart section starts -->
 
-    <h1 class="heading" style="margin-top: 50px;"><span>Add To Cart</span></h1>
+    <h1 class="heading" style="margin-top: 50px;"><span>Your Cart</span></h1>
 
     <body class="bg-light">
         <div class="container-fluid">
@@ -188,12 +189,11 @@ if (isset($_GET['delete_all'])) {
                                 ?>
                                 <div class="row">
                                     <!-- cart images div -->
-                                    <div
-                                        class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                                        <img src="../../dashboard/views/<?php echo $fetch_cart['cart_book_image']; ?>"
+                                    <div class="col-md-3 col-10 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img" style="height: 250px;">
+                                        <img style="height:230px;" src="../../dashboard/views/<?php echo $fetch_cart['cart_book_image']; ?>"
                                             alt="cart img">
                                     </div><!-- cart product details -->
-                                    <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                    <div class="col-md-9 col-11 mx-auto px-4 mt-2">
                                         <div class="row">
                                             <!-- product name  -->
                                             <div class="col-6 card-title">
@@ -220,8 +220,8 @@ if (isset($_GET['delete_all'])) {
                                                             onclick="decreaseNumber('textbox','itemval')">
                                                             <i class="fas fa-minus"></i> </button>
                                                     </li>
-                                                    <li class="page-item"><input type="text" name="quantity" class="page-link"
-                                                            value="1" id="textbox">
+                                                    <li class="page-item"><input type="text" name="quantity"
+                                                            class="page-link" value="1" id="textbox">
                                                     </li>
                                                     <li class="page-item">
                                                         <button class="page-link"
@@ -244,8 +244,8 @@ if (isset($_GET['delete_all'])) {
                                                 </p>
                                             </div>
                                             <div class="col-4 d-flex justify-content-end price_money">
-                                                <h3>Rs.<span
-                                                        id="itemval" value="<?php echo $fetch_cart['cart_book_price']; ?>"><?php echo $fetch_cart['cart_book_price']; ?></span>
+                                                <h3>Rs.<span id="itemval"
+                                                        value="<?php echo $fetch_cart['cart_book_price']; ?>"><?php echo $fetch_cart['cart_book_price']; ?></span>
                                                 </h3>
                                             </div>
                                         </div>
@@ -307,46 +307,48 @@ if (isset($_GET['delete_all'])) {
         ?>
 
 
-<script>
-     const abc = parseInt(document.getElementById('itemval').innerHTML);
-var product_total_amt = document.getElementById('product_total_amt');
-var shipping_charge = document.getElementById('shipping_charge');
-var total_cart_amt = document.getElementById('total_cart_amt');
-var discountCode = document.getElementById('discount_code1');
-const decreaseNumber = (incdec, itemprice) => {
-var itemval = document.getElementById(incdec);
-var itemprice = document.getElementById(itemprice);
-console.log(itemprice.innerHTML);
-// console.log(itemval.value);
-if (itemval.value <= 0) {
-      itemval.value = 0;
-      alert('Negative quantity not allowed');
-  } else {
-      itemval.value = parseInt(itemval.value) - 1;
-      itemval.style.background = '#fff';
-      itemval.style.color = '#000';
-      itemprice.innerHTML = parseInt(itemprice.innerHTML) - abc;
-      product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 0;
-      total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
-  }
-}
-const increaseNumber = (incdec, itemprice) => {
-var itemval = document.getElementById(incdec);
-var itemprice = document.getElementById(itemprice);
-// console.log(itemval.value);
-if (itemval.value >= 5) {
-      itemval.value = 5;
-      alert('max 5 allowed');
-      itemval.style.background = 'red';
-      itemval.style.color = '#fff';
-  } else {
-      itemval.value = parseInt(itemval.value) + 1;
-      itemprice.innerHTML = parseInt(itemprice.innerHTML) + abc;
-      product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 0;
-      total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
-  }
-}
-</script>
+        <script>
+        const abc = parseInt(document.getElementById('itemval').innerHTML);
+        var product_total_amt = document.getElementById('product_total_amt');
+        var shipping_charge = document.getElementById('shipping_charge');
+        var total_cart_amt = document.getElementById('total_cart_amt');
+        var discountCode = document.getElementById('discount_code1');
+        const decreaseNumber = (incdec, itemprice) => {
+            var itemval = document.getElementById(incdec);
+            var itemprice = document.getElementById(itemprice);
+            console.log(itemprice.innerHTML);
+            // console.log(itemval.value);
+            if (itemval.value <= 0) {
+                itemval.value = 0;
+                alert('Negative quantity not allowed');
+            } else {
+                itemval.value = parseInt(itemval.value) - 1;
+                itemval.style.background = '#fff';
+                itemval.style.color = '#000';
+                itemprice.innerHTML = parseInt(itemprice.innerHTML) - abc;
+                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 0;
+                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge
+                    .innerHTML);
+            }
+        }
+        const increaseNumber = (incdec, itemprice) => {
+            var itemval = document.getElementById(incdec);
+            var itemprice = document.getElementById(itemprice);
+            // console.log(itemval.value);
+            if (itemval.value >= 5) {
+                itemval.value = 5;
+                alert('max 5 allowed');
+                itemval.style.background = 'red';
+                itemval.style.color = '#fff';
+            } else {
+                itemval.value = parseInt(itemval.value) + 1;
+                itemprice.innerHTML = parseInt(itemprice.innerHTML) + abc;
+                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 0;
+                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge
+                    .innerHTML);
+            }
+        }
+        </script>
     </body>
 
 </html>

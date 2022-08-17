@@ -19,6 +19,10 @@
         //     $message[] = 'already added to cart!';
         // } else {
             $query_e = mysqli_query($con, "INSERT INTO `tbl_cart`(`cart_user_id`, `cart_book_id`, `cart_book_name`, `cart_book_image`, `cart_book_price`, `cart_book_quantity`) VALUES ('$user_id','$book_id','$book_name','$book_image','$book_price','1')");
+
+            if($query_e){
+                header("location:../../views/index.php?response=Successfully Inserted");
+            }
             // $message[] = 'product added to cart!';
         // }
     }

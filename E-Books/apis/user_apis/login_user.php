@@ -23,7 +23,7 @@
                 $_SESSION["image"] = $fetchArray[6];
                 $_SESSION["email"] = $fetchArray[3];
                 $_SESSION["contact"] = $fetchArray[5];
-                $_SESSION["address"] = $fetchArray[6];
+                $_SESSION["address"] = $fetchArray[4];
                 $_SESSION["subscribtion"] = $fetchArray[7];
                 $_SESSION["userid"] = $fetchArray[0];
                 $_SESSION["role_id"] = $fetchArray[1];
