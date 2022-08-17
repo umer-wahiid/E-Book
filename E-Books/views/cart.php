@@ -210,7 +210,7 @@ if (isset($_GET['delete_all'])) {
                                                 &nbsp;
                                                 <label style="font-size: 16px;" for="">CD</label>
                                                 <br>
-                                                <input type="radio" name="abc" value="Hard Copy">
+                                                <input type="radio" name="abc" value="Hard Copy" checked="checked">
                                                 &nbsp;
                                                 <label style="font-size: 16px;" for="">Hard Copy</label>
                                             </div>
@@ -220,6 +220,7 @@ if (isset($_GET['delete_all'])) {
                                                     <li class="page-item">
                                                         <input type="number" name="quantity" min="1" max="4"
                                                             class="page-link" value="1" onchange="qty()" id="textbox">
+                                                        <input type="hidden" id="origprice" value="<?php echo $fetch_cart['cart_book_price']; ?>" id="textbox">
                                                     </li>
                                                 </ul>
                                             </div>
@@ -342,12 +343,14 @@ if (isset($_GET['delete_all'])) {
         //     }
         // }
 
-        function qty(){
+        // function qty(){
+            const qty = () => {
 
-            const price = parseInt(document.getElementById('itemval').innerHTML);
+            const orig = document.getElementById('origprice').value;
+            // const price = parseInt(document.getElementById('itemval').innerHTML);
             // alert(price);
             const quantity = document.getElementById('textbox').value;
-            const now = (price * quantity);
+            const now = (orig*quantity);
 
             document.getElementById('itemval').innerHTML = now;
 
