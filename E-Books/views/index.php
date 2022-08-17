@@ -147,8 +147,12 @@
                                     <input type="hidden" name="book_name" value="' . $row[1] . '">
                                     <input type="hidden" name="book_price" value="' . $row[14] . '">
                                     <input type="hidden" name="book_image" value="' . $row[17] . '">
-                                    <input type="hidden" value="'.$row[0].'" name="book_id" />
-                                    <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">
+                                    <input type="hidden" value="'.$row[0].'" name="book_id" />';
+                                    if(isset($_SESSION["userid"]) != null){echo'
+                                    <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">';}
+                                    else{echo'
+                                    <div id="login-btn" class="btn-n">Add To Cart</div>';}
+                                echo '
                                 </div>
                             </div>
                         </form>
@@ -266,6 +270,30 @@
         }
 
         ?>
+
+    <!-- login form  -->
+
+    <div class="login-form-container">
+
+        <div id="close-login-btn" class="fas fa-times"></div>
+
+        <form action="../apis/user_apis/login_user.php" method="POST">
+            <h3>sign in</h3>
+            <span>Email</span>
+            <input type="email" name="vemail" class="box" placeholder="Enter your email" id="">
+            <span>password</span>
+            <input type="password" name="vpassword" class="box" placeholder="Enter your password" id="">
+            <div class="checkbox">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me"> remember me</label>
+            </div>
+            <input type="submit" name="login" value="sign in" class="btn-n">
+            <p>forget password ? <a href="#">click here</a></p>
+            <p>don't have an account ? <a href="#" id="signup-btn">create one</a></p>
+            <!-- <p>don't have an account ? <button id="signup-btn">create one</button></p> -->
+        </form>
+
+    </div>
 
 
         <!-- featured section ends -->
