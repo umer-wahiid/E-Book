@@ -147,6 +147,7 @@
                                     <input type="hidden" name="book_price" value="' . $row[14] . '">
                                     <input type="hidden" name="pdf_price" value="' . $row[15] . '">
                                     <input type="hidden" name="cd_price" value="' . $row[16] . '">
+                                    <input type="hidden" name="final_price" value="' . $row[14] . '">
                                     <input type="hidden" name="book_image" value="' . $row[17] . '">
                                     <input type="hidden" value="' . $row[0] . '" name="book_id" />';
                         if (isset($_SESSION["userid"]) != null) {
