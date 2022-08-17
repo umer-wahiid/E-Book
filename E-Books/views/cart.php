@@ -223,8 +223,8 @@ if (isset($_GET['delete_all'])) {
                                                     <li class="page-item">
 
 
-                                                        <form action="" method="POST">
-                                                            <input type="hidden" id="">
+                                                        <form action="<?php echo '../apis/cart_apis/edit_cart.php?iid='.$fetch_cart['cart_id'].''?>" method="POST">
+                                                            <input type="hidden" name="final_price" id="itemva<?php echo $fetch_cart['cart_id']; ?>" value=''>
                                                             <input type="number" name="quantity" min="1" max="5"
                                                                 class="page-link" value="<?php echo $fetch_cart['cart_book_quantity']; ?>"
                                                                 onchange="qty() ; this.form.submit()"
@@ -281,6 +281,8 @@ if (isset($_GET['delete_all'])) {
                                         'textbox<?php echo $fetch_cart['cart_id']; ?>').value;
                                     document.getElementById('itemval<?php echo $fetch_cart['cart_id']; ?>')
                                         .innerHTML = origpdf * quantity;
+                                    document.getElementById('itemva<?php echo $fetch_cart['cart_id']; ?>')
+                                        .value = origpdf * quantity;
 
 
                                     qty = () => {
@@ -291,6 +293,8 @@ if (isset($_GET['delete_all'])) {
                                         var now = (orig * quantity);
                                         document.getElementById('itemval<?php echo $fetch_cart['cart_id']; ?>')
                                             .innerHTML = now;
+                                        document.getElementById('itemva<?php echo $fetch_cart['cart_id']; ?>')
+                                            .value = now;
                                     }
                                 }
                                 const radio1 = () => {
@@ -307,6 +311,8 @@ if (isset($_GET['delete_all'])) {
                                         'textbox<?php echo $fetch_cart['cart_id']; ?>').value;
                                     document.getElementById('itemval<?php echo $fetch_cart['cart_id']; ?>')
                                         .innerHTML = origcd * quantity;
+                                    document.getElementById('itemva<?php echo $fetch_cart['cart_id']; ?>')
+                                        .value = origcd * quantity;
 
 
                                     qty = () => {
@@ -317,6 +323,8 @@ if (isset($_GET['delete_all'])) {
                                         var now = (orig * quantity);
                                         document.getElementById('itemval<?php echo $fetch_cart['cart_id']; ?>')
                                             .innerHTML = now;
+                                        document.getElementById('itemva<?php echo $fetch_cart['cart_id']; ?>')
+                                            .value = now;
                                     }
                                 }
                                 const radio2 = () => {
@@ -333,6 +341,8 @@ if (isset($_GET['delete_all'])) {
                                         'textbox<?php echo $fetch_cart['cart_id']; ?>').value;
                                     document.getElementById('itemval<?php echo $fetch_cart['cart_id']; ?>')
                                         .innerHTML = orig * quantity;
+                                    document.getElementById('itemva<?php echo $fetch_cart['cart_id']; ?>')
+                                        .value = orig * quantity;
 
 
                                     qty = () => {
@@ -343,6 +353,8 @@ if (isset($_GET['delete_all'])) {
                                         var now = (orig * quantity);
                                         document.getElementById('itemval<?php echo $fetch_cart['cart_id']; ?>')
                                             .innerHTML = now;
+                                        document.getElementById('itemva<?php echo $fetch_cart['cart_id']; ?>')
+                                            .value = now;
                                     }
                                 }
 
@@ -356,11 +368,9 @@ if (isset($_GET['delete_all'])) {
                                     var now = (orig * quantity);
                                     document.getElementById('itemval<?php echo $fetch_cart['cart_id']; ?>')
                                         .innerHTML = now;
+                                    document.getElementById('itemva<?php echo $fetch_cart['cart_id']; ?>')
+                                        .value = now;
                                 }
-
-
-                                const sum = sum(parsInt(document.getElementById('product_total_amt')));
-                                alert(sum);
                                 </script>
                                 <?php
                             }
