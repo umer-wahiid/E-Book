@@ -24,7 +24,7 @@ require "../apis/connection.php";
     <title>Document</title>
     <style>
         :root {
-            --purple: #8e44ad;
+            --purple: #27ae60;
             --red: #c0392b;
             --orange: #f39c12;
             --black: #333;
