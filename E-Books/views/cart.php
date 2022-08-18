@@ -395,16 +395,67 @@ if (isset($_GET['delete_all'])) {
                                 <h2 class="product_name mb-5">The Total Amount Of</h2>
                                 <div class="price_indiv d-flex justify-content-between">
                                     <p>Product amount</p>
-                                    <p>Rs.<span id="product_total_amt">0.00</span></p>
+                                    <p>Rs
+                                        <span id="product_total_amt">.
+                                            <?php 
+                                        $iid = $_SESSION['userid'];
+                                        $query = "SELECT * FROM tbl_cart WHERE cart_user_id = $iid";
+                                        $query_run = mysqli_query($con, $query);
+
+                                        $total= 0;
+                                        while ($num = mysqli_fetch_assoc ($query_run)) {
+                                            $total += $num['cart_final_price'];
+                                        }
+                                        echo $total;
+                                    ?>
+                                        </span>
+                                    </p>
                                 </div>
                                 <div class="price_indiv d-flex justify-content-between">
                                     <p>Shipping Charge</p>
-                                    <p>Rs.<span id="shipping_charge">50.0</span></p>
+                                    <p>Rs.
+                                        <span id="shipping_charge">
+                                            <?php 
+                                        $iid = $_SESSION['userid'];
+                                        $query = "SELECT * FROM tbl_cart WHERE cart_user_id = $iid && cart_book_form != 'PDFS' ";
+                                        $query_run = mysqli_query($con, $query);
+
+                                        $ship= 0;
+                                        while ($num = mysqli_fetch_assoc ($query_run)) {
+                                            $ship += $num['cart_book_quantity'];
+                                        }
+                                        echo $ship * 40;
+                                    ?>
+                                        </span>
+                                    </p>
                                 </div>
                                 <hr />
                                 <div class="total-amt d-flex justify-content-between font-weight-bold">
                                     <p>The total amount of (including VAT)</p>
-                                    <p>PKR/<span id="total_cart_amt"></span>
+                                    <p>PKR/
+
+                                        <?php
+                                    
+                                    $iid = $_SESSION['userid'];
+                                    $query = "SELECT * FROM tbl_cart WHERE cart_user_id = $iid";
+                                    $query_run = mysqli_query($con, $query);
+                                    $query2 = "SELECT * FROM tbl_cart WHERE cart_user_id = $iid && cart_book_form != 'PDFS' ";
+                                    $query_run2 = mysqli_query($con, $query2);
+
+                                    $total= 0;
+                                    while ($num = mysqli_fetch_assoc ($query_run)) {
+                                        $total += $num['cart_final_price'];
+                                    }
+
+                                    $ship= 0;
+                                    while ($num2 = mysqli_fetch_assoc ($query_run2)) {
+                                        $ship += $num2['cart_book_quantity'];
+                                    }
+
+                                    echo $total + ($ship*40);
+                                    
+                                    ?>
+                                        <span id="total_cart_amt"></span>
                                     </p>
                                 </div>
                                 <a class="btn-n text-uppercase" href="checkout.php">Check Out</a>
