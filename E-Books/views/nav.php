@@ -161,7 +161,7 @@
                 <!-- <a href="#blogs">blogs</a> -->
                 <a href="about.php">About</a>
                 <a href="contact.php">Contact</a>
-                <a href="competition.php">competition</a>
+                <a href="order.php">order</a>
             </nav>
             <?php
             echo '

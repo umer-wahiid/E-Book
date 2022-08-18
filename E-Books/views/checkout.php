@@ -3,6 +3,55 @@ session_start();
 
 include "../apis/connection.php";
 
+$user_id = $_SESSION['userid'];
+
+
+if (isset($_POST['order_btn'])) {
+
+    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $number = $_POST['number'];
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $method = mysqli_real_escape_string($con, $_POST['method']);
+    $address = mysqli_real_escape_string($con, $_POST['house/flat']);
+    $placed_on = date('d-M-Y');
+
+    $cart_total = 0;
+    $cart_products[] = '';
+
+    $cart_query = mysqli_query($con, "SELECT * FROM `tbl_cart` WHERE cart_user_id = '$user_id'");
+    if (mysqli_num_rows($cart_query) > 0) {
+        while ($cart_item = mysqli_fetch_assoc($cart_query)) {
+            $cart_products[] = $cart_item['cart_book_name'] . ' (' . $cart_item['cart_book_quantity'] . ') ';
+            $sub_total = ($cart_item['cart_final_price'] * $cart_item['cart_book_quantity']);
+            $cart_total += $sub_total;
+        }
+    }
+
+    $total_products = implode(', ', $cart_products);
+
+    $order_query = mysqli_query($con, "SELECT * FROM `tbl_book_order` 
+    WHERE user_name = '$name' 
+    AND user_number = '$number' 
+    AND user_email = '$email' 
+    AND order_method = '$method' 
+    AND user_address = '$address' 
+    AND total_products = '$total_products' 
+    AND total_price = '$cart_total'");
+
+    if ($cart_total == 0) {
+        $message[] = 'your cart is empty';
+    } else {
+        if (mysqli_num_rows($order_query) > 0) {
+            $message[] = 'order already placed!';
+        } else {
+            mysqli_query($con, "INSERT INTO `tbl_book_order`(`user_id`, `user_name`, `user_number`, `user_email`, `order_method`, `user_address`, `total_products`, `total_price`, `placed_on`) 
+            VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on')");
+            $message[] = 'order placed successfully!';
+            mysqli_query($con, "DELETE FROM `tbl_cart` WHERE user_id = '$user_id'");
+        }
+    }
+}
+
 ?>
 
 
