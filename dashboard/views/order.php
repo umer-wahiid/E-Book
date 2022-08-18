@@ -123,7 +123,7 @@ if (isset($_GET['delete'])) {
                             <input type="hidden" name="order_id" value="<?php echo $fetch_orders['order_id']; ?>">
                             <select name="update_payment">
                                 <option value="" selected disabled><?php echo $fetch_orders['payment_status']; ?></option>
-                                <option value="pending">pending</option>
+                                <option value="In Process">In Process</option>
                                 <option value="completed">completed</option>
                             </select>
                             <input type="submit" value="update" name="update_order" class="btn btn-primary">

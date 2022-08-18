@@ -57,3 +57,31 @@ Book Name : Cat Kid Comic Club On Purpose
 Book Author : Dav Pilkey
 Book About : The Cat Kid Comic Club is deep in discovery in the newest graphic novel in the hilarious and heartwarming worldwide bestselling series by Dav Pilkey, the author and illustrator of Dog Man.The comic club is going in all different directions! Naomi, Melvin, and siblings are each trying to find their purpose.
 Book Author About : David "Dav" Murray Pilkey Jr. is an American cartoonist, author, and illustrator of children's literature. He is best known as the author and illustrator of the children's book series, Captain Underpants, and the children's graphic novel series, Dog Man.
+
+		
+	GENERAL KNOWLEDGE BOOKS
+
+Book Name : Thinking, Fast and Slow
+Book Author : Daniel Kahneman
+Book About : Thinking, Fast and Slow is a 2011 book by psychologist Daniel Kahneman. The book's main thesis is that of a dichotomy between two modes of thought: "System 1" is fast, instinctive and emotional; "System 2" is slower, more deliberative, and more logical.
+Book Publication date : October 25, 2011
+Book Pages : 499 pages
+Book Author About : Daniel Kahneman is an Israeli-American psychologist and economist notable for his work on the psychology of judgment and decision-making, as well as behavioral economics, for which he was awarded the 2002 Nobel Memorial Prize in Economic Sciences.
+
+Book Name : An Incomplete Education
+Book Author :  William Wilson
+Book Publication Date : 1988
+Book Pages : Not Shown 
+Book Author About : "William Wilson" is a short story by American writer Edgar Allan Poe, first published in 1839, with a setting inspired by Poe's formative years on the outskirts of London. The tale features a doppelgänger. It also appeared in the 1840 collection Tales of the Grotesque and Arabesque, and has been adapted several times.
+
+Book Name : A History of the World in 100 Objects
+Book Author : Neil MacGregor
+Book Publication Date : 2010
+Book Page : Not Shown
+Book Author About : Robert Neil MacGregor OM AO FSA is a British art historian and former museum director. He was editor of the Burlington Magazine from 1981 to 1987, then Director of the National Gallery, London.
+
+Book Name : Sapiens
+Book Author : Yuval Noah Harari
+Book Publication Date : 2011
+Book Pages :443 pages
+Book Author About : Yuval Noah Harari is an Israeli public intellectual, historian, and professor in the Department of History at the Hebrew University of Jerusalem. He is the author of the popular science bestsellers Sapiens: A Brief History of Humankind, Homo Deus: A Brief History of Tomorrow, and 21 Lessons for the 21st Century.

@@ -92,7 +92,7 @@ $user_id = $_SESSION['userid'];
 
     <section class="placed-orders">
 
-        <h1 class="title">placed orders</h1>
+        <h1 class="heading" style="margin-bottom: 70px;"><span>placed orders</span></h1>
 
         <div class="box-container">
 
