@@ -52,6 +52,38 @@ include "../apis/connection.php";
         color: var(--black);
         padding-top: 1rem;
     }
+
+    .products .box-container .box .price span {
+        font-size: 1.5rem;
+        color: var(--light-color);
+        text-decoration: line-through;
+    }
+
+    .products .box-container .box .icons {
+        border-bottom: var(--border-hover);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        z-index: 1;
+        transform: translateY(-105%);
+    }
+
+    .products .box-container .box:hover .icons {
+        transform: translateY(0%);
+    }
+
+    .products .box-container .box .icons a {
+        color: var(--black);
+        font-size: 2.2rem;
+        padding: 1.3rem 1.5rem;
+    }
+
+    .products .box-container .box .icons a:hover {
+        background: var(--green);
+        color: #fff;
+    }
 </style>
 
 
@@ -66,6 +98,13 @@ include "../apis/connection.php";
         <div class="box-container">
 
             <form action="" method="post" class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
+                        <p class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></p>
+                    </a>
+                </div>
                 <img class="image" src="image/book-1.png" alt="">
                 <div class="name">A Gentleman in Moscow</div>
                 <div class="price">Rs.1700</div>
