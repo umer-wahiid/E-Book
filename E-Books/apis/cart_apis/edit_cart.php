@@ -22,9 +22,10 @@ if (isset($_POST["quantity"])) {
 if (isset($_POST['abc'.$_GET['iid']])) {
     $id = $_GET["iid"];
     $price = $_POST['final_price'];
+    $formprice = $_POST['form_price'];
     $form = $_POST['abc'.$id];
 
-    $update_q = "UPDATE `tbl_cart` SET `cart_book_form`='$form',`cart_final_price`='$price' WHERE `cart_id`= '$id'";
+    $update_q = "UPDATE `tbl_cart` SET `cart_book_form`='$form',`cart_final_price`='$price',`cart_form_price`='$formprice' WHERE `cart_id`= '$id'";
 
     $update_e = mysqli_query($con, $update_q);
 
