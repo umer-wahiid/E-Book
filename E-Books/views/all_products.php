@@ -102,7 +102,7 @@ include "../apis/connection.php";
 
     <section class="products">
 
-        <h1 class="title">latest products</h1>
+        <h1 class="title" style="margin-bottom: 50px;">All Products</h1>
 
         <div class="box-container">
 
@@ -124,16 +124,16 @@ include "../apis/connection.php";
 
             ?>
                     <form action="" method="post" class="box">
-                        <div class="icons">
+                        <!-- <div class="icons">
                             <a href="#" class="fas fa-search"></a>
                             <a href="#" class="fas fa-heart"></a>
                             <a data-bs-toggle="modal" data-bs-target="#myModal<?php echo $fetch_product['book_id']; ?>" style="background: transparent;">
                                 <p class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></p>
                             </a>
-                        </div>
+                        </div> -->
                         <img class="image" src="../../dashboard/views/<?php echo $fetch_product['book_image']; ?>" alt="">
                         <div class="name"><?php echo $fetch_product['book_title']; ?></div>
-                        <div class="price"><?php echo $fetch_product['book_price_hardcopy']; ?></div>
+                        <div class="price">Rs.<?php echo $fetch_product['book_price_hardcopy']; ?></div>
                         <!-- <input type="number" min="1" name="product_quantity" value="1" class="qty"> -->
                         <input type="hidden" name="product_name" value="<?php echo $fetch_product['book_title']; ?>">
                         <input type="hidden" name="product_price" value="<?php echo $fetch_product['book_price_hardcopy']; ?>">

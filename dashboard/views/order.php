@@ -1,18 +1,18 @@
 <?php
 require "../apis/connection.php";
-if (isset($_POST['update_order'])) {
+// if (isset($_POST['update_order'])) {
 
-    $order_update_id = $_POST['order_id'];
-    $update_payment = $_POST['update_payment'];
-    mysqli_query($con, "UPDATE `tbl_book_order` SET payment_status = '$update_payment' WHERE order_id = '$order_update_id'") or die('query failed');
-    $message[] = 'payment status has been updated!';
-}
+//     $order_update_id = $_POST['order_id'];
+//     $update_payment = $_POST['update_payment'];
+//     mysqli_query($con, "UPDATE `tbl_book_order` SET payment_status = '$update_payment' WHERE order_id = '$order_update_id'") or die('query failed');
+//     $message[] = 'payment status has been updated!';
+// }
 
-if (isset($_GET['delete'])) {
-    $delete_id = $_GET['delete'];
-    mysqli_query($con, "DELETE FROM `tbl_book_order` WHERE order_id = '$delete_id'") or die('query failed');
-    header('location:orders.php');
-}
+// if (isset($_GET['delete'])) {
+//     $delete_id = $_GET['delete'];
+//     mysqli_query($con, "DELETE FROM `tbl_book_order` WHERE order_id = '$delete_id'") or die('query failed');
+//     header('location:orders.php');
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +23,19 @@ if (isset($_GET['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root {
+            --purple: #8e44ad;
+            --red: #c0392b;
+            --orange: #f39c12;
+            --black: #333;
+            --white: #fff;
+            --light-color: #666;
+            --light-white: #ccc;
+            --light-bg: #f5f5f5;
+            --border: .1rem solid var(--black);
+            --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        }
+
         .navbar .navbar-nav .nav-link.dash,
         .cat,
         .pro,
@@ -92,37 +105,37 @@ if (isset($_GET['delete'])) {
 
         <div class="box-container">
             <?php
-            $select_orders = mysqli_query($con, "SELECT * FROM `tbl_book_order`") or die('query failed');
-            if (mysqli_num_rows($select_orders) > 0) {
-                while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
+            // $select_orders = mysqli_query($con, "SELECT * FROM `tbl_book_order`") or die('query failed');
+            // if (mysqli_num_rows($select_orders) > 0) {
+            //     while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
+            // 
             ?>
-                    <div class="box">
-                        <p> user id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
-                        <p> placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
-                        <p> name : <span><?php echo $fetch_orders['user_name']; ?></span> </p>
-                        <p> number : <span><?php echo $fetch_orders['user_number']; ?></span> </p>
-                        <p> email : <span><?php echo $fetch_orders['user_email']; ?></span> </p>
-                        <p> address : <span><?php echo $fetch_orders['user_address']; ?></span> </p>
-                        <p> total products : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
-                        <p> total price : <span>$<?php echo $fetch_orders['total_price']; ?>/-</span> </p>
-                        <p> payment method : <span><?php echo $fetch_orders['order_method']; ?></span> </p>
-                        <form action="" method="post">
-                            <input type="hidden" name="order_id" value="<?php echo $fetch_orders['order_id']; ?>">
-                            <select name="update_payment">
-                                <option value="" selected disabled><?php echo $fetch_orders['payment_status']; ?></option>
-                                <option value="pending">pending</option>
-                                <option value="completed">completed</option>
-                            </select>
-                            <input type="submit" value="update" name="update_order" class="option-btn">
-                            <a href="admin_orders.php?delete=<?php echo $fetch_orders['order_id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a>
-                        </form>
-                    </div>
-            <?php
-                }
-            } else {
-                echo '<p class="empty">no orders placed yet!</p>';
-            }
-            ?>
+            <div class="box">
+                <p> user id : <span>1</span> </p>
+                <p> placed on : <span>14 august</span> </p>
+                <p> name : <span>Ammar</span> </p>
+                <p> number : <span>53456</span> </p>
+                <p> email : <span>ammar@gmail.com</span> </p>
+                <p> address : <span>fafae</span> </p>
+                <p> total products : <span>The Book Theif(1),A gentleman in moscow(3),...</span> </p>
+                <p> total price : <span>$500/-</span> </p>
+                <p> payment method : <span>cash on delivery</span> </p>
+                <form action="" method="post">
+                    <select name="update_payment">
+                        <option value="" selected disabled>pending</option>
+                        <option value="pending">pending</option>
+                        <option value="completed">completed</option>
+                    </select>
+                    <input type="submit" value="update" name="update_order" class="option-btn">
+                    <!-- <a href="admin_orders.php?delete=<?php echo $fetch_orders['order_id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a> -->
+                </form>
+            </div>
+            <!-- <?php
+                    //     }
+                    // } else {
+                    //     echo '<p class="empty">no orders placed yet!</p>';
+                    // }
+                    ?> -->
         </div>
 
     </section>
