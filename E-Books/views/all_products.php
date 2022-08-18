@@ -84,6 +84,15 @@ include "../apis/connection.php";
         background: var(--green);
         color: #fff;
     }
+
+    .empty {
+        padding: 1.5rem;
+        text-align: center;
+        border: var(--border);
+        background-color: var(--white);
+        color: var(--red);
+        font-size: 2rem;
+    }
 </style>
 
 
@@ -97,23 +106,50 @@ include "../apis/connection.php";
 
         <div class="box-container">
 
-            <form action="" method="post" class="box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
-                        <p class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></p>
-                    </a>
-                </div>
-                <img class="image" src="image/book-1.png" alt="">
-                <div class="name">A Gentleman in Moscow</div>
-                <div class="price">Rs.1700</div>
-                <!-- <input type="number" min="1" name="product_quantity" value="1" class="qty"> -->
-                <input type="hidden" name="product_name" value="A Gentleman in Moscow">
-                <input type="hidden" name="product_price" value="1700">
-                <input type="hidden" name="product_image" value="A Gentleman in Moscow.png">
-                <input type="submit" value="add to cart" name="add_to_cart" class="btn-n">
-            </form>
+            <?php
+
+            $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail
+            INNER JOIN tbl_book_category as tb1
+            ON
+            tbl_book_detail.book_category_1 = tb1.b_id
+            INNER JOIN tbl_book_category as tb2
+            ON
+            tbl_book_detail.book_category_2 = tb2.b_id
+            INNER JOIN tbl_book_category as tb3
+            ON
+            tbl_book_detail.book_category_3 = tb3.b_id
+            ');
+            if (mysqli_num_rows($fetch_book) > 0) {
+                while ($fetch_product = mysqli_fetch_assoc($fetch_book)) {
+
+            ?>
+                    <form action="" method="post" class="box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a data-bs-toggle="modal" data-bs-target="#myModal<?php echo $fetch_product['book_id']; ?>" style="background: transparent;">
+                                <p class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></p>
+                            </a>
+                        </div>
+                        <img class="image" src="../../dashboard/views/<?php echo $fetch_product['book_image']; ?>" alt="">
+                        <div class="name"><?php echo $fetch_product['book_title']; ?></div>
+                        <div class="price"><?php echo $fetch_product['book_price_hardcopy']; ?></div>
+                        <!-- <input type="number" min="1" name="product_quantity" value="1" class="qty"> -->
+                        <input type="hidden" name="product_name" value="<?php echo $fetch_product['book_title']; ?>">
+                        <input type="hidden" name="product_price" value="<?php echo $fetch_product['book_price_hardcopy']; ?>">
+                        <input type="hidden" name="pdf_price" value="<?php echo $fetch_product['book_price_pdf']; ?>">
+                        <input type="hidden" name="cd_price" value="<?php echo $fetch_product['book_price_cd']; ?>">
+                        <input type="hidden" name="final_price" value="<?php echo $fetch_product['book_price_hardcopy']; ?>">
+                        <input type="hidden" name="product_image" value="<?php echo $fetch_product['book_image']; ?>">
+                        <input type="hidden" value="<?php echo $fetch_product['book_id']; ?>" name="book_id" />';
+                        <input type="submit" value="add to cart" name="add_to_cart" class="btn-n">
+                    </form>
+            <?php
+                }
+            } else {
+                echo '<p class="empty">no products added yet!</p>';
+            }
+            ?>
 
         </div>
 
