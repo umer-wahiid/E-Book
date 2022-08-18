@@ -20,7 +20,7 @@
         // if (mysqli_num_rows($check_cart_numbers) > 0) {
         //     $message[] = 'already added to cart!';
         // } else {
-            $query_e = mysqli_query($con, "INSERT INTO `tbl_cart`(`cart_user_id`, `cart_book_id`, `cart_book_name`, `cart_book_image`, `cart_book_price`,`cart_pdf_price`,`cart_cd_price`,`cart_final_price`, `cart_book_quantity`) VALUES ('$user_id','$book_id','$book_name','$book_image','$book_price','$pdf_price','$cd_price','$book_price','1')");
+            $query_e = mysqli_query($con, "INSERT INTO `tbl_cart`(`cart_user_id`, `cart_book_id`, `cart_book_name`, `cart_book_image`, `cart_book_price`,`cart_pdf_price`,`cart_cd_price`,`cart_final_price`, `cart_book_quantity`, `cart_book_form`) VALUES ('$user_id','$book_id','$book_name','$book_image','$book_price','$pdf_price','$cd_price','$book_price','1','Hard Copy')");
 
             if($query_e){
                 header("location:../../views/index.php?response=Successfully Inserted");
