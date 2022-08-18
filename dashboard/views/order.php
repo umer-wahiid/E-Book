@@ -121,12 +121,12 @@ require "../apis/connection.php";
                 <p> total price : <span>$500/-</span> </p>
                 <p> payment method : <span>cash on delivery</span> </p>
                 <form action="" method="post">
-                    <select name="update_payment">
+                    <!-- <select name="update_payment">
                         <option value="" selected disabled>pending</option>
-                        <option value="pending">pending</option>
-                        <option value="completed">completed</option>
-                    </select>
-                    <input type="submit" value="update" name="update_order" class="option-btn">
+                        <option value="pending">confirm order</option>
+                        <option value="completed">confirm order</option>
+                    </select> -->
+                    <input type="submit" value="Confirm Order" name="update_order" class="btn btn-primary">
                     <!-- <a href="admin_orders.php?delete=<?php echo $fetch_orders['order_id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a> -->
                 </form>
             </div>
