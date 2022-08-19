@@ -56,14 +56,18 @@
             <div class="icons">
                 <div id="search-btn" class="fas fa-search"></div>
                 <a href="#" class="fas fa-heart"></a>
-                <a href="cart.php" class="fas fa-shopping-cart"></a>
                 <?php
                 if (isset($_SESSION["userid"]) != null) {
-                    echo '<div class="fas nui online" onclick="settingsMenuToggle()">
+                    echo '
+                    <a href="cart.php" class="fas fa-shopping-cart"></a>
+                    <div class="fas nui online" onclick="settingsMenuToggle()">
                     <img  src="' . $_SESSION["image"] . '" class="rounded-circle">
                     </div>';
                 } else {
-                    echo '<div id="login-btn" class="fas fa-user"></div>';
+
+                    echo '
+                    <a href="" onclick="login()" class="fas fa-shopping-cart"></a>
+                    <div id="login-btn" class="fas fa-user"></div>';
                 }
                 ?>
 

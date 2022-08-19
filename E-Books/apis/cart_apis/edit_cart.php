@@ -38,7 +38,6 @@ if (isset($_POST['abc'.$_GET['iid']])) {
 
 if (isset($_POST['order'])) {
     $id = $_SESSION['userid'];
-    mysqli_query($con, "UPDATE `tbl_cart` SET `cart_status`= 0 WHERE `cart_user_id`= '$id'");
-
+    $query = mysqli_query($con, "UPDATE `tbl_cart` SET `cart_status`= '1' WHERE `cart_user_id`= $id");
 }
 ?>

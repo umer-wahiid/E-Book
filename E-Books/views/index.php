@@ -393,7 +393,7 @@
                             <div class="image">
                                 <img src="../../dashboard/views/' . $row[17] . '" alt="">
                             </div>
-                            <div class="content">
+                            <div class="content" style="text-align:left;">
                                 <h3>' . $row[1] . '</h3>
                                 <div class="price">Rs. ' . $row[14] . ' <span>$20.99</span></div>
                                 <div class="stars">
