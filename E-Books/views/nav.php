@@ -139,11 +139,11 @@
                 <hr>
                 <div class="sl">
                     <img src="image/setting.png" class="si">
-                    <a href="#">Settings & Privacy <img src="image/arrow.png" width="10px"></a>
+                    <a href="edit.php">Settings & Privacy <img src="image/arrow.png" width="10px"></a>
                 </div>
                 <div class="sl">
                     <img src="image/help.png" class="si">
-                    <a href="#">Help & Support <img src="image/arrow.png" width="10px"></a>
+                    <a href="contact.php">Help & Support <img src="image/arrow.png" width="10px"></a>
                 </div>
                 <div class="sl">
                     <img src="image/logout.png" class="si">
