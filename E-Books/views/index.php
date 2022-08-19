@@ -133,13 +133,12 @@
                             <a href="#" class="fas fa-search"></a>
                             <a href="#" class="fas fa-heart"></a>
                             ';
-                            if (isset($_SESSION["userid"]) != null) {
-                                echo '<a data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">';
-                            }
-                            else{
-                                echo "<a onclick='login()' style='background: transparent;'>";
-                            }
-                            echo'
+                        if (isset($_SESSION["userid"]) != null) {
+                            echo '<a data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">';
+                        } else {
+                            echo "<a onclick='login()' style='background: transparent;'>";
+                        }
+                        echo '
                             <p class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></p>
                             </a>
                             </div>
@@ -267,13 +266,15 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                        <form action="../apis/cart_apis/add_to_cart.php" method="POST" enctype="multipart/form-data"></form>
+                        <form action="../apis/cart_apis/add_to_cart.php" method="POST">
                             <input type="hidden" name="book_name" value="' . $row[1] . '">
                             <input type="hidden" name="book_price" value="' . $row[14] . '">
+                            <input type="hidden" name="pdf_price" value="' . $row[15] . '">
+                            <input type="hidden" name="cd_price" value="' . $row[16] . '">
+                            <input type="hidden" name="final_price" value="' . $row[14] . '">
                             <input type="hidden" name="book_image" value="' . $row[17] . '">
                             <input type="hidden" value="' . $row[0] . '" name="book_id" />
-                            <button type="submit" name="add_to_cart" class="btn-n" style="margin-top:0px;margin-right:309px;">Add To Cart</button>
-                            <button type="button" style="width:100px;height:35px;font-size:15px;" class="btn" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">
                         </form>    
                         </div>
                     </div>
@@ -300,8 +301,7 @@
                     <!-- <a href="#" class="btn-n">Subscribe !</a> -->
                 </div>
 
-                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php"
-                    method="POST">
+                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
 
                     <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
                     <input type="email" readonly name="" placeholder="enter your email" <?php
@@ -482,12 +482,12 @@
 
 
         <script>
-        function login() {
-            alert('Please Login First');
-        }
+            function login() {
+                alert('Please Login First');
+            }
         </script>
 
-        
+
     </body>
 
     </html>
