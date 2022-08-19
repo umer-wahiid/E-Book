@@ -28,14 +28,14 @@
     <title>E-Books</title>
 
     <style>
-        .modal-title {
-            text-transform: uppercase;
-            margin-left: 22px;
-        }
+    .modal-title {
+        text-transform: uppercase;
+        margin-left: 22px;
+    }
 
-        .heading span {
-            text-transform: uppercase;
-        }
+    .heading span {
+        text-transform: uppercase;
+    }
     </style>
 </head>
 
@@ -44,7 +44,7 @@
 
         <div class="header-1">
 
-            <a href="index.php" class="logo"> <img src="image/logo.png" width="90px" alt="">  e-books </a>
+            <a href="index.php" class="logo"> <img src="image/logo.png" width="90px" alt=""> e-books </a>
             <!-- id="search-box" -->
             <form class="search-form" method="GET">
                 <input method="GET" type="search" id="ser" name="search" placeholder="search book here...">
@@ -294,7 +294,8 @@
             <span>Phone</span>
             <input type="text" name="uphone" class="box" placeholder="Enter your phone" id="">
             <span>Address</span>
-            <textarea style="border:1px solid gray;border-radius:6px ; resize: none; color: var(--light-color);" placeholder="Enter your address" name="uaddress" id="" cols="52" rows="3"></textarea>
+            <textarea style="border:1px solid gray;border-radius:6px ; resize: none; color: var(--light-color);"
+                placeholder="Enter your address" name="uaddress" id="" cols="52" rows="3"></textarea>
             <span>password</span>
             <input type="password" name="upassword" class="box" placeholder="Enter your password" id="">
             <input type="submit" name="submit" value="submit" class="btn-n">
