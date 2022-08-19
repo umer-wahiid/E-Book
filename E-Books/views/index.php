@@ -49,7 +49,7 @@
                 <div class="swiper books-slider">
                     <div class="swiper-wrapper">
                         <?php
-                        $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id DESC LIMIT 5 ');
+                        $fetch_book = mysqli_query($con, 'SELECT * FROM tbl_book_detail ORDER BY book_id ASC LIMIT 5 ');
                         while ($row = mysqli_fetch_array($fetch_book)) {
                             echo '
                             <button class="swiper-slide" data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
@@ -201,8 +201,8 @@
                         </div>
                         <div class="modal-body" style="padding:1.5rem;">
                             <div class="row">
-                                <div class="col-lg-3" width="max-content">
-                                    <img class="img-fluid" style="border-radius: 10px;" src="../../dashboard/views/' . $row[17] . '" alt="">
+                                <div class="col-lg-3" width="200px">
+                                    <img class="img-fluid" style="border-radius: 10px;width:200px;" src="../../dashboard/views/' . $row[17] . '" alt="">
                                 </div>
                                 <div class="col-lg-8 mt-3" style="margin-left:20px;">
                                     <div class="row">
