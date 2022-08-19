@@ -132,7 +132,15 @@
                             <div class="icons">
                             <a href="#" class="fas fa-search"></a>
                             <a href="#" class="fas fa-heart"></a>
-                            <a data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">
+                            ';
+                            if (isset($_SESSION["userid"]) != null) {
+                                echo '<a data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '" style="background: transparent;">';
+                            }
+                            else{
+                                echo "<a onclick='login()' style='background: transparent;'>";
+                            }
+                            echo'
+                             
                             <p class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></p>
                             </a>
                             </div>
@@ -157,7 +165,7 @@
                                     ';
                         } else {
                             echo '
-                                    <a href="#" class="btn-n">Add To Cart</a>';
+                                    <a href="#" onclick="login()" class="btn-n">Add To Cart</a>';
                         }
                         echo '
                                 </div>
@@ -317,7 +325,7 @@
                     if (isset($_SESSION["userid"]) != null) {
                         echo '<input type="submit" name="subscribe" value="subscribe" class="btn-n">';
                     } else {
-                        echo '<div id="login-btn" href="#"  class="btn-n">Subscribe</div>';
+                        echo '<div id="login-btn" onclick="login()" href="#"  class="btn-n">Subscribe</div>';
                     }
                     ?>
                 </form>
@@ -413,8 +421,8 @@
             <div class="content">
                 <h3>deal of the day</h3>
                 <h1>upto 50% off</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde perspiciatis in atque dolore tempora
-                    quaerat at fuga dolorum natus velit.</p>
+                <p>Get Upto 50% Off On All New Arrival Books On Black Friday. So what are you waiting for, Avail the
+                        offer ASAP !</p>
                 <a href="#" class="btn-n">shop now</a>
             </div>
 
@@ -473,7 +481,11 @@
     </div> -->
 
 
-
+<script>
+    function login(){
+        alert('Please Login First');
+    }
+</script>
     </body>
 
     </html>
