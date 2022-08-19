@@ -50,6 +50,7 @@ if (isset($_POST['order_btn'])) {
             // mysqli_query($con, "DELETE FROM `tbl_cart` WHERE user_id = '$user_id'");
         }
     }
+
 }
 
 ?>

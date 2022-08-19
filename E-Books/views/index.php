@@ -111,7 +111,7 @@
         <!-- icons section ends -->
 
 
-        <section class="featured" id="bestselling">
+        <section class="featured" id="bestselling" style="margin-top:-30px ;">
 
             <h1 class="heading"><span>Most Selling</span></h1>
 
@@ -301,7 +301,8 @@
                     <!-- <a href="#" class="btn-n">Subscribe !</a> -->
                 </div>
 
-                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
+                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php"
+                    method="POST">
 
                     <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
                     <input type="email" readonly name="" placeholder="enter your email" <?php
@@ -354,7 +355,7 @@
                             <div class="image">
                                 <img src="../../dashboard/views/' . $row[17] . '" alt="">
                             </div>
-                            <div class="content">
+                            <div class="content" style="text-align:left;">
                                 <h3>' . $row[1] . '</h3>
                                 <div class="price">Rs. ' . $row[14] . ' <span>$20.99</span></div>
                                 <div class="stars">
@@ -482,9 +483,9 @@
 
 
         <script>
-            function login() {
-                alert('Please Login First');
-            }
+        function login() {
+            alert('Please Login First');
+        }
         </script>
 
 

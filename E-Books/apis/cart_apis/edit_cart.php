@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include '../connection.php';
 
 if (isset($_POST["quantity"])) {
@@ -34,5 +34,11 @@ if (isset($_POST['abc'.$_GET['iid']])) {
     } else {
         header("location:../../views/cart.php?response=Try Again");
     }
+}
+
+if (isset($_POST['order'])) {
+    $id = $_SESSION['userid'];
+    mysqli_query($con, "UPDATE `tbl_cart` SET `cart_status`= 0 WHERE `cart_user_id`= '$id'");
+
 }
 ?>

@@ -182,7 +182,7 @@ if (isset($_GET['delete_all'])) {
                                 </h3>
                                 <?php
                                 $grand_total = 0;
-                                $select_cart = mysqli_query($con, "SELECT * FROM `tbl_cart` WHERE cart_user_id = '$user_id'") or die('query failed');
+                                $select_cart = mysqli_query($con, "SELECT * FROM `tbl_cart` WHERE cart_user_id = '$user_id' && cart_status='1'") or die('query failed');
                                 if (mysqli_num_rows($select_cart) > 0) {
                                     while ($fetch_cart = mysqli_fetch_assoc($select_cart)) {
                                 ?>
@@ -425,13 +425,15 @@ if (isset($_GET['delete_all'])) {
                                         <span id="total_cart_amt"></span>
                                     </p>
                                 </div>
-                                <a class="btn-n text-uppercase" href="checkout.php">Check Out</a>
+                                <form action="../apis/cart_apis/edit_cart.php" method="POST">
+                                    <a class="btn-n text-uppercase" name="order" onclick="this.form.submit();" href="checkout.php">Check Out</a>
+                                </form>
                             </div>
+                            <a class="btn-n" href="index.php#bestselling" style="margin: 15px 0 20px 10px;">Continue Shopping</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="btn-n" href="index.php#bestselling" style="margin: 15px 0 20px 10px;">Continue Shopping</a>
         </div>
 
         <!-- cart section ends -->

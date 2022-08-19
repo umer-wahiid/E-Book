@@ -44,7 +44,7 @@
 
         <div class="header-1">
 
-            <a href="index.php" class="logo"> <i class="fas fa-book"></i> e-books </a>
+            <a href="index.php" class="logo"> <img src="image/logo.png" width="90px" alt="">  e-books </a>
             <!-- id="search-box" -->
             <form class="search-form" method="GET">
                 <input method="GET" type="search" id="ser" name="search" placeholder="search book here...">
@@ -117,7 +117,7 @@
                         <div class="up">
                             <img src="' . $_SESSION["image"] . '" class="rounded-circle">
                             <div>
-                                <p>' . $_SESSION["name"] . '</p>
+                                <p style="text-align:left;">' . $_SESSION["name"] . '</p>
                                 <a href="profile.php">See Your Profile</a>
                             </div>
                         </div>';
@@ -265,12 +265,7 @@
             <input type="email" name="vemail" class="box" placeholder="Enter your email" id="">
             <span>password</span>
             <input type="password" name="vpassword" class="box" placeholder="Enter your password" id="">
-            <div class="checkbox">
-                <input type="checkbox" name="" id="remember-me">
-                <label for="remember-me"> remember me</label>
-            </div>
             <input type="submit" name="login" value="sign in" class="btn-n">
-            <p>forget password ? <a href="#">click here</a></p>
             <p>don't have an account ? <a href="#" id="signup-btn">create one</a></p>
             <!-- <p>don't have an account ? <button id="signup-btn">create one</button></p> -->
         </form>

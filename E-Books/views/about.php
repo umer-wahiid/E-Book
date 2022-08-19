@@ -42,11 +42,6 @@ session_start();
                 hesitate to
                 write to us, we will be glade to answer your queries.
             </p>
-            <div class="skills">
-                <span>PDFS</span>
-                <span>Hard Copys</span>
-                <span>CDS</span>
-            </div>
         </div>
     </div>
     <!-- about section ends -->
