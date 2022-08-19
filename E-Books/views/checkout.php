@@ -47,7 +47,7 @@ if (isset($_POST['order_btn'])) {
             mysqli_query($con, "INSERT INTO `tbl_book_order`(`user_id`, `user_name`, `user_number`, `user_email`, `order_method`, `user_address`, `total_products`, `total_price`, `placed_on`,`payment_status`) 
             VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on','pending')");
             $message[] = 'order placed successfully!';
-            mysqli_query($con, "DELETE FROM `tbl_cart` WHERE user_id = '$user_id'");
+            // mysqli_query($con, "DELETE FROM `tbl_cart` WHERE user_id = '$user_id'");
         }
     }
 }
