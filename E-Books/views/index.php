@@ -140,7 +140,6 @@
                                 echo "<a onclick='login()' style='background: transparent;'>";
                             }
                             echo'
-                             
                             <p class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></p>
                             </a>
                             </div>
@@ -301,7 +300,8 @@
                     <!-- <a href="#" class="btn-n">Subscribe !</a> -->
                 </div>
 
-                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
+                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php"
+                    method="POST">
 
                     <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
                     <input type="email" readonly name="" placeholder="enter your email" <?php
@@ -422,7 +422,7 @@
                 <h3>deal of the day</h3>
                 <h1>upto 50% off</h1>
                 <p>Get Upto 50% Off On All New Arrival Books On Black Friday. So what are you waiting for, Avail the
-                        offer ASAP !</p>
+                    offer ASAP !</p>
                 <a href="#" class="btn-n">shop now</a>
             </div>
 
@@ -481,11 +481,13 @@
     </div> -->
 
 
-<script>
-    function login(){
-        alert('Please Login First');
-    }
-</script>
+        <script>
+        function login() {
+            alert('Please Login First');
+        }
+        </script>
+
+        
     </body>
 
     </html>
