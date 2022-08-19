@@ -154,14 +154,19 @@
             <nav class="navbar-n">
                 <a href="index.php#home">home</a>
                 <a style="cursor:pointer;" id="cat">Categories</a>
-                <!-- <a href="#bestselling">Best Selling</a> -->
+                <a href="index.php#bestselling">Best Selling</a>
                 <a href='all_products.php'>All Products</a>
                 <a href="index.php#arrivals">arrivals</a>
                 <a href="index.php#reviews">reviews</a>
                 <!-- <a href="#blogs">blogs</a> -->
                 <a href="about.php">About</a>
                 <a href="contact.php">Contact</a>
-                <a href="order.php">order</a>
+                <?php
+                if (isset($_SESSION["userid"]) != null) {
+                    echo'
+                <a href="order.php">order</a>';
+                }
+                ?>
             </nav>
             <?php
             echo '

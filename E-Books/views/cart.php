@@ -84,7 +84,7 @@ if (isset($_GET['delete_all'])) {
     }
 
     .product_img img {
-        min-width: 200px;
+        min-width: 100px;
         max-height: 230px;
     }
 
@@ -190,8 +190,8 @@ if (isset($_GET['delete_all'])) {
                                 <div class="row">
                                     <!-- cart images div -->
                                     <div class="col-md-3 col-10 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img"
-                                        style="height: 250px;">
-                                        <img style="height:230px;"
+                                        style="height: 190px;width:140px;">
+                                        <img style="height:160px;"
                                             src="../../dashboard/views/<?php echo $fetch_cart['cart_book_image']; ?>"
                                             alt="cart img">
                                     </div><!-- cart product details -->
@@ -459,13 +459,6 @@ if (isset($_GET['delete_all'])) {
                                     </p>
                                 </div>
                                 <a class="btn-n text-uppercase" href="checkout.php">Check Out</a>
-                            </div>
-
-                            <div class="mt-3 shadow p-3 bg-white">
-                                <div class="pt-4">
-                                    <h5 class="mb-4">Expected delivery date</h5>
-                                    <p>July 27th 2020 - July 29th 2020</p>
-                                </div>
                             </div>
                         </div>
                     </div>

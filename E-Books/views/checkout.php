@@ -47,7 +47,7 @@ if (isset($_POST['order_btn'])) {
             mysqli_query($con, "INSERT INTO `tbl_book_order`(`user_id`, `user_name`, `user_number`, `user_email`, `order_method`, `user_address`, `total_products`, `total_price`, `placed_on`,`payment_status`) 
             VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on','pending')");
             $message[] = 'order placed successfully!';
-            mysqli_query($con, "DELETE FROM `tbl_cart` WHERE user_id = '$user_id'");
+            // mysqli_query($con, "DELETE FROM `tbl_cart` WHERE user_id = '$user_id'");
         }
     }
 }
@@ -127,15 +127,27 @@ if (isset($_POST['order_btn'])) {
             <div class="flex">
                 <div class="inputBox">
                     <span>your name :</span>
-                    <input type="text" name="name" required placeholder="enter your name">
+                    <input type="text" name="name" readonly 
+                    <?php 
+                    echo  'value="'.$_SESSION["name"].'" ';
+                    ?> 
+                    required placeholder="enter your name">
                 </div>
                 <div class="inputBox">
                     <span>your number :</span>
-                    <input type="text" name="number" required placeholder="enter your number">
+                    <input type="text" name="number"
+                    <?php 
+                    echo  'value="'.$_SESSION["contact"].'" ';
+                    ?>
+                    required placeholder="enter your number">
                 </div>
                 <div class="inputBox">
                     <span>your email :</span>
-                    <input type="email" name="email" required placeholder="enter your email">
+                    <input type="email" name="email" readonly
+                    <?php 
+                    echo  'value="'.$_SESSION["email"].'" ';
+                    ?>
+                    required placeholder="enter your email">
                 </div>
                 <div class="inputBox">
                     <span>payment method :</span>
@@ -149,11 +161,15 @@ if (isset($_POST['order_btn'])) {
                 </div>
                 <div class="inputBox">
                     <span>address :</span>
-                    <input type="text" name="house/flat" required placeholder="e.g. house/flat no.">
+                    <input type="text" name="house/flat"
+                    <?php 
+                    echo  'value="'.$_SESSION["address"].'" ';
+                    ?>
+                    required placeholder="e.g. house/flat no.">
                 </div>
                 <div class="inputBox">
                     <span>city :</span>
-                    <input type="text" name="city" required placeholder="e.g. karachi">
+                    <input type="text" name="city" value="Karachi" required placeholder="e.g. karachi">
                 </div>
             </div>
             <input type="submit" value="order now" class="btn-n" name="order_btn">

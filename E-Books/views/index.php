@@ -111,7 +111,7 @@
         <!-- icons section ends -->
 
 
-        <section class="featured">
+        <section class="featured" id="bestselling">
 
             <h1 class="heading"><span>Most Selling</span></h1>
 
