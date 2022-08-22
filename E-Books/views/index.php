@@ -273,10 +273,17 @@
                             <input type="hidden" name="cd_price" value="' . $row[16] . '">
                             <input type="hidden" name="final_price" value="' . $row[14] . '">
                             <input type="hidden" name="book_image" value="' . $row[17] . '">
-                            <input type="hidden" value="' . $row[0] . '" name="book_id" />
-                            <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">
-                        </form>    
-                        </div>
+                            <input type="hidden" value="' . $row[0] . '" name="book_id" />';
+            if (isset($_SESSION["userid"]) != null) {
+                echo '
+                                        <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">
+                                </form>
+                                        ';
+            } else {
+                echo '
+                                        <a href="#" onclick="login()" class="btn-n">Add To Cart</a>';
+            }
+            echo '</div>
                     </div>
                 </div>
             </div>
@@ -301,8 +308,7 @@
                     <!-- <a href="#" class="btn-n">Subscribe !</a> -->
                 </div>
 
-                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php"
-                    method="POST">
+                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
 
                     <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
                     <input type="email" readonly name="" placeholder="enter your email" <?php
@@ -483,9 +489,9 @@
 
 
         <script>
-        function login() {
-            alert('Please Login First');
-        }
+            function login() {
+                alert('Please Login First');
+            }
         </script>
 
 
