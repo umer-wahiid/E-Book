@@ -277,11 +277,12 @@
             if (isset($_SESSION["userid"]) != null) {
                 echo '
                                         <input type="submit" class="btn-n" name="add_to_cart" value="Add To Cart">
-                                </form>
+                                
                                         ';
             } else {
                 echo '
-                                        <a href="#" onclick="login()" class="btn-n">Add To Cart</a>';
+                                        <a href="#" onclick="login()" class="btn-n">Add To Cart</a>
+                                        </form>';
             }
             echo '</div>
                     </div>
