@@ -281,9 +281,7 @@
                                         ';
             } else {
                 echo '
-                                        <a href="#" onclick="login()" class="btn-n">Add To Cart</a>
-                                </form>';
-
+                                        <a href="#" onclick="login()" class="btn-n">Add To Cart</a>';
             }
             echo '</div>
                     </div>
@@ -293,6 +291,12 @@
         }
 
         ?>
+
+
+        <!-- product section ends -->
+
+        <!-- newsletter section starts -->
+
         <section class="home newsletter">
             <div class="row">
 
