@@ -22,6 +22,14 @@
         $author_about = $_POST["uauthor_about"];
 
         $unique = uniqid();
+        $allowed_types = array(
+            'jpg',
+            'jpeg',
+            'png',
+            'jfif'
+        );
+        $typecheck = pathinfo($bimage_path, PATHINFO_EXTENSION);
+        if (in_array($typecheck, $allowed_types)){
 
         $uimage_path = "../book_image/" . $unique . basename($_FILES['uimage']['name']);
         $uimage = "../apis/book_image/" . $unique . basename($_FILES['uimage']['name']);
@@ -39,5 +47,9 @@
         } else {
             header("location:../../views/ViewProduct.php?response=Try Again");
         }
+    }
+    else{
+        header("location:../../views/ViewProduct.php?response=Try Again");
+    }
     }
     ?>

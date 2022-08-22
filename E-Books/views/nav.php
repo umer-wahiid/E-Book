@@ -209,9 +209,21 @@
                                             <div class="icons">
                                                 <a href="#" class="fas fa-search"></a>
                                                 <a href="#" class="fas fa-heart"></a>
-                                                <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '">
-                                                    <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
-                                                </button>
+                                                ';
+                        if (isset($_SESSION["userid"]) != null) {
+                            echo '
+                            <button data-bs-toggle="modal" data-bs-target="#myModal' . $row[0] . '">
+                                <a class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
+                            </button>
+                            ';
+                        } else {
+                            echo '
+                            <button onclick="login()">
+                                <a onclick="login()" class="fas fa-eye" data-bs-toggle="tooltip" title="Book Details"></a>
+                            </button>
+                            ';
+                        }
+                        echo '
                                             </div>
                                             <div class="image">
                                                 <img src="../../dashboard/views/' . $row[17] . '" alt="">
