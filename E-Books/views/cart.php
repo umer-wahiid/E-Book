@@ -211,7 +211,7 @@ if (isset($_GET['delete_all'])) {
                                                             &nbsp;
                                                             <label style="font-size: 16px;" for="">CD</label>
                                                             <br>
-                                                            <input type="radio" name="abc<?php echo $fetch_cart['cart_id']; ?>" onclick="radio2() ; this.form.submit()" id="abc" value="Hard Copy">
+                                                            <input type="radio" name="abc<?php echo $fetch_cart['cart_id']; ?>" onclick="radio2() ; this.form.submit()" id="abc" value="Hard Copy" checked>
                                                             &nbsp;
                                                             <label style="font-size: 16px;" for="">Hard Copy</label>
 
@@ -296,8 +296,6 @@ if (isset($_GET['delete_all'])) {
                                                     .innerHTML = origpdf;
                                                 document.getElementById('formp<?php echo $fetch_cart['cart_id']; ?>')
                                                     .value = origpdf;
-                                                document.getElementsByName(
-                                                    'abc<?php echo $fetch_cart['cart_id']; ?>').checked=true;
 
 
 
@@ -322,8 +320,6 @@ if (isset($_GET['delete_all'])) {
                                                     .innerHTML = origcd;
                                                 document.getElementById('formp<?php echo $fetch_cart['cart_id']; ?>')
                                                     .value = origcd;
-                                                    document.getElementsByName(
-                                                    'abc<?php echo $fetch_cart['cart_id']; ?>').checked=true;
 
 
 
@@ -348,8 +344,6 @@ if (isset($_GET['delete_all'])) {
                                                     .innerHTML = orig;
                                                 document.getElementById('formp<?php echo $fetch_cart['cart_id']; ?>')
                                                     .value = orig;
-                                                    document.getElementsByName(
-                                                    'abc<?php echo $fetch_cart['cart_id']; ?>').checked=true;
 
 
                                             }

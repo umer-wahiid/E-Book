@@ -7,14 +7,14 @@ if (isset($_POST['update_order'])) {
     mysqli_query($con, "UPDATE `tbl_book_order` SET payment_status = '$update_payment' WHERE order_id = '$order_update_id'") or die('query failed');
     $message[] = 'payment status has been updated!';
 
-    $user_mail = $_POST['usermail'];
-    $user_name = $_POST['username'];
-    $to = $user_mail;
-    $from = "ebook@gmail.com";
-    $sub = "Confirmation Email";
-    $msg = "$user_name Your Order is Confirm! Thankyou For Shopping";
+    // $user_mail = $_POST['usermail'];
+    // $user_name = $_POST['username'];
+    // $to = $user_mail;
+    // $from = "ebook@gmail.com";
+    // $sub = "Confirmation Email";
+    // $msg = "$user_name Your Order is Confirm! Thankyou For Shopping";
 
-    mail($to, $sub, $msg, $from);
+    // mail($to, $sub, $msg, $from);
 }
 
 if (isset($_GET['delete'])) {

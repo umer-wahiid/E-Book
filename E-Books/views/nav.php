@@ -288,21 +288,20 @@
         <form action="../apis/user_apis/insert_user.php" method="POST" enctype="multipart/form-data">
             <h3>sign up</h3>
             <span>User Name</span>
-            <input type="text" name="uname" class="box" placeholder="Enter your name" id="">
+            <input type="text" required name="uname" class="box" placeholder="Enter your name" id="">
             <span>Email</span>
-            <input type="email" name="uemail" class="box" placeholder="Enter your email" id="">
+            <input type="email" required name="uemail" class="box" placeholder="Enter your email" id="">
             <span>Phone</span>
-            <input type="text" name="uphone" class="box" placeholder="Enter your phone" id="">
+            <input type="text" required name="uphone" class="box" placeholder="Enter your phone" id="">
             <span>Address</span>
             <textarea style="border:1px solid gray;border-radius:6px ; resize: none; color: var(--light-color);"
-                placeholder="Enter your address" name="uaddress" id="" cols="52" rows="3"></textarea>
+                placeholder="Enter your address" name="uaddress" required id="" cols="52" rows="3"></textarea>
             <span>password</span>
-            <input type="password" name="upassword" class="box" placeholder="Enter your password" id="">
-            <input type="submit" name="submit" value="submit" class="btn-n">
-            <!-- <p>Already have an account ? <a href="#" id="login-btn">Sign in</a></p> -->
+            <input type="password" required name="upassword" class="box" placeholder="Enter your password" id="">
+            <input type="submit" required name="submit" value="submit" class="btn-n">
+            <!-- <p>Already have an accoun  t ? <a href="#" id="login-btn">Sign in</a></p> -->
             <p>Already have an account ? <button id="login-btn">Sign in</button></p>
         </form>
-
     </div>
 
 

@@ -70,7 +70,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar">
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-book me-2"></i>E-BOOKS</h3>
+                    <h3 class="text-primary"><img src="img/logo.png" width="60px" alt="">E-BOOKS</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
