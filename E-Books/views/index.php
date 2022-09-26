@@ -309,14 +309,15 @@
                     <!-- <a href="#" class="btn-n">Subscribe !</a> -->
                 </div>
 
-                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php" method="POST">
+                <form class="col-3" style="margin-left: 0px;text-align:left;" action="../apis/user_apis/subscribe.php"
+                    method="POST">
 
                     <h2 style="color:#27ae60;font-size:20px;">subscribe for latest updates</h2>
                     <input type="email" readonly name="" placeholder="enter your email" <?php
-                                                                                        if (isset($_SESSION["userid"]) != null) {
-                                                                                            echo  'value="' . $_SESSION["email"] . '" ';
-                                                                                        }
-                                                                                        ?> id="" class="box">
+                    if (isset($_SESSION["userid"]) != null) {
+                        echo  'value="' . $_SESSION["email"] . '" ';
+                    }
+                    ?> id="" class="box">
                     <input type="radio" name="sub" value="1 Year" style="margin-top: 30px;" required>
                     &nbsp;
                     <span class="radio">1 Year/Rs.2000</span>
@@ -331,7 +332,8 @@
                     <br>
                     <?php
                     if (isset($_SESSION["userid"]) != null) {
-                        echo '<input type="submit" name="subscribe" value="subscribe" class="btn-n">';
+                        echo '<input type="submit" name="subscribe" value="subscribe" class="btn-n">
+                        ';
                     } else {
                         echo '<div id="login-btn" onclick="login()" href="#"  class="btn-n">Subscribe</div>';
                     }
@@ -490,9 +492,9 @@
 
 
         <script>
-            function login() {
-                alert('Please Login First');
-            }
+        function login() {
+            alert('Please Login First');
+        }
         </script>
 
 
